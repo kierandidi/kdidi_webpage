@@ -45,9 +45,7 @@ author:
   # Used by `jekyll-feed`:
   name:                Kieran Didi
   email:               kieran.didi@gmail.com
-  about: |
-  Hi, I'm Kieran, a master's student fascinated 
-  by AI for biochemistry and bioinformatics.
+  about: Hi, I'm Kieran, AI for biology enthusiast.
   
 # # Used by `jekyll-seo-tag`:
 # twitter:             <username>
