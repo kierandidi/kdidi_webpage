@@ -40,8 +40,3 @@ containing example content:
 ├── LICENSE.md
 └── NOTICE.md
 ~~~
-
-[documentation]: docs/README.md
-[install]: docs/install.md
-[upgrade]: docs/upgrade.md
-[config]: docs/config.md
