@@ -45,6 +45,7 @@ author:
   # Used by `jekyll-feed`:
   name:                Kieran Didi
   email:               kieran.didi@gmail.com
+  picture:             /assets/img/Kieran_Didi_Picture.png
   about: Hi, I'm Kieran, AI for biology enthusiast.
   
 # # Used by `jekyll-seo-tag`:
@@ -58,8 +59,8 @@ menu:
     url:               /projects/
   - title:             Résumé*
     url:               /resume/
-  - title:             Documentation
-    url:               /docs/
+  - title:             About
+    url:               /about/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
