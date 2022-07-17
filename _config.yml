@@ -38,14 +38,14 @@ keywords:              []
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/Kieran_Didi_Picture.png
+logo:                  /assets/img/Kieran_Didi_Circle.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   name:                Kieran Didi
   email:               kieran.didi@gmail.com
   picture:
-    path:              /assets/img/Kieran_Didi_Picture.png
+    path:              /assets/img/Kieran_Didi_Circle.png
   about:               Hi, I am Kieran, AI for biology enthusiast.
   
 # # Used by `jekyll-seo-tag`:
