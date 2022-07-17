@@ -42,7 +42,6 @@ logo:                  /assets/img/Kieran_Didi_Picture.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
-  # Used by `jekyll-feed`:
   name:                Kieran Didi
   email:               kieran.didi@gmail.com
   picture:             /assets/img/Kieran_Didi_Picture.png
