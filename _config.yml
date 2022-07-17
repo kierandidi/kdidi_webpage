@@ -48,8 +48,9 @@ author:
   about: |
   Hi, I'm Kieran, a master's student fascinated 
   by AI for biochemistry and bioinformatics.
-  # # Used by `jekyll-seo-tag`:
-  # twitter:             <username>
+  
+# # Used by `jekyll-seo-tag`:
+# twitter:             <username>
 
 # Add links to the sidebar.
 menu:
