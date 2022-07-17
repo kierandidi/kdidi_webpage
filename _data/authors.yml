@@ -3,10 +3,10 @@
 # Change `author1` to your shortname.
 author:
   # Used by `jekyll-feed`:
-  name:                "Kieran Didi"
+  name:                Kieran Didi
   email:               kieran.didi@gmail.com
   picture:             /assets/img/Kieran_Didi_Picture.png
-  about: Hi, I'm Kieran, AI for biology enthusiast.
+  about: Hi, I am Kieran, AI for biology enthusiast.
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
 
