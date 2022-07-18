@@ -1,8 +1,6 @@
 ---
-layout: about
+layout: welcome
 title: About
 ---
 
 I am Kieran!
-
-<!--author-->
