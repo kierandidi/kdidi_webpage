@@ -53,6 +53,8 @@ If you got any comments to my posts or otherwise the desire to have a chat, just
 
 All the best and see you all soon!
 
+P.S. This webpage is still in the build-up phase, so please forgive me if something does not work or show up as intended.
+
 
 ## Credits
 
