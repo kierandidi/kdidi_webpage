@@ -6,7 +6,7 @@ description: >
   Here I will post projects I was or still am involved in (will be populated in the coming weeks).
 date: '21-07-2022'
 image: 
-  path: /assets/img/projects/coming-soon.png
+  path: /assets/img/projects/coming_soon.png
 #links:
 #  - title: Link
 #    url: https://hydejack.com/
