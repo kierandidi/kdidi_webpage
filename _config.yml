@@ -26,11 +26,11 @@ title:                 Kieran Didi
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
   Master's student interested in Protein Design, AI and bioinformatics. 
-  Blogging about papers, tools and experiences in the compbio space.
+  Blogging about papers, tools and experiences in the CompBio space.
 
 
 # A shorter description for the sidebar.
-tagline:               AI, CompBio, Antibodies
+tagline:               AI | CompBio | Healthcare
 
 # A list of keywords for your blog
 keywords:              []

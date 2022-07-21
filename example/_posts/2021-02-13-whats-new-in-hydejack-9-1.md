@@ -8,105 +8,50 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-  Version 9.1 provides minor design changes, new features, and closes multiple issues.
+  First post on this blog about the scope, my interests and possible topics
 invert_sidebar: true
 ---
 
-# What's New in Hydejack 9.1?
+# Hello World!
 
-What's New in Hydejack 9.1?
+Hey everybody! I am Kieran, a master's student in the CompBio space. After years of writing all kinds of things (newspaper reports, [preprint highlights](https://prelights.biologists.com/highlights/state-of-the-art-estimation-of-protein-model-accuracy-using-alphafold/), my own fantasy novel, ...), I decided that it is time to put a project into practice that I have been thinking about for quite some time: My own blog.
 
 * toc
 {:toc}
 
 
-## Stripe-ified Design
-Most elements now have rounded borders, making the design look more modern (dare I say "Stripe-ified") than ever before. 
+## Blogs I got inspired by
+I loved reading since my dad first started telling me fantasy stories. My fascination for blogging grew out of this fascination together with the influence of a few amazing blogs that shaped how I think about science and a lot of other stuff in general. Among these is first and foremost [In the Pipeline](https://www.science.org/blogs/pipeline), a blog by Derek Lowe which I follow basically since I started studying, and where I sometimes caught myself just staying on his site and refreshing the page in the faint hope that a new article might have appeared in the meantime.
 
-The goal of Hydejack was always to provide a theme that looks "designed" combined the amenities of a typical Jekyll theme for coders.
-This is an important step in maintaining this goal.
+I also enjoy the [Omics!Omics! blog](http://omicsomics.blogspot.com/) by Keith Robinson due to its timely coverage of news in the biotech industry, specifically regarding new fancy sequencing techniques. [Lilian Weng's blog](https://lilianweng.github.io/) helped me in the darkest coding hours where nothing makes sense, especially not your code and the math behind it. 
 
-At the same time, I'm introducing nerdy elements like [breadcrumbs](#serp-breadcrumbs), that are almost ornamental in nature.
-You wouldn't find these on other Stripe-like designs, but I think they are appealing to developer types like myself. 
-Like most additions to Hydejack, they can be disabled via configuration. 
+I love antibodies (as should be visible by the picture on the landing page, showing a ribbon cartoon of an IgG in PyMol, PDB code ), therefore the [OPIG blog](https://www.blopig.com/blog/) is always a good read, especially since their content is a nice mix of bioinformatics/protein design and "how the heck do I get this command line tool to work" tutorials.
 
+There is also [Some Thoughts on a Mysterious Universe](https://moalquraishi.wordpress.com/) by Mohammed AlQuraishi, which does not feature new blog posts to often, but if one comes out it always blows my mind. Love his holistic view on problems and the philosophical touch he brings to topics where I did'nt see this connection before.
 
-## Inverted Sidebars
-The colors on the sidebar can now be inverted to allow brighter sidebar images. This can be enabled per-page in the fort matter:
-
-```yml
-invert_sidebar: true
-```
+There are many others I often consult when I get want to know more about something, such as the famous [Machine Learning Mastery blog](https://machinelearningmastery.com/about/), [ML Theory](https://hunch.net/) by John Langford or the [Berkeley AI Research blog](https://bair.berkeley.edu/blog/), but the ones I mentioned above where definetely the ones that got me excited about blogging and from which I learned an awful lot!
 
 
-## Code Block Headers
-Code blocks can now have headers:
+## Why another blog??
+With this massive pile of reading material on your mind, you might ask yourself: "Why does this guy want to start yet another blog?" Well, there are three main reasons for that:
 
-~~~js
-// file: 'hello-world.js'
-console.log('Hello World!');
-~~~
+1. When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote this quote from Frank Oppenheimer, paraphrased from Science Magazine:
 
-Headers are added by making the first line a comment of the form `(file|title): ['"].*['"]`, e.g.:
+> The best way to learn is to teach, the best way to teach is to keep learning, and that what counts in the end is having had a shared, reflected experience
+{:.lead}
 
-    ~~~js
-    // file: 'hello-world.js'
-    console.log('Hello World!');
-    ~~~
-    
-Code blocks with and without headers now also come with a copy button. 
-In the case of header-less code blocks, the button only shows on hover to prevent potential overlap.
+Teaching definetely helped me getting a different point of view on things, no matter if that is basic chemistry or [data science with Python](https://github.com/kierandidi/Python_for_Biochemists).
 
+2. Even though the blog is mainly about organizing my thoughts and sharing my experiences, I hope that other people can get something out of that as well! I always enjoyed reading blogs and hearing people's opinions about stuff that I read as well, so I hope that at least some folks will have a similar experience reading my posts.
 
-## Resume Download Buttons
-Resumes can now have download buttons:
+3. I missed writing so damn much.
 
-![Download Buttons](/assets/img/blog/9.1.0-3.png){:.border.lead width="1776" height="258" loading="lazy"}
+## Hit me up!
+So, that's it for my first post. I will focus future posts on content and my path in the CompBio field with topics such as ML applications in healthcare or protein design showing promise to become regular topics of discussion on here. 
 
-Resumes can now have download buttons.
-{:.figcaption}
+If you got any comments to my posts or otherwise the desire to have a chat, just drop me a message via mail or Twitter! I was obsessive enough to write to random people whose work I found exciting and lucky enough to have many of them replying and chatting to me, so I intend to return this favor to everyone:) 
 
-The documentation has been updated with a chapter on [how to configure the buttons](/docs/basics/#downloads).
-
-
-## SERP Breadcrumbs
-Added breadcrumbs above page title:
-
-![Breadcrumbs](/assets/img/blog/9.1.0-2.png){:.border.lead width="1588" height="164" loading="lazy"}
-
-Bread crumbs are now shown above each page title.
-{:.figcaption}
-
-Note that this requires a [directory-like URL structure](https://qwtel.com/posts/software/urls-are-directories/) on your entire site, 
-otherwise the intermediate links will point to nonexisting sites.
-
-On a side note, Hydejack now has built-in tooltips for abbreviations like SERP (activated via tap/click).
-See [Example Content](/blog/hyde/2012-02-07-example-content/#inline-html-elements) on how to add them to your content.
-
-
-## Last Modified At
-Blog posts can now have a "last modified at" date in the sub title row.
-
-![Last modified at](/assets/img/blog/9.1.0-1.png){:.border.lead width="1254" height="218" loading="lazy"}
-
-Note that this depends on the `last_modified_at` property of the page, which must be either set manually in the frontmatter (not recommended), or via a plugin like [`jekyll-last-modified-at`](https://github.com/gjtorikian/jekyll-last-modified-at). Note that the later is not available when building on GitHub Pages and can increase build times.
-
-
-## Clap Button Preview
-I've been trying something new with [**getclaps.app**](https://getclaps.app/), a feedback and analytics tool for personal sites like those powered by Hydejack. 
-
-<!-- <clap-button style="--clap-button-color:var(--body-color);margin:2rem auto 3rem;width:3rem;height:3rem;font-size:smaller" nowave></clap-button> -->
-
-It is a separate product from Hydejack and not enabled by default. Because it depends on a backend component, it requires a monthly fee. 
-If enabled, it is placed below posts and pages where the dingbat character (❖) used to be.
-
-I can't claim that this product is fully baked (feedback welcome), but I've been using it on my personal site and here for the last couple of months with no issues.
-For more, see [the dedicated website](https://getclaps.app/).
-
-***
-{:style="margin:2rem 0"}
-
-There are many more changes and bugfixes in 9.1. See the [CHANGELOG](/CHANGELOG/){:.heading.flip-title} for details.
+All the best and see you all soon!
 
 
 ## Credits
