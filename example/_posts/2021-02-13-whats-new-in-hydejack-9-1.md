@@ -25,9 +25,9 @@ I loved reading since my dad first started telling me fantasy stories. My fascin
 
 I also enjoy the [Omics!Omics! blog](http://omicsomics.blogspot.com/) by Keith Robinson due to its timely coverage of news in the biotech industry, specifically regarding new fancy sequencing techniques. [Lilian Weng's blog](https://lilianweng.github.io/) helped me in the darkest coding hours where nothing makes sense, especially not your code and the math behind it. 
 
-I love antibodies (as should be visible by the picture on the landing page, showing a ribbon cartoon of an IgG in PyMol, PDB code ), therefore the [OPIG blog](https://www.blopig.com/blog/) is always a good read, especially since their content is a nice mix of bioinformatics/protein design and "how the heck do I get this command line tool to work" tutorials.
+I love antibodies (as should be visible by the picture on the landing page, showing a ribbon cartoon of a mouse IgG in PyMol, PDB code [1igt](https://www.rcsb.org/structure/1igt)), therefore the [OPIG blog](https://www.blopig.com/blog/) is always a good read, especially since their content is a nice mix of bioinformatics/protein design and "how the heck do I get this command line tool to work" tutorials.
 
-There is also [Some Thoughts on a Mysterious Universe](https://moalquraishi.wordpress.com/) by Mohammed AlQuraishi, which does not feature new blog posts to often, but if one comes out it always blows my mind. Love his holistic view on problems and the philosophical touch he brings to topics where I did'nt see this connection before.
+There is also [Some Thoughts on a Mysterious Universe](https://moalquraishi.wordpress.com/) by Mohammed AlQuraishi, which does not feature new blog posts to often, but when I stumble upon one it always blows my mind. Love his holistic view on problems and the philosophical touch he brings to topics where I did'nt see this connection before.
 
 There are many others I often consult when I get want to know more about something, such as the famous [Machine Learning Mastery blog](https://machinelearningmastery.com/about/), [ML Theory](https://hunch.net/) by John Langford or the [Berkeley AI Research blog](https://bair.berkeley.edu/blog/), but the ones I mentioned above where definetely the ones that got me excited about blogging and from which I learned an awful lot!
 
@@ -35,16 +35,16 @@ There are many others I often consult when I get want to know more about somethi
 ## Why another blog??
 With this massive pile of reading material on your mind, you might ask yourself: "Why does this guy want to start yet another blog?" Well, there are three main reasons for that:
 
-1. When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote this quote from Frank Oppenheimer, paraphrased from Science Magazine:
+1) When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote this quote from Frank Oppenheimer, paraphrased from Science Magazine:
 
 > The best way to learn is to teach, the best way to teach is to keep learning, and that what counts in the end is having had a shared, reflected experience
 {:.lead}
 
 Teaching definetely helped me getting a different point of view on things, no matter if that is basic chemistry or [data science with Python](https://github.com/kierandidi/Python_for_Biochemists).
 
-2. Even though the blog is mainly about organizing my thoughts and sharing my experiences, I hope that other people can get something out of that as well! I always enjoyed reading blogs and hearing people's opinions about stuff that I read as well, so I hope that at least some folks will have a similar experience reading my posts.
+2) Even though the blog is mainly about organizing my thoughts and sharing my experiences, I hope that other people can get something out of that as well! I always enjoyed reading blogs and hearing people's opinions about stuff that I read as well, so I hope that at least some folks will have a similar experience reading my posts.
 
-3. I missed writing so damn much.
+3) I missed writing so damn much.
 
 ## Hit me up!
 So, that's it for my first post. I will focus future posts on content and my path in the CompBio field with topics such as ML applications in healthcare or protein design showing promise to become regular topics of discussion on here. 
