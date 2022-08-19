@@ -1,14 +1,14 @@
 ---
 layout: post
 title: JS vs Python - Destructuring
-image: /assets/img/blog/pythonjs.jpg
+image: /assets/img/blog/jj-ying.jpg
 accent_image: 
   background: url('/assets/img/blog/pythonjs.jpg') center/covser
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-Destructuring can simplify your code and make it more readable
+  Destructuring can simplify your code and make it more readable
 invert_sidebar: true
 ---
 
