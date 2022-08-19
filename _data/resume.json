@@ -1,103 +1,191 @@
 {
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Kieran Didi",
-    "label": "B.Sc. Biochemie Heidelberg",
-    "picture": "",
-    "email": "",
-    "website": "",
-    "summary": "Excited about Drug Discovery, Protein Design and Entrepreneurship.",
+    "label": "CompBio master's student",
+    "image": "",
+    "email": "kieran.didi@gmail.com",
+    "phone": "",
+    "url": "https://kdidi.netlify.app/",
+    "summary": "Excited about Drug Discovery, Protein Design and Entrepreneurship. ",
     "location": {
-      "address": "",
-      "postalCode": "69115",
-      "city": "",
-      "countryCode": "",
-      "region": ""
+      "countryCode": "DE",
+      "address": ""
     },
-    "profiles": [],
-    "phone": "+49 1512 8409861"
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "me",
+        "url": "https://www.linkedin.com/in/me/"
+      }
+    ]
   },
   "work": [
     {
-      "company": "CSIRO",
+      "name": "CSIRO",
       "position": "Software Engineer Intern",
-      "website": "",
-      "startDate": "2022-07-01",
-      "summary": "Developing cloud-native software for DNA analysis using Spark, AWS and Terraform",
-      "highlights": []
+      "startDate": "2022-07-31",
+      "endDate": "",
+      "highlights": [],
+      "summary": "Developing cloud-native software for DNA analysis using Spark, AWS and Terraform.\nPublished an IaC Terraform module for creating EMR Serverless applications on AWS",
+      "url": "https://www.linkedin.com/company/csiro/",
+      "location": "Sydney, New South Wales, Australia"
     },
     {
-      "company": "PTNG Consulting",
+      "name": "PTNG Consulting",
       "position": "Consultant",
-      "website": "",
-      "startDate": "2022-06-01",
+      "startDate": "2022-06-30",
+      "endDate": "",
+      "highlights": [],
       "summary": "Conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
-      "highlights": []
+      "url": "https://www.linkedin.com/company/ptng-consulting/",
+      "location": "Melbourne, Victoria, Australia"
     },
     {
-      "company": "University of Cambridge",
+      "name": "University of Cambridge",
       "position": "Thesis Student",
-      "website": "",
-      "startDate": "2020-09-01",
-      "summary": "- designed peptide therapeutics and worked on screening system (publication in peer-review) - built database for high-quality antibody sequences, including data quality control and annotation - developed ML models with PyTorch and processing pipeline to quantify nativeness of antibody sequences",
+      "startDate": "2020-09-30",
+      "endDate": "2021-10-31",
       "highlights": [],
-      "endDate": "2021-10-01"
+      "summary": "- designed peptide therapeutics and worked on screening system (publication in peer-review)\n- built database for high-quality antibody sequences, including data quality control and annotation\n- developed ML models with PyTorch and processing pipeline to quantify nativeness of antibody sequences",
+      "url": "https://www.linkedin.com/school/university-of-cambridge/",
+      "location": "Cambridge, England, United Kingdom"
     },
     {
-      "company": "BioMed X Innovation Center",
-      "position": "Praktikant im Bereich Immunologie",
-      "website": "",
-      "startDate": "2019-08-01",
-      "summary": "Lindner Lab, Team IAA in Kooperation mit Janssen Pharmaceutica:  Identifikation von T-Zell-Antigenen, Design von Zell-Reporter-Systemen",
+      "name": "BioMedX Innovation Center",
+      "position": "Research Intern",
+      "startDate": "2019-08-31",
+      "endDate": "2020-04-30",
       "highlights": [],
-      "endDate": "2020-04-01"
+      "summary": "Team IAA in cooperation with Janssen Pharmaceuticals: \n- worked on a screening system for autoimmune diseases\n- identification of auto-antigens, construction of T cell reporter lines",
+      "url": "https://www.linkedin.com/company/biomed-x-institute/",
+      "location": "Heidelberg, Germany"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Studierendenrat Heidelberg",
+      "position": "Conference Coordinator",
+      "startDate": "2018-11-30",
+      "endDate": "2020-09-30",
+      "summary": "As a member of the Conference Administration of the Student Council Heidelberg, I organized and led the conferences and worked together with people from all different backgrounds on proposals.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "organization": "Förderverein der Biologie-Olympiade",
+      "position": "Internship Officer",
+      "startDate": "2019-05-31",
+      "endDate": "",
+      "summary": "In the context of the Biology Olympiad, I organize internships for successful and motivated participants and am the responsible coordinator between the pupils and the supervising professors or PhD students.",
+      "highlights": [],
+      "url": ""
     }
   ],
   "education": [
     {
       "institution": "Heidelberg University",
-      "area": "",
+      "area": "Biochemistry, focus Computer Science",
       "studyType": "Master of Science - MS",
-      "startDate": "2021-10-01",
-      "gpa": "",
-      "courses": [],
-      "endDate": "2022-10-01"
+      "startDate": "2021-10-31",
+      "endDate": "2022-10-31",
+      "score": "Currently 1.0",
+      "courses": []
     },
     {
-      "institution": "Ruprecht-Karls-Universität Heidelberg",
-      "area": "",
-      "studyType": "Bachelor of Science - BS",
-      "startDate": "2018-10-01",
-      "gpa": "",
-      "courses": [],
-      "endDate": "2021-10-01"
+      "institution": "Heidelberg University",
+      "area": "Biochemistry",
+      "studyType": "Bachelor of Science",
+      "startDate": "2018-10-31",
+      "endDate": "2021-09-30",
+      "score": "1.0 (best in year)",
+      "courses": []
     },
     {
       "institution": "University of Cambridge",
-      "area": "",
-      "studyType": "Austauschstipendium",
-      "startDate": "2020-01-01",
-      "gpa": "",
-      "courses": [],
-      "endDate": "2021-01-01"
+      "area": "Chemistry (Part II)",
+      "studyType": "Exchange Scholarship",
+      "startDate": "2020-12-31",
+      "endDate": "2021-12-31",
+      "score": "",
+      "courses": []
     },
     {
       "institution": "Sankt-Joseph-Gymnasium Rheinbach",
       "area": "",
-      "studyType": "Abitur",
-      "startDate": "2010-01-01",
-      "gpa": "",
-      "courses": [],
-      "endDate": "2018-01-01"
+      "studyType": "German Abitur (Baccalaureat)",
+      "startDate": "2010-12-31",
+      "endDate": "2018-12-31",
+      "score": "1.0",
+      "courses": []
     }
   ],
+  "awards": [
+    {
+      "title": "Sartorius STEM scholarship",
+      "date": "2021-10-31",
+      "awarder": "Sartorius",
+      "summary": "Received the Sartorius scholarship due to academic achievements and performance at video interview and in-person assesment center"
+    },
+    {
+      "title": "ICU Scholarship",
+      "date": "2019-09-30",
+      "awarder": "QX - Quaterly Crossing",
+      "summary": "One of seven finalists awarded the ICU Scholarship by the business and leadership network QX. The scholarships allows participation in international conferences such as the MBA World Summit or the Leadership Conference, includes intensive management mentoring and a lot of different activities to foster exchange between the scholars and the network."
+    },
+    {
+      "title": "German Academic Foundation Scholarship",
+      "date": "2018-10-31",
+      "awarder": "German Academic Foundation",
+      "summary": "Full scholarship for both undergraduate and master's studies"
+    },
+    {
+      "title": "International Biology Olympiad Silver Medal",
+      "date": "2018-07-01",
+      "awarder": "International Biology Olympiad",
+      "summary": "Came in second in nationwide competition, silver medal at the international competition in Teheran. "
+    },
+    {
+      "title": "NanoBio Vice-winner",
+      "date": "2017-09-01",
+      "awarder": "Deutscher Verband Nanotechnologie e.V.",
+      "summary": "At the \"NanoBio\" Competition, my team and I came in second nationwide for our project in which we constructed artificial muscle fibres out of Nylon and analyzed their properties."
+    },
+    {
+      "title": "DECHEMAX Top 10 Germany ",
+      "date": "2017-05-01",
+      "awarder": "DECHEMA Gesellschaft für Chemische Technik und Biotechnologie e.V.",
+      "summary": "At the \"DECHEMAX\" competition my team and I were chosen as one of the ten best teams in Germany for our experimental performance. "
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Fundamentals of Deep Learning",
+      "issuer": "NVIDIA",
+      "startDate": "2022-06-30",
+      "url": "https://courses.nvidia.com/certificates/14800358ebc948bdbaf306e195c74ff5/"
+    },
+    {
+      "name": "Fundamentals of Deep Learning for Multi-GPUs",
+      "issuer": "NVIDIA",
+      "startDate": "2022-06-30",
+      "url": "https://courses.nvidia.com/certificates/ed43e69f4c834cd48d0cc1e43adb9367/"
+    }
+  ],
+  "publications": [],
   "skills": [
     {
-      "name": "Microsoft Office",
+      "name": "ML for Biology",
       "level": "",
       "keywords": []
     },
     {
-      "name": "Microsoft Excel",
+      "name": "Cloud Computing",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
       "level": "",
       "keywords": []
     },
@@ -107,7 +195,7 @@
       "keywords": []
     },
     {
-      "name": "Immunologie",
+      "name": "Immunology",
       "level": "",
       "keywords": []
     },
@@ -120,35 +208,31 @@
       "name": "Java",
       "level": "",
       "keywords": []
-    },
-    {
-      "name": "Visual Basic",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Englisch",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Französisch",
-      "level": "",
-      "keywords": []
     }
   ],
   "languages": [
     {
-      "language": "Deutsch",
-      "fluency": "Native or bilingual proficiency"
+      "language": "de",
+      "fluency": "Native Speaker"
     },
     {
-      "language": "Englisch",
-      "fluency": "Full professional proficiency"
+      "fluency": "Native Speaker",
+      "language": "German "
     },
     {
-      "language": "French",
-      "fluency": "Elementary proficiency"
+      "fluency": "Full Professional",
+      "language": "English"
+    },
+    {
+      "fluency": "Elementary",
+      "language": "French"
     }
-  ]
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
 }
