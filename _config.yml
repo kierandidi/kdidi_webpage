@@ -61,6 +61,8 @@ menu:
     url:               /projects/
   - title:             Résumé
     url:               /resume/
+  - title:             Tags
+    url:               /tags/
 
 
 # Add links to the footer.
