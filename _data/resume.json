@@ -15,7 +15,7 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "me",
+        "username": "Kieran Didi",
         "url": "https://www.linkedin.com/in/me/"
       }
     ]
@@ -27,7 +27,7 @@
       "startDate": "2022-07-31",
       "endDate": "",
       "highlights": [],
-      "summary": "Developing cloud-native software for DNA analysis using Spark, AWS and Terraform.\nPublished an IaC Terraform module for creating EMR Serverless applications on AWS",
+      "summary": "- developing cloud-native software for DNA analysis using Spark, AWS and Terraform.\n- published an IaC Terraform module for creating EMR Serverless applications on AWS",
       "url": "https://www.linkedin.com/company/csiro/",
       "location": "Sydney, New South Wales, Australia"
     },
@@ -37,7 +37,7 @@
       "startDate": "2022-06-30",
       "endDate": "",
       "highlights": [],
-      "summary": "Conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
+      "summary": "- conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
       "url": "https://www.linkedin.com/company/ptng-consulting/",
       "location": "Melbourne, Victoria, Australia"
     },
@@ -70,7 +70,7 @@
       "endDate": "2020-09-30",
       "summary": "As a member of the Conference Administration of the Student Council Heidelberg, I organized and led the conferences and worked together with people from all different backgrounds on proposals.",
       "highlights": [],
-      "url": ""
+      "url": "https://www.stura.uni-heidelberg.de/"
     },
     {
       "organization": "Förderverein der Biologie-Olympiade",
@@ -79,7 +79,7 @@
       "endDate": "",
       "summary": "In the context of the Biology Olympiad, I organize internships for successful and motivated participants and am the responsible coordinator between the pupils and the supervising professors or PhD students.",
       "highlights": [],
-      "url": ""
+      "url": "https://ibo-verein.de/"
     }
   ],
   "education": [
@@ -90,7 +90,7 @@
       "startDate": "2021-10-31",
       "endDate": "2022-10-31",
       "score": "Currently 1.0",
-      "courses": []
+      "courses": ["machine learning I+II", "operating systems", "networks", "software development", "algorithms & data structures"]
     },
     {
       "institution": "Heidelberg University",
@@ -108,7 +108,7 @@
       "startDate": "2020-12-31",
       "endDate": "2021-12-31",
       "score": "",
-      "courses": []
+      "courses": ["math. methods", "symmetry", "cheminformatics", "theoretical chemistry", "scientific programming"]
     },
     {
       "institution": "Sankt-Joseph-Gymnasium Rheinbach",
@@ -175,52 +175,53 @@
   "publications": [],
   "skills": [
     {
+      "name": "Python",
+      "level": "professional",
+      "keywords": []
+    },
+    {
+      "name": "R",
+      "level": "advanced",
+      "keywords": []
+    },
+    {
+      "name": "C++",
+      "level": "novice",
+      "keywords": []
+    },
+    {
       "name": "ML for Biology",
-      "level": "",
+      "level": "advanced",
       "keywords": []
     },
     {
       "name": "Cloud Computing",
-      "level": "",
+      "level": "advanced",
       "keywords": []
     },
     {
       "name": "Amazon Web Services (AWS)",
-      "level": "",
+      "level": "advanced",
       "keywords": []
     },
     {
-      "name": "Research",
-      "level": "",
+      "name": "Web Development",
+      "level": "advanced",
       "keywords": []
     },
     {
       "name": "Immunology",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Python",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Java",
-      "level": "",
+      "level": "professional",
       "keywords": []
     }
   ],
   "languages": [
     {
-      "language": "de",
-      "fluency": "Native Speaker"
-    },
-    {
       "fluency": "Native Speaker",
       "language": "German "
     },
     {
-      "fluency": "Full Professional",
+      "fluency": "Native",
       "language": "English"
     },
     {
