@@ -99,7 +99,7 @@
       "startDate": "2018-10-31",
       "endDate": "2021-09-30",
       "gpa": "1.0 (best in year, German scale)",
-      "courses": []
+      "courses": ["bioinformatics", "statistical learning", "molecular bioogy", "organic chemistry"]
     },
     {
       "institution": "University of Cambridge",
