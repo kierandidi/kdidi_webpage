@@ -1,0 +1,154 @@
+{
+  "basics": {
+    "name": "Kieran Didi",
+    "label": "B.Sc. Biochemie Heidelberg",
+    "picture": "",
+    "email": "",
+    "website": "",
+    "summary": "Excited about Drug Discovery, Protein Design and Entrepreneurship.",
+    "location": {
+      "address": "",
+      "postalCode": "69115",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    },
+    "profiles": [],
+    "phone": "+49 1512 8409861"
+  },
+  "work": [
+    {
+      "company": "CSIRO",
+      "position": "Software Engineer Intern",
+      "website": "",
+      "startDate": "2022-07-01",
+      "summary": "Developing cloud-native software for DNA analysis using Spark, AWS and Terraform",
+      "highlights": []
+    },
+    {
+      "company": "PTNG Consulting",
+      "position": "Consultant",
+      "website": "",
+      "startDate": "2022-06-01",
+      "summary": "Conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
+      "highlights": []
+    },
+    {
+      "company": "University of Cambridge",
+      "position": "Thesis Student",
+      "website": "",
+      "startDate": "2020-09-01",
+      "summary": "- designed peptide therapeutics and worked on screening system (publication in peer-review) - built database for high-quality antibody sequences, including data quality control and annotation - developed ML models with PyTorch and processing pipeline to quantify nativeness of antibody sequences",
+      "highlights": [],
+      "endDate": "2021-10-01"
+    },
+    {
+      "company": "BioMed X Innovation Center",
+      "position": "Praktikant im Bereich Immunologie",
+      "website": "",
+      "startDate": "2019-08-01",
+      "summary": "Lindner Lab, Team IAA in Kooperation mit Janssen Pharmaceutica:  Identifikation von T-Zell-Antigenen, Design von Zell-Reporter-Systemen",
+      "highlights": [],
+      "endDate": "2020-04-01"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Heidelberg University",
+      "area": "",
+      "studyType": "Master of Science - MS",
+      "startDate": "2021-10-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "2022-10-01"
+    },
+    {
+      "institution": "Ruprecht-Karls-Universität Heidelberg",
+      "area": "",
+      "studyType": "Bachelor of Science - BS",
+      "startDate": "2018-10-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "2021-10-01"
+    },
+    {
+      "institution": "University of Cambridge",
+      "area": "",
+      "studyType": "Austauschstipendium",
+      "startDate": "2020-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "2021-01-01"
+    },
+    {
+      "institution": "Sankt-Joseph-Gymnasium Rheinbach",
+      "area": "",
+      "studyType": "Abitur",
+      "startDate": "2010-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "2018-01-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Microsoft Office",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft Excel",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Research",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Immunologie",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Python",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Java",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Visual Basic",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Englisch",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Französisch",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "Deutsch",
+      "fluency": "Native or bilingual proficiency"
+    },
+    {
+      "language": "Englisch",
+      "fluency": "Full professional proficiency"
+    },
+    {
+      "language": "French",
+      "fluency": "Elementary proficiency"
+    }
+  ]
+}

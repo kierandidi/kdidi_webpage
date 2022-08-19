@@ -2,8 +2,7 @@
 layout: resume
 title: Résumé*
 description: >
-  This is the `description` of your resume page, as it will be seen by search engines.
-  You'll probably want to modify it in `resume.md`, and maybe set `hide_description` to `true` in the front matter.
+  CV of Kieran Didi, master's student at Cambridge and Heidelberg focused on the interface of life sciences and computer science, with a focus on Machine Learning, cloud computing and software engineering for biology.
 hide_description: true
 left_column:
   - work
@@ -25,5 +24,5 @@ buttons:
   # or use `h2vx.com` to generate a vCard on the fly based on the structured data of the resume page.
   # The later requires `hydejack.no_structured_data: false` and only works once the site is deployed to a public URL.
   #vcf: http://h2vx.com/vcf/<!--url-->
-  #json: /assets/resume.json
+  json: /assets/resume.json
 ---
