@@ -181,16 +181,11 @@
     },
     {
       "name": "ML for Biology",
-      "level": "Intermediate",
+      "level": "professional",
       "keywords": []
     },
     {
       "name": "Cloud Computing",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "AWS",
       "level": "Intermediate",
       "keywords": []
     },
@@ -211,7 +206,7 @@
     },
     {
       "name": "Immunology",
-      "level": "Intermediate",
+      "level": "professional",
       "keywords": []
     }
   ],
