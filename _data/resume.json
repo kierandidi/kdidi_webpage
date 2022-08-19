@@ -89,7 +89,7 @@
       "studyType": "Master of Science - MS",
       "startDate": "2021-10-31",
       "endDate": "2022-10-31",
-      "score": "Currently 1.0",
+      "score": "1.0 (best in year, German scale)",
       "courses": ["machine learning I+II", "operating systems", "networks", "software development", "algorithms & data structures"]
     },
     {
@@ -98,7 +98,7 @@
       "studyType": "Bachelor of Science",
       "startDate": "2018-10-31",
       "endDate": "2021-09-30",
-      "score": "1.0 (best in year)",
+      "score": "1.0 (best in year, German scale)",
       "courses": []
     },
     {
@@ -116,7 +116,7 @@
       "studyType": "German Abitur (Baccalaureat)",
       "startDate": "2010-12-31",
       "endDate": "2018-12-31",
-      "score": "1.0",
+      "gpa": "1.0 (best in year, German scale)",
       "courses": []
     }
   ],
