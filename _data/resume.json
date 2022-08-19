@@ -89,7 +89,7 @@
       "studyType": "Master of Science - MS",
       "startDate": "2021-10-31",
       "endDate": "2022-10-31",
-      "score": "1.0 (best in year, German scale)",
+      "gpa": "1.0 (best in year, German scale)",
       "courses": ["machine learning I+II", "operating systems", "networks", "software development", "algorithms & data structures"]
     },
     {
@@ -98,7 +98,7 @@
       "studyType": "Bachelor of Science",
       "startDate": "2018-10-31",
       "endDate": "2021-09-30",
-      "score": "1.0 (best in year, German scale)",
+      "gpa": "1.0 (best in year, German scale)",
       "courses": []
     },
     {
@@ -107,7 +107,6 @@
       "studyType": "Exchange Scholarship",
       "startDate": "2020-12-31",
       "endDate": "2021-12-31",
-      "score": "",
       "courses": ["math. methods", "symmetry", "cheminformatics", "theoretical chemistry", "scientific programming"]
     },
     {
