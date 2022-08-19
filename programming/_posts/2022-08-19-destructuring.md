@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JS vs Python - Destructuring
-image: /assets/img/blog/jj-ying.jpg
+image: /assets/img/blog/pythonjs.jpg
 accent_image: 
   background: url('/assets/img/blog/pythonjs.jpg') center/covser
   overlay: false
