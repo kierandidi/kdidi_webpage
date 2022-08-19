@@ -3,7 +3,7 @@ layout: post
 title: JS vs Python - Destructuring
 image: /assets/img/blog/pythonjs.png
 accent_image: 
-  background: url('/assets/img/blog/pythonjs.png') center/cover
+  background: url('/assets/img/blog/pythonjs.png') center/covser
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
