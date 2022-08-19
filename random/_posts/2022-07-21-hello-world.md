@@ -10,6 +10,7 @@ theme_color: '#ccc'
 description: >
   First post on this blog about the scope, my interests and possible topics
 invert_sidebar: true
+type: category
 categories: [random]
 tags:       [events]
 ---
