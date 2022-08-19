@@ -22,7 +22,7 @@
   },
   "work": [
     {
-      "name": "CSIRO",
+      "organization": "CSIRO",
       "position": "Software Engineer Intern",
       "startDate": "2022-07-31",
       "endDate": "",
@@ -181,37 +181,47 @@
     },
     {
       "name": "R",
-      "level": "advanced",
+      "level": "Intermediate",
       "keywords": []
     },
     {
       "name": "C++",
-      "level": "novice",
+      "level": "Intermediate",
       "keywords": []
     },
     {
       "name": "ML for Biology",
-      "level": "advanced",
+      "level": "Intermediate",
       "keywords": []
     },
     {
       "name": "Cloud Computing",
-      "level": "advanced",
+      "level": "Intermediate",
       "keywords": []
     },
     {
-      "name": "Amazon Web Services (AWS)",
-      "level": "advanced",
+      "name": "AWS",
+      "level": "Intermediate",
+      "keywords": []
+    },
+    {
+      "name": "AWS",
+      "level": "Intermediate",
+      "keywords": []
+    },
+    {
+      "name": "Terraform",
+      "level": "professional",
       "keywords": []
     },
     {
       "name": "Web Development",
-      "level": "advanced",
+      "level": "Intermediate",
       "keywords": []
     },
     {
       "name": "Immunology",
-      "level": "professional",
+      "level": "Intermediate",
       "keywords": []
     }
   ],
@@ -221,7 +231,7 @@
       "language": "German "
     },
     {
-      "fluency": "Native",
+      "fluency": "Native Speaker",
       "language": "English"
     },
     {
