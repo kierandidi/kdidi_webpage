@@ -166,6 +166,12 @@ defaults:
     values:
       seo:
         type:          WebPage
+    # You can use the following to enable comments on all posts.
+  - scope:
+      type:            posts
+    values:
+      # https://applause-button.com/
+      applause_button:       true
 
 kramdown:
   math_engine:         katex
