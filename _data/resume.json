@@ -93,15 +93,6 @@
       "courses": ["machine learning I+II", "operating systems", "networks", "software development", "algorithms & data structures"]
     },
     {
-      "institution": "Heidelberg University",
-      "area": "Biochemistry",
-      "studyType": "Bachelor of Science",
-      "startDate": "2018-10-31",
-      "endDate": "2021-09-30",
-      "gpa": "1.0 (best in year, German scale)",
-      "courses": ["bioinformatics", "statistical learning", "molecular bioogy", "organic chemistry"]
-    },
-    {
       "institution": "University of Cambridge",
       "area": "Chemistry (Part II)",
       "studyType": "Exchange Scholarship",
@@ -110,13 +101,13 @@
       "courses": ["math. methods", "symmetry", "cheminformatics", "theoretical chemistry", "scientific programming"]
     },
     {
-      "institution": "Sankt-Joseph-Gymnasium Rheinbach",
-      "area": "",
-      "studyType": "German Abitur (Baccalaureat)",
-      "startDate": "2010-12-31",
-      "endDate": "2018-12-31",
+      "institution": "Heidelberg University",
+      "area": "Biochemistry",
+      "studyType": "Bachelor of Science",
+      "startDate": "2018-10-31",
+      "endDate": "2021-09-30",
       "gpa": "1.0 (best in year, German scale)",
-      "courses": []
+      "courses": ["bioinformatics", "statistical learning", "molecular bioogy", "organic chemistry"]
     }
   ],
   "awards": [
