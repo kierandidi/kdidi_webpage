@@ -3,7 +3,7 @@ layout: post
 title: JS vs Python - Destructuring
 image: /assets/img/blog/pythonjs.jpg
 accent_image: 
-  background: url('/assets/img/blog/pythonjs.jpg') center/covser
+  background: url('/assets/img/blog/pythonjs.jpg') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
@@ -53,8 +53,6 @@ Mention tuples?
 We do not need to match the exact number of elements in the list, but can also take a subset if we are just interested in say the first three entries in the leaderboard: 
 
 ~~~python
-# file: "unpacking1.py"
-
 #define a list containing the leaderboard of CASP14 (2020)
 leaderboard = ['AlphaFold2', 'BAKER', 'BAKER-experimental', 'FEIG-R2', 'Zhang', 'tFold_human']
 #unpack a list into its components
@@ -74,19 +72,19 @@ console.log(second)
 
 But what if this subset is not consecutive, i.e. we want for example the first and the last entry as separate entries and all the others still together as a list? Well, here the magic begins.
 
-## Splat vs Rest
+## Spla (*) vs Rest (...)
 
 In Python, we can use the splat operator (*) to indicate a variable number of arguments:
 
 ~~~python
 #use the splat operator for remaining elements
 first, second, third, *rest = leaderbord
-rest
+print(rest)
 # > ['FEIG-R2', 'Zhang', 'tFold_human']
 
 #use splat operator for elements in between
 first, *middle, last = leaderboard
-middle
+print(middle)
 # > ['FEIG-R2', 'Zhang', 'tFold_human']
 ~~~
 
@@ -138,7 +136,7 @@ console.log(last);
 This does the trick, but the nice one-liner we were able to write in Python is just not possible in JavaScript.
 
 
-## Collecting non-keyword arguments: * vs ...
+## Collecting non-keyword arguments: Splat(*) vs Rest(...)
 The above mentioned operators are often useful if you call functions and want to give the user the opportunity to give a variable number of input parameters to the function. In Python, we use the splat operator * together with args (although this is just a convention) to do that:
 
 ~~~python
@@ -199,7 +197,7 @@ announce('CASP14 results:', 'AlphaFold2', 'BAKER', 'BAKER-experimental');
 
 made JS function argument unpacking more similar to Python as you can see above. However, there is another thing Python can do which JS lacks currently: Unpacking of keyword arguments.
 
-## Collecting non-keyword arguments: **
+## Collecting non-keyword arguments: **kwargs
 
 In Python we can also pass a variable number of keyword (i.e. named arguments) via dictionary unpacking ** on the parameter kwargs (again, the name is just a convention, the operator ** is what really matters):
 
