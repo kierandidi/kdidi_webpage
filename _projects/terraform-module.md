@@ -6,7 +6,7 @@ description: >
   A template to create your own EMR Serverless cluster on AWS, including all neccessary IAM roles and some extra features.
 date: '19-08-2022'
 image: 
-  path: /assets/img/projects/cloud_logo.png
+  path: /assets/img/projects/cloud_logo.jpg
 #links:
 #  - title: Link
 #    url: https://hydejack.com/

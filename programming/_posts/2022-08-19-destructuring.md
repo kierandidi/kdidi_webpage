@@ -11,6 +11,8 @@ description: >
   Destructuring can simplify your code and make it more readable
 invert_sidebar: true
 type: category
+categories: [programming]
+#tags:       [programming]
 ---
 
 # JS vs Python - Destructuring
