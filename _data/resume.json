@@ -22,7 +22,7 @@
   },
   "work": [
     {
-      "organization": "CSIRO",
+      "company": "CSIRO",
       "position": "Software Engineer Intern",
       "startDate": "2022-07-31",
       "endDate": "",
@@ -32,7 +32,7 @@
       "location": "Sydney, New South Wales, Australia"
     },
     {
-      "name": "PTNG Consulting",
+      "company": "PTNG Consulting",
       "position": "Consultant",
       "startDate": "2022-06-30",
       "endDate": "",
@@ -42,7 +42,7 @@
       "location": "Melbourne, Victoria, Australia"
     },
     {
-      "name": "University of Cambridge",
+      "company": "University of Cambridge",
       "position": "Thesis Student",
       "startDate": "2020-09-30",
       "endDate": "2021-10-31",
@@ -52,7 +52,7 @@
       "location": "Cambridge, England, United Kingdom"
     },
     {
-      "name": "BioMedX Innovation Center",
+      "company": "BioMedX Innovation Center",
       "position": "Research Intern",
       "startDate": "2019-08-31",
       "endDate": "2020-04-30",
@@ -235,7 +235,7 @@
       "language": "English"
     },
     {
-      "fluency": "Elementary",
+      "fluency": "Elementary proficiency",
       "language": "French"
     }
   ],
