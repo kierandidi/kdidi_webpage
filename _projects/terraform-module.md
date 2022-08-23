@@ -14,7 +14,7 @@ sitemap: false
 ---
 
 # Terraform Module for EMR Serverless
-We recently published a [Terraform module for EMR Serverless](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) that came out of my internship at the [translational bioinformatics group](https://www.bioinformatics.csiro.au/) at CSIRO in Sydney.
+Together with [Anuradha Wickramarachchi](https://anuradhawick.com/) I recently published a [Terraform module for EMR Serverless](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) that came out of my internship at the [translational bioinformatics group](https://www.bioinformatics.csiro.au/) at CSIRO in Sydney.
 
 With this module, we want to make it easier to use this relatively new service at AWS (released in June 2022) which we think is really useful for scalable and cost-effective big data analysis. While the README document on the Terraform Registry is aimed to be short and concise and the [AWS Documentation](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html) can be quite overwhelming at first encounter, here I will explain some of the aspects of working with our module and EMR Serverless in general in a bit more detail.
 
