@@ -34,6 +34,7 @@ That is why we created the Terraform module: It takes care of all the IAM roles,
 After installing Terraform, the process is quite straightforward: You create a main.tf file in your working directory in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0)) with content similar to the following: 
 
 ~~~terraform
+file: "main.tf"
 module "emrserverless" {
   source  = "kierandidi/emrserverless/aws"
   version = "1.0.0"
@@ -73,12 +74,22 @@ Optionally you can add folders after `s3://<bucket_name>/` if you do want your j
 
 Submitting your jobs can (as often) either be done in the management console or in the terminal via the AWS CLI. What I like about the console option is that you can easily clone jobs; this creates a template for a new job including all the parameters of the old job, saving you the time to retype everything and prevents you from making mistakes. 
 
-Here is a screenshot of what those parameters might look like for a typical application: 
+Here is a table of the typical parameters I set when running an EMR Serverless Spark job: 
 
 
+| Name | Description | Value |
+|------|-------------|---------------|
+| <a name="spark.driver.cores"></a>[spark.driver.cores](#) | Number of cores available to Spark driver | `<number of cores>` |
+| <a name="spark.driver.memory"></a>[spark.driver.memory](#) | Amount of memory avaiable to Spark executor | `<memory in g, e.g. 4g>` |
+| <a name="spark.executor.cores"></a>[spark.executor.cores](#) | Number of cores available to Spark driver  | `<number of cores>` |
+| <a name="spark.executor.memory"></a>[spark.executor.memory](#) | Amount of memory avaiable to Spark executor. | `<memory in g, e.g. 4g>` |
+| <a name="spark.archives"></a>[spark.archives](#) | Location of compressed environment. | `s3://<path to your environment>#environment` |
+| <a name="spark.submit.pyFiles"></a>[spark.submit.pyFiles](#) | Location of compressed source code. | `s3://<bucket-name>/builds/<compressed directory name>` |
+| <a name="spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
+| <a name="spark.emr-serverless.driverEnv.PYSPARK_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
+| <a name="spark.executorEnv.PYSPARK_PYTHON"></a>[spark.executorEnv.PYSPARK_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
 
-For the CLI option, you can use the following command: 
-
+For the CLI option, you can use the `aws emr-serverless start-job-run` command with the parameters from above configured like [here](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/jobs-cli.html). This will then look something like this (I omitted some parameters for clarity):
 
 ~~~
 aws emr-serverless start-job-run \
@@ -94,7 +105,7 @@ aws emr-serverless start-job-run \
     }'
 ~~~
 
-The `sparkSubmitParameters` are just an example. The most important bit are the entryPoint and the entryPointArguments, so the file you want to run on the cluster and the arguments you want to pass to it.
+The `sparkSubmitParameters` are just an example. The most important bits are the entryPoint and the entryPointArguments, so the file you want to run on the cluster and the arguments you want to pass to it.
 
 You can configure an awful lot when submitting a job. One of the options that I find quite useful is determining a location in your S3 bucket where the log files of the jobs are stored; they help immensely in case of troubleshooting. 
 
@@ -122,3 +133,8 @@ aws emr-serverless get-job-run \
 ~~~
 
 You get the `job-run-id` as output in your terminal if you submit a job via the CLI or you can see it in the management console under the details of your job.
+
+
+## Closing thoughts
+
+I hope that this post has given you the tools to use our Terraform module and start your journey with EMR Serverless. We are always interested in hearing feedback about the module or potential additions you would find helpful, so if you would like to see some functionality either drop me a mail or open an [issue on GitHub](https://github.com/kierandidi/terraform-aws-emrserverless/issues). Thanks for reading!
