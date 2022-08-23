@@ -98,6 +98,7 @@
       "studyType": "Exchange Scholarship",
       "startDate": "2020-12-31",
       "endDate": "2021-12-31",
+      "gpa": "/",
       "courses": ["math. methods", "symmetry", "cheminformatics", "theoretical chemistry", "scientific programming"]
     },
     {
