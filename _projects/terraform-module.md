@@ -16,7 +16,7 @@ sitemap: false
 # Terraform Module for EMR Serverless
 Together with [Anuradha Wickramarachchi](https://anuradhawick.com/) I recently published a [Terraform module for EMR Serverless](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) that came out of my internship at the [translational bioinformatics group](https://www.bioinformatics.csiro.au/) at CSIRO in Sydney.
 
-With this module, we want to make it easier to use this relatively new service at AWS (released in June 2022) which we think is really useful for scalable and cost-effective big data analysis. While the README document on the Terraform Registry is aimed to be short and concise and the [AWS Documentation](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html) can be quite overwhelming at first encounter, here I will explain some of the aspects of working with our module and EMR Serverless in general in a bit more detail.
+With this module, we want to make it easier to use this relatively new service at AWS (released in June 2022) which we think is really useful for scalable and cost-effective big data analysis. While the README document on the Terraform Registry is intended to be short and concise,the [AWS Documentation](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html) can be quite overwhelming at first sight. So here I decided to take the middleground: I will explain some of the aspects of working with our module and EMR Serverless in a bit more detail, focusing on the aspects I use often and without aiming to cover the full docs.
 
 
 * toc
@@ -26,12 +26,12 @@ With this module, we want to make it easier to use this relatively new service a
 
 In my internship I was building a cloud-native bioinformatics software for genomic analysis (see [this blog post]() if you want to know more about the context). We chose to use the EMR Serverless service of AWS since it allowed us to run our Spark application in a transient cluster that gets shut-down after job completion, ideal for our pipeline with fluctuating workloads.
 
-Since the service was just published in June 2022, there was no Infrastructure-as-Code solution publicly available. Nevertheless, we wanted to use IaC in order to automate the provisioning process and remove error potential at this part of the pipeline in order to fully focus on the development of the application code. 
+Since the service was just published in June 2022, there was no Infrastructure-as-Code solution publicly available yet. Nevertheless, we wanted to use IaC in order to automate the provisioning process and remove error potential at this part of the pipeline in order to fully focus on the development of the application code. 
 
-That is why we created the Terraform module: It takes care of all the IAM roles, bucket policies etc. and even adds some nice features such as uploading your virtual environments and your source code to the cloud.
+That is why we created the Terraform module: it takes care of all the IAM roles, bucket policies etc. and even adds some nice features such as uploading your virtual environments and your source code to the cloud.
 ## How to use our Terraform module
 
-After installing Terraform, the process is quite straightforward: You create a main.tf file in your working directory in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) or the paragraph below for more info) with content similar to the following: 
+After installing Terraform, the process is quite straightforward: you create a main.tf file in your working directory, in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) or the paragraph below for more info) with content similar to the following: 
 
 ~~~terraform
 # file: "main.tf"
@@ -55,8 +55,8 @@ Then, you can follow the typical Terraform workflow:
 
 1. Run `terraform init` to download and install the necessary providers.
 2. Run `terraform plan` to see what resources will be provisioned upon execution.
-3. Run `terraform apply` to execute the proposed resource provisioning plan (you can add `--auto-approve` if you do not want to type `yes` for every apply). After running it, you should see an output with some useful information, such as the application id of your created application and the path to your uploaded source code (it will have a different name now since its name is based on a hash; that helps the module figuring out if there were any changes between this and the last upload).
-4. In case you want to destroy the infrastructure at some point including associated IAM roles etc, just run `terraform destroy`.
+3. Run `terraform apply` to execute the proposed resource provisioning plan (you can add `--auto-approve` if you do not want to type `yes` for every apply). After running it, you should see an output with some useful information, such as the application id of your newly created application and the path to your uploaded source code (it will have a different name now since its name is based on a hash; that helps the module to figure out if there were any changes between this and the last upload).
+4. In case you want to destroy the infrastructure at some point, including associated IAM roles etc, just run `terraform destroy`.
 
 ### Compress your source code and environment
 
@@ -73,8 +73,8 @@ In case you do not know how to compress your environment and script file, here a
   3. Put it in the same directory as your `main.tf` file.
 
 - source code: 
-  1. Define a bash function to only zip files you want to (in my case I want to exclude .git and .DS_Store files since I am on a Mac): `function zip_clean() {zip -r $1 $2 -x "*.git*" -x "*.DS_Store"}`
-  2. insider the directory you want to zip, execute the function: `zip_clean <folder-name>.zip .`
+  1. Define a bash function to only zip files you want (in my case I want to exclude .git and .DS_Store files since I am on a Mac): `function zip_clean() {zip -r $1 $2 -x "*.git*" -x "*.DS_Store"}`
+  2. inside the directory you want to zip, execute the function: `zip_clean <folder-name>.zip .`
   3. Put it in the same directory as the `main.tf` file.
 
 ## What to do after Terraform apply?
@@ -91,7 +91,7 @@ Optionally you can add folders after `s3://<bucket_name>/` if you do want your j
 
 ## Submit your first job
 
-Submitting your jobs can (as often) either be done in the management console or in the terminal via the AWS CLI. What I like about the console option is that you can easily clone jobs; this creates a template for a new job including all the parameters of the old job, saving you the time to retype everything and prevents you from making mistakes. 
+Submitting your jobs can (as usual) either be done in the management console or in the terminal via the AWS CLI. What I like about the console option is that you can easily clone jobs; this creates a template for a new job including all the parameters of the old job, saving you the time of retyping everything and preventing you from making mistakes. 
 
 Here is a table of the typical parameters I set when running an EMR Serverless Spark job: 
 
@@ -99,16 +99,16 @@ Here is a table of the typical parameters I set when running an EMR Serverless S
 | Name | Description | Value |
 |------|-------------|---------------|
 | <a name="spark.driver.cores"></a>[spark.driver.cores](#) | Number of cores available to Spark driver | `<number of cores>` |
-| <a name="spark.driver.memory"></a>[spark.driver.memory](#) | Amount of memory avaiable to Spark executor | `<memory in g, e.g. 4g>` |
+| <a name="spark.driver.memory"></a>[spark.driver.memory](#) | Amount of memory available to Spark executor | `<memory in g, e.g. 4g>` |
 | <a name="spark.executor.cores"></a>[spark.executor.cores](#) | Number of cores available to Spark driver  | `<number of cores>` |
-| <a name="spark.executor.memory"></a>[spark.executor.memory](#) | Amount of memory avaiable to Spark executor. | `<memory in g, e.g. 4g>` |
-| <a name="spark.archives"></a>[spark.archives](#) | Location of compressed environment. | `s3://<path to your environment>#environment` |
-| <a name="spark.submit.pyFiles"></a>[spark.submit.pyFiles](#) | Location of compressed source code. | `s3://<bucket-name>/builds/<compressed directory name>` |
-| <a name="spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
-| <a name="spark.emr-serverless.driverEnv.PYSPARK_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
+| <a name="spark.executor.memory"></a>[spark.executor.memory](#) | Amount of memory available to Spark executor | `<memory in g, e.g. 4g>` |
+| <a name="spark.archives"></a>[spark.archives](#) | Location of compressed environment | `s3://<path to your environment>#environment` |
+| <a name="spark.submit.pyFiles"></a>[spark.submit.pyFiles](#) | Location of compressed source code | `s3://<bucket-name>/builds/<compressed directory name>` |
+| <a name="spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_DRIVER_PYTHON](#) | Necessary for Spark to access your environment | `./environment/bin/python` |
+| <a name="spark.emr-serverless.driverEnv.PYSPARK_PYTHON"></a>[spark.emr-serverless.driverEnv.PYSPARK_PYTHON](#) | Necessary for Spark to access your environment | `./environment/bin/python` |
 | <a name="spark.executorEnv.PYSPARK_PYTHON"></a>[spark.executorEnv.PYSPARK_PYTHON](#) | Necessary for Spark to access your environment. | `./environment/bin/python` |
 
-For the CLI option, you can use the `aws emr-serverless start-job-run` command with the parameters from above configured like [here](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/jobs-cli.html). This will then look something like this (I omitted some parameters for clarity):
+For the CLI option, you can use the `aws emr-serverless start-job-run` command with the parameters above configured like [here](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/jobs-cli.html). This will then look something like this (I omitted some parameters for clarity):
 
 ~~~
 aws emr-serverless start-job-run \
@@ -128,7 +128,7 @@ The `sparkSubmitParameters` are just an example. The most important bits are the
 
 You can configure an awful lot when submitting a job. One of the options that I find quite useful is determining a location in your S3 bucket where the log files of the jobs are stored; they help immensely in case of troubleshooting. 
 
-To do that, you can tick the corresponding box in the job submissions form in the management console or provide the following `--configuration-overrides` besides the other configurations above: 
+To do that, you can tick the corresponding box in the job submissions form in the management console, or provide the following `--configuration-overrides` besides the other configurations above: 
 
 ~~~
 {
@@ -140,7 +140,7 @@ To do that, you can tick the corresponding box in the job submissions form in th
 }
 ~~~
 
-It will create a log folder which then nicely sorts the logs first based on application id, then job id and the Spark Driver/Executor so that you do not drown in a sea full of log files (not a nice feeling I can assure you).
+It will create a log folder which then nicely sorts the logs, first based on application id, then job id and the Spark Driver/Executor, so that you don't drown in a sea full of log files (not a nice feeling, I can assure you).
 ## Monitoring your running jobs
 
 You can use the console to monitor your applications and jobs. The only time I use this frequently is to see how a job is going without leaving the terminal, but you can do a lot more with it in case you want to.
@@ -156,4 +156,4 @@ You get the `job-run-id` as output in your terminal if you submit a job via the 
 
 ## Closing thoughts
 
-I hope that this post has given you the tools to use our Terraform module and start your journey with EMR Serverless. We are always interested in hearing feedback about the module or potential additions you would find helpful, so if you would like to see some functionality either drop me a mail or open an [issue on GitHub](https://github.com/kierandidi/terraform-aws-emrserverless/issues). Thanks for reading!
+I hope that this post has given you the tools to use our Terraform module and start your journey with EMR Serverless. We are always interested in hearing feedback about the module or potential additions you would find helpful, so if you would like to see some particular functionality either drop me a mail or open an [issue on GitHub](https://github.com/kierandidi/terraform-aws-emrserverless/issues). Thanks for reading!
