@@ -34,7 +34,7 @@ That is why we created the Terraform module: It takes care of all the IAM roles,
 After installing Terraform, the process is quite straightforward: You create a main.tf file in your working directory in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0)) with content similar to the following: 
 
 ~~~terraform
-file: "main.tf"
+# file: "main.tf"
 module "emrserverless" {
   source  = "kierandidi/emrserverless/aws"
   version = "1.0.0"
