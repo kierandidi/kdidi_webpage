@@ -31,7 +31,7 @@ Since the service was just published in June 2022, there was no Infrastructure-a
 That is why we created the Terraform module: It takes care of all the IAM roles, bucket policies etc. and even adds some nice features such as uploading your virtual environments and your source code to the cloud.
 ## How to use our Terraform module
 
-After installing Terraform, the process is quite straightforward: You create a main.tf file in your working directory in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0)) with content similar to the following: 
+After installing Terraform, the process is quite straightforward: You create a main.tf file in your working directory in which you also locate the compressed virtual environment and your source code folder (see the [usage notes](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) or the paragraph below for more info) with content similar to the following: 
 
 ~~~terraform
 # file: "main.tf"
@@ -53,10 +53,29 @@ output "emrserverless_outputs" {
 ~~~
 Then, you can follow the typical Terraform workflow: 
 
-1. run `terraform init` to download and install the necessary providers.
-2. run `terraform plan` to see what resources will be provisioned upon execution
-3. run `terraform apply` to execute the proposed resource provisioning plan (you can add `--auto-approve` if you do not want to type `yes` for every apply). After running it, you should see an output with some useful information, such as the application id of your created application and the path to your uploaded source code (it will have a different name now since its name is based on a hash; that helps the module figuring out if there were any changes between this and the last upload).
-4. in case you want to destroy the infrastructure at some point including associated IAM roles etc, just run `terraform destroy`.
+1. Run `terraform init` to download and install the necessary providers.
+2. Run `terraform plan` to see what resources will be provisioned upon execution.
+3. Run `terraform apply` to execute the proposed resource provisioning plan (you can add `--auto-approve` if you do not want to type `yes` for every apply). After running it, you should see an output with some useful information, such as the application id of your created application and the path to your uploaded source code (it will have a different name now since its name is based on a hash; that helps the module figuring out if there were any changes between this and the last upload).
+4. In case you want to destroy the infrastructure at some point including associated IAM roles etc, just run `terraform destroy`.
+
+### Compress your source code and environment
+
+In case you do not know how to compress your environment and script file, here are some short instructions:
+
+- environment (conda):
+  1. Install [conda pack](https://conda.github.io/conda-pack/) via `conda install conda-pack` or `pip3 install conda-pack`.
+  2. Compress your conda environment via `conda pack -n <envname> -o <envname>.tar.gz`.
+  3. Put it in the same directory as your `main.tf` file.
+
+- environment (venv), also described in [AWS docs](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/using-python-libraries.html):
+  1. Install [venv-pack](https://jcristharif.com/venv-pack/) via `pip3 install venv-pack`
+  2. Compress the currently activate venv via `venv-pack -f -o <envname>.tar.gz`
+  3. Put it in the same directory as your `main.tf` file.
+
+- source code: 
+  1. Define a bash function to only zip files you want to (in my case I want to exclude .git and .DS_Store files since I am on a Mac): `function zip_clean() {zip -r $1 $2 -x "*.git*" -x "*.DS_Store"}`
+  2. insider the directory you want to zip, execute the function: `zip_clean <folder-name>.zip .`
+  3. Put it in the same directory as the `main.tf` file.
 
 ## What to do after Terraform apply?
 
