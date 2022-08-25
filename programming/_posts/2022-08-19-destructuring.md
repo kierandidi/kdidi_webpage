@@ -9,7 +9,7 @@ accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
   Destructuring can simplify your code and make it more readable
-invert_sidebar: true
+invert_sidebar: false
 categories: programming
 #tags:       [programming]
 ---
