@@ -15,7 +15,7 @@ categories: programming
 ---
 
 # Mastering Cloud Computing
-Besides machine learning and blockchain, cloud computing is probably one of the buzzwords that have been thrown a lot in the last couple of years. But despite the hype, there are quite a lot of real advantages to using cloud computing over local on-premise resources, for example when working with highly fluctuating workloads (see [this post]() for a project I worked on at [CSIRO Sydney](https://bioinformatics.csiro.au/) that fits this description quite well).
+Besides machine learning and blockchain, cloud computing is probably one of the buzzwords that have been thrown around the most in the last couple of years. But despite the hype, there are quite a lot of real advantages to using cloud computing over local on-premise resources, for example when working with highly fluctuating workloads (see [this post]() for a project I worked on at [CSIRO Sydney](https://bioinformatics.csiro.au/) that fits this description quite well).
 
 Here I want to take a step back and look at the things that in retrospect were helpful on my learning journey of cloud computing. Along the way I will share some resources I especially liked ordered by level of prerequisite knowledge that you need, interspersed with some practical tidbits I picked up during coding and troubleshooting. Hopefully, that helps you on your learning journey, whether you are just starting or an experienced coder who wants a fresh perspective on familiar topics!
 
@@ -28,7 +28,7 @@ To understand what cloud networks are about, it is very helpful to know how loca
 
 Once you have a solid understanding of computer networks, you can start dipping your feet into cloud computing, for example through introductory tutorials provided by the three major public cloud providers: [AWS](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/what-is-cloud-computing.html), [Google Cloud Platform](https://cloud.google.com/learn/what-is-cloud-computing) and [Microsoft Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing/). 
 
-There are also great tutorials available that are agnostic to the cloud provider: for that, you can check out courses on [ACloudGuru](https://acloudguru.com/course/introduction-to-cloud-computing) or [Udemy]( https://www.udemy.com/course/introduction-to-cloud-computing-on-amazon-aws-for-beginners/). But honestly, for an introduction to the topic I would not bother with paid courses, but just use what is freely available on the web such as 
+There are also great tutorials available that are agnostic to the cloud provider: for that, you can check out courses on [ACloudGuru](https://acloudguru.com/course/introduction-to-cloud-computing) or [Udemy]( https://www.udemy.com/course/introduction-to-cloud-computing-on-amazon-aws-for-beginners/). But honestly, for an introduction to the topic I would not bother with paid courses, but just use what is freely available on YouTube such as [this](https://www.youtube.com/watch?v=RWgW-CgdIk0) or [this](https://www.youtube.com/watch?v=_a6us8kaq0g) video.
 
 ## Intermediate: Choose your platform
 Once you understand what cloud computing is and you want to get practical experience, I would recommend choosing one of the major public cloud providers mentioned above to dig deeper into how to use their platform and get your hands dirty with some toy projects. As in any domain, doing instead of just reading will improve your skills, so make sure to choose a project to directly put your learnings into practice!
