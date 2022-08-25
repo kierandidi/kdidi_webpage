@@ -3,7 +3,7 @@ layout: project
 title: 'Terraform Module for EMR Serverless'
 caption: IaC Template for Big Data Jobs on AWS
 description: >
-  A template to create your own EMR Serverless cluster on AWS, including all neccessary IAM roles and some extra features.
+  A template to create your own EMR Serverless cluster on AWS, including all necessary IAM roles and some extra features.
 date: '19-08-2022'
 image: 
   path: /assets/img/projects/cloud_logo.jpg
@@ -14,7 +14,7 @@ sitemap: false
 ---
 
 # Terraform Module for EMR Serverless
-Together with [Anuradha Wickramarachchi](https://anuradhawick.com/) I recently published a [Terraform module for EMR Serverless](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) that came out of my internship at the [Translational Bioinformatics Group](https://www.bioinformatics.csiro.au/) at CSIRO in Sydney.
+Together with [Anuradha Wickramarachchi](https://anuradhawick.com/) I recently published a [Terraform module for EMR Serverless](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) that came out of my internship at the [Transformational Bioinformatics Group](https://www.bioinformatics.csiro.au/) at CSIRO in Sydney.
 
 With this module, we want to make it easier to use this relatively new service at AWS (released in June 2022) which we think is really useful for scalable and cost-effective big data analysis. While the README document on the Terraform Registry is intended to be short and concise, the [AWS Documentation](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html) can be quite overwhelming at first sight. So here I decided to take the middleground: I will explain some of the aspects of working with our module and EMR Serverless in a bit more detail, focusing on the aspects I use often and without aiming to cover the full docs.
 
