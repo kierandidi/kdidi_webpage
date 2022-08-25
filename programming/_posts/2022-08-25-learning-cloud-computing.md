@@ -9,7 +9,7 @@ accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
   Resources for learning cloud computing, from novice to master
-invert_sidebar: true
+invert_sidebar: false
 categories: programming
 #tags:       [programming]
 ---
