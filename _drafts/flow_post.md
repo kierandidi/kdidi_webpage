@@ -1,64 +1,85 @@
 ---
 layout: post
-title: My first poster and the talk of the year
-image: /assets/img/blog/jj-ying.jpg
+title: (GER) Normalizing Flows Teil 1 - Daten und Determinanten
+image: /assets/img/blog/flows_chart.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-About my first conference poster and the Australian way of doing conferences
+Was Normalizing Flows sind und wie man sie sich vorstellen kann
 invert_sidebar: true
 ---
 
-# Protein Geeks of all nations, unite - APFED 2022
-This post is a rather unusual one since it is in German. I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on score-based modeling]() by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
+# (GER) Normalizing Flows Teil 1 - Daten und Determinanten
+
+(Die deutsche Version beginn unten!)
+
+This post is a rather unusual one since it is in German. I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on normalizing flows](https://blog.evjang.com/2018/01/nf1.html) by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
 
 
 * toc
 {:toc}
 
+## Einführung: Was und für wen?
 
-## Why Zotero and Obsidian?
-I loved reading since my dad first started telling me fantasy stories. My fascination for blogging grew out of this fascination together with the influence of a few amazing blogs that shaped how I think about science and a lot of other stuff in general. Among these is first and foremost [In the Pipeline](https://www.science.org/blogs/pipeline), a blog by Derek Lowe which I follow basically since I started studying, and where I sometimes caught myself just staying on his site and refreshing the page in the faint hope that a new article might have appeared in the meantime.
+Wenn du an maschinellem Lernen, an generativer Modellierung, Bayesian Deep Learning oder Deep Reinforcement Learning arbeitest, sind "Normalizing Flows" eine praktische Technik, die du in deinem algorithmischen Werkzeugkasten haben solltest.
 
-I also enjoy the [Omics!Omics! blog](http://omicsomics.blogspot.com/) by Keith Robinson due to its timely coverage of news in the biotech industry, specifically regarding new fancy sequencing techniques. [Lilian Weng's blog](https://lilianweng.github.io/) helped me in the darkest coding hours where nothing makes sense, especially not your code and the math behind it. 
+Normalizing flows transformieren einfache Dichteverteilungen (wie die Normalverteilung) in komplexe Verteilungen, die für generative Modelle, RL und Variational Inference verwendet werden können. TensorFlow hat ein paar nützliche Funktionen, die es einfach machen, Flows zu erstellen und zu trainieren, um sie an reale Daten anzupassen.
 
-I love antibodies (as should be visible by the picture on the landing page, showing a ribbon cartoon of a mouse IgG in PyMol, PDB code [1igt](https://www.rcsb.org/structure/1igt)), therefore the [OPIG blog](https://www.blopig.com/blog/) is always a good read, especially since their content is a nice mix of bioinformatics/protein design and "how the heck do I get this command line tool to work" tutorials.
+Diese Serie besteht aus zwei Teilen:
+- Teil 1: Daten und Determinanten. In diesem Beitrag erkläre ich, wie invertierbare Transformationen von Dichteverteilungen verwendet werden können, um komplexere Dichteverteilungen zu implementieren, und wie diese Transformationen miteinander verkettet werden können, um einen "Normalizing Flow" zu bilden.
 
-There is also [Some Thoughts on a Mysterious Universe](https://moalquraishi.wordpress.com/) by Mohammed AlQuraishi, which does not feature new blog posts to often, but when I stumble upon one it always blows my mind. Love his holistic view on problems and the philosophical touch he brings to topics where I did'nt see this connection before.
+- Teil 2: Moderne Normalizing Flows: In einem Folgebeitrag gebe ich einen Überblick über die neuesten Techniken, die von Forschern entwickelt wurden, um Normalizing Flows zu erlernen, und erkläre, wie eine Reihe von modernen generativen Modellierungstechniken - autoregressive Modelle, MAF, IAF, NICE, Real-NVP, Parallel-Wavenet - alle miteinander in Beziehung stehen.
+Diese Reihe ist für ein Publikum mit einem rudimentären Verständnis von linearer Algebra, Wahrscheinlichkeit, neuronalen Netzen und TensorFlow geschrieben. Kenntnisse über die jüngsten Fortschritte im Bereich Deep Learning und generative Modelle sind hilfreich, um die Motivationen und den Kontext, der diesen Techniken zugrunde liegt, zu verstehen, aber sie sind nicht notwendig.
 
-There are many others I often consult when I get want to know more about something, such as the famous [Machine Learning Mastery blog](https://machinelearningmastery.com/about/), [ML Theory](https://hunch.net/) by John Langford or the [Berkeley AI Research blog](https://bair.berkeley.edu/blog/), but the ones I mentioned above where definetely the ones that got me excited about blogging and from which I learned an awful lot!
 
+## Hintergrund 
 
-## Setup
+Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Daten zu erlernen, indem sie eine parametrische Verteilung $$ p(x;θ) $$ an sie anpassen. Wenn wir einen Datensatz mit einer Verteilung darstellen können, können wir:
 
-### Installing Zotero
-With this massive pile of reading material on your mind, you might ask yourself: "Why does this guy want to start yet another blog?" Well, there are three main reasons for that:
+1. Neue Daten "kostenlos" generieren, indem aus der gelernten Verteilung in silico Stichproben gezogen werden ("sampling"); es ist nicht notwendig, den eigentlichen generativen Prozess für die Daten durchzuführen. Dies ist ein nützliches Werkzeug, wenn die Daten teuer zu generieren sind, z. B. bei einem realen Experiment, dessen Durchführung viel Zeit in Anspruch nimmt [^1]. Sampling wird auch verwendet, um Schätzer für hochdimensionale Integrale über Räume zu konstruieren.
 
-### Configuring Zotero: Plugins, auto-export and more
+2. Bewertung der Wahrscheinlichkeit der zum Testzeitpunkt beobachteten Daten (dies kann für Rejection Sampling verwendet werden oder um zu bewerten, wie gut unser Modell ist).
 
-1) When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote this quote from Frank Oppenheimer, paraphrased from Science Magazine:
+3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$ p(x_2|x_1) $$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
 
-### Installing Obsidian
+4. Bewertung unseres Algorithmus anhand von Komplexitätsmaßen wie Entropie, gegenseitige Information und Momenten der Verteilung.
 
-Teaching definetely helped me getting a different point of view on things, no matter if that is basic chemistry or [data science with Python](https://github.com/kierandidi/Python_for_Biochemists).
+Wir sind ziemlich gut im Sampling (1) geworden, wie die jüngsten Arbeiten an generativen Modellen für Bilder und Audio zeigen. Diese Art von generativen Modellen wird bereits in echten kommerziellen Anwendungen und Google-Produkten eingesetzt. 
 
-### Configuring Obsidian: Templates, Citations and more
+Allerdings widmet die Forschungsgemeinschaft der unbedingten und bedingten Wahrscheinlichkeitsschätzung (2, 3) und dem Model-Scoring (4) derzeit weniger Aufmerksamkeit. Wir wissen zum Beispiel nicht, wie man den Träger eines GAN-Decoders berechnet (wie viel des Ausgaberaums vom Modell mit einer Wahrscheinlichkeit ungleich Null belegt wurde), wir wissen nicht, wie man die Dichte eines Bildes in Bezug auf eine DRAW-Verteilung oder sogar einen VAE berechnet, und wir wissen nicht, wie man verschiedene Metriken (KL, Earth-Mover-Distanz) für beliebige Verteilungen analytisch berechnet, selbst wenn wir ihre analytischen Dichten kennen.
 
-2) Even though the blog is mainly about organizing my thoughts and sharing my experiences, I hope that other people can get something out of that as well! I always enjoyed reading blogs and hearing people's opinions about stuff that I read as well, so I hope that at least some folks will have a similar experience reading my posts.
+Es reicht nicht aus, wahrscheinliche Stichproben zu erzeugen: Wir wollen auch die Frage beantworten: "Wie wahrscheinlich sind die Daten?" [^2], flexible bedingte Dichten (z. B. für die Stichprobenbildung und die Bewertung von Divergenzen multimodaler Policies in RL) und die Möglichkeit, umfangreiche Familien von A-priori Wahrscheinlichkeiten ("priors") und "posteriors" in Variational Inference zu wählen. 
 
-3) I missed writing so damn much.
+Lasst uns für einen Moment den netten Nachbarn von nebenan anschauen: Die Normalverteilung. Sie ist der Klassiker unter den Verteilungen: Wir können leicht Stichproben aus ihr ziehen, wir kennen ihre analytische Dichte und KL-Divergenz zu anderen Normalverteilungen, der zentrale Grenzwertsatz gibt uns die Gewissheit, dass wir sie auf so gut wie alle Daten anwenden können, und wir können sogar mit dem Trick der Reparametrisierung durch ihre Stichproben Backpropagation durchführen (siehe VAEs). Diese netten Eigenschaften der Normalverteilung macht sie zu einer sehr beliebten Wahl für viele generative Modellierungs- und RL-Algorithmen.
 
-## My typical workflow
-So, that's it for my first post. I will focus future posts on content and my path in the CompBio field with topics such as ML applications in healthcare or protein design showing promise to become regular topics of discussion on here. 
+Leider ist die Normalverteilung bei vielen realen Problemen, die uns interessieren, einfach nicht geeignet. Beim Reinforcement Learning - insbesondere bei kontinuierlichen Steuerungsaufgaben wie in der Robotik - werden Strategien oft als multivariate Normalverteilungen mit diagonalen Kovarianzmatrizen modelliert. 
 
-If you got any comments to my posts or otherwise the desire to have a chat, just drop me a message via mail or Twitter! I was obsessive enough to write to random people whose work I found exciting and lucky enough to have many of them replying and chatting to me, so I intend to return this favor to everyone:) 
+Per Definition können uni-modale Normalverteilungen bei Aufgaben, die eine Stichprobenziehung aus einer multimodalen Verteilung erfordern, nicht gut abschneiden. Ein klassisches Beispiel dafür, wo uni-modale Strategien versagen, ist ein Agent, der versucht, über einen See zu seinem Haus zu gelangen. Er kann nach Hause gelangen, indem er den See im Uhrzeigersinn (links) oder gegen den Uhrzeigersinn (rechts) umgeht, aber eine Gauß'sche Strategie ist nicht in der Lage, zwei Modi darzustellen. Stattdessen werden Aktionen aus einer Gaußschen Kurve ausgewählt, deren Mittelwert eine lineare Kombination der beiden Modi ist, was dazu führt, dass der Agent geradewegs in das eisige Wasser läuft. Traurig!
 
-All the best and see you all soon!
+Das obige Beispiel veranschaulicht, wie die Normalverteilung zu vereinfachend sein kann. Zusätzlich zu den schlechten Symmetrieannahmen konzentriert sich die Dichte der Gauß-Verteilung in hohen Dimensionen größtenteils auf die Ränder und ist nicht robust gegenüber seltenen Ereignissen. Können wir eine bessere Verteilung mit den folgenden Eigenschaften finden?
 
-P.S. This webpage is still in the build-up phase, so please forgive me if something does not work or show up as intended.
+1. Komplex genug, um reichhaltige, multimodale Datenverteilungen wie Bilder und Wertfunktionen in RL-Umgebungen zu modellieren?
+2. ... unter Beibehaltung der netten Eigenschaften einer Normalverteilung: Stichprobenziehung, Dichteauswertung und mit reparametrisierbaren Stichproben?
+
+Die Antwort ist ja! Hier sind ein paar Möglichkeiten, dies zu tun:
+- Verwendung eines Mischmodelles (siehe GMMs), um eine multimodale Policy zu repräsentieren, wobei eine kategorische Variable die "Option" und eine Mischung die Subpolicy repräsentiert. Auf diese Weise erhält man Stichproben, die einfach zu ziehen und auszuwerten sind. 
+Es gibt aber ein Problem: Die Stichproben sind nicht trivial reparametrisierbar, was ihre Verwendung für VAEs und Posterior-Inferenz erschwert. Die Verwendung einer Gumbel-Softmax/Concrete Relaxierung der kategorischen "Option" würde jedoch eine multimodale, reparametrisierbare Verteilung liefern.
+- Autoregressive Faktorisierungen von Policy-/Wertverteilungen. Insbesondere kann die kategorsche Verteilung jede diskrete Verteilung modellieren.
+- In RL kann man dies ganz vermeiden, indem man die Symmetrie der Wertverteilung durch rekurrente Policies, Rauschen oder verteilungsbezogene RL bricht. Dies hilft, indem die komplexen Wertverteilungen in jedem Zeitschritt in einfachere bedingte Verteilungen zerlegt werden. 
+- Lernen mit energiebasierten Modellen, d.h. ungerichteten grafischen Modellen mit Potenzialfunktionen, die auf eine normalisierte probabilistische Interpretation verzichten. Hier ist ein Beispiel für diese Anwendung auf RL.
+- Normalizing Flows: Hier lernen wir invertierbare, volumenverfolgende transformationen von Verteilungen, die wir leicht manipulieren können.
+
+Sehen wir uns den letzten Ansatz an - Normalizing Flows.
+
+## Substitution und Volumenveränderung
+
+Wir wollen eine gewisse Intuition entwickeln, indem wir die linearen Transformationen von 1D-Zufallsvariablen untersuchen. $$X$$ sei die Verteilung $$Uniform(0,1)$$. Sei die Zufallsvariable $$Y=f(X)=2X+1$$. $$Y$$ ist eine einfache affine Transformation (Skalierung und Verschiebung) der zugrundeliegenden "Ausgangsverteilung" $$X$$. Das bedeutet, dass eine Stichprobe $$x_i$$ aus $$X$$ in eine Stichprobe aus $$Y$$ umgewandelt werden kann, indem einfach die Funktion $$f$$ darauf angewendet wird. 
+
+![Tux, the Linux mascot](/assets/images/blog/volumechange)
+
 
 
 ## Closing thoughts
