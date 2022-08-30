@@ -8,7 +8,7 @@ image: /assets/img/blog/flow_nature.jpg
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-Hier stellen wir mit modernen Flow-Architekturen wie MAF, IAF und Real-NVP Wörter dar.
+  Hier stellen wir mit modernen Flow-Architekturen wie MAF, IAF und Real-NVP Wörter dar.
 invert_sidebar: true
 categories: ML
 ---

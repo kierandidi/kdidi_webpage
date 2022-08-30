@@ -1,14 +1,14 @@
 ---
 layout: post
 title: (GER) Normalizing Flows Teil 1 - Daten und Determinanten
-image: /assets/img/blog/pythonjs.jpg
+image: /assets/img/blog/flows_chart.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-Was Normalizing Flows sind und wie man sie sich vorstellen kann
+  Was Normalizing Flows sind und wie man sie sich vorstellen kann
 invert_sidebar: true
 categories: ML
 ---
