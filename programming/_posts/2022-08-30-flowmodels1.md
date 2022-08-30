@@ -10,10 +10,10 @@ theme_color: '#ccc'
 description: >
 Was Normalizing Flows sind und wie man sie sich vorstellen kann
 invert_sidebar: true
-categories: programming
+categories: ML
 ---
 
-# (GER) Normalizing Flows Teil 1 - Daten und Determinanten
+# Normalizing Flows Teil 1 - Daten und Determinanten
 
 (Die deutsche Version beginn unten!)
 

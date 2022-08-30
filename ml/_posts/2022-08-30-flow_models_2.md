@@ -10,7 +10,7 @@ theme_color: '#ccc'
 description: >
 Hier stellen wir mit modernen Flow-Architekturen wie MAF, IAF und Real-NVP Wörter dar.
 invert_sidebar: true
-categories: ml
+categories: ML
 ---
 
 # (GER) Normalizing Flows Teil 2 - Moderne Normalizing Flows
