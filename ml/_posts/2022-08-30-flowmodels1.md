@@ -204,7 +204,7 @@ Die Jacobi-Matrix einer affinen Funktion ist trivial zu berechnen, aber im schli
 
 $$M+V⋅D⋅V^T$$
 
-Um $$\det(M+V⋅D⋅VT^)$$ kostengünstig zu berechnen, verwenden wir das [Matrix-Determinanten-Lemma](https://en.wikipedia.org/wiki/Matrix_determinant_lemma).
+Um $$\det(M+V⋅D⋅V^T)$$ kostengünstig zu berechnen, verwenden wir das [Matrix-Determinanten-Lemma](https://en.wikipedia.org/wiki/Matrix_determinant_lemma).
 
 Nun benötigen wir eine invertierbare Nichtlinearität, um nichtlineare Funktionen auszudrücken (andernfalls bleibt die Kette der affinen Bijektoren affin). $$Sigmoid$$ / $$tanh$$ scheinen eine gute Wahl zu sein, aber sie sind unglaublich instabil zu invertieren - kleine Änderungen in der Ausgabe nahe -1 oder 1 entsprechen massiven Änderungen in der Eingabe. In meinen Experimenten konnte ich nicht 2 sättigende Nichtlinearitäten aneinanderreihen, ohne dass die Gradienten explodierten. $$ReLU$$ dagegen ist stabil, aber nicht invertierbar für $$x<0$$.
 
