@@ -24,7 +24,7 @@ With this module, we want to make it easier to use this relatively new service a
 
 ## Why a Terraform module
 
-In my internship I was building a cloud-native bioinformatics software for genomic analysis (see [this blog post]() if you want to know more about the context). We chose to use the EMR Serverless service of AWS since it allowed us to run our Spark application in a transient cluster that gets shut-down after job completion, ideal for our pipeline with fluctuating workloads.
+In my internship I was building a cloud-native bioinformatics software for genomic analysis (see [this blog post](https://bioinformatics.csiro.au/blog/the-many-ways-to-the-cloud-from-on-prem-to-emr-serverless/) if you want to know more about the context). We chose to use the EMR Serverless service of AWS since it allowed us to run our Spark application in a transient cluster that gets shut-down after job completion, ideal for our pipeline with fluctuating workloads.
 
 Since the service was just published in June 2022, there was no Infrastructure-as-Code solution publicly available yet. Nevertheless, we wanted to use IaC in order to automate the provisioning process and remove error potential at this part of the pipeline in order to fully focus on the development of the application code. 
 
