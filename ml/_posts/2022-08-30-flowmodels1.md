@@ -91,7 +91,7 @@ Auf der linken Seite haben wir eine lokal zunehmende Funktion $$(dy/dx>0)$$ und 
 
 $$p(x)dx=p(y)dy$$
 
-Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $$y$$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $$logp(y)=logp(x)+log \lvert dx/dy \rvert$$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
+Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von $$y$$ und nicht seine Richtung (es spielt keine Rolle, ob $$f(x)$$ bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $$y$$ in jedem Fall gleich ist). Daher ist $$p(y)=p(x)\lvert dx/dy \rvert$$. Im logarithmischen Raum ist dies gleichbedeutend mit $$\log p(y)=\log p(x)+ \log \lvert dx/dy \rvert$$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
 
 Betrachten wir nun den multivariablen Fall, mit 2 Variablen. Auch hier zoomen wir in einen unendlich kleinen Bereich unseres Gebiets und unser anfängliches "Segment" der Basisverteilung ist nun ein Quadrat mit der Breite $$dx$$.
 
@@ -106,15 +106,15 @@ Die Fläche eines Parallelogramms, ad-bc, ist nichts anderes als der Absolutwert
 
 In drei Dimensionen wird die "Flächenänderung des Parallelogramms" zu einer "Volumenänderung des Parallelepipeds" und in noch höheren Dimensionen zu einer "Volumenänderung eines n-Parallelotops". Das Konzept bleibt jedoch dasselbe - Determinanten sind nichts anderes als der Betrag (und die Richtung) der Volumenverzerrung einer linearen Transformation, verallgemeinert auf eine beliebige Anzahl von Dimensionen.
 
-Was ist, wenn die Transformation $$f$$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $$|det(J(f-1(x)))|$$, wobei $$J(f^-1(x))$$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $$dx/dy$$ von vorhin.
+Was ist, wenn die Transformation $$f$$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $$\lvert \det (J(f-1(x))) \rvert$$, wobei $$J(f^{-1}(x))$$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $$dx/dy$$ von vorhin.
 
 $$y=f(x)$$
 
 
-$$p(y)=p(f-1(y))⋅|detJ(f-1(y))|$$
+$$p(y)=p(f-1(y)) \lvert \det J(f-1(y)) \rvert$$
 
 
-$$\log{p(y)}=\log{p(f-1(y))}+\log{|det(J(f-1(y)))|}$$
+$$\log{p(y)}=\log{p(f-1(y))}+\log{\lvert \det(J(f-1(y))) \rvert}$$
 
 
 
