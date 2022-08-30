@@ -44,7 +44,7 @@ Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Da
 
 2. Bewertung der Wahrscheinlichkeit der zum Testzeitpunkt beobachteten Daten (dies kann für Rejection Sampling verwendet werden oder um zu bewerten, wie gut unser Modell ist).
 
-3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$p(x_2|x_1)$$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
+3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$p(x_2 \mid x_1)$$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
 
 4. Bewertung unseres Algorithmus anhand von Komplexitätsmaßen wie Entropie, gegenseitige Information und Momenten der Verteilung.
 
@@ -91,7 +91,7 @@ Auf der linken Seite haben wir eine lokal zunehmende Funktion $(dy/dx>0)$ und au
 
 $$p(x)dx=p(y)dy$$
 
-Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $y$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $logp(y)=logp(x)+log|dx/dy|$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
+Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $y$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $logp(y)=logp(x)+log \lvert dx/dy \rvert$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
 
 Betrachten wir nun den multivariablen Fall, mit 2 Variablen. Auch hier zoomen wir in einen unendlich kleinen Bereich unseres Gebiets und unser anfängliches "Segment" der Basisverteilung ist nun ein Quadrat mit der Breite $dx$.
 
@@ -109,8 +109,14 @@ In drei Dimensionen wird die "Flächenänderung des Parallelogramms" zu einer "V
 Was ist, wenn die Transformation $f$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $|det(J(f-1(x)))|$, wobei $J(f^-1(x))$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $dx/dy$ von vorhin.
 
 $$y=f(x)$$
+
+
 $$p(y)=p(f-1(y))⋅|detJ(f-1(y))|$$
+
+
 $$\log{p(y)}=\log{p(f-1(y))}+\log{|det(J(f-1(y)))|}$$
+
+
 
 Als ich in der Mittel- und Oberstufe etwas über Determinanten lernte, war ich sehr verwirrt über die scheinbar willkürliche Definition von Determinanten. Uns wurde nur beigebracht, wie man eine Determinante berechnet, statt zu wissen, was eine Determinante bedeutet: die lokale, linearisierte Rate der Volumenänderung einer Transformation ([3Blue1Brown's Videos](https://www.youtube.com/watch?v=Ip3X9LOh2dk) hierzu sind absolut Gold wert!).
 
@@ -120,7 +126,7 @@ TensorFlow hat eine elegante API zum Transformieren von Verteilungen. Eine `Tran
 
 1. eine Vorwärtstransformation $y=f(x)$, wobei $f\colon \mathbb{R^d} \longrightarrow \mathbb{R^d}$
 2. die inverse Transformation $x=f^{-1}(y)$, und 
-3. 3) die inverse log-Determinante des Jacobian $\log{|\det J(f^{-1}(y))|}$ implementiert. Im weiteren Verlauf dieses Beitrags werde ich diese Größe mit ILDJ abkürzen.
+3. 3) die inverse log-Determinante des Jacobian $\log{\mid \det J(f^{-1}(y)) \mid}$ implementiert. Im weiteren Verlauf dieses Beitrags werde ich diese Größe mit ILDJ abkürzen.
 
 Unter dieser Abstraktion ist das Vorwärtssampling trivial:
 
@@ -170,7 +176,7 @@ tfd = tf.contrib.distributions
 tfb = tfd.bijectors
 ~~~
 
-Wir versuchen, die Verteilung p(x1,x2)=N(x1|μ=1/4x22,σ=1)⋅N(x2|μ=0,σ=4) zu modellieren. Wir können Stichproben aus der Zielverteilung mit dem folgenden Codeschnipsel erzeugen (wir erzeugen sie in TensorFlow, um zu vermeiden, dass wir bei jedem Minibatch Stichproben von der CPU auf die GPU kopieren müssen):
+Wir versuchen, die Verteilung $$p(x_1,x_2)=N(x1|μ=1/4x22,σ=1)⋅N(x2|μ=0,σ=4)$$ zu modellieren. Wir können Stichproben aus der Zielverteilung mit dem folgenden Codeschnipsel erzeugen (wir erzeugen sie in TensorFlow, um zu vermeiden, dass wir bei jedem Minibatch Stichproben von der CPU auf die GPU kopieren müssen):
 
 ~~~python
 # file: "nf1_target.py"
