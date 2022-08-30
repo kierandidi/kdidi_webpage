@@ -176,7 +176,7 @@ tfd = tf.contrib.distributions
 tfb = tfd.bijectors
 ~~~
 
-Wir versuchen, die Verteilung $$p(x_1,x_2)=N(x1|μ=1/4x22,σ=1)⋅N(x2|μ=0,σ=4)$$ zu modellieren. Wir können Stichproben aus der Zielverteilung mit dem folgenden Codeschnipsel erzeugen (wir erzeugen sie in TensorFlow, um zu vermeiden, dass wir bei jedem Minibatch Stichproben von der CPU auf die GPU kopieren müssen):
+Wir versuchen, die Verteilung $$p(x_1,x_2)= \mathcal{N}(x_1 \mid \mu=1/4x_{2}^{2},\sigma=1) * \mathcal{N}(x_2 \mid \mu=0,\sigma=4)$$ zu modellieren. Wir können Stichproben aus der Zielverteilung mit dem folgenden Codeschnipsel erzeugen (wir erzeugen sie in TensorFlow, um zu vermeiden, dass wir bei jedem Minibatch Stichproben von der CPU auf die GPU kopieren müssen):
 
 ~~~python
 # file: "nf1_target.py"
