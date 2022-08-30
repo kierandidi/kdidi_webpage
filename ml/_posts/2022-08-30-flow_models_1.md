@@ -82,7 +82,7 @@ Sehen wir uns den letzten Ansatz an - Normalizing Flows.
 
 ## Substitution und Volumenveränderung
 
-Wir wollen eine gewisse Intuition entwickeln, indem wir die linearen Transformationen von 1D-Zufallsvariablen untersuchen. $X$ sei die Verteilung $Uniform(0,1)$. Sei die Zufallsvariable $Y=f(X)=2X+1$. $Y$ ist eine einfache affine Transformation (Skalierung und Verschiebung) der zugrundeliegenden "Ausgangsverteilung" $X$. Das bedeutet, dass eine Stichprobe $x_i$ aus $X$ in eine Stichprobe aus $Y$ umgewandelt werden kann, indem einfach die Funktion $f$ darauf angewendet wird. 
+Wir wollen eine gewisse Intuition entwickeln, indem wir die linearen Transformationen von 1D-Zufallsvariablen untersuchen. $$X$$ sei die Verteilung $$Uniform(0,1)$$. Sei die Zufallsvariable $$Y=f(X)=2X+1$$. $$Y$$ ist eine einfache affine Transformation (Skalierung und Verschiebung) der zugrundeliegenden "Ausgangsverteilung" $$X$$. Das bedeutet, dass eine Stichprobe $$x_i$$ aus $$X$$ in eine Stichprobe aus $$Y$$ umgewandelt werden kann, indem einfach die Funktion $$f$$ darauf angewendet wird. 
 
 ![flow1](/assets/img/blog/flow1.png)
 
