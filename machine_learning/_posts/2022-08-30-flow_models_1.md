@@ -38,7 +38,7 @@ Diese Reihe ist für ein Publikum mit einem rudimentären Verständnis von linea
 
 ## Hintergrund 
 
-Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Daten zu erlernen, indem sie eine parametrische Verteilung $$ p(x;θ) $$ an sie anpassen. Wenn wir einen Datensatz mit einer Verteilung darstellen können, können wir:
+Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Daten zu erlernen, indem sie eine parametrische Verteilung $$p(x;θ)$$ an sie anpassen. Wenn wir einen Datensatz mit einer Verteilung darstellen können, können wir:
 
 1. Neue Daten "kostenlos" generieren, indem aus der gelernten Verteilung in silico Stichproben gezogen werden ("sampling"); es ist nicht notwendig, den eigentlichen generativen Prozess für die Daten durchzuführen. Dies ist ein nützliches Werkzeug, wenn die Daten teuer zu generieren sind, z. B. bei einem realen Experiment, dessen Durchführung viel Zeit in Anspruch nimmt [^1]. Sampling wird auch verwendet, um Schätzer für hochdimensionale Integrale über Räume zu konstruieren.
 
@@ -47,7 +47,7 @@ Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Da
 
 2. Bewertung der Wahrscheinlichkeit der zum Testzeitpunkt beobachteten Daten (dies kann für Rejection Sampling verwendet werden oder um zu bewerten, wie gut unser Modell ist).
 
-3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$ p(x_2|x_1) $$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
+3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$p(x_2|x_1)$$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
 
 4. Bewertung unseres Algorithmus anhand von Komplexitätsmaßen wie Entropie, gegenseitige Information und Momenten der Verteilung.
 
@@ -88,7 +88,7 @@ Wir wollen eine gewisse Intuition entwickeln, indem wir die linearen Transformat
 
 Das grüne Quadrat stellt die schattierte Wahrscheinlichkeitsmasse auf $\mathbb{R}$ sowohl für $p(x)$ als auch für $p(y)$ dar - die Höhe stellt die Dichtefunktion bei diesem Wert dar. Da die Wahrscheinlichkeitsmasse für jede Verteilung zu 1 integriert werden muss, bedeutet die Skalierung des Bereichs durch 2 überall, dass wir die Wahrscheinlichkeitsdichte überall durch 2 teilen müssen, so dass die Gesamtfläche des grünen Quadrats und des blauen Rechtecks gleich ist (=1).
 
-Zoomen wir auf ein bestimmtes $x$ und einen unendlich nahe gelegenen Punkt $x+dx$, so führt uns die Anwendung von $f$ auf diese beiden Punkte zu dem Paar $(y,y+dy)$.
+Zoomen wir auf ein bestimmtes $x$ und einen unendlich nahe gelegenen Punkt $$x+dx$$, so führt uns die Anwendung von $f$ auf diese beiden Punkte zu dem Paar $(y,y+dy)$.
 
 ![flow2](/assets/img/blog/flow2.png)
 
@@ -96,7 +96,7 @@ Auf der linken Seite haben wir eine lokal zunehmende Funktion $(dy/dx>0)$ und au
 
 $$p(x)dx=p(y)dy$$
 
-Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von $y$ und nicht seine Richtung (es spielt keine Rolle, ob $f(x)$ bei $x$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $y$ in jedem Fall gleich ist). Daher ist $p(y)=p(x)|dx/dy|$. Im logarithmischen Raum ist dies gleichbedeutend mit $logp(y)=logp(x)+log|dx/dy|$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
+Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $y$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $logp(y)=logp(x)+log|dx/dy|$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
 
 Betrachten wir nun den multivariablen Fall, mit 2 Variablen. Auch hier zoomen wir in einen unendlich kleinen Bereich unseres Gebiets und unser anfängliches "Segment" der Basisverteilung ist nun ein Quadrat mit der Breite $dx$.
 
