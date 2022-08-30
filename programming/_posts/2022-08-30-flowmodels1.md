@@ -42,9 +42,6 @@ Statistische Algorithmen für maschinelles Lernen versuchen, die Struktur von Da
 
 1. Neue Daten "kostenlos" generieren, indem aus der gelernten Verteilung in silico Stichproben gezogen werden ("sampling"); es ist nicht notwendig, den eigentlichen generativen Prozess für die Daten durchzuführen. Dies ist ein nützliches Werkzeug, wenn die Daten teuer zu generieren sind, z. B. bei einem realen Experiment, dessen Durchführung viel Zeit in Anspruch nimmt [^1]. Sampling wird auch verwendet, um Schätzer für hochdimensionale Integrale über Räume zu konstruieren.
 
-[^1]: Die Vorstellung, dass wir unseren Datensatz mit \*neuen\* Informationen aus einem endlichen Datensatz erweitern können, ist ziemlich beunruhigend, und es muss sich erst noch zeigen, ob probabilistisches maschinelles Lernen wirklich echte generative Prozesse ersetzen kann (z. B. die Simulation der Flüssigkeitsdynamik), oder ob es am Ende des Tages nur zur Amortisierung von Berechnungen taugt und jede Verallgemeinerung, die wir über die Trainings-/Testverteilung erhalten, ein glücklicher Zufall ist.
-
-
 2. Bewertung der Wahrscheinlichkeit der zum Testzeitpunkt beobachteten Daten (dies kann für Rejection Sampling verwendet werden oder um zu bewerten, wie gut unser Modell ist).
 
 3. Ermittlung der bedingten Beziehung zwischen Variablen. Das Erlernen der Verteilung $$p(x_2|x_1)$$ ermöglicht es uns zum Beispiel, diskriminierende (im Gegensatz zu generativen) Klassifizierungs- oder Regressionsmodelle zu erstellen.
@@ -56,8 +53,6 @@ Wir sind ziemlich gut im Sampling (1) geworden, wie die jüngsten Arbeiten an ge
 Allerdings widmet die Forschungsgemeinschaft der unbedingten und bedingten Wahrscheinlichkeitsschätzung (2, 3) und dem Model-Scoring (4) derzeit weniger Aufmerksamkeit. Wir wissen zum Beispiel nicht, wie man den [Träger](https://en.wikipedia.org/wiki/Support_(mathematics)) eines GAN-Decoders berechnet (wie viel des Ausgaberaums vom Modell mit einer Wahrscheinlichkeit ungleich Null belegt wurde), wir wissen nicht, wie man die Dichte eines Bildes in Bezug auf eine [DRAW-Verteilung](https://arxiv.org/abs/1502.04623) oder selbst einen [VAE](https://arxiv.org/abs/1606.05908) berechnet, und wir wissen nicht, wie man verschiedene Metriken (KL, Earth-Mover-Distanz) für beliebige Verteilungen analytisch berechnet, selbst wenn wir ihre analytischen Dichten kennen.
 
 Es reicht nicht aus, wahrscheinliche Stichproben zu erzeugen: Wir wollen auch die Frage beantworten: "Wie wahrscheinlich sind die Daten?" [^2], flexible bedingte Dichten (z. B. für die Stichprobenbildung und die Bewertung von Divergenzen multimodaler Policies in RL) und die Möglichkeit, umfangreiche Familien von A-priori Wahrscheinlichkeiten ("priors") und "posteriors" in Variational Inference zu wählen. 
-
-[^2]: [A note on the evaluation of generative models](https://arxiv.org/abs/1511.01844) ist eine anregende Diskussion darüber, dass eine hohe log-likelihood weder ausreichend noch notwendig ist, um "plausible" Bilder zu erzeugen. Dennoch ist es besser als nichts und in der Praxis ein nützliches Diagnoseinstrument.
 
 Lasst uns für einen Moment den netten Nachbarn von nebenan anschauen: Die [Normalverteilung](https://en.wikipedia.org/wiki/Normal_distribution). Sie ist der Klassiker unter den Verteilungen: Wir können leicht Stichproben aus ihr ziehen, wir kennen ihre analytische Dichte und KL-Divergenz zu anderen Normalverteilungen, der [zentrale Grenzwertsatz](https://en.wikipedia.org/wiki/Central_limit_theorem) gibt uns die Gewissheit, dass wir sie auf so gut wie alle Daten anwenden können, und wir können sogar mit dem Trick der Reparametrisierung durch ihre Stichproben Backpropagation durchführen (siehe VAEs). Diese netten Eigenschaften der Normalverteilung macht sie zu einer sehr beliebten Wahl für viele generative Modellierungs- und RL-Algorithmen.
 
@@ -151,8 +146,6 @@ Gemäß der Standardkonvention werden transformierte Verteilungen als `Bijector-
 
 Warum bei 1 Bijektor aufhören? Wir können eine beliebige Anzahl von Bijektoren miteinander verketten, ähnlich wie wir Schichten in einem neuronalen Netz miteinander verketten [^3]. Dieses Konstrukt wird als "Normalizing Flow" bezeichnet. Wenn ein Bijektor darüber hinaus über einstellbare Parameter in Bezug auf `bijector.log_prob` verfügt, kann der Bijektor tatsächlich so erlernt werden, dass er unsere Basisverteilung an beliebige Wahrscheinlichkeitsdichten anpasst. Jeder Bijektor fungiert als lernfähige "Schicht", und man kann einen Optimierer verwenden, um die Parameter der Transformation zu lernen, damit sie zu der Datenverteilung passen, die man zu modellieren versucht. Ein Algorithmus hierfür ist die Maximum-Likelihood-Schätzung, die unsere Modellparameter so modifiziert, dass unsere Trainingsdatenpunkte eine maximale log-Wahrscheinlichkeit unter unserer transformierten Verteilung haben. Aus Gründen der [numerischen Stabilität](https://stats.stackexchange.com/questions/174481/why-to-optimize-max-log-probability-instead-of-probability) berechnen und optimieren wir eher über log-Wahrscheinlichkeiten als über Wahrscheinlichkeiten.
 
-[^3]: Es gibt eine Verbindung zwischen Normalizing Flows und GANs über Encoder-Decoder-GAN-Architekturen, die die Inverse des Generators lernen (ALI / BiGAN). Da es einen separaten Encoder gibt, der versucht, $u=G^{-1}(X)$ so wiederherzustellen, $dass X=G(u)$ ist, kann man sich den Generator als einen Flow für die einfache uniforme Verteilung vorstellen. Wir wissen jedoch nicht, wie wir den Betrag der Volumenexpansion/-kontraktion in Bezug auf $X$ berechnen können, so dass wir die Dichte nicht aus GANs gewinnen können. Es ist jedoch wahrscheinlich nicht völlig unvernünftig, die log-det-Jacobimatrix numerisch zu modellieren oder eine Art von Linearzeit-Jacobimatrix durch Konstruktion zu erzwingen.
-
 Diese Folie aus dem [UAW-Vortrag](https://www.youtube.com/watch?v=JrO5fSskISY) von Shakir Mohamed und Danilo Rezende [(Folien)](http://www.shakirm.com/slides/DeepGenModelsTutorial.pdf) veranschaulicht dieses Konzept:
 
 ![flow4](/assets/img/blog/flow4.png)
@@ -237,8 +230,6 @@ class LeakyReLU(tfb.Bijector):
 
 PReLU ist eine elementweise Transformation, daher ist die Jacobi-Matrix diagonal. Die Determinante einer Diagonalmatrix ist einfach das Produkt der Diagonaleinträge, so dass wir die ILDJ durch einfache Summierung der Diagonaleinträge der log-Jacobi-Matrix [^4] berechnen. Wir erstellen den "MLP Bijector" mit `tfb.Chain()` und wenden ihn dann auf unsere Basisverteilung an, um die transformierte Verteilung zu erhalten:
 
-[^4]: Das Lemma "Die Determinante einer Diagonalmatrix ist das Produkt der Diagonaleinträge" ist aus geometrischer Sicht recht intuitiv: Die Längenverzerrung jeder Dimension ist unabhängig von den anderen Dimensionen, so dass die gesamte Volumenänderung nur das Produkt der Änderungen in jeder Richtung ist, als ob wir das Volumen eines hochdimensionalen rechteckigen Prismas berechnen würden.
-
 ~~~python
 # file: "nf1_chain.py"
 d, r = 2, 2
@@ -291,6 +282,14 @@ for i in range(NUM_STEPS):
 Und das war's! TensorFlow-Distributionen machen Normalizing Flows implementierbar und akkumulieren automatisch alle Jacobi-Determinanten in einer Weise, die sauber und gut lesbar ist. Der vollständigen Code findet könnt ihr auf [Github](https://github.com/ericjang/normalizing-flows-tutorial/blob/master/nf_part1_intro.ipynb) finden.
 
 Ihr werdet vielleicht festellen, dass die Deformation ziemlich langsam ist und dass es viele Schichten braucht, um eine relativ einfache Transformation zu lernen [^5]. Im [nächsten Post](http://blog.evjang.com/2018/01/nf2.html) werde ich modernere Techniken zum Erlernen von Normalizing Flows behandeln.
+
+[^1]: Die Vorstellung, dass wir unseren Datensatz mit \*neuen\* Informationen aus einem endlichen Datensatz erweitern können, ist ziemlich beunruhigend, und es muss sich erst noch zeigen, ob probabilistisches maschinelles Lernen wirklich echte generative Prozesse ersetzen kann (z. B. die Simulation der Flüssigkeitsdynamik), oder ob es am Ende des Tages nur zur Amortisierung von Berechnungen taugt und jede Verallgemeinerung, die wir über die Trainings-/Testverteilung erhalten, ein glücklicher Zufall ist.
+
+[^2]: [A note on the evaluation of generative models](https://arxiv.org/abs/1511.01844) ist eine anregende Diskussion darüber, dass eine hohe log-likelihood weder ausreichend noch notwendig ist, um "plausible" Bilder zu erzeugen. Dennoch ist es besser als nichts und in der Praxis ein nützliches Diagnoseinstrument.
+
+[^3]: Es gibt eine Verbindung zwischen Normalizing Flows und GANs über Encoder-Decoder-GAN-Architekturen, die die Inverse des Generators lernen (ALI / BiGAN). Da es einen separaten Encoder gibt, der versucht, $$u=G^{-1}(X)$$ so wiederherzustellen, dass $$X=G(u)$$ ist, kann man sich den Generator als einen Flow für die einfache uniforme Verteilung vorstellen. Wir wissen jedoch nicht, wie wir den Betrag der Volumenexpansion/-kontraktion in Bezug auf $$X$$ berechnen können, so dass wir die Dichte nicht aus GANs gewinnen können. Es ist jedoch wahrscheinlich nicht völlig unvernünftig, die log-det-Jacobimatrix numerisch zu modellieren oder eine Art von Linearzeit-Jacobimatrix durch Konstruktion zu erzwingen.
+
+[^4]: Das Lemma "Die Determinante einer Diagonalmatrix ist das Produkt der Diagonaleinträge" ist aus geometrischer Sicht recht intuitiv: Die Längenverzerrung jeder Dimension ist unabhängig von den anderen Dimensionen, so dass die gesamte Volumenänderung nur das Produkt der Änderungen in jeder Richtung ist, als ob wir das Volumen eines hochdimensionalen rechteckigen Prismas berechnen würden.
 
 [^5]: Die Kapazität dieses MLP ist eher begrenzt, da jede affine Transformation nur eine 2x2-Matrix ist und PReLU die zugrunde liegende Verteilung nur sehr langsam "verformt" (daher sind mehrere PreLUs erforderlich, um die Daten in die richtige Form zu bringen). Für niedrigdimensionale Verteilungen ist dieses MLP eine sehr schlechte Wahl für einen Normalizing Flow und ist zur Illustration der Konzepte gedacht.
 

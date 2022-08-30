@@ -7,7 +7,7 @@ const WorkerPlugin = require('worker-plugin');
 const { merge } = require("webpack-merge");
 const { argv: { mode } } = require("yargs");
 
-const { name: filename, version } = require("./package.json");
+const { name: filename, version } = require("./#jekyll-theme-hydejack/package.json");
 
 const banner = readFileSync(resolve("./_includes/header.txt"), "utf-8");
 
