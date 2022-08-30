@@ -2,9 +2,9 @@
 layout: post
 title: (GER) Normalizing Flows Teil 2 - Moderne Normalizing Flows
 image: /assets/img/blog/flow_nature.jpg
-accent_image: 
-  background: url('/assets/img/blog/jj-ying.jpg') center/cover
-  overlay: false
+#accent_image: 
+#  background: url('/assets/img/blog/jj-ying.jpg') center/cover
+#  overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
@@ -14,7 +14,6 @@ categories: ML
 ---
 
 # (GER) Normalizing Flows Teil 2 - Moderne Normalizing Flows
-
 (Die deutsche Version beginn unten!)
 
 This post is a rather unusual one since it is in German. I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on normalizing flows](https://blog.evjang.com/2018/01/nf1.html) by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
@@ -25,7 +24,7 @@ This post is a rather unusual one since it is in German. I have always been invo
 
 ## Hintergrund 
 
-In meinem [letzten Post]() habe ich beschrieben, wie einfache Verteilungen wie Normalverteilungen "deformiert" werden können, um sie komplexen Datenverteilungen mithilfe von Normalizing Flows anzupassen. Wir haben einen einfachen Flow implementiert, indem wir 2D-Affine Bijektoren mit PreLU-Nichtlinearitäten verkettet haben, um ein kleines invertierbares neuronales Netz aufzubauen.
+In meinem [letzten Post](https://main--kdidi.netlify.app/blog/programming/2022-08-30-2022-08-30-flowmodels1/#fnref:2) habe ich beschrieben, wie einfache Verteilungen wie Normalverteilungen "deformiert" werden können, um sie komplexen Datenverteilungen mithilfe von Normalizing Flows anzupassen. Wir haben einen einfachen Flow implementiert, indem wir 2D-Affine Bijektoren mit PreLU-Nichtlinearitäten verkettet haben, um ein kleines invertierbares neuronales Netz aufzubauen.
 
 Dieser MLP-Flow ist jedoch ziemlich schwach: Es gibt nur 2 Einheiten pro versteckter Schicht. Außerdem ist die Nichtlinearität monoton und stückweise linear, d. h. sie führt lediglich zu einer leichten Verzerrung der Datenvielfalt um den Ursprung. Dieser Flow versagt völlig bei der Implementierung komplexerer Transformationen wie der Trennung einer isotropen Normalverteilung in zwei Modi beim Versuch, den "Two Moons"-Datensatz unten zu lernen:
 
@@ -38,40 +37,42 @@ Glücklicherweise gibt es mehrere leistungsfähigere Normalisierungsverfahren, d
 ## Autoregressive Modelle sind Normalizing Flows
 
 
-Autoregressive Dichteschätzverfahren wie [WaveNet](https://arxiv.org/abs/1609.03499) und [PixelRNN](https://arxiv.org/abs/1601.06759) lernen komplexe gemeinsame Dichten $p(x_{1:D})$, indem sie die gemeinsame Dichte in ein Produkt eindimensionaler bedingter Dichten zerlegen, wobei jedes $x_i$ nur von den vorherigen $i-1$ Werten abhängt:
+Autoregressive Dichteschätzverfahren wie [WaveNet](https://arxiv.org/abs/1609.03499) und [PixelRNN](https://arxiv.org/abs/1601.06759) lernen komplexe gemeinsame Dichten $$p(x_{1:D})$$, indem sie die gemeinsame Dichte in ein Produkt eindimensionaler bedingter Dichten zerlegen, wobei jedes $$x_i$$ nur von den vorherigen $$i-1$$ Werten abhängt:
 
 $$p(x)= \prod_{i} p(x_i|x_{1:i-1})$$
 
-Die bedingten Dichten haben normalerweise lernbare Parameter. Eine gängige Wahl ist zum Beispiel eine autoregressive Dichte $p(x_{1:D})$, deren bedingte Dichte eine univariate Normalverteilung ist. Mittelwert und Standardabweichungen dieser Normalverteilung werden von neuronalen Netzen berechnet, die von den vorherigen $x_{1:i-1}$ abhängen.
+Die bedingten Dichten haben normalerweise lernbare Parameter. Eine gängige Wahl ist zum Beispiel eine autoregressive Dichte $$p(x_{1:D})$$, deren bedingte Dichte eine univariate Normalverteilung ist. Mittelwert und Standardabweichungen dieser Normalverteilung werden von neuronalen Netzen berechnet, die von den vorherigen $$x_{1:i-1}$$ abhängen.
 
 $$p(x_i|x_{1:i-1})= \mathcal{N}(x_i | \mu_i,(\exp \alpha_i)^2)$$
+
 $$μ_i=f_{μ_i}(x_{1:i-1})$$
+
 $$\alpha_i=f_{\alpha_i}(x_{1:i-1})$$
 
 Beim Lernen von Daten mit autoregressiver Dichteschätzung wird die recht waghalsige induktive Annahme aufgestellt, dass die Variablen so sortiert sind, dass die früheren Variablen nicht von den späteren Variablen abhängen. Intuitiv sollte dies für natürliche Daten überhaupt nicht zutreffen (die oberste Pixelreihe eines Bildes hat eine kausale, bedingte Abhängigkeit vom unteren Teil des Bildes). Dennoch ist es möglich, auf diese Weise [plausible Bilder zu erzeugen](https://github.com/openai/pixel-cnn) (zur Überraschung vieler Forscher!). 
 
-Um eine Stichprobe aus dieser Verteilung zu ziehen, berechnen wir $D$ "Noise-Variablen" $u_{1:D}$ aus der Standardnormalverteilung $\mathcal{N}(0,1)$ und wenden dann die folgende Rekursion an, um $x_{1:D}$ zu erhalten:
+Um eine Stichprobe aus dieser Verteilung zu ziehen, berechnen wir $$D$$ "Noise-Variablen" $$u_{1:D}$$ aus der Standardnormalverteilung $$\mathcal{N}(0,1)$$ und wenden dann die folgende Rekursion an, um $$x_{1:D}$$ zu erhalten:
 
 $$x_i=u_i \exp \alpha_i+ \mu_i$$
 
 $$u_i \sim \mathcal{N}(0,1)$$
 
 
-Das Verfahren der autoregressiven Stichprobenziehung ("sampling") ist eine deterministische Transformation der zugrunde liegenden Noise-Variablen (die aus $\mathcal{N}(0,\mathbb{I})$ gezogen werden) in eine neue Verteilung, so dass autoregressives Sampling tatsächlich als eine `TransformedDistribution` der Standardnormalverteilung interpretiert werden kann!
+Das Verfahren der autoregressiven Stichprobenziehung ("sampling") ist eine deterministische Transformation der zugrunde liegenden Noise-Variablen (die aus $$\mathcal{N}(0,\mathbb{I})$$ gezogen werden) in eine neue Verteilung, so dass autoregressives Sampling tatsächlich als eine `TransformedDistribution` der Standardnormalverteilung interpretiert werden kann!
 
-Mit dieser Erkenntnis können wir mehrere autoregressive Transformationen aneinanderketten, um einen Normalizing Flow zu erhalten. Der Vorteil dieser Vorgehensweise besteht darin, dass wir die Reihenfolge der Variablen $x_1,...,x_D$ für jeden Bijektor im Flow ändern können, so dass, wenn eine autoregressive Faktorisierung eine Verteilung nicht gut modellieren kann (aufgrund einer schlechten Wahl der Variablenreihenfolge), eine nachfolgende Schicht dazu in der Lage sein könnte.
+Mit dieser Erkenntnis können wir mehrere autoregressive Transformationen aneinanderketten, um einen Normalizing Flow zu erhalten. Der Vorteil dieser Vorgehensweise besteht darin, dass wir die Reihenfolge der Variablen $$x_1,...,x_D$$ für jeden Bijektor im Flow ändern können, so dass, wenn eine autoregressive Faktorisierung eine Verteilung nicht gut modellieren kann (aufgrund einer schlechten Wahl der Variablenreihenfolge), eine nachfolgende Schicht dazu in der Lage sein könnte.
 
-Der [Masked Autoregressive Flow](https://arxiv.org/abs/1705.07057) (MAF) Bijektor implementiert ein solches bedingt-gaußsches autoregressives Modell. Hier ein Schema des Forward-Pass für einen einzelnen Eintrag in einer Stichprobe der transformierten Verteilung, $x_i$:
+Der [Masked Autoregressive Flow](https://arxiv.org/abs/1705.07057) (MAF) Bijektor implementiert ein solches bedingt-gaußsches autoregressives Modell. Hier ein Schema des Forward-Pass für einen einzelnen Eintrag in einer Stichprobe der transformierten Verteilung, $$x_i$$:
 
 ![flow2_2](/assets/img/blog/flow2_2.png)
 
-Der graue $x_i$-Block ist die Einheit, die wir zu berechnen wollen, und die blauen Blöcke sind die Werte, von denen diese Berechnung abhängt. $\alpha_i$ und $\mu_i$ sind Skalare, die berechnet werden, indem $x_{1:i-1}$ durch neuronale Netze geleitet wird (magenta und oranger Kreis). Auch wenn es sich bei der Transformation um eine einfache Skalierung und Verschiebung handelt, können Skalierung und Verschiebung komplexe Abhängigkeiten von früheren Variablen aufweisen. Für die erste Einheit $x_1$ werden $\mu$ und $\alpha$ normalerweise auf lernbare skalare Variablen gesetzt, die nicht von $x$ oder $u$ abhängen.
+Der graue $$x_i$$-Block ist die Einheit, die wir zu berechnen wollen, und die blauen Blöcke sind die Werte, von denen diese Berechnung abhängt. $$\alpha_i$$ und $$\mu_i$$ sind Skalare, die berechnet werden, indem $$x_{1:i-1}$$ durch neuronale Netze geleitet wird (magenta und oranger Kreis). Auch wenn es sich bei der Transformation um eine einfache Skalierung und Verschiebung handelt, können Skalierung und Verschiebung komplexe Abhängigkeiten von früheren Variablen aufweisen. Für die erste Einheit $$x_1$$ werden $$\mu$$ und $$\alpha$$ normalerweise auf lernbare skalare Variablen gesetzt, die nicht von $$x$$ oder $$u$$ abhängen.
 
-Doch hier kommt der Knackpunkt: Die Transformation ist so konzipiert, dass die Berechnung der Inversen $u=f^{-1}(x)$ keine Invertierung von $f_{\alpha}$ oder $f_{\mu}$ erfordert. Da die Transformation als Skalierung und Verschiebung parametrisiert ist, können wir die ursprünglichen Noise-Variablen durch Umkehrung der Verschiebung und Skalierung wiederherstellen: 
+Doch hier kommt der Knackpunkt: Die Transformation ist so konzipiert, dass die Berechnung der Inversen $$u=f^{-1}(x)$$ keine Invertierung von $$f_{\alpha}$$ oder $$f_{\mu}$$ erfordert. Da die Transformation als Skalierung und Verschiebung parametrisiert ist, können wir die ursprünglichen Noise-Variablen durch Umkehrung der Verschiebung und Skalierung wiederherstellen: 
 
 $$u=(x-f_{\mu}(x))/exp(f_{\alpha}(x))$$
 
-Der "forward pass" und der 'backward pass" des Bijektors hängen nur von der vorwärtsgerichteten Auswertung von $f_{\alpha}(x)$ und $f_{\mu}(x)$ ab, so dass wir in den neuronalen Netzen $f_{\alpha}$ und $f_{\alpha}$ nicht invertierbare Funktionen wie ReLU und Multiplikationen mit nicht-quadratischen (=nicht invertierbaren) Matrizen verwenden können.
+Der "forward pass" und der 'backward pass" des Bijektors hängen nur von der vorwärtsgerichteten Auswertung von $$f_{\alpha}(x)$$ und $$f_{\mu}(x)$$ ab, so dass wir in den neuronalen Netzen $$f_{\alpha}$$ und $$f_{\alpha}$$ nicht invertierbare Funktionen wie ReLU und Multiplikationen mit nicht-quadratischen (=nicht invertierbaren) Matrizen verwenden können.
 
 Der inverse Durchlauf des MAF-Modells wird zur Berechnung der Dichte verwendet:
 
@@ -81,19 +82,19 @@ Der inverse Durchlauf des MAF-Modells wird zur Berechnung der Dichte verwendet:
 
 ## Laufzeit-Komplexität und MADE
 
-Autoregressive Modelle und MAF können "schnell" trainiert werden, da alle bedingten Wahrscheinlichkeiten $p(x_1),p(x_2|x_1),...p(x_D|x_{1:D-1})$ in einem einzigen Durchlauf von $D$ Threads gleichzeitig ausgewertet werden können, wobei die Parallelität moderner GPUs genutzt wird. Wir gehen davon aus, dass Parallelität, wie z. B. [SIMD-Vektorisierung](https://en.wikipedia.org/wiki/SIMD) auf CPUs/GPUs, keinen Laufzeit-Overhead hat.
+Autoregressive Modelle und MAF können "schnell" trainiert werden, da alle bedingten Wahrscheinlichkeiten $$p(x_1),p(x_2|x_1),...p(x_D|x_{1:D-1})$$ in einem einzigen Durchlauf von $$D$$ Threads gleichzeitig ausgewertet werden können, wobei die Parallelität moderner GPUs genutzt wird. Wir gehen davon aus, dass Parallelität, wie z. B. [SIMD-Vektorisierung](https://en.wikipedia.org/wiki/SIMD) auf CPUs/GPUs, keinen Laufzeit-Overhead hat.
 
-Andererseits ist das Sampling autoregressiver Modelle langsam, weil man warten muss, bis alle vorherigen $x_{1:i-1}$ berechnet sind, bevor man neue $x_i$ berechnet. Die Laufzeitkomplexität der Erzeugung einer einzelnen Stichprobe besteht aus D sequentiellen Durchläufen eines einzelnen Threads, wodurch die Parallelität der Prozessoren nicht genutzt wird.
+Andererseits ist das Sampling autoregressiver Modelle langsam, weil man warten muss, bis alle vorherigen $$x_{1:i-1}$$ berechnet sind, bevor man neue $$x_i$$ berechnet. Die Laufzeitkomplexität der Erzeugung einer einzelnen Stichprobe besteht aus D sequentiellen Durchläufen eines einzelnen Threads, wodurch die Parallelität der Prozessoren nicht genutzt wird.
 
-Ein weiteres Problem: Sollten wir im parallelisierbaren inversen Durchlauf separate neuronale Netze (mit unterschiedlich großem Input) für die Berechnung von jedem $\alpha_i$ und $\mu_i$ verwenden? Das ist ineffizient, insbesondere wenn man bedenkt, dass die gelernten Repräsentationen zwischen diesen D Netzwerken gemeinsam genutzt werden sollten (solange die autoregressive Abhängigkeit nicht verletzt wird). In dem Paper [Masked Autoencoder for Distribution Estimation](https://www.google.com/search?q=Masked+Autoencoder+for+Distribution+Estimation&oq=Masked+Autoencoder+for+Distribution+Estimation&aqs=chrome..69i57.205j0j9&sourceid=chrome&ie=UTF-8) (MADE) schlagen die Autoren eine sehr schöne Lösung vor: Verwendung eines einzigen neuronalen Netzes zur gleichzeitigen Ausgabe aller Werte von $\alpha$ und $\mu$, aber Maskierung der Gewichte, damit die autoregressive Eigenschaft erhalten bleibt.
+Ein weiteres Problem: Sollten wir im parallelisierbaren inversen Durchlauf separate neuronale Netze (mit unterschiedlich großem Input) für die Berechnung von jedem $$\alpha_i$$ und $$\mu_i$$ verwenden? Das ist ineffizient, insbesondere wenn man bedenkt, dass die gelernten Repräsentationen zwischen diesen D Netzwerken gemeinsam genutzt werden sollten (solange die autoregressive Abhängigkeit nicht verletzt wird). In dem Paper [Masked Autoencoder for Distribution Estimation](https://www.google.com/search?q=Masked+Autoencoder+for+Distribution+Estimation&oq=Masked+Autoencoder+for+Distribution+Estimation&aqs=chrome..69i57.205j0j9&sourceid=chrome&ie=UTF-8) (MADE) schlagen die Autoren eine sehr schöne Lösung vor: Verwendung eines einzigen neuronalen Netzes zur gleichzeitigen Ausgabe aller Werte von $$\alpha$$ und $$\mu$$, aber Maskierung der Gewichte, damit die autoregressive Eigenschaft erhalten bleibt.
 
-Mit diesem Trick ist es möglich, alle Werte von $u$ aus allen Werten von $x$ mit einem einzigen Durchlauf durch ein einziges neuronales Netz (D Inputs, D Outputs) zu ermitteln. Dies ist wesentlich effizienter als die gleichzeitige Verarbeitung von D neuronalen Netzen (D(D+1)/2 Inputs, D Outputs).
+Mit diesem Trick ist es möglich, alle Werte von $$u$$ aus allen Werten von $$x$$ mit einem einzigen Durchlauf durch ein einziges neuronales Netz (D Inputs, D Outputs) zu ermitteln. Dies ist wesentlich effizienter als die gleichzeitige Verarbeitung von D neuronalen Netzen (D(D+1)/2 Inputs, D Outputs).
 
 Zusammenfassend lässt sich sagen, dass MAF die MADE-Architektur als Effizienztrick für die Berechnung nichtlinearer Parameter von Shift-and-Scale-autoregressiven Transformationen nutzt und diese effizienten autoregressiven Modelle in das Normalizing Flow Konzept integriert.
 
 ## Inverser Autoregressiver Flow (IAF)
 
-Beim inversen autoregressiven Flow werden die nichtlinearen Verschiebungs-/Skalierungsstatistiken unter Verwendung der vorherigen Noise-Variablen $u_{1:i-1}$ anstelle der Datenpunkte $x_{1:i-1}$ berechnet:
+Beim inversen autoregressiven Flow werden die nichtlinearen Verschiebungs-/Skalierungsstatistiken unter Verwendung der vorherigen Noise-Variablen $$u_{1:i-1}$$ anstelle der Datenpunkte $$x_{1:i-1}$$ berechnet:
 
 $$x_i = u_i \exp \alpha_i + \mu_i$$
 
@@ -103,15 +104,15 @@ $$\alpha_i = f_{\alpha_i}(u_{1:i-1})$$
 
 ![flow2_4](/assets/img/blog/flow2_4.png)
 
-Der "forward pass" (sampling) von IAF ist schnell: alle $x_i$ können in einem einzigen Durchlauf von D parallel arbeitenden Threads berechnet werden. IAF verwendet auch MADE-Netzwerke, um diese Parallelität effizient zu implementieren.
+Der "forward pass" (sampling) von IAF ist schnell: alle $$x_i$$ können in einem einzigen Durchlauf von D parallel arbeitenden Threads berechnet werden. IAF verwendet auch MADE-Netzwerke, um diese Parallelität effizient zu implementieren.
 
-Wenn wir jedoch einen neuen Datenpunkt erhalten und die Dichte auswerten sollen, müssen wir $u$ wiederherstellen, und dieser Prozess ist langsam: zuerst berechnen wir $u_1=(x-μ_1) \exp(-\alpha_1)$, dann führen wir dies sequentiell fort: 
+Wenn wir jedoch einen neuen Datenpunkt erhalten und die Dichte auswerten sollen, müssen wir $$u$$ wiederherstellen, und dieser Prozess ist langsam: zuerst berechnen wir $$u_1=(x-μ_1) \exp(-\alpha_1)$$, dann führen wir dies sequentiell fort: 
 
 $$u_i=(x-μ_i(\mu_{1:i-1})) \exp(-\alpha_i(u_{1:i-1}))$$
 
-Andererseits ist es trivial, die (logarithmische) Wahrscheinlichkeit der durch IAF erzeugten Stichproben zu verfolgen, da wir bereits alle $u$-Werte kennen, ohne von $x$ aus invertieren zu müssen.
+Andererseits ist es trivial, die (logarithmische) Wahrscheinlichkeit der durch IAF erzeugten Stichproben zu verfolgen, da wir bereits alle $$u$$-Werte kennen, ohne von $$x$$ aus invertieren zu müssen.
 
-Dem aufmerksamen Leser wird auffallen, dass, wenn man die untere Reihe als $x_1, ... x_D$ und die obere Reihe als $u_1, ... u_D$ bezeichnet, dies genau dem inversen Pass des MAF-Bijektors entspricht! Ebenso ist die Inverse von IAF nichts anderes als der Vorwärtspass von MAF (mit vertauschten $x$ und $u$). Daher sind MAF und IAF in `TensorFlow Distributions` tatsächlich mit der gleichen Bijector-Klasse implementiert, und es gibt eine bequeme "Invert"-Funktion für die Invertierung von Bijektoren, um ihre inversen und vorwärts gerichteten Durchläufe zu vertauschen.
+Dem aufmerksamen Leser wird auffallen, dass, wenn man die untere Reihe als $$x_1, ... x_D$$ und die obere Reihe als $$u_1, ... u_D$$ bezeichnet, dies genau dem inversen Pass des MAF-Bijektors entspricht! Ebenso ist die Inverse von IAF nichts anderes als der Vorwärtspass von MAF (mit vertauschten $$x$$ und $$u$$). Daher sind MAF und IAF in `TensorFlow Distributions` tatsächlich mit der gleichen Bijector-Klasse implementiert, und es gibt eine bequeme "Invert"-Funktion für die Invertierung von Bijektoren, um ihre inversen und vorwärts gerichteten Durchläufe zu vertauschen.
 
 `iaf_bijector = tfb.Invert(maf_bijector)`
 
@@ -121,7 +122,7 @@ IAF und MAF bieten entgegengesetzte Kompromisse bei der Berechnung - MAF trainie
 
 Eine naheliegende Folgefrage ist, ob diese beiden Ansätze kombiniert werden können, um das Beste aus beiden Welten zu erhalten, d.h. schnelles Training und Sampling.
 
-Die Antwort lautet: Ja! Das oft erwähnte [Parallel Wavenet](https://arxiv.org/abs/1711.10433) von DeepMind macht genau das: ein autoregressives Modell (MAF) wird verwendet, um ein generatives Modell effizient zu trainieren; dann wird ein IAF-Modell trainiert, um die Likelihood seiner eigenen Stichproben unter diesem Lehrer zu maximieren. Es sei daran erinnert, dass es bei IAF kostspielig ist, die Dichte externer Datenpunkte (z. B. aus dem Trainingsdatensatz) zu berechnen, aber es kann die Dichte seiner eigenen Stichproben kostengünstig berechnen, indem es die Noise-Variablen $u_{1:D}$ zwischenspeichert und so den "inverse pass" nicht aufrufen muss. Auf diese Weise können wir das "Schüler"-IAF-Modell trainieren, indem wir die Divergenz zwischen der Schüler- und der Lehrer-Verteilung minimieren.
+Die Antwort lautet: Ja! Das oft erwähnte [Parallel Wavenet](https://arxiv.org/abs/1711.10433) von DeepMind macht genau das: ein autoregressives Modell (MAF) wird verwendet, um ein generatives Modell effizient zu trainieren; dann wird ein IAF-Modell trainiert, um die Likelihood seiner eigenen Stichproben unter diesem Lehrer zu maximieren. Es sei daran erinnert, dass es bei IAF kostspielig ist, die Dichte externer Datenpunkte (z. B. aus dem Trainingsdatensatz) zu berechnen, aber es kann die Dichte seiner eigenen Stichproben kostengünstig berechnen, indem es die Noise-Variablen $$u_{1:D}$$ zwischenspeichert und so den "inverse pass" nicht aufrufen muss. Auf diese Weise können wir das "Schüler"-IAF-Modell trainieren, indem wir die Divergenz zwischen der Schüler- und der Lehrer-Verteilung minimieren.
 
 ![flow2_5](/assets/img/blog/flow2_5.png)
 
@@ -131,17 +132,17 @@ Dies ist eine Anwendung von Forschung über Normalizing Flows, die sehr große A
 
 Zum Schluss betrachten wir das Real-NVP, das als Spezialfall des IAF-Bijektors angesehen werden kann.
 
-In einer NVP-"Kopplungsschicht" legen wir eine ganze Zahl $0<d<D$ fest. Wie bei IAF ist $x_{d+1}$ eine Verschiebung und Skalierung, die von früheren $u_d$-Werten abhängt. Der Unterschied besteht darin, dass wir auch $x_{d+2}, x_{d+3},...x_D$ dazu zwingen, nur von diesen $u_d$-Werten abzuhängen, so dass ein einziger Durchlauf durch das Netzwerk verwendet werden kann, um $\alpha_{d+1:D}$ und $\mu_{d+1:D}$ zu erzeugen.
+In einer NVP-"Kopplungsschicht" legen wir eine ganze Zahl $$0<d<D$$ fest. Wie bei IAF ist $$x_{d+1}$$ eine Verschiebung und Skalierung, die von früheren $$u_d$$-Werten abhängt. Der Unterschied besteht darin, dass wir auch $$x_{d+2}, x_{d+3},...x_D$$ dazu zwingen, nur von diesen $$u_d$$-Werten abzuhängen, so dass ein einziger Durchlauf durch das Netzwerk verwendet werden kann, um $$\alpha_{d+1:D}$$ und $$\mu_{d+1:D}$$ zu erzeugen.
 
-Bei $x_{1:d}$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $u_{1:d}$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $\alpha(u_{1:d})=\alpha(x_{1:d}).
+Bei $$x_{1:d}$$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $$u_{1:d}$$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $$\alpha(u_{1:d})=\alpha(x_{1:d}).
 
 ![flow2_6](/assets/img/blog/flow2_6.png)
 
-Da die Verschiebungs- und Skalierstatistiken für die gesamte Schicht entweder aus $x_{1:d}$ oder $u_{1:d}$ in einem einzigen Durchgang berechnet werden können, kann NVP die Vorwärts- und Rückwärtsberechnungen in einem einzigen parallelen Durchgang durchführen (Sampling und Dichteschätzung sind beide schnell). MADE ist ebenfalls nicht erforderlich.
+Da die Verschiebungs- und Skalierstatistiken für die gesamte Schicht entweder aus $$x_{1:d}$$ oder $$u_{1:d}$$ in einem einzigen Durchgang berechnet werden können, kann NVP die Vorwärts- und Rückwärtsberechnungen in einem einzigen parallelen Durchgang durchführen (Sampling und Dichteschätzung sind beide schnell). MADE ist ebenfalls nicht erforderlich.
 
-Empirische Studien deuten jedoch darauf hin, dass Real-NVP tendenziell schlechter abschneidet als MAF und IAF, und ich habe die Erfahrung gemacht, dass NVP meine 2D-Toy-Datensätze (z. B. den SIGGRAPH-Datensatz) bei Verwendung der gleichen Anzahl von Schichten schlechter anpasst. Real-NVP und IAF sind im 2D-Fall nahezu äquivalent, außer dass die erste Einheit von IAF weiterhin durch eine Skalierung und Verschiebung transformiert wird, die nicht von $u1$ abhängt, während Real-NVP die erste Einheit unverändert lässt.
+Empirische Studien deuten jedoch darauf hin, dass Real-NVP tendenziell schlechter abschneidet als MAF und IAF, und ich habe die Erfahrung gemacht, dass NVP meine 2D-Toy-Datensätze (z. B. den SIGGRAPH-Datensatz) bei Verwendung der gleichen Anzahl von Schichten schlechter anpasst. Real-NVP und IAF sind im 2D-Fall nahezu äquivalent, außer dass die erste Einheit von IAF weiterhin durch eine Skalierung und Verschiebung transformiert wird, die nicht von $$u1$$ abhängt, während Real-NVP die erste Einheit unverändert lässt.
 
-Real-NVP war eine Folgearbeit des NICE-Bijektors, einer reinen Verschiebungsvariante, die $\alpha=0$ annimmt. Da NICE die Verteilung nicht skaliert, ist die ILDJ tatsächlich konstant!
+Real-NVP war eine Folgearbeit des NICE-Bijektors, einer reinen Verschiebungsvariante, die $$\alpha=0$$ annimmt. Da NICE die Verteilung nicht skaliert, ist die ILDJ tatsächlich konstant!
 
 # Batch-Normalisierungs-Bijektor
 
@@ -215,11 +216,11 @@ Die ILDJ lässt sich leicht ableiten, indem man einfach die logarithmische Ablei
 
 ## Code Beispiel 
 
-Dank der Bemühungen von Josh Dillon und dem Google Bayesflow-Team gibt es bereits eine flexible Implementierung des [MaskedAutoregressiveFlow](https://www.tensorflow.org/versions/master/api_docs/python/tf/contrib/distributions/bijectors/MaskedAutoregressiveFlow) Bijektors, die MADE-Netzwerke zur Implementierung einer effizienten Wiederherstellung von $u$ für das Training verwendet.
+Dank der Bemühungen von Josh Dillon und dem Google Bayesflow-Team gibt es bereits eine flexible Implementierung des [MaskedAutoregressiveFlow](https://www.tensorflow.org/versions/master/api_docs/python/tf/contrib/distributions/bijectors/MaskedAutoregressiveFlow) Bijektors, die MADE-Netzwerke zur Implementierung einer effizienten Wiederherstellung von $$u$$ für das Training verwendet.
 
 Ich habe mit [diesem Blender-Skript](https://gist.github.com/ericjang/dd56bbde3f9dc971c8ed6f78017c40f0) eine komplexe 2D-Verteilung erstellt, die eine Punktwolke in Form der Buchstaben "SIGGRAPH" ist. Wir konstruieren unseren Datensatz, den Bijektor und die transformierte Verteilung auf eine sehr ähnliche Weise wie im ersten Tutorial, daher werde ich die Codeblöcke hier nicht wiederholen - das Jupyter-Notebook findet ihr [hier](https://github.com/ericjang/normalizing-flows-tutorial/blob/master/nf_part2_modern.ipynb). Dieses Notebook kann einen Normalisierungsfluss mit MAF, IAF, Real-NVP mit/ohne BatchNorm für die Datensätze "Two Moons" und "SIGGRAPH" trainieren.
 
-Ein Detail, das leicht übersehen werden kann, ist, dass dies überhaupt nicht funktioniert, es sei denn man ändert die Reihenfolge der Variablen nach jedem Flow. Andernfalls wird keine der autoregressiven Faktorisierungen der Schichten die Struktur von $p(x_1|x_2)$ lernen. Glücklicherweise hat TensorFlow einen Permute-Bijektor, der speziell für diese Aufgabe entwickelt wurde.
+Ein Detail, das leicht übersehen werden kann, ist, dass dies überhaupt nicht funktioniert, es sei denn man ändert die Reihenfolge der Variablen nach jedem Flow. Andernfalls wird keine der autoregressiven Faktorisierungen der Schichten die Struktur von $$p(x_1|x_2)$$ lernen. Glücklicherweise hat TensorFlow einen Permute-Bijektor, der speziell für diese Aufgabe entwickelt wurde.
 
 ~~~python
 # file: "nf2_chain.py"
