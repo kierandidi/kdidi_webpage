@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (GER) Normalizing Flows Teil 1 - Daten und Determinanten
+title: Normalizing Flows Teil 1 - Daten und Determinanten
 image: /assets/img/blog/flows_chart.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
