@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Normalizing Flows Teil 1 - Daten und Determinanten
+title: (GER) Normalizing Flows Teil 1 - Daten und Determinanten
 image: /assets/img/blog/flows_chart.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -13,7 +13,7 @@ invert_sidebar: true
 categories: ML
 ---
 
-# Normalizing Flows Teil 1 - Daten und Determinanten
+# (GER) Normalizing Flows Teil 1 - Daten und Determinanten
 
 (Die deutsche Version beginn unten!)
 
@@ -30,9 +30,9 @@ Wenn du an maschinellem Lernen, an generativer Modellierung, Bayesian Deep Learn
 Normalizing flows transformieren einfache Dichteverteilungen (wie die Normalverteilung) in komplexe Verteilungen, die für generative Modelle, RL und Variational Inference verwendet werden können. TensorFlow hat [ein paar nützliche Funktionen](https://arxiv.org/pdf/1711.10604.pdf), die es einfach machen, Flows zu erstellen und zu trainieren, um sie an reale Daten anzupassen.
 
 Diese Serie besteht aus zwei Teilen:
-- [Teil 1: Daten und Determinanten](). In diesem Beitrag erkläre ich, wie invertierbare Transformationen von Dichteverteilungen verwendet werden können, um komplexere Dichteverteilungen zu implementieren, und wie diese Transformationen miteinander verkettet werden können, um einen "Normalizing Flow" zu bilden.
+- [Teil 1: Daten und Determinanten](https://main--kdidi.netlify.app/blog/programming/2022-08-30-2022-08-30-flowmodels1/#fnref:2). In diesem Beitrag erkläre ich, wie invertierbare Transformationen von Dichteverteilungen verwendet werden können, um komplexere Dichteverteilungen zu implementieren, und wie diese Transformationen miteinander verkettet werden können, um einen "Normalizing Flow" zu bilden.
 
-- [Teil 2: Moderne Normalizing Flows](): In einem Folgebeitrag gebe ich einen Überblick über die neuesten Techniken, die von Forschern entwickelt wurden, um Normalizing Flows zu erlernen, und erkläre, wie eine Reihe von modernen generativen Modellierungstechniken - autoregressive Modelle, MAF, IAF, NICE, Real-NVP, Parallel-Wavenet - alle miteinander in Beziehung stehen.
+- [Teil 2: Moderne Normalizing Flows](https://main--kdidi.netlify.app/blog/ml/2022-08-30-2022-08-30-flow_models_2/): In einem Folgebeitrag gebe ich einen Überblick über die neuesten Techniken, die von Forschern entwickelt wurden, um Normalizing Flows zu erlernen, und erkläre, wie eine Reihe von modernen generativen Modellierungstechniken - autoregressive Modelle, MAF, IAF, NICE, Real-NVP, Parallel-Wavenet - alle miteinander in Beziehung stehen.
 Diese Reihe ist für ein Publikum mit einem rudimentären Verständnis von linearer Algebra, Wahrscheinlichkeit, neuronalen Netzen und TensorFlow geschrieben. Kenntnisse über die jüngsten Fortschritte im Bereich Deep Learning und generative Modelle sind hilfreich, um die Motivationen und den Kontext, der diesen Techniken zugrunde liegt, zu verstehen, aber sie sind nicht notwendig.
 
 
@@ -81,32 +81,32 @@ Wir wollen eine gewisse Intuition entwickeln, indem wir die linearen Transformat
 
 ![flow1](/assets/img/blog/flow1.png)
 
-Das grüne Quadrat stellt die schattierte Wahrscheinlichkeitsmasse auf $\mathbb{R}$ sowohl für $p(x)$ als auch für $p(y)$ dar - die Höhe stellt die Dichtefunktion bei diesem Wert dar. Da die Wahrscheinlichkeitsmasse für jede Verteilung zu 1 integriert werden muss, bedeutet die Skalierung des Bereichs durch 2 überall, dass wir die Wahrscheinlichkeitsdichte überall durch 2 teilen müssen, so dass die Gesamtfläche des grünen Quadrats und des blauen Rechtecks gleich ist (=1).
+Das grüne Quadrat stellt die schattierte Wahrscheinlichkeitsmasse auf $$\mathbb{R}$$ sowohl für $$p(x)$$ als auch für $$p(y)$$ dar - die Höhe stellt die Dichtefunktion bei diesem Wert dar. Da die Wahrscheinlichkeitsmasse für jede Verteilung zu 1 integriert werden muss, bedeutet die Skalierung des Bereichs durch 2 überall, dass wir die Wahrscheinlichkeitsdichte überall durch 2 teilen müssen, so dass die Gesamtfläche des grünen Quadrats und des blauen Rechtecks gleich ist (=1).
 
-Zoomen wir auf ein bestimmtes $x$ und einen unendlich nahe gelegenen Punkt $$x+dx$$, so führt uns die Anwendung von $f$ auf diese beiden Punkte zu dem Paar $(y,y+dy)$.
+Zoomen wir auf ein bestimmtes $$x$$ und einen unendlich nahe gelegenen Punkt $$x+dx$$, so führt uns die Anwendung von $$f$$ auf diese beiden Punkte zu dem Paar $$(y,y+dy)$$.
 
 ![flow2](/assets/img/blog/flow2.png)
 
-Auf der linken Seite haben wir eine lokal zunehmende Funktion $(dy/dx>0)$ und auf der rechten Seite eine lokal abnehmende Funktion $(dy/dx<0)$. Um die Gesamtwahrscheinlichkeit zu erhalten, muss die Änderung von $p(x)$ entlang des Intervalls $dx$ der Änderung von $p(y)$ entlang des Intervalls $dy$ entsprechen:
+Auf der linken Seite haben wir eine lokal zunehmende Funktion $$(dy/dx>0)$$ und auf der rechten Seite eine lokal abnehmende Funktion $$(dy/dx<0)$$. Um die Gesamtwahrscheinlichkeit zu erhalten, muss die Änderung von $$p(x)$$ entlang des Intervalls $$dx$$ der Änderung von $$p(y)$$ entlang des Intervalls $$dy$$ entsprechen:
 
 $$p(x)dx=p(y)dy$$
 
-Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $y$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $logp(y)=logp(x)+log \lvert dx/dy \rvert$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
+Um die Wahrscheinlichkeit zu erhalten, interessiert uns nur der Betrag der Änderung von \(y\) und nicht seine Richtung (es spielt keine Rolle, ob \(f(x)\) bei $$x$$ zunimmt oder abnimmt, wir nehmen an, dass der Betrag der Änderung von $$y$$ in jedem Fall gleich ist). Daher ist \begin{math}p(y)=p(x)|dx/dy|\end{math}. Im logarithmischen Raum ist dies gleichbedeutend mit $$logp(y)=logp(x)+log \lvert dx/dy \rvert$$. Die Berechnung von log-Dichten skaliert aus Gründen der numerischen Stabilität besser.
 
-Betrachten wir nun den multivariablen Fall, mit 2 Variablen. Auch hier zoomen wir in einen unendlich kleinen Bereich unseres Gebiets und unser anfängliches "Segment" der Basisverteilung ist nun ein Quadrat mit der Breite $dx$.
+Betrachten wir nun den multivariablen Fall, mit 2 Variablen. Auch hier zoomen wir in einen unendlich kleinen Bereich unseres Gebiets und unser anfängliches "Segment" der Basisverteilung ist nun ein Quadrat mit der Breite $$dx$$.
 
-Beachte, dass eine Transformation, die lediglich ein rechteckiges Feld $(x1,x2,x3,x4)$ verschiebt, die Fläche nicht verändert. Wir sind nur an der Änderungsrate pro Flächeneinheit von $x$ interessiert, daher kann die Verschiebung $dx$ als Maßeinheit betrachtet werden, die beliebig ist. Um die folgende Analyse einfach und einheitenlos zu gestalten, untersuchen wir ein Einheitsquadrat im Ursprung, d. h. 4 Punkte $(0,0),(1,0),(0,1),(1,1)$.
+Beachte, dass eine Transformation, die lediglich ein rechteckiges Feld $$(x1,x2,x3,x4)$$ verschiebt, die Fläche nicht verändert. Wir sind nur an der Änderungsrate pro Flächeneinheit von $$x$$ interessiert, daher kann die Verschiebung $$dx$$ als Maßeinheit betrachtet werden, die beliebig ist. Um die folgende Analyse einfach und einheitenlos zu gestalten, untersuchen wir ein Einheitsquadrat im Ursprung, d. h. 4 Punkte $$(0,0),(1,0),(0,1),(1,1)$$.
 
-Durch Multiplikation mit der Matrix $[[a,b];[c,d]]$ werden die Punkte dieses Quadrats zu einem Parallelogramm, wie in der Abbildung rechts (unten) dargestellt. $(0,0)$ wird nach $(0,0)$ geschickt, $(1,0)$ nach $(a,b)$, $(1,0)$ nach $(c,d)$ und $(1,1)$ nach $(a+c,b+d)$.
+Durch Multiplikation mit der Matrix $$[[a,b];[c,d]]$$ werden die Punkte dieses Quadrats zu einem Parallelogramm, wie in der Abbildung rechts (unten) dargestellt. $$(0,0)$$ wird nach $$(0,0)$$ geschickt, $$(1,0)$$ nach $$(a,b)$$, $$(1,0)$$ nach $$(c,d)$$ und $$(1,1)$$ nach $$(a+c,b+d)$$.
 
 ![flow3](/assets/img/blog/flow3.png)
 
-Ein Einheitsquadrat in der Domäne von $X$ entspricht also einem deformierten Parallelogramm in der Domäne von $Y$, sodass die Änderungsrate der Fläche pro Einheit die Fläche des Parallelogramms ist, d. h. ad-bc.
+Ein Einheitsquadrat in der Domäne von $$X$$ entspricht also einem deformierten Parallelogramm in der Domäne von $$Y$$, sodass die Änderungsrate der Fläche pro Einheit die Fläche des Parallelogramms ist, d. h. ad-bc.
 Die Fläche eines Parallelogramms, ad-bc, ist nichts anderes als der Absolutwert der Determinante der linearen Transformation!
 
 In drei Dimensionen wird die "Flächenänderung des Parallelogramms" zu einer "Volumenänderung des Parallelepipeds" und in noch höheren Dimensionen zu einer "Volumenänderung eines n-Parallelotops". Das Konzept bleibt jedoch dasselbe - Determinanten sind nichts anderes als der Betrag (und die Richtung) der Volumenverzerrung einer linearen Transformation, verallgemeinert auf eine beliebige Anzahl von Dimensionen.
 
-Was ist, wenn die Transformation $f$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $|det(J(f-1(x)))|$, wobei $J(f^-1(x))$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $dx/dy$ von vorhin.
+Was ist, wenn die Transformation $$f$$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $$|det(J(f-1(x)))|$$, wobei $$J(f^-1(x))$$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $$dx/dy$$ von vorhin.
 
 $$y=f(x)$$
 
@@ -124,9 +124,9 @@ Als ich in der Mittel- und Oberstufe etwas über Determinanten lernte, war ich s
 
 TensorFlow hat eine elegante API zum Transformieren von Verteilungen. Eine `TransformedDistribution` wird durch ein Basisverteilungsobjekt spezifiziert, das wir transformieren werden, und ein Bijector-Objekt, das folgende Transformationen implementiert:
 
-1. eine Vorwärtstransformation $y=f(x)$, wobei $f\colon \mathbb{R^d} \longrightarrow \mathbb{R^d}$
-2. die inverse Transformation $x=f^{-1}(y)$, und 
-3. 3) die inverse log-Determinante des Jacobian $\log{\mid \det J(f^{-1}(y)) \mid}$ implementiert. Im weiteren Verlauf dieses Beitrags werde ich diese Größe mit ILDJ abkürzen.
+1. eine Vorwärtstransformation $$y=f(x)$$, wobei $$f\colon \mathbb{R^d} \longrightarrow \mathbb{R^d}$$
+2. die inverse Transformation $$x=f^{-1}(y)$$, und 
+3. 3) die inverse log-Determinante des Jacobian $$\log{\mid \det J(f^{-1}(y)) \mid}$$ implementiert. Im weiteren Verlauf dieses Beitrags werde ich diese Größe mit ILDJ abkürzen.
 
 Unter dieser Abstraktion ist das Vorwärtssampling trivial:
 
@@ -142,9 +142,9 @@ Einige häufig verwendete TensorFlow-Verteilungen sind tatsächlich mit diesen `
 
 | Ursprungsverteilung | Bijector.forward | Transformierte Verteilung |
 |------|-------------|---------------|
-| <a name="Normal"></a>[Normal](#) | $exp(x)$ | LogNormal |
-| <a name="Exp(rate=1)"></a>[Exp(rate=1)](#) | $-\log{x}$ | Gumbel(0,1) |
-| <a name="Gumbel(0,1)"></a>[Gumbel(0,1)](#) | $softmax(x)$ | Gumbel-Softmax / Concrete |
+| <a name="Normal"></a>[Normal](#) | $$exp(x)$$ | LogNormal |
+| <a name="Exp(rate=1)"></a>[Exp(rate=1)](#) | $$-\log{x}$$ | Gumbel(0,1) |
+| <a name="Gumbel(0,1)"></a>[Gumbel(0,1)](#) | $$softmax(x)$$ | Gumbel-Softmax / Concrete |
 
 Gemäß der Standardkonvention werden transformierte Verteilungen als `Bijector-1BaseDistribution` bezeichnet; so wird ein `ExpBijector`, der auf eine Normalverteilung angewendet wird, zu `LogNormal`. Es gibt einige Ausnahmen von diesem Benennungsschema - die [Gumbel-Softmax](http://blog.evjang.com/2016/11/tutorial-categorical-variational.html)-Verteilung ist als RelaxedOneHotCategorical-Verteilung implementiert, die einen SoftmaxCentered-Bijektor auf eine Gumbel-Verteilung anwendet.
 
@@ -156,7 +156,7 @@ Diese Folie aus dem [UAW-Vortrag](https://www.youtube.com/watch?v=JrO5fSskISY) v
 
 ![flow4](/assets/img/blog/flow4.png)
 
-Die Berechnung der Determinante einer beliebigen N×N-Jacob-Matrix hat jedoch eine Laufzeitkomplexität von $O(N^3)$, was sehr teuer ist, wenn man sie in ein neuronales Netz einbaut. Hinzu kommt das Problem der Invertierung eines beliebigen Funktionsapproximators. Ein Großteil der aktuellen Forschung zu Normalizing Flows konzentriert sich darauf, wie ausdrucksstarke Bijectors entworfen werden können, die die GPU-Parallelisierung während der Vorwärts- und Umkehrberechnungen ausnutzen und gleichzeitig recheneffiziente ILDJs beibehalten.
+Die Berechnung der Determinante einer beliebigen N×N-Jacob-Matrix hat jedoch eine Laufzeitkomplexität von $$O(N^3)$$, was sehr teuer ist, wenn man sie in ein neuronales Netz einbaut. Hinzu kommt das Problem der Invertierung eines beliebigen Funktionsapproximators. Ein Großteil der aktuellen Forschung zu Normalizing Flows konzentriert sich darauf, wie ausdrucksstarke Bijectors entworfen werden können, die die GPU-Parallelisierung während der Vorwärts- und Umkehrberechnungen ausnutzen und gleichzeitig recheneffiziente ILDJs beibehalten.
 
 
 ## Code-Beispiel
@@ -200,15 +200,15 @@ base_dist = tfd.MultivariateNormalDiag(loc=tf.zeros([2], tf.float32))
 
 Als Nächstes konstruieren wir den `Bijector` und erstellen daraus eine `TransformedDistribution`. Lasst uns einen flow aufbauen, der einem klassischen vollständig verbundenen Netzwerk ähnelt, d. h. alternierende Matrixmultiplikation und Nichtlinearitäten.
 
-Die Jacobi-Matrix einer affinen Funktion ist trivial zu berechnen, aber im schlimmsten Fall [sind die Determinanten $O(n^3)$](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations), was inakzeptabel langsam ist. Stattdessen bietet TensorFlow eine strukturierte affine Transformation, deren Determinante effizienter berechnet werden kann. Diese affine Transformation ist parametrisiert als eine untere Dreiecksmatrix $M$ plus eine Aktualisierung niedrigen Ranges:
+Die Jacobi-Matrix einer affinen Funktion ist trivial zu berechnen, aber im schlimmsten Fall [sind die Determinanten $$O(n^3)$$](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations), was inakzeptabel langsam ist. Stattdessen bietet TensorFlow eine strukturierte affine Transformation, deren Determinante effizienter berechnet werden kann. Diese affine Transformation ist parametrisiert als eine untere Dreiecksmatrix $$M$$ plus eine Aktualisierung niedrigen Ranges:
 
 $$M+V⋅D⋅V^T$$
 
-Um $\det(M+V⋅D⋅VT^)$ kostengünstig zu berechnen, verwenden wir das [Matrix-Determinanten-Lemma](https://en.wikipedia.org/wiki/Matrix_determinant_lemma).
+Um $$\det(M+V⋅D⋅VT^)$$ kostengünstig zu berechnen, verwenden wir das [Matrix-Determinanten-Lemma](https://en.wikipedia.org/wiki/Matrix_determinant_lemma).
 
-Nun benötigen wir eine invertierbare Nichtlinearität, um nichtlineare Funktionen auszudrücken (andernfalls bleibt die Kette der affinen Bijektoren affin). $Sigmoid$ / $tanh$ scheinen eine gute Wahl zu sein, aber sie sind unglaublich instabil zu invertieren - kleine Änderungen in der Ausgabe nahe -1 oder 1 entsprechen massiven Änderungen in der Eingabe. In meinen Experimenten konnte ich nicht 2 sättigende Nichtlinearitäten aneinanderreihen, ohne dass die Gradienten explodierten. $ReLU$ dagegen ist stabil, aber nicht invertierbar für $x<0$.
+Nun benötigen wir eine invertierbare Nichtlinearität, um nichtlineare Funktionen auszudrücken (andernfalls bleibt die Kette der affinen Bijektoren affin). $$Sigmoid$$ / $$tanh$$ scheinen eine gute Wahl zu sein, aber sie sind unglaublich instabil zu invertieren - kleine Änderungen in der Ausgabe nahe -1 oder 1 entsprechen massiven Änderungen in der Eingabe. In meinen Experimenten konnte ich nicht 2 sättigende Nichtlinearitäten aneinanderreihen, ohne dass die Gradienten explodierten. $$ReLU$$ dagegen ist stabil, aber nicht invertierbar für $$x<0$$.
 
-Ich entschied mich dafür, $PReLU$ (parametrisierte $ReLU$) zu implementieren, was dasselbe ist wie $Leaky ReLU$, aber mit einer lernbaren Steigung im negativen Bereich. Die Einfachheit von PReLU und seine simple Jacobi-Matrix sind eine gute Übung für die Implementierung eigener Bijektoren: Beachte, dass die ILDJ 0 ist, wenn $x>0$ (keine Volumenänderung) und $1/\alpha$ andernfalls (Kompensation der Volumenkontraktion durch Multiplikation von $x$ mit $\alpha$).
+Ich entschied mich dafür, $$PReLU$$ (parametrisierte $$ReLU$$) zu implementieren, was dasselbe ist wie $$Leaky ReLU$$, aber mit einer lernbaren Steigung im negativen Bereich. Die Einfachheit von PReLU und seine simple Jacobi-Matrix sind eine gute Übung für die Implementierung eigener Bijektoren: Beachte, dass die ILDJ 0 ist, wenn $$x>0$$ (keine Volumenänderung) und $$1/\alpha$$ andernfalls (Kompensation der Volumenkontraktion durch Multiplikation von $$x$$ mit $$\alpha$$).
 
 ~~~python
 # file: "nf1_prelu.py"
@@ -287,7 +287,7 @@ for i in range(NUM_STEPS):
 
 Und das war's! TensorFlow-Distributionen machen Normalizing Flows implementierbar und akkumulieren automatisch alle Jacobi-Determinanten in einer Weise, die sauber und gut lesbar ist. Der vollständigen Code findet könnt ihr auf [Github](https://github.com/ericjang/normalizing-flows-tutorial/blob/master/nf_part1_intro.ipynb) finden.
 
-Ihr werdet vielleicht festellen, dass die Deformation ziemlich langsam ist und dass es viele Schichten braucht, um eine relativ einfache Transformation zu lernen [^5]. Im [nächsten Post](http://blog.evjang.com/2018/01/nf2.html) werde ich modernere Techniken zum Erlernen von Normalizing Flows behandeln.
+Ihr werdet vielleicht festellen, dass die Deformation ziemlich langsam ist und dass es viele Schichten braucht, um eine relativ einfache Transformation zu lernen [^5]. Im [nächsten Post](https://main--kdidi.netlify.app/blog/ml/2022-08-30-2022-08-30-flow_models_2/) werde ich modernere Techniken zum Erlernen von Normalizing Flows behandeln.
 
 [^1]: Die Vorstellung, dass wir unseren Datensatz mit \*neuen\* Informationen aus einem endlichen Datensatz erweitern können, ist ziemlich beunruhigend, und es muss sich erst noch zeigen, ob probabilistisches maschinelles Lernen wirklich echte generative Prozesse ersetzen kann (z. B. die Simulation der Flüssigkeitsdynamik), oder ob es am Ende des Tages nur zur Amortisierung von Berechnungen taugt und jede Verallgemeinerung, die wir über die Trainings-/Testverteilung erhalten, ein glücklicher Zufall ist.
 
