@@ -135,7 +135,7 @@ Zum Schluss betrachten wir das Real-NVP, das als Spezialfall des IAF-Bijektors a
 
 In einer NVP-"Kopplungsschicht" legen wir eine ganze Zahl $$0<d<D$$ fest. Wie bei IAF ist $$x_{d+1}$$ eine Verschiebung und Skalierung, die von früheren $$u_d$$-Werten abhängt. Der Unterschied besteht darin, dass wir auch $$x_{d+2}, x_{d+3},...x_D$$ dazu zwingen, nur von diesen $$u_d$$-Werten abzuhängen, so dass ein einziger Durchlauf durch das Netzwerk verwendet werden kann, um $$\alpha_{d+1:D}$$ und $$\mu_{d+1:D}$$ zu erzeugen.
 
-Bei $$x_{1:d}$$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $$u_{1:d}$$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $$\alpha(u_{1:d})=\alpha(x_{1:d})$$.
+Bei $$x_{1:d}$$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $$u_{1:d}$$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $$\alpha(u_{1:d})=\alpha(x_{1:d})$$).
 
 ![flow2_6](/assets/img/blog/flow2_6.png)
 

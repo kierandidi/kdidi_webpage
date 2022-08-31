@@ -6,7 +6,7 @@ description: >
   The final project of the TechLabs WebDevelopment Bootcamp 2022s
 date: '19-08-2022'
 image: 
-  path: /assets/img/projects/techlabs.jpg
+  path: /assets/img/projects/techlabs.png
 #links:
 #  - title: Link
 #    url: https://hydejack.com/
