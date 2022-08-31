@@ -2,9 +2,9 @@
 layout: post
 title: (GER) Normalizing Flows Teil 2 - Moderne Normalizing Flows
 image: /assets/img/blog/flow_nature.jpg
-#accent_image: 
-#  background: url('/assets/img/blog/jj-ying.jpg') center/cover
-#  overlay: false
+accent_image: 
+  background: url('/assets/img/blog/jj-ying.jpg') center/cover
+  overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
@@ -83,7 +83,7 @@ Der inverse Durchlauf des MAF-Modells wird zur Berechnung der Dichte verwendet:
 
 ## Laufzeit-Komplexität und MADE
 
-Autoregressive Modelle und MAF können "schnell" trainiert werden, da alle bedingten Wahrscheinlichkeiten $$p(x_1),p(x_2|x_1),...p(x_D|x_{1:D-1})$$ in einem einzigen Durchlauf von $$D$$ Threads gleichzeitig ausgewertet werden können, wobei die Parallelität moderner GPUs genutzt wird. Wir gehen davon aus, dass Parallelität, wie z. B. [SIMD-Vektorisierung](https://en.wikipedia.org/wiki/SIMD) auf CPUs/GPUs, keinen Laufzeit-Overhead hat.
+Autoregressive Modelle und MAF können "schnell" trainiert werden, da alle bedingten Wahrscheinlichkeiten $$p(x_1),p(x_2 \mid x_1),...p(x_D \mid x_{1:D-1})$$ in einem einzigen Durchlauf von $$D$$ Threads gleichzeitig ausgewertet werden können, wobei die Parallelität moderner GPUs genutzt wird. Wir gehen davon aus, dass Parallelität, wie z. B. [SIMD-Vektorisierung](https://en.wikipedia.org/wiki/SIMD) auf CPUs/GPUs, keinen Laufzeit-Overhead hat.
 
 Andererseits ist das Sampling autoregressiver Modelle langsam, weil man warten muss, bis alle vorherigen $$x_{1:i-1}$$ berechnet sind, bevor man neue $$x_i$$ berechnet. Die Laufzeitkomplexität der Erzeugung einer einzelnen Stichprobe besteht aus D sequentiellen Durchläufen eines einzelnen Threads, wodurch die Parallelität der Prozessoren nicht genutzt wird.
 
@@ -135,7 +135,7 @@ Zum Schluss betrachten wir das Real-NVP, das als Spezialfall des IAF-Bijektors a
 
 In einer NVP-"Kopplungsschicht" legen wir eine ganze Zahl $$0<d<D$$ fest. Wie bei IAF ist $$x_{d+1}$$ eine Verschiebung und Skalierung, die von früheren $$u_d$$-Werten abhängt. Der Unterschied besteht darin, dass wir auch $$x_{d+2}, x_{d+3},...x_D$$ dazu zwingen, nur von diesen $$u_d$$-Werten abzuhängen, so dass ein einziger Durchlauf durch das Netzwerk verwendet werden kann, um $$\alpha_{d+1:D}$$ und $$\mu_{d+1:D}$$ zu erzeugen.
 
-Bei $$x_{1:d}$$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $$u_{1:d}$$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $$\alpha(u_{1:d})=\alpha(x_{1:d}).
+Bei $$x_{1:d}$$ handelt es sich um "Pass-Through"-Einheiten, d.h. sie werden gleichgesetztt zu $$u_{1:d}$$. Daher ist Real-NVP auch ein Spezialfall des MAF-Bijektors (da $$\alpha(u_{1:d})=\alpha(x_{1:d})$$.
 
 ![flow2_6](/assets/img/blog/flow2_6.png)
 
@@ -221,7 +221,7 @@ Dank der Bemühungen von Josh Dillon und dem Google Bayesflow-Team gibt es berei
 
 Ich habe mit [diesem Blender-Skript](https://gist.github.com/ericjang/dd56bbde3f9dc971c8ed6f78017c40f0) eine komplexe 2D-Verteilung erstellt, die eine Punktwolke in Form der Buchstaben "SIGGRAPH" ist. Wir konstruieren unseren Datensatz, den Bijektor und die transformierte Verteilung auf eine sehr ähnliche Weise wie im ersten Tutorial, daher werde ich die Codeblöcke hier nicht wiederholen - das Jupyter-Notebook findet ihr [hier](https://github.com/ericjang/normalizing-flows-tutorial/blob/master/nf_part2_modern.ipynb). Dieses Notebook kann einen Normalisierungsfluss mit MAF, IAF, Real-NVP mit/ohne BatchNorm für die Datensätze "Two Moons" und "SIGGRAPH" trainieren.
 
-Ein Detail, das leicht übersehen werden kann, ist, dass dies überhaupt nicht funktioniert, es sei denn man ändert die Reihenfolge der Variablen nach jedem Flow. Andernfalls wird keine der autoregressiven Faktorisierungen der Schichten die Struktur von $$p(x_1|x_2)$$ lernen. Glücklicherweise hat TensorFlow einen Permute-Bijektor, der speziell für diese Aufgabe entwickelt wurde.
+Ein Detail, das leicht übersehen werden kann, ist, dass dies überhaupt nicht funktioniert, es sei denn man ändert die Reihenfolge der Variablen nach jedem Flow. Andernfalls wird keine der autoregressiven Faktorisierungen der Schichten die Struktur von $$p(x_1 \mid x_2)$$ lernen. Glücklicherweise hat TensorFlow einen Permute-Bijektor, der speziell für diese Aufgabe entwickelt wurde.
 
 ~~~python
 # file: "nf2_chain.py"
