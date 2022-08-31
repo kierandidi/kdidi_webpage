@@ -8,7 +8,7 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-About my first in-person conference and how great it is to design proteins
+  About my first in-person conference and how great it is to design proteins
 invert_sidebar: true
 categories: proteins
 ---
