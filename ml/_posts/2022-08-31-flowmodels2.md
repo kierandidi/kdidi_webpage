@@ -8,15 +8,16 @@ image: /assets/img/blog/flow_nature.jpg
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-  Hier stellen wir mit modernen Flow-Architekturen wie MAF, IAF und Real-NVP Wörter dar.
+  Hier stellen wir mit modernen Flow-Architekturen wie MAF, IAF und Real-NVP Schriftzüge dar.
 invert_sidebar: true
-categories: ML
+categories: ml
 ---
 
 # (GER) Normalizing Flows Teil 2 - Moderne Normalizing Flows
 (Die deutsche Version beginn unten!)
 
-This post is a rather unusual one since it is in German. I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on normalizing flows](https://blog.evjang.com/2018/01/nf1.html) by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
+This post is a follow-up on the [last German post](https://kdidi.netlify.app/blog/ml/2022-08-30-flowmodels1/) and the translation of the second post in Eric Jang's series of posts for Normalizing Flows. 
+I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on normalizing flows](https://blog.evjang.com/2018/01/nf2.html) by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
 
 
 * toc
@@ -24,7 +25,7 @@ This post is a rather unusual one since it is in German. I have always been invo
 
 ## Hintergrund 
 
-In meinem [letzten Post](https://main--kdidi.netlify.app/blog/programming/2022-08-30-2022-08-30-flowmodels1/#fnref:2) habe ich beschrieben, wie einfache Verteilungen wie Normalverteilungen "deformiert" werden können, um sie komplexen Datenverteilungen mithilfe von Normalizing Flows anzupassen. Wir haben einen einfachen Flow implementiert, indem wir 2D-Affine Bijektoren mit PreLU-Nichtlinearitäten verkettet haben, um ein kleines invertierbares neuronales Netz aufzubauen.
+In meinem [letzten Post](https://main--kdidi.netlify.app/blog/programming/2022-08-30-2022-08-30-flowmodels1/) habe ich beschrieben, wie einfache Verteilungen wie Normalverteilungen "deformiert" werden können, um sie komplexen Datenverteilungen mithilfe von Normalizing Flows anzupassen. Wir haben einen einfachen Flow implementiert, indem wir 2D-Affine Bijektoren mit PreLU-Nichtlinearitäten verkettet haben, um ein kleines invertierbares neuronales Netz aufzubauen.
 
 Dieser MLP-Flow ist jedoch ziemlich schwach: Es gibt nur 2 Einheiten pro versteckter Schicht. Außerdem ist die Nichtlinearität monoton und stückweise linear, d. h. sie führt lediglich zu einer leichten Verzerrung der Datenvielfalt um den Ursprung. Dieser Flow versagt völlig bei der Implementierung komplexerer Transformationen wie der Trennung einer isotropen Normalverteilung in zwei Modi beim Versuch, den "Two Moons"-Datensatz unten zu lernen:
 
