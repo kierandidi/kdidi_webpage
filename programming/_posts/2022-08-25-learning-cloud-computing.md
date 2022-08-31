@@ -2,9 +2,9 @@
 layout: post
 title: Mastering Cloud Computing
 image: /assets/img/blog/cloud_bits.png
-#accent_image: 
-  #background: url('/assets/img/blog/cloud_bits_sidebar.png') center/cover
-  #overlay: false
+accent_image: 
+  background: url('/assets/img/blog/jj-ying.jpg') center/cover
+  overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
