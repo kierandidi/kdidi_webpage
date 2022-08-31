@@ -10,6 +10,7 @@ theme_color: '#ccc'
 description: >
 About my first in-person conference and how great it is to design proteins
 invert_sidebar: true
+categories: proteins
 ---
 
 # Protein Geeks of all nations, unite - APFED 2022
