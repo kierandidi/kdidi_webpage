@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Iterator Generator Terminator??
+title: Iterator Generator Decorator??
 image: /assets/img/blog/jj-ying.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -8,12 +8,12 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-Are iterators and generators in Python that different? 
+Are iterators and generators in Python that different? And what are these decorator things?
 invert_sidebar: true
 ---
 
-# Iterator Generator Terminator??
-There are certain things about every topic that trip people up when they start learning it. With Python programming, one of these things seem to be iterators and generators. When you start out, you use them without knowing all the time (in a for-loop for example), but once it comes to understanding how it works, I observed that students often struggle with grasping the main ideas behind these concepts and why they exist in the first place. So here is an attempt to clarify some things and shine a light on similarities and differences between those two concepts.
+# Iterator Generator Decorator??
+There are certain things about every topic that trip people up when they start learning it. With Python programming, one of these things seem to be iterators and generators. When you start out, you use them without knowing all the time (in a for-loop for example), but once it comes to understanding how it works, I observed that students often struggle with grasping the main ideas behind these concepts and why they exist in the first place. So here is an attempt to clarify some things and shine a light on similarities and differences between those two concepts.ß
 
 
 * toc

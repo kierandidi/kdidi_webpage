@@ -145,7 +145,7 @@ Empirische Studien deuten jedoch darauf hin, dass Real-NVP tendenziell schlechte
 
 Real-NVP war eine Folgearbeit des NICE-Bijektors, einer reinen Verschiebungsvariante, die $$\alpha=0$$ annimmt. Da NICE die Verteilung nicht skaliert, ist die ILDJ tatsächlich konstant!
 
-# Batch-Normalisierungs-Bijektor
+## Batch-Normalisierungs-Bijektor
 
 Das Real-NVP-Papier schlägt mehrere neue Beiträge vor, von denen einer ein Batch-Normalisierungs-Bijektor ist, der zur Stabilisierung des Trainings verwendet wird. Konventionell wird die Batch-Norm auf das Training neuronaler Netze angewandt, wobei die Vorwärtsstatistiken mittelwertzentriert und auf eine diagonale Einheitskovarianz skaliert sind und die Batch-Norm-Statistiken (gleitender Mittelwert, gleitende Varianz) über einen exponentiellen gleitenden Durchschnitt akkumuliert werden. Zum Testzeitpunkt werden die akkumulierten Statistiken zur Normalisierung der Daten verwendet.
 
