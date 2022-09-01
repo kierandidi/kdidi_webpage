@@ -22,6 +22,16 @@
   },
   "work": [
     {
+      "company": "Australian National University",
+      "position": "ML Engineer Intern",
+      "startDate": "2022-09-01",
+      "endDate": "",
+      "highlights": [],
+      "summary": "- working on ML for protein design",
+      "url": "https://www.linkedin.com/company/csiro/",
+      "location": "Canberra, ACT, Australia"
+    },
+    {
       "company": "CSIRO",
       "position": "Software Engineer Intern",
       "startDate": "2022-07-31",
