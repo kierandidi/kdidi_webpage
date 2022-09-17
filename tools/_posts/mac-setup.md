@@ -1,0 +1,55 @@
+---
+layout: post
+title: My MacBook setup for coding and research
+image: /assets/img/blog/macbook_pic.jpg
+accent_image: 
+  background: url('/assets/img/blog/ji-ying.jpg') center/cover
+  overlay: false
+accent_color: '#ccc'
+theme_color: '#ccc'
+description: >
+  About the little gritty details that make the difference in my research workflow
+invert_sidebar: true
+---
+
+# My MacBook setup for coding and research
+I recently bought a new MacBook and decided to take the opportunity and rethink everything I do on my laptop, from coding over task management to citing papers. The setup I came up with is far from perfect, but for me personally the one I can work very well with. I hope that somebody might find one or two things I mention here useful, and if it is just me next year!
+
+
+* toc
+{:toc}
+
+## Getting your shell right
+
+I spend quite a lot of the time I spent on my laptop typing commands in the shell, so making this a pleasing experience was one of my main objectives. The standard zsh mac shell is not bad, but you can make quite some improvements over it. 
+
+### Terminal Emulators: iTerms2 vs Hyper
+
+First of all there are terminal emulators that you can use for a visually more pleasing experience and some cool extra features. The two main tools here are iTerms2 and Hyper. I personally chose iTerms2 since it is more established and more performant in many cases, but will keep a look on Hyper since it looks promising as well ([here](https://medium.com/@brianhague/why-i-switched-my-terminal-to-hyper-then-switched-back-f0bd06af4d7d) a comparison between the two).
+
+### Making it pretty
+
+With iTerms2 as well as Hyper there are quite some ways to further customize your shell. I personally like [this video](https://www.youtube.com/watch?v=0MiGnwPdNGE) which helps you make style your shell as well as give it some nice shortcuts ([here](https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal) the summary of the commands used in the video). Here is how my shell looked afterwards:
+
+<>
+
+Pretty nice if you ask me!
+
+## Data Science workflows: jupyter, pyenv etc
+
+MacOS comes with a default Python installation, but I try to avoid fiddling around with it since nightmares of clashing package requirements haunt me to this day at night. For managing these varying dependencies, people typically use pyenv or conda. I use both, but prefer pyenv since it is less bloated than conda and has given me less pain in the past. See [this post](https://engineeringfordatascience.com/posts/setting_up_a_macbook_for_data_science/) for how to set up pyenv and more!
+
+## VS Code: the allrounder
+
+Although the terminal is crucial for coding work, I often use 
+## Running R in VS Code
+
+## Productivity Hacks
+
+## Paper and Citation workflow: Zotero and Obsidian
+
+## Closing thoughts
+
+
+
+*[SERP]: Search Engine Results Page
