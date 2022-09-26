@@ -139,6 +139,7 @@ So here are some of the common ones I use on MacOS; on Windows you often just ha
 #### Workspace
 - `Cmd` + `B`: toggle sidebar
 - `Cmd` + `,`: open settings
+
 #### Navigating
 - `Shift` + `Option` + `Up/Down`: duplicate line up/down
 - `Option` + `Up/Down`: move line up/down
@@ -146,13 +147,16 @@ So here are some of the common ones I use on MacOS; on Windows you often just ha
 - `Cmd` + `[`: fold current code region
 - `Option` + `Cmd` + `[`: unfold current code region
 - create your own regions with #region class method, close via #end regio
+
 #### Multiple cursors (keep `Cmd` pressed!)
 - `Shift` + `Cmd` + `L`: mark every element with same name
 - `Cmd` + `D`: go through marked elements one by one
 - `Cmd` + `K`: skip one of the marked elements
+
 #### Refactoring
 - `F2` for selected element/right-click and `rename symbol`: refactor cleverly, changes all occurances where variable is referenced (but not for exampled string that is named the same way!)
 - also works for imports among different files
+
 #### Finding things
 - `Cmd` + `F`: classic find
 - click button on search field to include regex in your search
@@ -174,6 +178,7 @@ With all this code editor configurations it is easy to forget that you do other 
 - Background Music: volume mixer for MacOS
 - Itsycal: show monthly overview in taskbar
 - Hidden Bar: customize and sort your taskbar icons
+
 ## Paper and Citation workflow: Zotero and Obsidian
 Back at the start of my study I downloaded papers as PDFs, sorted them in folders and highlighted important bits in my PDF reader. This is (fortunately) a thing of the past: with citation managers such as Zotero, Mendeley or EndNote is it easy to import papers, sort them, annote them and export citations again (for example for use in Latex editors such as Overleaf). I prefer Zotero since it is open-source and offers nice extensions and integrations to other services. One prime example of this is [Obsidian](), a great notetaking tool in markdown file format. There are many great resources for how to integrate it with Zotero:
 
@@ -186,6 +191,7 @@ Back at the start of my study I downloaded papers as PDFs, sorted them in folder
 - [Practical guide for the migration](https://www.marianamontes.me/post/obsidian-and-zotero/)
 
 I also published a [post](https://kdidi.netlify.app/blog/tools/2022-09-26-obsidian_zotero/) on how I use Zotero and Obsidian, so check it out if you are interested!
+
 ## Closing thoughts
 I spent quite some time customizing my setup and at times questioned myself if this time would not be better spent doing actual work. In retrospect, the answer is a clear no: I am way more comfortable with my customized setup, work more productively and just have more fun while doing stuff which is the main thing! Let me know in case you have things that I should add to the post. Thanks for reading!
 

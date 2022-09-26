@@ -40,7 +40,7 @@ Although I like PyMol as a program a lot, I would not recommend to use it in con
 
 New geometry nodes work with 'fields'
 
-There are different input and output sockets in the node editor, most of them are either colored circles (:large_blue_circle:) or colored diamonds (:large_blue_diamond:). 
+There are different input and output sockets in the node editor, most of them are either colored circles  or colored diamonds. 
 
 *Circles*
 - bright green: mesh
@@ -52,7 +52,7 @@ purple: vector
 - pink: boolean
 - grey: float
 
-If they have a dot in the middle, this means they can take a filed as input.
+If they have a dot in the middle, this means they can take a field as input.
 ## Spin right round - DNA in Blender
 
 
