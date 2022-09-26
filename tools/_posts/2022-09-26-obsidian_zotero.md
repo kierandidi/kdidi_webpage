@@ -54,23 +54,30 @@ Now that you have a general idea of how I go about reading papers, let's drill d
 
     ![paper_workflow_4](/assets/img/blog/zotero/paper_workflow_4.png)
 
-With this workflow, I turned a paper I found in the internet to an annoted Zotero entry and a custom Obsidian note for that paper. If this kind of workflow is what you're looking for, let us talk about the setup of this workflow!
+With this workflow, I turned a paper I found in the internet into an annoted Zotero entry and a custom Obsidian note for that paper. If this kind of workflow is what you're looking for, let us talk about the setup of this workflow!
 
 ## Installing Zotero
 
-You can just install Zotero from [their website](https://www.zotero.org/download/). I also recommend installing the Browser plugin for Chrome/Firefox since it makes adding papers to Zotero a lot easier.
+You can just install Zotero from [their website](https://www.zotero.org/download/). I also recommend installing the Browser plugin for Chrome/Firefox since it makes adding papers to Zotero a lot easier. An alternative way would be to go to Zotero, click on the magic wand (the button named `Add Item(s) by Identifier) and paste the DOI of the article every time you want to add something to your library.
 
-Then you will need to install the BetterBibTex addon from [GitHub](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.23) to make it integrate seamlessly with Obsidian. After downloading the .xpi file, go to Zotero and follow [these installation instructions](https://retorque.re/zotero-better-bibtex/installation/).
+Then you will need to install the BetterBibTex addon from [GitHub](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.23) to make it integrate seamlessly with Obsidian. After downloading the .xpi file from GitHub, go to Zotero and follow [these installation instructions](https://retorque.re/zotero-better-bibtex/installation/).
 
 ## Installing Obsidian
 
-Similar to Zotero, just install Obsidian via [their website](https://obsidian.md/download). Once you have this, there are a million options on how to customize it and make it work with Zotero. I linked some example workflows in my [setup post](), but will only present the one I settled on here.
+Similar to Zotero, just install Obsidian via [their website](https://obsidian.md/download). Once you have this, there are a million options on how to customize it and make it work with Zotero. I linked some example workflows in my [setup post](https://kdidi.netlify.app/blog/tools/2022-09-17-mac-setup-copy/), but will only present the one I settled on here.
 
 I use different Obsidian plugins, mainly [Zotero Integration](https://electricarchaeology.ca/2022/07/12/obsidian-zotero-integration-plugin/) for linking it to Zotero, Dataview for querying your notes and Templater for creating and using note templates.
 
 In case you do not want to customize the whole thing yourself and want a solution that works straight out of the box, I recommend [this vault](https://github.com/erazlogo/obsidian-history-vault) on GitHub (Vault being the Obsidian word for a folder containing all your notes, configurations etc). It is created by [Elena Razlogova](http://elenarazlogova.org/) who provides [amazing instructions](https://publish.obsidian.md/history-notes/01+Notetaking+for+Historians) on how to use it. While it is intended for historians, I found it easy to adapt for research in computer science and natural sciences. 
 
-The easiest way to get it is downloading the zip file from the GitHub link above, extract it, rename it to whatever you like (in my case `obsidian-knowledgebase`) and open it with Obsidian as a new vault. You can do this by opening Obsidian, going to `File > Open Vault...`, choosing `Open folder as vault` and then select the downloaded folder from your Downloads folder. This will open the vault with all the configurations, plugins and settings described on her website and including some example notes on how to use it!
+The easiest way to get it is the following:
+
+- download the zip file from [GitHub](https://github.com/erazlogo/obsidian-history-vault)
+- extract the zip file
+- rename it to whatever you like (in my case `obsidian-knowledgebase`)
+- open it with Obsidian as a new vault. You can do this by opening Obsidian, going to `File > Open Vault...`, choosing `Open folder as vault` and then select the downloaded folder from your Downloads folder. 
+
+This will open the vault with all the configurations, plugins and settings described on her website and including some example notes on how to use it!
 
 ![import_vault](/assets/img/blog/zotero/import_vault.png)
 
@@ -92,8 +99,6 @@ To change this, you can go in your vault to `meta > zotero > research note`.
 
 At first it took me a bit of time to get used to this new way of working with the literature, but in retrospect it helped me immensely to organise my thoughts and feel less overwhelmed when working through new research papers. I hope it helps you as well!
 
-## Credits
 
-<span>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 *[SERP]: Search Engine Results Page

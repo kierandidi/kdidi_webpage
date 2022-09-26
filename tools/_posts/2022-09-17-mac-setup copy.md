@@ -184,6 +184,8 @@ Back at the start of my study I downloaded papers as PDFs, sorted them in folder
 - [Zotero Connector Plugin for Obsidian](https://github.com/mgmeyers/obsidian-zotero-integration)
 - [An Academic Workflow](https://medium.com/@alexandraphelan/an-academic-workflow-zotero-obsidian-56bf918d51ab), nice guide on how to use colors for highlighting
 - [Practical guide for the migration](https://www.marianamontes.me/post/obsidian-and-zotero/)
+
+I also published a [post](https://kdidi.netlify.app/blog/tools/2022-09-26-obsidian_zotero/) on how I use Zotero and Obsidian, so check it out if you are interested!
 ## Closing thoughts
 I spent quite some time customizing my setup and at times questioned myself if this time would not be better spent doing actual work. In retrospect, the answer is a clear no: I am way more comfortable with my customized setup, work more productively and just have more fun while doing stuff which is the main thing! Let me know in case you have things that I should add to the post. Thanks for reading!
 
