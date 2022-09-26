@@ -2,7 +2,7 @@
 layout: resume
 title: Résumé
 description: >
-  CV of Kieran Didi, master's student at Cambridge and Heidelberg focused on the interface of life sciences and computer science, with a focus on Machine Learning, cloud computing and software engineering for biology.
+  CV of Kieran Didi, master's student at Cambridge and Heidelberg focused on the interface of life sciences and computer science, with a focus on machine learning, cloud computing and software engineering for biology.
 hide_description: true
 left_column:
   - work
