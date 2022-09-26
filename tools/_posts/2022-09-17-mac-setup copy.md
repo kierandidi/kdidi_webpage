@@ -99,11 +99,13 @@ There is an enormous number of extensions for VS Code out there, so it can be ov
 #### Version Control
 - GitLens: shows you inline commit information and a lot more (the premium version is free for students via the GitHub education pack!)
 - GitGraph: allows nice visualisation of the commit history, similar to the Network view on GitHub
+
 #### Cloud Computing
 - AWS Toolkit: saves you a couple of visits to the management console if you use it wisely
 - Terraform (Anton Kulikov): syntax highlighting for HCL and more 
 - Docker: again saves you the journey to Docker Desktop
 - Remote SSH: connect to remote machine and keep your beloved VS Code IDE!
+
 #### Code Quality
 - ESLint: If you use JavaScript this extension helps with linting
 - prettier: formatted code out of the box
@@ -111,9 +113,11 @@ There is an enormous number of extensions for VS Code out there, so it can be ov
 - GitHub Copilot: AI-assisted code suggestions (free for students!)
 - Autodocstring: gives you a template for docstrings automatically
 - ErrorLens: gives useful inline error suggestions
+
 #### R Development
 - R language extension: syntax highlighting etc
 - R Debugger: allows debugging for R programs
+
 #### Others
 - SettingsSync: Allows syncing your VS Code setup so that you have the same settings on a new device
 - Python: the suggested extension bundle for Python including linting and syntax highlighting
