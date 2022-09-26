@@ -70,7 +70,9 @@ I use different Obsidian plugins, mainly [Zotero Integration](https://electricar
 
 In case you do not want to customize the whole thing yourself and want a solution that works straight out of the box, I recommend [this vault](https://github.com/erazlogo/obsidian-history-vault) on GitHub (Vault being the Obsidian word for a folder containing all your notes, configurations etc). It is created by [Elena Razlogova](http://elenarazlogova.org/) who provides [amazing instructions](https://publish.obsidian.md/history-notes/01+Notetaking+for+Historians) on how to use it. While it is intended for historians, I found it easy to adapt for research in computer science and natural sciences. 
 
-The easiest way to get it is downloading the zip file from the GitHub link above, extract it, rename it to whatever you like (in my case `obsidian-knowledgebase `) and open it with Obsidian as a new vault. This will open the vault with all the configurations, plugins and settings described on her website and including some example notes on how to use it!
+The easiest way to get it is downloading the zip file from the GitHub link above, extract it, rename it to whatever you like (in my case `obsidian-knowledgebase`) and open it with Obsidian as a new vault. You can do this by opening Obsidian, going to `File > Open Vault...`, choosing `Open folder as vault` and then select the downloaded folder from your Downloads folder. This will open the vault with all the configurations, plugins and settings described on her website and including some example notes on how to use it!
+
+![import_vault](/assets/img/blog/zotero/import_vault.png)
 
 Here the highlights that I use (the vault has way more configurations/options in it, so check out Elena's post linked above):
 
