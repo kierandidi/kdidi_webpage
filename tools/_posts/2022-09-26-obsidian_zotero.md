@@ -40,19 +40,19 @@ Now that you have a general idea of how I go about reading papers, let's drill d
 
 1. First, I find a paper online (in this example on biorxiv) and import it into the respective Zotero folder via the Chrome plugin (upper right corner).
 
-![paper_workflow_1](/assets/img/blog/zotero/paper_workflow_1.png)
+    ![paper_workflow_1](/assets/img/blog/zotero/paper_workflow_1.png)
 
 2. Then, I open this paper in Zotero, start reading it and highlight the bits that are relevant for me according to a color scheme (more on that later).
 
-![paper_workflow_2](/assets/img/blog/zotero/paper_workflow_2.png)
+    ![paper_workflow_2](/assets/img/blog/zotero/paper_workflow_2.png)
 
 3. Having finished the first read, I open Obsidian and click `Cmd + R` which opens the Zotero Integrator interface. Then, I search for the article I want to import, select it and click `Enter`.
 
-![paper_workflow_3](/assets/img/blog/zotero/paper_workflow_3.png)
+    ![paper_workflow_3](/assets/img/blog/zotero/paper_workflow_3.png)
 
 4. Now Obsidian created a research note with the paper title, authors etc. including my annotations in colored boxes with types that I specify during the set-up (for example blue for definitions/concepts). With this note, I go through the paper again and add my own notes to Obsidian. 
 
-![paper_workflow_4](/assets/img/blog/zotero/paper_workflow_4.png)
+    ![paper_workflow_4](/assets/img/blog/zotero/paper_workflow_4.png)
 
 With this workflow, I turned a paper I found in the internet to an annoted Zotero entry and a custom Obsidian note for that paper. If this kind of workflow is what you're looking for, let us talk about the setup of this workflow!
 
@@ -86,7 +86,7 @@ Here the highlights that I use (the vault has way more configurations/options in
   - Blue: definition/concept
   - purple: unclear
 
-To change this, you can go in your vault to meta > zotero > research note.
+To change this, you can go in your vault to `meta > zotero > research note`.
 
 ## Closing thoughts
 
