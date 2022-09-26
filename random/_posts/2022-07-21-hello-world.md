@@ -37,7 +37,7 @@ There are many others I often consult when I get want to know more about somethi
 ## Why another blog??
 With this massive pile of reading material on your mind, you might ask yourself: "Why does this guy want to start yet another blog?" Well, there are three main reasons for that:
 
-1) When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote this quote from Frank Oppenheimer, paraphrased from Science Magazine:
+1) When I struggle to understand something, writing it down into a cohesive piece with a logic in it orders my thoughts and helps me put things into perspective. I always liked this quote from Frank Oppenheimer, paraphrased from Science Magazine:
 
 > The best way to learn is to teach, the best way to teach is to keep learning, and that what counts in the end is having had a shared, reflected experience
 {:.lead}
