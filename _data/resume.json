@@ -22,14 +22,14 @@
   },
   "work": [
     {
-      "company": "Australian National University",
+      "company": "EMBL EBI",
       "position": "ML Engineer Intern",
       "startDate": "2022-09-01",
       "endDate": "",
       "highlights": [],
       "summary": "- working on ML for protein design",
       "url": "https://www.linkedin.com/company/csiro/",
-      "location": "Canberra, ACT, Australia"
+      "location": "Cambridge, UK"
     },
     {
       "company": "CSIRO",
@@ -84,6 +84,24 @@
   ],
   "volunteer": [
     {
+      "organization": "Nucleate UK",
+      "position": "Communications Lead, Cambridge Chapter",
+      "startDate": "2022-07-31",
+      "endDate": "",
+      "summary": "Organized nationwide comms strategy for empowering biotech talents",
+      "highlights": [],
+      "url": "https://ibo-verein.de/"
+    },
+    {
+      "organization": "Förderverein der Biologie-Olympiade",
+      "position": "Internship Officer",
+      "startDate": "2019-05-31",
+      "endDate": "2022-07-31",
+      "summary": "In the context of the Biology Olympiad, I organize internships for successful and motivated participants and am the responsible coordinator between the pupils and the supervising professors or PhD students.",
+      "highlights": [],
+      "url": "https://ibo-verein.de/"
+    },
+    {
       "organization": "Studierendenrat Heidelberg",
       "position": "Conference Coordinator",
       "startDate": "2018-11-30",
@@ -91,16 +109,8 @@
       "summary": "As a member of the Conference Administration of the Student Council Heidelberg, I organized and led the conferences and worked together with people from all different backgrounds on proposals.",
       "highlights": [],
       "url": "https://www.stura.uni-heidelberg.de/"
-    },
-    {
-      "organization": "Förderverein der Biologie-Olympiade",
-      "position": "Internship Officer",
-      "startDate": "2019-05-31",
-      "endDate": "",
-      "summary": "In the context of the Biology Olympiad, I organize internships for successful and motivated participants and am the responsible coordinator between the pupils and the supervising professors or PhD students.",
-      "highlights": [],
-      "url": "https://ibo-verein.de/"
     }
+
   ],
   "education": [
     {

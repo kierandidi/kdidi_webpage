@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to get started with Coding
+title: Python for Data Science
 image: /assets/img/blog/jj-ying.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -8,29 +8,35 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-  fsdf
+  How to get started and what tools to use
 invert_sidebar: true
 ---
 
-# How to get started with Coding
-f
+# Python for Data Science
+
+*This post is intended as recommended reading for the participants of the first part of the lecture series "Python for Data Science" at Heidelberg University which was conceptualised and organised by Lukas Jarosch and me, but should be intersting to anyone who wants to start working with Python.*
+
+
 
 
 * toc
 {:toc}
 
 
-## How to get started: Learn Python online
+## Python: the allrounder
 
-## Get Python and your favourite IDE
+## Python libraries: include whatever you want
 
-## f
+## Notebooks: a quick way to get started
+
+## Visual Studio Code: an editor you will learn to love
+
+## GitHub: collaboration is key
 
 
 ## Closing thoughts
 
-## Credits
 
-<span>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
 
 *[SERP]: Search Engine Results Page
