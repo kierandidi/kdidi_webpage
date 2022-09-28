@@ -138,10 +138,16 @@
       "startDate": "2018-10-31",
       "endDate": "2021-09-30",
       "gpa": "1.0 (best in year, German scale)",
-      "courses": ["bioinformatics", "statistical learning", "molecular bioogy", "organic chemistry"]
+      "courses": ["bioinformatics", "statistical learning", "molecular biology", "protein engineering", "organic chemistry"]
     }
   ],
   "awards": [
+    {
+      "title": "DAAD and Studienstiftung scholarship",
+      "date": "2022-04-31",
+      "awarder": "DAAD, Studienstiftung",
+      "summary": "Received two scholarships for my master's studies at Cambridge due to academic grades and performance at interviews"
+    },
     {
       "title": "Sartorius STEM scholarship",
       "date": "2021-10-31",
