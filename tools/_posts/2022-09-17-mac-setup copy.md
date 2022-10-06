@@ -130,9 +130,9 @@ For more hacks regarding VS Code, [this website](https://www.vscodecandothat.com
 
 ### Remote SSH - no pain with vi anymore
 
-If you are like me and not a frenetic vi user, chances may be that doing coding on a remote machine without a GUI or anything can be quite a pain sometimes. It is also jsut cumbersome to write `ssh <username>@<hostname>` 100 times a day followed by typing your password.
+If you are like me and not a frenetic vi user, chances may be that doing coding on a remote machine without a GUI or anything can be quite a pain sometimes. It is also just cumbersome to write `ssh <username>@<hostname>` 100 times a day followed by typing your password.
 
-That is why there is an extension for VS Code called [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) that lets you work on remote machines while staying in your familiar IDE environment. Here I will shortly show how to use it
+That is why there is an extension for VS Code called [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) that lets you work on remote machines while staying in your familiar IDE environment. Here I will shortly show how to use it.
 
 #### Step 1: Set up the ssh config file
 

@@ -1,38 +1,35 @@
 ---
 layout: post
-title: Protein Geeks of all nations, unite - APFED 2022
-image: /assets/img/blog/apfed_logo.png
+title: Proteins and where to find them - RosettaCon 2022
+image: /assets/img/blog/rosetta_logo.png
 accent_image: 
-  background: url('/assets/img/blog/apfed_logo.png') center/cover
+  background: url('/assets/img/blog/rosetta_logo.png') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-About my first in-person conference and how great it is to design proteins
+  About the breathtaking pace of innovation in the space and the amazing community that drives it
 invert_sidebar: true
 ---
 
-# Protein Geeks of all nations, unite - APFED 2022
+# Proteins and where to find them - RosettaCon 2022
 
 * toc
 {:toc}
 
-## Engineering artifical metalloenzymes - Cathleen Zeymer
 
-## Accessible protein design - Christopher Wood
+## Scaffolding protein motifs using Deep Learning - (Baker Lab, IPD, UW)
 
-## Lessons from outside the borders of biological protein space - Klara Hlouchovoa
+## Manifold Sampling for function-guided antibody design - Vladimir Gligorijevic (Prescient Design)
 
-As researchers we work with protein sequences to such an extent that we rarely take a step back and ask ourselves: how did these miracoulous things actually come about? Was it straightforward for evolution to get where we are currently or have there been major obstacles in the way? And why do we actually have these specific 20 amino acids instead of some others? 
 
-These are big questions for sure, but in her talk Klara Hlouchovoa gave great insights into some of these questions with cleverly designed experiments that turned out to be quite thought-provoking!
+## Designing epotope-specific binders in silico - Possu Huang (Stanford)
 
-### Let's see what happens: Random vs natural proteins sequences
 
-### Early vs late amino acids
-## why these 20? alternative alphabets
+## Conformational Switches - Amelia McCue (North Carolina) / Florian Praetorius & Phil Leung (Baker Lab, IPD, UW)
 
-## Protein Structure Prediction in a post-AlphaFold2 World - Mohammeld AlQuraishi
+
+## Bringing de novo proteins into the clinic - Javier Castellanos (Neoleukin)
 
 
 ## Closing thoughts
