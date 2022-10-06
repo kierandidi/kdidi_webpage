@@ -143,7 +143,7 @@ Since no one else should use the information in this config file beside you, it 
 We can then set up the config file by typing `nano ~/.ssh/config` which will open the nano editor. In this file you can specifiy as many remotes as you want with the corresponding information on how to connect with them. An example file could look like this:
 
 ~~~bash
-// file: "/.ssh/config"
+# file: "/.ssh/config"
 # Host information
 Host remote123
   User kieran
