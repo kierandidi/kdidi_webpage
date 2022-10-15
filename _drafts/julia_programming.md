@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JS vs Python - Destructuring
+title: Julia - beautiful programming
 image: /assets/img/blog/pythonjs.jpg
 accent_image: 
   background: url('/assets/img/blog/pjs.png') center/cover
@@ -8,38 +8,35 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-  Destructuring can simplify your code and make it more readable
+  How to go about learning Julia as a Python geek
 invert_sidebar: true
 categories: programming
 #tags:       [programming]
 ---
 
-# JS vs Python - Destructuring
-I have recently started dipping my feet into web development for an internship project where we want to expose a cloud computing application to users via an user-friendly website. And although Python in Web Development is making big steps with tools like [Gradio](https://gradio.app/) for ML web interfaces and [PyScript](https://pyscript.net/) allowing you to run Python in your browser, JS is still the language powering most web applications. 
-While digging deeper into it, I found that it does things differenly than Python at some points and very similarly at others, just using different names for the same thing. Here, I want to showcase this with one particular example: Destructuring.
+# Julia - beautiful programming
+As part of my master's program in Cambridge I got to work on deep learning with Julia. As a Python worshipper I was at first a bit sceptical about the hype around Julia (and still am a bit to be honest), but started to appreciate the upsides of using a language that was designed with scientific programming and machine learning as major applications in mind. In this post, I want to show you some concepts in Julia that might be familiar from Python and some that might not be in order to show you where Julia really shines. I won't talk much about Julia-specific syntax here; for this, see for example [this page](https://juliabyexample.helpmanual.io/) with great examples. 
 
 
 * toc
 {:toc}
 
+## Environments
 
-## Basic destructuring (List/Array)
+As with other programming languages, it is always a good idea to separate your projects into different environments in order to avoid conflicting package versions and improve reproducibility.
+
+While in Python you often use venv or conda, Julia offers its own tools for that:
 
 
-~~~python
-#define a list containing the leaderboard of CASP14 (2020)
-leaderboard = ['AlphaFold2', 'BAKER', 'BAKER-experimental', 'FEIG-R2', 'Zhang', 'tFold_human']
-#unpack a list into its components
-first, second, third, fourth, fifth, sixth = leaderboard
-print(fifth)
-# > 'Zhang'
+~~~julia
+#
+
 ~~~
 
 
 
 ## Closing thoughts
 
-I cannot help but feel like with the recent ES updates developers from other languages (such as Python) should be convinced to use JS due to the lower barrier of entry. While the rest operator is from my point of view a good result of this effort, there are others that are way more controversial, such as the addition of the [class syntax](https://everyday.codes/javascript/please-stop-using-classes-in-javascript/). Maybe I will cover this one in a future post.
-Anyway, I hope that this post helped to clear up some confusion around the different destructuring options in Python and JS!
+A
 
 *[SERP]: Search Engine Results Page

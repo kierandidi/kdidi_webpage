@@ -37,8 +37,20 @@ But this team tackled the problem via a different approach: they built a Denoisi
 The team shows some pretty cool applications of their approach, from generating new Calcium-binding proteins to an ion transporter with a novel *all-alpha* fold (no pun intended), and that by starting of from a protein with an *all-beta* fold!  In a [follow-up paper](https://arxiv.org/abs/2205.04259) they describe an approach to only design certain regions of the sequence, enabling workflows similar to the RFDesign pipeline mentioned above.
 
 All in all this seems like a promising way to generate very diverse sequences conditioned on function.
-## Designing epotope-specific binders in silico - Possu Huang (Stanford)
+## Designing epitope-specific binders in silico - Possu Huang (Stanford)
 
+Generating custom antibodies binding to a specific target is already quite a feat, but doing it not only target- but even epitope-specific would be impressive. Nothing less is what Possu Huang presented at RosettaCon. They published quite some work on protein design and specifically backbone generation over the last couple years, using diverse approaches ranging from [Generative Adversarial Networks (GANs)](https://openreview.net/forum?id=SJxnVL8YOV) to [language models](http://www.proteindesign.org/uploads/1/2/1/9/121933886/2020_madani_neurips.pdf).
+
+In 2020 they published a preprint on Ig-VAE, a Variational Autoencoder for generating antibody structures, and published the final version in [PLOS CompBio this June](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010271). 
+This model is inspired by nature using a single antibody scaffold and adapting it to the problem at hand. They wanted to do something similiar *in silico*, so they chose to create a model with three important properties:
+
+1. rotational and translational invariance should be maintained
+2. the model should be aware of torsion angles since these are very important for protein structure and function
+3. the output should directly be 3D structures and not an intermediate output such as distance maps.
+
+
+
+With this new generative model, 
 
 ## Conformational Switches - Amelia McCue (North Carolina) / Florian Praetorius & Phil Leung (Baker Lab, IPD, UW)
 

@@ -189,6 +189,104 @@ The classic way to run R is in RStudio, but since I wanted to minimze the time I
 - languageserver: to allow communication between the R shell and VS Code
 - radian: huge improvement over the standard R shell
 
+When you now want to run an R file, you first have to launch an R terminal. And here is the tricky bit: **Don't** type R in the VS Code terminal, but rather open a new terminal by clicking the small arrow next to the plus button in the terminal and click R terminal; only via this way will VS Code be able to communicate with the R session.
+
+If you want to enable the keyboard shortcuts you know and love from RStudio, you can add the following input to the `keybindings.json` configuration file (from [this webpage](https://github.com/REditorSupport/vscode-R/wiki/Keyboard-shortcuts)):
+
+~~~js
+// file: "keybindings.json"
+[
+  {
+    "key": "alt+-",
+    "command": "type",
+    "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus",
+    // if you want using quarto, try this
+    // "when": "editorLangId =~ /r|rmd|qmd/ && editorTextFocus",
+    "args": {"text": " <- "}
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "type",
+    "when": "editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus",
+    "args": {"text": " %>% "}
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "-workbench.actions.view.problems"
+  },
+
+  // input indicative of r markdown code chunk
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'rmd'",
+    "args": {
+        "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
+    },
+    "label": "input indicative of r markdown code chunk"
+  },
+
+  // you can also input indicative of code chunk in `r` file by inserting "# %% ":
+  // specifics in `https://github.com/REditorSupport/vscode-R/pull/662`
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'r'",
+    "args": {
+        "snippet": "$LINE_COMMENT %% "
+    },
+    "label": "input indicative of code chunk"
+  },
+
+  // open help panel for selection
+  {
+    "key": "f1",
+    "command": "r.helpPanel.openForSelection",
+    "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'"
+  },
+
+  // RStudio keybinding for R Package development
+  {
+    "key": "ctrl+shift+b",
+    "command": "r.install",
+    "when": "resourceLangId == 'r'"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "r.check",
+    "when": "resourceLangId == 'r'"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "r.test",
+    "when": "resourceLangId == 'r'"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "r.document",
+    "when": "resourceLangId == 'r'"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "r.loadAll",
+    "when": "resourceLangId == 'r'"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "r.runCommand",
+    "when": "editorTextFocus && editorLangId == 'r'",
+    "args": ".vsc.browser(httpgd::hgd_url(), viewer = \"Beside\")"
+  }
+]
+~~~
+
+This should give you the typical shortcuts for the pipe operator, the assignment operator etc.
+
+#### Help, I get an error when launching an R terminal!
+
+In case you get an error like `The terminal process terminated with exit code: 1`, make sure that `"terminal.integrated.inheritEnv": true` in `settings.json` (this took me quite some time to figure out until I found [this issue](https://github.com/randy3k/radian/issues/170) on GitHub).
+
+
 ### Shortcuts in VS Code
 
 Using shortcuts makes your life in VS Code a lot easier. For example, I used to mark the whole line before copying it, but realized at some point that VS Code selects the whole line by default when typing `Cmd` + `C`.
