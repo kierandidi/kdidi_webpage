@@ -65,8 +65,12 @@ Their lead candidate NL-201 is based on [this publication in Nature](https://eor
 
 ## Closing thoughts
 
+The talks mentioned above show the bredth and depth of work going on in the protein design field, from combining established methods with new methods to the development of new algorithmic ideas. It was especially fascinating to see that de novo proteins are moving into the clinic and to the patient now since advances in disease therapy is the goal of many protein design projects.
+
+Finally, the collaborative and friendly atmosphere at the conference was exceptional; everybody took time for answering questions, helping others out and explain new advances in order to move the whole field forward. For me personally attending RosettaCon remotely was a great experience, and I hope to repeat this experience in person soon!
+
 ## Credits
 
-Thanks a lot to the organizers of the APFED conference, both for creating such an amazing event and for giving me permissions to use their conference logo for this blogpost.
+Thanks a lot to the organizers of the RosettaCon conference, both for making the conference a great experience and for allowing me to post this summary on their website and use their logo for the post on my website.
 
 *[SERP]: Search Engine Results Page
