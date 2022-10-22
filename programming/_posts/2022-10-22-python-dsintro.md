@@ -40,8 +40,9 @@ First, let's talk about versatility. Although there are many ways in which you c
 This does not mean that DSLs cannot perform calculations that GPLs can (most programming languages are [Turing-complete]() anyway), but their syntax and structure are optimised for a specific purpose, which may make it harder to adapt them for others. 
 The division is quite blurry in real life, but I like to keep it in the back of my head to keep my thoughts organized. [FORTRAN]() for example was originally designed for numeric computation, and although some people used it for other purposes it stayed mostly in that area. [SQL]() is another example of a language that was designed for quering databases and is nearly exclusively used for that application.
 
-<img src="/assets/img/blog/python_intro/powerdrill.png"  width="50%" height="50%" class="center"/>
-
+<p align="center">
+<img src="/assets/img/blog/python_intro/powerdrill.png"  width="50%" height="50%"/>
+</p>
 
 *A power drill is useful for drilling holes, but not very useful for anything else.*
 
