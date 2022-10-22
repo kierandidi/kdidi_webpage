@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python for Data Science: Know your tools!
+title: Python for Data Science - know your tools!
 image: /assets/img/blog/python_intro/toolbox_front.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
