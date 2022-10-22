@@ -77,6 +77,7 @@ Similar to the Swiss army knife, there are situations in which Python is not the
 ## Python libraries: your specialist tools
 
 In this course, we will teach you two Python libraries that will come in very handy when you analyse data: Pandas and Seaborn.
+
 ### Pandas: The scissor to change data the way you like
 
 <p align="center">
