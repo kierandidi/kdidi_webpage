@@ -57,7 +57,7 @@ Generally, people often refer to *high-level* and *low-level languages* in this 
 C++ is an example for a fairly low-level language. While you can also work on a higher level with libraries that give you access to object-oriented programming and other abstractions, you can still mess up your programs by playing around with low-level constructs such as [pointers](https://hackaday.com/2018/04/04/the-basics-and-pitfalls-of-pointers-in-c/). In our metaphor from above, you can think of it as a toolbox with an extensive number of complicated tools: sure, now you are not limited to one tool and are flexible, but each one of these is still quite hard to work with. 
 
 <p align="center">
-  <img src="assets/img/blog/python_intro/toolbox.jpg"  width=50% height=50%/>
+  <img src="assets/img/blog/python_intro/toolbox.jpg"  width="50%" height="50%"/>
 </p>
 
 *A toolbox offers you a lot of flexibility, but requires quite some expertise to be used correctly.*
@@ -67,7 +67,7 @@ C++ and Java are great languages, don't get me wrong: While learning them I lear
 Python on the other hand is what I would call the swiss army knife of programming languages. It is easy to learn, quick to prototype with and versatile in what it can be applied to.
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/swissknife.jpg"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/swissknife.jpg"  width="50%" height="50%"/>
 </p>
 
 *A swiss army knife combines the best of both worlds: it is versatile and straightforward to use.*
@@ -80,7 +80,7 @@ In this course, we will teach you two Python libraries that will come in very ha
 ### Pandas: The scissor to change data the way you like
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/scissors.png"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/scissors.png"  width="50%" height="50%"/>
 </p>
 
 *Similar to a pair of scissors, Pandas can slice and dice your data the way you want it, reshape it and transform it so that it fits your needs..*
@@ -88,13 +88,13 @@ In this course, we will teach you two Python libraries that will come in very ha
 ### Seaborn: your magnifying glass
 
 <p align="center">
-<img src="/assets/img/blog/python_intro/lupe.png"  width=50% height=50%/>
+<img src="/assets/img/blog/python_intro/lupe.png"  width="50%" height="50%"/>
 *Like a magnifying glass, seaborn allows you to see things in your data that you cannot see by just staring it at, and it allows you to show these insights to others.*
 
 ## Notebooks: a quick way to get started
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/pencil.png"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/pencil.png"  width="50%" height="50%"/>
 </p>
 
 *Notebooks help you to get a quick draft of your program into code, similar to how a pencil lets you quickly draft something on paper which can be refined afterwards.*
@@ -102,7 +102,7 @@ In this course, we will teach you two Python libraries that will come in very ha
 ## Visual Studio Code: an editor you will learn to love
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/workbench.png"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/workbench.png"  width="50%" height="50%"/>
 </p>
 
 *All your tools at the right place: VS Code is your workbench, making it easy to access everything that you need and navigate between different tasks.*
@@ -110,7 +110,7 @@ In this course, we will teach you two Python libraries that will come in very ha
 ## GitHub: collaboration is key
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/github.png"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/github.png"  width="50%" height="50%"/>
 </p>
 
 *Coding is teamwork, and GitHub helps you discuss ideas with others and show your work to the world.*
@@ -118,7 +118,7 @@ In this course, we will teach you two Python libraries that will come in very ha
 ## StackOverflow: where you will spend most of your days
 
 <p align="center">
-  <img src="/assets/img/blog/python_intro/stackoverflow.png"  width=50% height=50%/>
+  <img src="/assets/img/blog/python_intro/stackoverflow.png"  width="50%" height="50%"/>
 </p>
 
 *In case you are stuck on how to use a tool, nice people on StacOverflow can show you how to use it.*
