@@ -8,8 +8,9 @@ accent_image:
 accent_color: '#ccc'
 theme_color: '#ccc'
 description: >
-  How to get started and what tools to use
+  How to get started with Python and what tools to use
 invert_sidebar: true
+categories: programming
 ---
 
 # Python for Data Science
