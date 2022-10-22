@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sed, awk & co - master the shell
-image: /assets/img/blog/pythonjs.jpg
+image: /assets/img/blog/terminal.png
 accent_image: 
   background: url('/assets/img/blog/pjs.png') center/cover
   overlay: false
@@ -16,17 +16,17 @@ categories: programming
 
 # sed, awk & co - master the shell
 
-
+I recently saw two great videos regarding the command line tools [sed](https://www.youtube.com/watch?v=EACe7aiGczw) and [awk](https://www.youtube.com/watch?v=9YOZmI-zWok) and thought it might be a good idea to put the commands and varieties explained in these videos here in order to have a quick reference for myself and others in case one struggles again to find the right pattern or syntax for using one of these tools. If you do not know `awk` and `sed` yet, I highly recommend watching these videos and getting familiar with them; using them for text manipulation and quick processing is often way quicker than writing a Python or R script for this kind of job. For those who know the two tools already, I hope that this provides a good reference for their usage!
 
 * toc
 {:toc}
 
 ## sed - your search and replace function
 
-sed stands from *stream editor* and you can imagine it as your automated search and replace function: with it you can look for patterns and replace them with other patterns. 
+sed stands from *stream editor* and you can imagine it as your automated search and replace function: with it you can look for patterns and replace them with other patterns. In this part of the post we will use the following text file as an example: 
 
-~~~txt
-#example file: balance.txt --
+~~~bash
+#example file: balance.txt
 - 25,13 EUR Mon Supermarket -------
 
 + 13,40 EUR Tue Pizza/Drinks -
@@ -64,24 +64,34 @@ to the shell and interpreted by it, which can be problematic in case of special 
 
 - `awk '{print $2}' balance.txt`: print first field/column of each line. By default, spaces separate columns in `awk` (can be customized).
 - `awk '{print $0}' balance.txt`: print whole lines (equivalent to `cat`); same output if you just use `'{print}'` as command for `awk`.
-- 
+- `awk -F ":" '{print $1}' /etc/passwd`: use colons instead of spaces as filed separator to get all users on Linux system
+- `awk -F ":" '{print $1"\t"$6","$7}' /etc/passwd`: print several columns with a tab between the first and second column and a comma between the second and third
+- `awk {'BEGIN{FS=":"; OFS="-"} {print $1,$6,$7}' /etc/passwd`: change field separator to different character as part of the input
+- `awk -F "/" '/^\// {print $NF}' /etc/shells`: set `/` as the field separator for the contents of `/etc/passwd`. Then, search for the regex pattern between slashes (`^\/`), which looks for lines that start with a slash (`\` is needed to escape `/` since it is normally recognised as a special character). Then, print the last field of each line (i.e. the name of the corresponding shells).
+- `awk -F "/" '/^\// {print $NF}' /etc/shells | uniq | sort`: output from above, just with the duplicates removed and alphabetically sorted
+- `df | awk '/\dev\/loop/ {print $1"\t"$2+$3}'`:
+- `awk 'length($0) > 10' /etc/shells`: only print 
+- `ps -ef | awk '{ if($NF == "/bin/zsh') print $0}'`: print all processes that are currently running and have `/bin/zsh` as end of the line
+- `ps -ef | awk BEGIN { for(i=1; i<=10; i++) print "Process ", i, ": ", $0}`
+- `awk '$1 ~ /^[b,c]/ {print $0}' .bashrc`: look at the content of `.bashrc`, check if the first column matches the regular expression `^[b,c]` (i.e. does the first column start with b or c). If yes, print the line.
+- `awk '{print substr($0, 4)} /etc/passwd`: look at the content of `passwd` and print every line from the fourth character on
+- `awk 'match($0, /,/) {print $1 " has \"\,\" character at " RSTART}' file.txt`: look at the content of file.txt and look for all lines that match the pattern `,`. then, print the first field of that line, followed by a string that contains the position at which `,` appeared in the line (`RSTART`).
+- `df | awk 'NR%2 == 0 {print "Even"}; NR%2 !=0 {print "Odd"}'`:
+- `awk 'END {print NR} /etc/shells /etc/passwd'`: line count combined of given files
 
+## cut - 
 ## getting help - man/tldr
+
+It is often easy to get lost with all the varieties of tools out there, so here are some pointers to resources to look for help:
 
 - `man sed`: gives you the (long) manual page of sed, explaining the different options
 - `tldr sed`: gives a more concise summary of the sed command, similar to a cheat sheet
 - [online man page](https://www.gnu.org/software/sed/manual/sed.html) often a bit easier to read than terminal version
 - great YouTube channels such as [DistroTube](https://www.youtube.com/c/DistroTube) explaining many of the tricks for shell commands; many of the example commands from this article are inspired by his videos!
-
-~~~bash
-#
-
-~~~
-
-
+- as always, [StackOverflow](https://stackoverflow.com/) is often the best place to visit if you try to solve a specific problem and need inspiration for how to tackle it.
 
 ## Closing thoughts
 
-A
+As with many things, shell scripting feels very cumbersome and inefficient at the start. But once you pass this initial struggle, you will see how convenient they really are (especially since they are present on virtually any Linux machine) and how quickly you can get stuff done with them! 
 
 *[SERP]: Search Engine Results Page
