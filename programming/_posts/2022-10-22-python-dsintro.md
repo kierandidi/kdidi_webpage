@@ -72,7 +72,7 @@ Python on the other hand is what I would call the swiss army knife of programmin
 
 *A swiss army knife combines the best of both worlds: it is versatile and straightforward to use.*
 
-Similar to the Swiss army knife, there are situations in which Python is not the most efficient tool. If you want to write a program doing efficient numerical calculations, Python itself will not be your saviour (but maybe one of its libraries as we will see later). In that case, a lower-level language like C++ might be more suitable. However, for the purposes of a scientist, Python is a great way into coding, both from a didactic and a practical point of view. Plus there is a large community using Python already out there, so if you get stuck there is with high probability someone out there who had the problem before you and posted a solution!
+Similar to the Swiss army knife, there are situations in which Python is not the most efficient tool. If you want to write a program doing efficient numerical calculations, Python itself will not be your saviour (but maybe one of its libraries as we will see later). In that case, a lower-level language like C++ might be more suitable. However, for the purposes of a scientist, Python is a great way into coding, both from a didactic and a practical point of view. Plus there is a large community using [Python](https://www.python.org/) already out there, so if you get stuck there is with high probability someone out there who had the problem before you and posted a solution!
 
 ## Python libraries: your specialist tools
 
@@ -80,19 +80,31 @@ In this course, we will teach you two Python libraries that will come in very ha
 
 ### Pandas: The scissor to change data the way you like
 
+Often as a scientist, you will find yourself doing an experiment and generating large amounts of data from it that you want to analyse. Doing it by hand is impossible due to the number of data points, and tools like Excel start to freeze already when opening your data file. So, what do you do?
+
+Enter [Pandas](https://pandas.pydata.org/), a library for data analysis in Python. With it, many of the tasks for which you would need to write your own functions in base Python (opening Excel sheets, calculating summary statistics, filtering/combining data) are just a one-liner. It comes with its own data structure called a [Pandas DataFrame](https://realpython.com/pandas-dataframe/) which you will learn a lot more about during the course. You can imagine it as a table storing your data in a convenient and efficient format.
+
 <p align="center">
   <img src="/assets/img/blog/python_intro/scissors.png" width="50%" height="50%"/>
 </p>
 
 *Similar to a pair of scissors, Pandas can slice and dice your data the way you want it, reshape it and transform it so that it fits your needs..*
 
+The Pandas website has some great [tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html) on how to get started with Pandas and a [cookbook](https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html) on how to use it for specific use cases, so if you find a use case after the course that you did not encounter before or you do not remember how to handle, these are great places to start looking!
+
+Pandas builds on another library called [NumPy](https://numpy.org/). NumPy is a library optimised for efficiency via [vectorization](https://en.wikipedia.org/wiki/Array_programming) and is often used in scientific applications. However, often you do not need all the flexibility that NumPy offers you and want a more concise and pre-structured formulation of your code. Here Pandas can shine: it sits in between the simplicity of base Python and the efficiency of NumPy.
+
 ### Seaborn: your magnifying glass
+
+Often, transforming your data via Pandas is only the first step of your data analysis. Numbers can only show so much, and it is often more efficient to visualise your data via graphics, both for your own understanding of your data as well as for communicating your insights to others. Here [Seaborn](https://seaborn.pydata.org/) comes to your rescue: it is a data visualisation library that allows you to directly take your data from a DataFrame and plot it easily via a myriad of formats, with all kinds of styles and customisations available. It integrates very well with Pandas and makes creating graphs dead-easy. In case you are looking for inspiration, there is an [example gallery](https://seaborn.pydata.org/examples/index.html) showing plots with the corresponding code so that you can easily adapt them for your own purposes.
 
 <p align="center">
 <img src="/assets/img/blog/python_intro/lupe.png" width="50%" height="50%"/>
 </p>
 
 *Like a magnifying glass, seaborn allows you to see things in your data that you cannot see by just staring it at, and it allows you to show these insights to others.*
+
+Similar to Pandas, Seaborn did not come from nowhere: it is based on the library [matplotlib](https://matplotlib.org/), which is the go-to library for visualisation in Python. Again, similar to NumPy it offers you a lot of flexibility, but often you will rather prefer readable over extremely flexible code when analysing your data. Especially the strong integration with Pandas gives you a good reason to use Seaborn. That being said, in many circumstances I find myself switching back and forth between Pandas/Seaborn and NumPy/matplotlib; since the former two are based on the latter two, using them together often works quite well!
 
 ## Notebooks: a quick way to get started
 
