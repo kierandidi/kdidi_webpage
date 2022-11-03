@@ -130,6 +130,17 @@ There are two different kinds of storage associated with Docker containers: non-
 - `docker volume ls`
 - `docker volume create <volume-name>`
 - `docker volume create <volume-id>`
+- `docker volume inspect <volume-id>`
+- `docker volume rm <volume-id>`
+- `docker volume prune`: 
+
+Beside volumes, we can also use a more specialised construct for persistent data storage called **bind mounts**. Bind mounts serve to mount a file or directory that already exists on the host into a container, whereas volumes create a new directory on the container that is located within Docker's storage directory; Docker is managing this directory, whereas the host machine manages the bind mount directory.
+
+- `docker container run -d --mount type=bind,source="$(pwd)"/<directory-name>,target=/app <image>`: creates a container from a specified image in background mode and creates a bind mount on it with the folder `<directory-name>` from our current working directory on the host machine. This directory is going to be saved on the docker container in the folder we specify as `target`, in this case `/app`. The directory we want to mount has to exist before executing this command, otherwise we get an error. Once mounted the directory exists on both the Docker container and the host machine. Bind mounts are often useful for a short one file transfer.
+- `docker container run -d --volume "$(pwd)"/target2:/app <image>`: same as above, but instead of the bind mount we create a volume at the specified location in the container. Since the volume will be create anew in the container we do not have to have a directory with this name existent on our host machine. On the Docker container we will have the volume called `/app`, wheras we will have it as `/target2` saved in our curent working directory on the host machine. Instead of `--volume` we can also use the shorter volume flag `-v`. We could have used the more verbose option with the `mount` flag case by replacing `type=bind` with `type=volume`, but I just wanted to show you the more concise location with the colon separating source and target. We could also appen the option `,readonly` after the target while using the mount flag; this prevents us from making changes to this volume while on the container.
+
+Volumes are often preferred over bind mounts when you want to use this storage space regularly and not just once, since they are easier to migrate to other locations and easier to back up than bind mounts.
+
 
 
 

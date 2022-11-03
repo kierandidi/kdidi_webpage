@@ -18,6 +18,7 @@ categories: programming
 *This post is intended as recommended reading for the participants of the first part of the lecture series "Python for Data Science" at Heidelberg University which was conceptualised and organised by Lukas Jarosch and me, but should be intersting to anyone who wants to start working with Python.*
 
 Computers seem to be everwhere today: in our offices, our kitchens and more and more in our labs as well. As a scientist in the natural sciences, you have better and better tools at your disposal that generate more and more data. And while back in the day an Excel table or even a lab notebook would have been sufficient, nowadays you often need software to process your data. While there is a growing amount of no-code software available that you can use without programming yourself, programming will probably form a growing part of your day-to-day job. Therefore we lecture [this course](https://github.com/kierandidi/python_for_scientists) to get you started with that, with this post being your initial overview of what we are going to cover!
+
 * toc
 {:toc}
 
@@ -106,15 +107,11 @@ Often, transforming your data via Pandas is only the first step of your data ana
 
 Similar to Pandas, Seaborn did not come from nowhere: it is based on the library [matplotlib](https://matplotlib.org/), which is the go-to library for visualisation in Python. Again, similar to NumPy it offers you a lot of flexibility, but often you will rather prefer readable over extremely flexible code when analysing your data. Especially the strong integration with Pandas gives you a good reason to use Seaborn. That being said, in many circumstances I find myself switching back and forth between Pandas/Seaborn and NumPy/matplotlib; since the former two are based on the latter two, using them together often works quite well!
 
-## Notebooks: a quick way to get started
-
-<p align="center">
-  <img src="/assets/img/blog/python_intro/pencil.png" width="50%" height="50%"/>
-</p>
-
-*Notebooks help you to get a quick draft of your program into code, similar to how a pencil lets you quickly draft something on paper which can be refined afterwards.*
-
 ## Visual Studio Code: an editor you will learn to love
+
+Pandas and Seaborn and all the rest of it are nice and great, but where do you actually write the code containing all these libraries? While you could do that just via the command line, there are way better tools available nowadays that make your life a lot easier. This are often called [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment)(IDE) and if you have participated in the course [Data Analysis with R](https://jmbuhr.de/dataintro/) by Jannik Buhr, you already met one of these: RStudio.
+
+While RStudio is a nice IDE, it is very R-centric in many of its design decisions. For our purposes, we want a general-purpose IDE that can act as our workbench: we bring whatever tools we want to work with (programming language, packages, data etc.) and our IDE should support our work with these. That is why we decided to teach this course using [VS Code](https://code.visualstudio.com/). It is versatile, open-source and has a massive library of extensions that make your life as a programmer easier. To get started, see [this amazing guide](https://realpython.com/python-development-visual-studio-code/) which will take you through the different steps of installing and setting up VS Code (there is also a short walkthrough-guide available on the [VS Code website](https://code.visualstudio.com/docs/python/python-tutorial)).
 
 <p align="center">
   <img src="/assets/img/blog/python_intro/workbench.png" width="50%" height="50%"/>
@@ -122,7 +119,28 @@ Similar to Pandas, Seaborn did not come from nowhere: it is based on the library
 
 *All your tools at the right place: VS Code is your workbench, making it easy to access everything that you need and navigate between different tasks.*
 
+To learn more about the cool things you can do with VS Code (support for R, connecting to remote machines, keyboard shortcuts etc) you can have a look at [this post](https://kdidi.netlify.app/blog/tools/2022-09-17-mac-setup/) which I published some time ago. 
+
+## Notebooks: a quick way to get started
+
+Using the tools we mentioned so far you can create great programs for analysing your data. But how to get started? And how to document what you have done? And how to put your work into a format that is suitable for presenting at e.g. a lab meeting?
+
+This is were noteboks come in ([Jupyter notebooks](https://jupyter.org/) for Python more specifically with the file ending `.ipynb`]). You can just power up your notebook and get started coding; it shows you the output directly in the document, no matter if it is a number, a plot or an image.
+
+And once you finished your analysis, you can just add some text cells in which you describe your code more eloquently via [Markdown syntax](https://www.datacamp.com/tutorial/markdown-in-jupyter-notebook) than inline-comments in your code could ever do.
+
+<p align="center">
+  <img src="/assets/img/blog/python_intro/pencil.png" width="50%" height="50%"/>
+</p>
+
+*Notebooks help you to get a quick draft of your program into code, similar to how a pencil lets you quickly draft something on paper which can be refined afterwards.*
+
+These notebooks can serve both as a quick start to some data exploration (e.g. visualising your data for quality control) and as a documentation of your work you can show to colleagues and collaborators. In fact, the lecture slides we will deliver as part of the Python course are made from notebooks!
+
 ## GitHub: collaboration is key
+
+Notebooks are a great way to share your results once you are done with analysing your data, but what if you want to share it with your colleagues who want to work on the analysis together with you? The most straightforward way would be too just send them the `.ipynb` file which they can then use to work on the data. This however has some caveats: first of all does the colleague need to have the exact same format of the data as you in order to make the analysis reproducible. Second, if your analysis becomes more complicated, you may want to split your analysis into different Python files and notebooks, making exchanging these more complicated. In addition, you cannot work on the analysis at the same time, since the changes you and your colleague introduce might not be compatible and therefore merging these changes into a consistent program in the end might just be impossible. Even worse, every time you change something in the code you have to send your colleague a new version of your code and vice versa, a huge waste of time and effort. That is why GitHub (and Git) were created.
+
 
 <p align="center">
   <img src="/assets/img/blog/python_intro/github.png" width="50%" height="50%"/>
@@ -130,7 +148,12 @@ Similar to Pandas, Seaborn did not come from nowhere: it is based on the library
 
 *Coding is teamwork, and GitHub helps you discuss ideas with others and show your work to the world.*
 
+[GitHub](https://github.com/) is an online service for software development and [version control](https://en.wikipedia.org/wiki/Version_control). It uses Git, a system for local version control and makes it globally distributed so that you can work together with people all over the world. In addition, it provides some nice features making the software development process more structured and organised: wikis, pull requests, issues, taks management, continuous integration, basically the whole software shebang you can wish for. 
+
+Git is a great system, but it takes some time to get used to. But I can assure you that this time will be well-spent since it is the de facto standard for publishing and sharing software with the world. In case you like gamified learning, [here](https://ohmygit.org/) is the link to a game that makes the dive into Git a bit more fun.
 ## StackOverflow: where you will spend most of your days
+
+When you think about programming, you might still have the image of a hacker on your mind, sitting with his hoodie in a dark room, relentlessly maltreating his keyboard without rhyme or reason. That is far from the actual reality: most of the time, you will spend looking up stuff which you either have no clue about or had a clue about at some point but lost it in the flood of other important memories such as Shakira lyrics and the results of last weekend's football match. Here, [StackOverflow](https://stackoverflow.com/tour) is your friend.
 
 <p align="center">
   <img src="/assets/img/blog/python_intro/stackoverflow.png" width="50%" height="50%"/>
@@ -138,9 +161,11 @@ Similar to Pandas, Seaborn did not come from nowhere: it is based on the library
 
 *In case you are stuck on how to use a tool, nice people on StacOverflow can show you how to use it.*
 
+On StackOverflow, you can ask questions about basically everything related to programming and will often receive high-quality answers (given that you formulated your question well). But in most cases, you won't even have to ask a question since another person had the same or a very similar problem before you and solved it with help from StackOverflow. Using this tool right is a skill that cannot be overestimated since you will spend a significant amount of time using this and other similar resources. There are [quite some guides out there](https://www.freecodecamp.org/news/5-steps-to-become-a-better-stack-overflow-user-4ce85711c0f9/) on how to use it best; for me, learning by doing has helped the most. And once you are advanced enough, answering questions there can be a great way to give back and stay sharp on your coding skills at the same time!
+
 ## Closing thoughts
 
-
+There are many great resources out there for scientist who want to learn coding for their research, such as [this workshop webpage](https://education.molssi.org/python-scripting-biochemistry/chapters/setup.html). We hope that with our lecture series we give you both the skills to apply coding for basic tasks in your research and the enthusiams to continue learning new things in order to improve even more!
 
 
 *[SERP]: Search Engine Results Page
