@@ -104,7 +104,7 @@ Three building blocks that the CNM defines:
 - endpoints: virtual network interfaces to connect sandbox to network
 - networks: software implementations of bridge
 
-- `ifconfig`: shows you 
+- `ifconfig`: shows you the configuration of your network interface and allows you to change it.
 - `docker network ls`: lists all networks present. By default there are three: bridge, hoste and none. Do not deinstall these or you might have to reinstall Docker itself!
 - `docker network inspect <network-id>`: shows detailed information for a specified network in JSON format.
 - `docker network create <network-name>`: create a new network with specified name (by default driver will be `bridge`). We can add the `--internal` flag to tell Docker not to connect this network to any of our available interfaces. If you do that, you will not be able to `curl` or `ping` the container connected to this network by specifying the port, but by specifying its private IP since you and the container are in the same private subnet.
