@@ -9,7 +9,7 @@ Hey everyone! I am Kieran, currently a ML Research Intern at EMBL-EBI, master's 
 Besides my research and studies, I love writing, reading, every sport that involves a ball and doing Blender visualisations such as the one you see below!
 
 <p align="center">
-  <img src="/assets/img/blog/kras-compressed.png" width="50%" height="50%"/>
+  <img src="/assets/img/blog/kras-compressed.png" width="100%" height="100%"/>
 </p>
 
 
