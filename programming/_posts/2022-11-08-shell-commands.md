@@ -76,10 +76,8 @@ to the shell and interpreted by it, which can be problematic in case of special 
 - `awk '$1 ~ /^[b,c]/ {print $0}' .bashrc`: look at the content of `.bashrc`, check if the first column matches the regular expression `^[b,c]` (i.e. does the first column start with b or c). If yes, print the line.
 - `awk '{print substr($0, 4)} /etc/passwd`: look at the content of `passwd` and print every line from the fourth character on
 - `awk 'match($0, /,/) {print $1 " has \"\,\" character at " RSTART}' file.txt`: look at the content of file.txt and look for all lines that match the pattern `,`. then, print the first field of that line, followed by a string that contains the position at which `,` appeared in the line (`RSTART`).
-- `df | awk 'NR%2 == 0 {print "Even"}; NR%2 !=0 {print "Odd"}'`:
+- `df | awk 'NR%2 == 0 {print "Even"}; NR%2 !=0 {print "Odd"}'`: NR gives you the line number. Here, take the output of df and print "Even" if the line number is even and "Odd" if the line number is odd. 
 - `awk 'END {print NR} /etc/shells /etc/passwd'`: line count combined of given files
-
-## cut - 
 ## getting help - man/tldr
 
 It is often easy to get lost with all the varieties of tools out there, so here are some pointers to resources to look for help:
