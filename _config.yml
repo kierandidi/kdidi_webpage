@@ -59,6 +59,8 @@ menu:
     url:               /blog/
   - title:             Projects
     url:               /projects/
+  - title:             Publications
+    url:               /publications/
   - title:             Résumé
     url:               /resume/
   - title:             Tags
