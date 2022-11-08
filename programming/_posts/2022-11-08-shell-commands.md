@@ -26,7 +26,7 @@ I recently saw two great videos regarding the command line tools [sed](https://w
 sed stands from *stream editor* and you can imagine it as your automated search and replace function: with it you can look for patterns and replace them with other patterns. In this part of the post we will use the following text file as an example: 
 
 ~~~bash
-#example file: balance.txt
+# file: balance.txt
 - 25,13 EUR Mon Supermarket -------
 
 + 13,40 EUR Tue Pizza/Drinks -

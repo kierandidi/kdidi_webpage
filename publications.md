@@ -14,5 +14,6 @@ title: Publications
 ## Lectures and Talks
 
 - *Python for Scientists*, [lecture](https://github.com/kierandidi/python_for_scientists) Heidelberg University, 11/22
-- *Deep Learning with PyTorch*, [Lunch Time Python](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Scientific Software Center Heidelberg, 10/2022
+- *Python Best Practices*, [workshop (co-host)](https://ssciwr.github.io/Python-best-practices-course/), Scientific Software Center Heidelberg, 11/2022
+- *Deep Learning with PyTorch*, [Lunch Time Python workshop](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Scientific Software Center Heidelberg, 10/2022
 - *Python for Biochemists*, [lecture](https://github.com/kierandidi/Python_for_Biochemists) Heidelberg University, 03/22

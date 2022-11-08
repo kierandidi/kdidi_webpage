@@ -141,8 +141,32 @@ Beside volumes, we can also use a more specialised construct for persistent data
 
 Volumes are often preferred over bind mounts when you want to use this storage space regularly and not just once, since they are easier to migrate to other locations and easier to back up than bind mounts.
 
+## Dockerfile
 
+We talked a lot about converting images into containers and different ways to do this via the `run` command, but how do create these images in the first place? That is where the *Dockerfile* comes into play: it contains the instructions on how to build a Docker image. 
 
+You can imagine a Docker image as a pile of images stacked up onto each other that are read-only; so you can build and run a container from it, but not change the image itself. 
+
+<p align="center">
+  <img src="/assets/img/blog/docker/book_pile.png" width="50%" height="50%"/>
+</p>
+
+*Ahe Dockerimage is like a pile of objects that were built using instructions from the Dockerfile (the objects are represented by bricks in this case).*
+
+The Dockerfile is responsible for changes: each layer in the Docker image is built via an instruction from the Docker file. Thereby, the image is created iteratively by building layer upon layer, each layer represententing the changes compared to the previous layer. 
+
+<p align="center">
+  <img src="/assets/img/blog/docker/brick-pile.png" width="50%" height="50%"/>
+</p>
+
+*A Dockerfile is like a big pile of instructions (for example how to produce bricks). From these instructions, a Docker image can be built.*
+
+Every Dockerfile has a structure comparable to the one below:
+
+~~~bash
+# file: dockerfile.doc
+
+~~~
 
 
 ## Closing thoughts
