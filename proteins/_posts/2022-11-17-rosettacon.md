@@ -3,7 +3,7 @@ layout: post
 title: De novo proteins and where to find them - RosettaCon 2022
 image: /assets/img/blog/rosetta_logo.png
 accent_image: 
-  background: url('/assets/img/blog/rosetta_logo.png') center/cover
+  background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
