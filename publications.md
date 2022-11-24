@@ -8,7 +8,8 @@ title: Publications
 - *High Resolution Biomolecular Condensate Phase Diagrams with a Combinatorial Microdroplet Platform*, [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.06.04.132308v5), 09/2022
 ## Conference Presentations
 
-- *sINSIDER: a cloud-native modular platform for kmer-based genomic analysis* (oral presentation), [ABACBS Conference Melbourne (Australia)](https://www.abacbs.org/conference2022), 12/2022
+- *Accessible AMR-detection tools for clinicians via cloud-based bioinformatics* (oral presentation), [Clinical Informatics Symposium Melbourne (Australia)](https://pheedloop.com/ABACBS2022/site/CI), 12/2022
+- *sINSIDER: a cloud-native modular platform for kmer-based genomic analysis* (oral presentation), [ABACBS Conference Melbourne (Australia)](https://www.abacbs.org/conference2022), 11/2022
 - *Moving bioinformatics to the cloud* (keynote presentation), [eSCAMPS Symposium Cambridge (UK)](https://escamps.org/), 09/2022
 - *Detecting DNA integration via HPC bioinformatics pipeline* (poster),[R&I Conference Sydney (Australia)](https://na.eventscloud.com/website/36005/home/), 08/2022
 ## Lectures and Talks
