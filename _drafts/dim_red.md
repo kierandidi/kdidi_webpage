@@ -124,7 +124,18 @@ $$
 An optional caption for a math block
 {:.figcaption}
 
+This naive t-SNE implementation can however lead to local optima where two clusters of points of the same class want to attract each other, but are separated by clusters of other classes and are therefore too strongly repelled. This can be resolved via a trick called *early exaggeration*, in which we increase the attractional forces during the early stages of gradient descent to allow points of the same classes to place themselves in approximately the same region in space and then decrease the attractional forces to the "correct" values in order to learn the final embedding. This can be thought of as the t-SNE analogue of a learning rate schedule where the optimizer takes big steps in the beginning and smaller steps later on, focusing initially on exploration of the space and later on exploiting the relationships present to produce a good embedding. Belkina et al 2019: learning rate has to be high enough for this to work, in this paper nu = n/12
 
+
+IMPLEMENT DEMO OF GRADIENT DESCENT VIA GIF LIBRARY?
+
+## Speed t-SNE up
+
+Problem: so far we have O(n^2) attractive and repulsive forces. We want to speed this up.
+
+FOr attractive forces, we just choose a sparse k-nearest-neigbour graph (kNN) for which to compute attractive forces (works since we said in the beginning that the close points are anyway small in size and most affinities are near 0). Often people choose k=3P. We can speed things up even more by constructing approximate kNN graphs that still work well enough for t-SNE.
+
+Repulsive forces are a bit more complicated. There have been many different approaches such as Barnes-Hut t-SNE and FFT-accelarted interpolation-based t-SNE, but the newest one whose interpretation will become important later on is called NCVis (2020) and is based on noise contrastive estimation and negative sampling.
 
 
 
