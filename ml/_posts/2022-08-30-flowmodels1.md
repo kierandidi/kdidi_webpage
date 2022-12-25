@@ -17,6 +17,13 @@ categories: ml
 
 (Die deutsche Version beginn unten!)
 
+$$$
+\begin{aligned}
+\text{A + B = C} \\
+\text{C - B = A}
+\end{aligned}
+$$$
+
 This post is a rather unusual one since it is in German. I have always been involved in making content available in other languages to allow more people to enjoy it, such as when I did translations for Khan Academy. The following post is a translation of an excellent [post on normalizing flows](https://blog.evjang.com/2018/01/nf1.html) by Eric Jang, who fortunately shares my passion for making content available in different languages. So for all German-speaking folks among you - Lasst uns loslegen!
 
 

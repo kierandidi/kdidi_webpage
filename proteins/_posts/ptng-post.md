@@ -30,6 +30,9 @@ Here, I want to elaborate a bit on that by specifically talking about generative
 
 ## Closing thoughts
 
+I recently had a conversation about this topic which brought up an interesting point: people often (rightfully) critize the hype that is associated with ML for biology and bioinformatics. But there is another point to this debate that is often overlooked: despite all the downsides to the hype, it also brought some underappreciated benefits. One that I came to value quite a lot in my work at EMBL-EBI in the last months is the advent of best practices from software engineering to biological programs.
+
+Anyone who ever worked in bioinformatics will sing you a song of the lack 
 
 ## Credits
 
