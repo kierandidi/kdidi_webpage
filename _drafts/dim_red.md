@@ -137,6 +137,35 @@ FOr attractive forces, we just choose a sparse k-nearest-neigbour graph (kNN) fo
 
 Repulsive forces are a bit more complicated. There have been many different approaches such as Barnes-Hut t-SNE and FFT-accelarted interpolation-based t-SNE, but the newest one whose interpretation will become important later on is called NCVis (2020) and is based on noise contrastive estimation and negative sampling.
 
+technical part done, now parameters/usage of the algorithm
+- perplexity: large values often impractical due to memory constraints. Much smaller does not make sense, so in most practical applications you cannot change perplexity.
+
+- uniform affinity with k=15 is very similar and speeds up computation. Gaussian affinities in high-dim. space are atually not important.
+
+- low-dimensionality similarity kernel: t-SNE paper says Cauchy kernel deals with crowding problem (Heavy-tailed kernel is a bit more permissive and allows some of the neighbours to be a bit further away than they should, relaxing the crowding problem).
+One can see Gaussian kernel (SNE, overcrowding problem) as t-distr. with infinite degrees of freedom and Cauchy kernel (t-SNE) as t-distr. with 1 degree of freedom; then you can move between these. VISUALISE THIS? KOBAK ET AL 2020. Heavier tailed kernels emphasize fine cluster structure and often create subislands with meaningful substructure like different handwritings of numbers in the case of MNIST.
+
+- role of initialisation: big role since loss function has many local minima and t-SNE often struggles to preserve global structure (designed as local neigbourhood method, early exaggeration was one way to deal with that). KOBAK AND LIBEMANN 2021
+-> always use informative initialisation, e.g. PCA to converge to a better local minimum (though not guaranteed to be the global minimum).
+-> strong early exaggeration approximates Laplacian Eigenmaps (parametric method, Linderman Steinerberger 2019), visually slowly unwrapping in the case of circle toydata
+
+- Tasic 2018 dataset. Three main types of cells: inhibitory neurons, excitatory neurons and non-neural cells in mouse cortex (these three clusters can be seen in PCA, but not by default in t-SNE due to missing of global structure with random initialisation).
+
+- used in 2019 paper of Kobak and Berens 2019: if initialised with PCA, we get correct global structure
+
+- Böhm et al 2020: what if we keep early exaggeration on and do not switch it off after some time? Results in attraction-repulsion spectrum with some interesting intermediary embeddings, again identifying substructures due to increased attractions. Continuous structure emphasised in exaggeration kept on, discrete structures in data emphasided when data is turned off. UMAP for example is on this spectrum and corresponds to intermediary exaggeration (analysis of UMAP loss function confirms this: UMAP has stronger attractive forces).
+
+- Cao et al 2019, Kobak and Berens 2019. Bigger dataset with sc-transcriptomics of mouse embryogenesis (2million cells, UMAP/t-SNE with exaggeration gives structures with continuity emphasis, e.g. one megacluster with neural cells). Tradeoff between continuity and discreteness (higher attraction emphasises continous submanifolds, higher attraction emphasis different discrete structures).
+
+
+
+
+
+
+
+
+
+
 
 
 # Resources:

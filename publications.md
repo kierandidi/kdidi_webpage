@@ -5,7 +5,7 @@ title: Publications
 
 ## Publications
 
-- *High Resolution Biomolecular Condensate Phase Diagrams with a Combinatorial Microdroplet Platform*, [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.06.04.132308v5), 09/2022
+- *High Resolution Biomolecular Condensate Phase Diagrams with a Combinatorial Microdroplet Platform*, [Nature Communications](https://www.nature.com/articles/s41467-022-35265-7), 12/2022
 ## Conference Presentations
 
 - *Accessible AMR-detection tools for clinicians via cloud-based bioinformatics* (oral presentation), [Clinical Informatics Symposium Melbourne (Australia)](https://pheedloop.com/ABACBS2022/site/CI), 12/2022
