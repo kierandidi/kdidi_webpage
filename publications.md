@@ -18,7 +18,7 @@ title: Publications
 - *Detecting DNA integration via HPC bioinformatics pipeline* (poster),[R&I Conference Sydney (Australia)](https://na.eventscloud.com/website/36005/home/), 08/2022
 ## Teaching
 
-- *Algorithms II*, supervising course on [data structures and graph algorithms](https://www.cl.cam.ac.uk/teaching/2122/Algorithm2/), Cambridge Universtiy, 01-03/2023
+- *Algorithms II*, supervising course on [data structures and graph algorithms](https://www.cl.cam.ac.uk/teaching/2122/Algorithm2/), Cambridge University, 01-03/2023
 - *MLOps with PyTorch Lightning and W&B*, conceptualised and lecture workshop, ML Forum CSIRO Australia, 01/2023
 - *Python for Scientists*, [lecture](https://github.com/kierandidi/python_for_scientists) Heidelberg University, 11/2022
 - *Python Best Practices*, [workshop (co-host)](https://ssciwr.github.io/Python-best-practices-course/), Scientific Software Center Heidelberg, 11/2022
