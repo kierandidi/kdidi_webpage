@@ -1,6 +1,9 @@
 ---
 layout: welcome
 title: Publications
+buttons:
+  print: false
+  pdf: /assets/Publication_List_Kieran_Didi.pdf
 ---
 
 ## Publications
