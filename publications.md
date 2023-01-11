@@ -6,7 +6,9 @@ buttons:
   pdf: /assets/Publication_List_Kieran_Didi.pdf
 ---
 
-## Publications
+## Publications 
+
+[here]({{ site.baseurl }}/Publication_List_Kieran_Didi.pdf){:.no-push-state}
 
 - *High Resolution Biomolecular Condensate Phase Diagrams with a Combinatorial Microdroplet Platform*, [Nature Communications](https://www.nature.com/articles/s41467-022-35265-7), 12/2022
 - *Accessible genomics at scale: developing a cloud-native platform to detect foreign DNA insertions*, under review (first author), 12/2022
