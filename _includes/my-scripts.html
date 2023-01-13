@@ -53,3 +53,16 @@ The snippet below will run the code on every `hy-push-state-load` event instead.
   });
 </script>
 {% endcomment %}
+
+{% if site.lightbox %}
+  <script src="/assets/js/lightbox.js"></script>
+{% endif %}
+
+<script>
+  document
+    .getElementById("_pushState")
+    .addEventListener("hy-push-state-load", function () {
+      apply_lightbox();
+    });
+</script>
+
