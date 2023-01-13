@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Docker
+title: PBS, SLURM and co - the world of HPC job schedulers
 image: /assets/img/blog/docker/container.jpg
 accent_image: 
   background: url('/assets/img/blog/pjs.png') center/cover

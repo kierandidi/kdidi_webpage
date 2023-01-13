@@ -15,7 +15,6 @@ categories: ml
 
 # Probability Distributions and where they come from
 
-(Die deutsche Version beginn unten!)
 
 
 
