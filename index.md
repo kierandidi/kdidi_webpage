@@ -8,14 +8,8 @@ Hey everyone! I am Kieran, currently a ML Research Intern at EMBL-EBI, master's 
 
 Besides my research and studies, I love writing, reading, every sport that involves a ball and doing Blender visualisations such as the picture you see below showing K-Ras with an inhibitor or the video showing a [penicillin-binding protein](https://pdb101.rcsb.org/motm/29).
 
-<!-- <p align="center">
-  <img src="/assets/img/blog/kras-compressed.png" width="100%" height="100%"/>
-</p> -->
 
 ![Blender visualisation of Kras inhibitor](/assets/img/blog/kras-compressed.png)
-
-![Blender visualisation of penicillin-binding protein](/assets/vid/blender_penicillin_video.mp4)
-
 
 
 
