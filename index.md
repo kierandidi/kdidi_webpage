@@ -14,7 +14,7 @@ Besides my research and studies, I love writing, reading, every sport that invol
 
 ![Blender visualisation of Kras inhibitor](/assets/img/blog/kras-compressed.png)
 
-![Blender visualisation of penicillin-binding protein](https://vimeo.com/768921351)
+![Blender visualisation of penicillin-binding protein](/assets/vid/blender_penicillin_video.mp4)
 
 
 
