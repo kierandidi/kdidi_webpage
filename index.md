@@ -16,3 +16,4 @@ Besides my research and studies, I love writing, reading, every sport that invol
 </div>
 
 {% include bokeh_mammoth_plot.html %}
+<!-- bokeh plots included via http://dmnfarrell.github.io/plotting/embed-bokeh-plots-jekyll -->
