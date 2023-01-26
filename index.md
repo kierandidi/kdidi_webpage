@@ -15,4 +15,4 @@ Besides my research and studies, I love writing, reading, every sport that invol
   <iframe src="https://player.vimeo.com/video/768921351?h=7ab3fb6425" style="width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
-{% include bokeh_zim_plot.html %}
+{% include bokeh_mammoth_plot.html %}
