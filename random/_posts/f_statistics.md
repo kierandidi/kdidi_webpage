@@ -78,7 +78,13 @@ Together these statistics give us a good idea of the degree of inbreeding in a p
 
 ## F distribution
 
-## F test
+## F test/statistic (Fisher's F)
+
+There is another F statistic that is used in variance analysis. This is the F statistic that is used in the F test. The F test is used to test the significance of the overall effect of a factor in a variance analysis. Whereas the t test is used to test the significance of the effect of a single factor, the F test is used to test the joint significance of the effect of multiple factors.
+
+As with most test statistics, the F test is based on a test statistic that is distributed according to a certain distribution. In this case, the F test is based on the F statistic, which is distributed according to the F distribution. To test the significance of the overall effect of a factor, we calculate the F statistic and compare it to the F distribution. If the F statistic is larger than some critical value, we can reject the null hypothesis that the overall effect of the factor is not significant.
+
+
 
 ## F ratio
 

@@ -9,7 +9,7 @@ PDF version available [here]({{ site.baseurl }}/assets/Publication_List_Kieran_D
 ## Publications 
 
 
-
+- *Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models*, [ICLR 2023, MLDD workshop](https://sites.google.com/view/mldd-2023/), 03/2023
 - *High Resolution Biomolecular Condensate Phase Diagrams with a Combinatorial Microdroplet Platform*, [Nature Communications](https://www.nature.com/articles/s41467-022-35265-7), 12/2022
 - *Accessible genomics at scale: developing a cloud-native platform to detect foreign DNA insertions*, under review (first author), 12/2022
 - *On How AI needs to Change to Advance the Science of Drug Discovery*, [arxiv](https://arxiv.org/abs/2212.12560), 12/2022
