@@ -32,4 +32,4 @@ PDF version available [here]({{ site.baseurl }}/assets/Publication_List_Kieran_D
 
 ## Other projects
 
-- 
+- *The Art of Molecular Programming*, [textbook](https://molecularprogrammers.org/), active as editor
