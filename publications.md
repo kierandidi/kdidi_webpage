@@ -29,3 +29,7 @@ PDF version available [here]({{ site.baseurl }}/assets/Publication_List_Kieran_D
 - *Python Best Practices*, [workshop (co-host)](https://ssciwr.github.io/Python-best-practices-course/), Scientific Software Center Heidelberg, 11/2022
 - *Deep Learning with PyTorch*, [Lunch Time Python workshop](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Scientific Software Center Heidelberg, 10/2022
 - *Python for Biochemists*, [lecture](https://github.com/kierandidi/Python_for_Biochemists) Heidelberg University, 03/2022
+
+## Other projects
+
+- 
