@@ -41,11 +41,19 @@ Es wurden mehrere diffusionsbasierte generative Modelle mit ähnlichen Ideen vor
 
 ## Forward Diffusion Process
 
-Nehmen wir an, wir haben einen Datenpunkt von einer realen Datenverteilung, $x_0 \sim q(x)$. Dann können wir einen *forward diffusion process* definieren, in dem wir in $T$ Schritten kleine Mengen an Gaussian noise zu dem Datenpunkt hinzufügen und damit eine Sequenz $x_1, ..., x_T$ an korrumpierten (sogenannten *noised*) Datenpunkten erzeugen. Wir kontrollieren die Schrittgröße zwischen diesen Datenpunkten mit der sogenannten *variance schedule* $\{\beta_t \in (0,1)\}^T_{t=1}$.
+Nehmen wir an, wir haben einen Datenpunkt von einer realen Datenverteilung, $$x_0 \sim q(x)$$. Dann können wir einen *forward diffusion process* definieren, in dem wir in $$T$$ Schritten kleine Mengen an Gaussian noise zu dem Datenpunkt hinzufügen und damit eine Sequenz $$x_1, ..., x_T$$ an korrumpierten (sogenannten *noised*) Datenpunkten erzeugen. Wir kontrollieren die Schrittgröße zwischen diesen Datenpunkten mit der sogenannten *variance schedule* $$\{\beta_t \in (0,1)\}^T_{t=1}$$.
 
+$$
 \begin{aligned}
     q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t \textbf{I}) \hspace{10px} q(x_{1:T} = \prod^T_{t=1} q(x_t | x_{t_1}))
 \end{aligned}
+$$
+
+Unser Datenpunkt $$x_0$$ verliert so seine erkennbaren Eigenschaften wenn $$t$$ größer wird. Wenn $$T \to \infty$$ ist $$x_T$$ equivalent zur isotropen Normalverteilung.
+
+![gen_model_overview.png](/assets/img/blog/diffusion_models/diffusion_process.png)
+
+
 
 
 
