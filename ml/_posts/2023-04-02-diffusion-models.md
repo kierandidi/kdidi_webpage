@@ -51,7 +51,19 @@ $$
 
 Unser Datenpunkt $$x_0$$ verliert so seine erkennbaren Eigenschaften wenn $$t$$ größer wird. Wenn $$T \to \infty$$ ist $$x_T$$ equivalent zur isotropen Normalverteilung.
 
-![gen_model_overview.png](/assets/img/blog/diffusion_models/diffusion_process.png)
+![diffusion_process](/assets/img/blog/diffusion_models/diffusion_process.png)
+
+Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem beliebigen Zeitpunkt $$t$$ in geschlossener Form samplen können, und zwar mithilfe eines [Reparametrisierungs-Tricks](https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick). Sei $$\alpha_t = 1 - \beta_t$ und $$\bar{\alpha_t} = \prod^t_{i=1} \alpha_i$$:
+
+$$
+\begin{aligned}
+    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} where \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I})
+        &= 
+
+
+    q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t \textbf{I}) \hspace{10px} q(x_{1:T} = \prod^T_{t=1} q(x_t | x_{t_1}))
+\end{aligned}
+$$
 
 
 
