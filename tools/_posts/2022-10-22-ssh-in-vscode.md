@@ -52,7 +52,7 @@ To do this, we first create a keypair on our local machine by typing `ssh-keygen
 
 Now you should have two files on your local machine: the public key `remote123_rsa.pub` which can be seen as a lock and the private key `remote123_rsa` which can be seen as a key. In this kind of encryption, you will give the lock to the remote machine, but do not share the key with anyone. Every time you log into the remote machine, you will basically show it that you can unlock the lock you gave it earlier with your private key, proving that you are allowed to access your account.
 
-For that to work, we have to share the public key with the remote machine. For that, copy your public key to your clipboard via `cat remote123_rsa | pbcopy`.
+For that to work, we have to share the public key with the remote machine. For that, copy your public key to your clipboard via `cat remote123_rsa.pub | pbcopy`.
 
 Now, log into your remote machine and execute the following series of commands:
 
