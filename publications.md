@@ -8,12 +8,9 @@ buttons:
 <!-- PDF version available [here]({{ site.baseurl }}/assets/Publication_List_Kieran_Didi.pdf){:.no-push-state}. -->
 ## Publications 
 
-### Pre-Prints/under review
+### Pre-Prints
 
-<!-- - *AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for engineering, selection, and computational design*, under review, 04/2023 -->
-- *Accessible genomics at scale: developing a cloud-native platform to detect foreign DNA insertions*, under review (first author), 03/2023
-- *On How AI needs to Change to Advance the Science of Drug Discovery*, [arxiv](https://arxiv.org/abs/2212.12560), 12/2022
-
+*AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for engineering, selection, and computational design*, biorxiv, 04/2023
 
 ### Book Chapters
 
