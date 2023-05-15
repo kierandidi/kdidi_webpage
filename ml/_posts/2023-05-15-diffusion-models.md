@@ -93,7 +93,7 @@ Leider müssten wir die gesamte Datenverteilung $$p(x)$$ kennen, um $$q(x_{t-1} 
 
 $$ p_{\theta}(x_{0:T}) = p(x_T) \prod^T_{t=1} p_{\theta}(x_{t-1} | x_{t}) \hspace{10px} p_{\theta}(x_{t-1} | x_{t}) = \mathcal{N}(x_{t-1}; \mu_{\theta}(x_t, t), \Sigma_{\theta}(x_t,t))$$
 
-![Reverse Diffusion Process](/assets/img/blog/diffusion_models/diffusion_example.png)
+![Reverse Diffusion Process](/assets/img/blog/diffusion_models/diffusion-example.png)
 
 Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2D swiss roll daten. (Quelle: [Sohl-Dickstein et al. 2015](https://arxiv.org/abs/1503.03585))
 {:.figcaption}
