@@ -98,7 +98,9 @@ $$ p_{\theta}(x_{0:T}) = p(x_T) \prod^T_{t=1} p_{\theta}(x_{t-1} | x_{t}) \hspac
 Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2D swiss roll daten. (Quelle: [Sohl-Dickstein et al. 2015](https://arxiv.org/abs/1503.03585))
 {:.figcaption}
 
+Es ist bemerkenswert dass die reverse bedingte Wahrscheinlichkeit berechnet werden kan, wenn diese auf $$x_0$$ bedingt ist:
 
+$$q(x_{t-1} | x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \widetilde{\mu(x_t, t)}, \color{red} \widetilde{\beta_t \mathbf{I}})$$
 
 
 
