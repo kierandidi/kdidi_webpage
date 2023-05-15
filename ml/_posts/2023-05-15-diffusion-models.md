@@ -53,17 +53,23 @@ Unser Datenpunkt $$x_0$$ verliert so seine erkennbaren Eigenschaften wenn $$t$$ 
 
 ![diffusion_process](/assets/img/blog/diffusion_models/diffusion_process.png)
 
-Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem beliebigen Zeitpunkt $$t$$ in geschlossener Form samplen können, und zwar mithilfe eines [Reparametrisierungs-Tricks](https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick). Sei $$\alpha_t = 1 - \beta_t$ und $$\bar{\alpha_t} = \prod^t_{i=1} \alpha_i$$:
+A caption for an image.
+{:.figcaption}
+
+Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem beliebigen Zeitpunkt $$t$$ in geschlossener Form samplen können, und zwar mithilfe eines [Reparametrisierungs-Tricks](https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick). Sei $$\alpha_t = 1 - \beta_t$$ und $$\bar{\alpha_t} = \prod^t_{i=1} \alpha_i$$:
 
 $$
 \begin{aligned}
-    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} mit \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I})
-        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \bar{\epsilon_{t-2}} \hspace{10px} mit \bar{\epsion_{t-2}} als Kombination von zwei Normalverteilungen (*)
-
+    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} mit \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\ [2em]
+        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \bar{\epsilon_{t-2}} \hspace{10px} mit \bar{\epsion_{t-2}} als Kombination von zwei Normalverteilungen (*) \\ [2em]
+        &= ... \\ [2em]
+        &= \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon \\ [2em]
 
     q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t \textbf{I}) \hspace{10px} q(x_{1:T} = \prod^T_{t=1} q(x_t | x_{t_1}))
 \end{aligned}
 $$
+
+(*) Wenn wir zwei Normalverteilungen mit verschiedenen Varianzen kombinieren, hat die neue Normalverteilung die Summe der Varianzen als Varianz: $$\mathcal{N}(0, \sigma^2_1\textbf{I}) + \mathcal{N}(0, \sigma^2_2\textbf{I}) = \mathcal{N}(0, (\sigma^2_1 + \sigma^2_2)\textbf{I})$$. In unserem Falle ist die kombinierte Standardabwecihung $$\sqrt{(1-\alpha_t) + \alpha_t(1-\alpha_{t-1}} = \sqrt{1-\alpha_t \alpha_{t-1}}$$.
 
 
 
