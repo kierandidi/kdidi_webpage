@@ -53,23 +53,23 @@ Unser Datenpunkt $$x_0$$ verliert so seine erkennbaren Eigenschaften wenn $$t$$ 
 
 ![diffusion_process](/assets/img/blog/diffusion_models/diffusion_process.png)
 
-A caption for an image.
+Fig. 2. Die Markovkette des *forward (reverse) diffusion process*, in dem eine Stichprobe durch langsames Hinzufügen/Entfernen von Rauschen erzeugt wird. Quelle: [Ho et al. 2020](https://arxiv.org/abs/2006.11239) mit einigen zusätzlichen Anmerkungen.
 {:.figcaption}
 
 Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem beliebigen Zeitpunkt $$t$$ in geschlossener Form samplen können, und zwar mithilfe eines [Reparametrisierungs-Tricks](https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick). Sei $$\alpha_t = 1 - \beta_t$$ und $$\overline{\alpha_t} = \prod^t_{i=1} \alpha_i$$:
 
 $$
 \begin{aligned}%!!15
-    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1}; \hspace{10px} \epsilon_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\[2em]
-        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \overline{\epsilon_{t-2}} (*) \\[2em]
-        &= ... \\[2em]
-        &= \sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{\alpha_t}}\epsilon \\[2em]
+    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1}; \hspace{10px} \epsilon_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\[1em]
+        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \overline{\epsilon_{t-2}} (*) \\[1em]
+        &= ... \\[1em]
+        &= \sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{\alpha_t}}\epsilon \\[1em]
 
     q(x_t | x_{0}) = \mathcal{N}(x_t; \sqrt{\overline{\alpha_t}} x_{0}, (1-\overline{\alpha_t}) \textbf{I})
 \end{aligned}
 $$
 
-(*) Wenn wir zwei Normalverteilungen mit verschiedenen Varianzen kombinieren, hat die neue Normalverteilung die Summe der Varianzen als Varianz: $$\mathcal{N}(0, \sigma^2_1\textbf{I}) + \mathcal{N}(0, \sigma^2_2\textbf{I}) = \mathcal{N}(0, (\sigma^2_1 + \sigma^2_2)\textbf{I})$$. In unserem Falle ist die kombinierte Standardabwecihung $$\sqrt{(1-\alpha_t) + \alpha_t(1-\alpha_{t-1}} = \sqrt{1-\alpha_t \alpha_{t-1}}$$.
+(*) Wenn wir zwei Normalverteilungen mit verschiedenen Varianzen kombinieren, hat die neue Normalverteilung die Summe der Varianzen als Varianz: $$\mathcal{N}(0, \sigma^2_1\textbf{I}) + \mathcal{N}(0, \sigma^2_2\textbf{I}) = \mathcal{N}(0, (\sigma^2_1 + \sigma^2_2)\textbf{I})$$. In unserem Falle ist die kombinierte Standardabwecihung $$\sqrt{(1-\alpha_t) + \alpha_t(1-\alpha_{t-1})} = \sqrt{1-\alpha_t \alpha_{t-1}}$$.
 
 Normalerweise können wir uns größere Updateschritte erlauben wenn unsere Sample mehr Rauschen enthält, also setzen wir die variance schedule so, dass $$\beta_t$$ mit $$t$$ wächst: $$\beta_1 < \beta_2 < ... < \beta_t$$ und daher $$\overline{\alpha_1} > \overline{\alpha_2} > ... > \overline{\alpha_t}$$.
 
@@ -85,7 +85,18 @@ Verglichen mit standard Gradient Descent Methoden, die nur die Gradienten der Lo
 
 ## Reverse Diffusion Process
 
+Wenn wir den oben beschriebenen *forward diffusion process* umkehren und somit Stichproben von $$q(x_{t-1} | x_{t})$$ ziehen könnten, können wir aus Gauss'schen Rauschen $$\x_T \sim \mathcal{N}(0, \textbf{I})$$ Stichproben von $$p(x)$$ ziehen. Dieser Prozess wird als *reverse diffusion process* bezeichnet. 
 
+Falls $$\beta_t$$ klein genoug ist, wird $$q(x_{t-1} | x_{t})$$ ebenfalls einer Normalverteilung folgen.
+
+Leider müssten wir die gesamte Datenverteilung $$p(x)$$ kennen, um $$q(x_{t-1} | x_{t})$$ zu berechnen. Dies ist in der Praxis nicht möglich. Wir können jedoch ein Modell $$p_{\theta}$$ lernen, dass diese bedingten Wahrscheinlichkeiten approximiert. Mithilfe dieses Modells können wir dann den *reverse diffusion process* durchführen und näherungsweise Stichproben von $$p(x)$$ ziehen:
+
+$$ p_{\theta}(x_{0:T}) = p(x_T) \prod^T_{t=1} p_{\theta}(x_{t-1} | x_{t}) \hspace{10px} p_{\theta}(x_{t-1} | x_{t}) = \mathcal{N}(x_{t-1}; \mu_{\theta}(x_t, t), \Sigma_{\theta}(x_t,t))$$
+
+![Reverse Diffusion Process](/assets/img/blog/diffusion_models/diffusion_example.png)
+
+Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2D swiss roll daten. (Quelle: [Sohl-Dickstein et al. 2015](https://arxiv.org/abs/1503.03585))
+{:.figcaption}
 
 
 
@@ -98,8 +109,7 @@ Verglichen mit standard Gradient Descent Methoden, die nur die Gradienten der Lo
 
 ## Credits
 
-Vielen Dank an Eric Jang für ein cooles Tutorial und die Möglichkeit, es deutschen Lesern zugänglich zu machen!
-Außerdem vielen Dank an Brad Saund, dessen [Blogpost](https://www.bradsaund.com/post/normalizing_flows/) ähnliche Beispiele zu den obigen in TensorFlow2 enthält!
+Vielen Dank an Lilian Weng für ihre coolen Blogposts und die Möglichkeit, diesen Blogpost zu übersetzen!
 
 
 <span>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
