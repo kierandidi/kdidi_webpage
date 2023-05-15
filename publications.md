@@ -19,7 +19,7 @@ buttons:
 
 ### Peer-reviewed
 
-- [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), **ICLR 2023 MLDD workshop**, 03/2023
+- [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charlie Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian R. Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR 2023 MLDD workshop**, 03/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
 
