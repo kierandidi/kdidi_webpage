@@ -13,7 +13,7 @@ invert_sidebar: true
 categories: ml
 ---
 
-# (GER) Normalizing Flows Teil 1 - Daten und Determinanten
+# (GER) Was sind Diffusion Models
 
 (Die deutsche Version beginn unten!)
 
@@ -57,8 +57,8 @@ Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem belie
 
 $$
 \begin{aligned}
-    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} where \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I})
-        &= 
+    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} mit \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I})
+        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \bar{\epsilon_{t-2}} \hspace{10px} mit \bar{\epsion_{t-2}} als Kombination von zwei Normalverteilungen (*)
 
 
     q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t \textbf{I}) \hspace{10px} q(x_{1:T} = \prod^T_{t=1} q(x_t | x_{t_1}))
