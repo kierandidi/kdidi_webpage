@@ -100,7 +100,7 @@ Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2
 
 Es ist bemerkenswert dass die reverse bedingte Wahrscheinlichkeit berechnet werden kan, wenn diese auf $$x_0$$ bedingt ist:
 
-$$q(x_{t-1} \| x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \widetilde{\mu(x_t, t)}, \color{red} \widetilde{\beta_t \mathbf{I}})$$
+$$q(x_{t-1} \| x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \tilde{\mu(x_t, t)}, \color{red} \tilde{\beta_t} \mathbf{I})$$
 
 Mit dem Satz von Bayes erhalten wir folgendes:
 
