@@ -87,7 +87,7 @@ Verglichen mit standard Gradient Descent Methoden, die nur die Gradienten der Lo
 
 Wenn wir den oben beschriebenen *forward diffusion process* umkehren und somit Stichproben von $$q(x_{t-1} | x_{t})$$ ziehen könnten, können wir aus Gauss'schen Rauschen $$\x_T \sim \mathcal{N}(0, \textbf{I})$$ Stichproben von $$p(x)$$ ziehen. Dieser Prozess wird als *reverse diffusion process* bezeichnet. 
 
-Falls $$\beta_t$$ klein genoug ist, wird $$q(x_{t-1} | x_{t})$$ ebenfalls einer Normalverteilung folgen.
+Falls $$\beta_t$$ klein genoug ist, wird $$q(x_{t-1} \| x_{t})$$ ebenfalls einer Normalverteilung folgen.
 
 Leider müssten wir die gesamte Datenverteilung $$p(x)$$ kennen, um $$q(x_{t-1} | x_{t})$$ zu berechnen. Dies ist in der Praxis nicht möglich. Wir können jedoch ein Modell $$p_{\theta}$$ lernen, dass diese bedingten Wahrscheinlichkeiten approximiert. Mithilfe dieses Modells können wir dann den *reverse diffusion process* durchführen und näherungsweise Stichproben von $$p(x)$$ ziehen:
 
@@ -100,11 +100,20 @@ Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2
 
 Es ist bemerkenswert dass die reverse bedingte Wahrscheinlichkeit berechnet werden kan, wenn diese auf $$x_0$$ bedingt ist:
 
-$$q(x_{t-1} | x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \widetilde{\mu(x_t, t)}, \color{red} \widetilde{\beta_t \mathbf{I}})$$
+$$q(x_{t-1} \| x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \widetilde{\mu(x_t, t)}, \color{red} \widetilde{\beta_t \mathbf{I}})$$
 
+Mit dem Satz von Bayes erhalten wir folgendes:
 
+$$
+\begin{aligned}%!!15
+    x_t &=  \\[1em]
+        &=  \\[1em]
+        &=  \\[1em]
+        &=  \\[1em]
 
-
+    q(x_t | x_{0}) = \mathcal{N}(x_t; \sqrt{\overline{\alpha_t}} x_{0}, (1-\overline{\alpha_t}) \textbf{I})
+\end{aligned}
+$$
 
 
 
