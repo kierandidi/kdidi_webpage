@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (GER) Was sind Diffusion Models
-image: /assets/img/blog/flows_chart.png
+image: /assets/img/blog/diffusion_models/diffusion_models_cover.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
@@ -26,9 +26,9 @@ This post is a rather unusual one since it is in German. I have always been invo
 
 ## Einführung
 
-GANs, VAEs und Normalising Flows sind drei Typen von Machine Learning Modellen für generative Zwecke. Alle drei haben sehr erfolgreich hochqualitative Beispiele generiert, aber jede der drei Familien hat eigene Probleme. GANs sind bekannt für instabiles Training und weniger Diversität der produzierten Beispiele durch ihre Trainingsprozedur. VAEs basieren auf einem sogenannten "surrogate loss". Normalising Flows müssen spezielle Architekturen verwenden, um reversible Transformationen zu konstruieren.
+GANs, VAEs und Normalising Flows sind drei Typen von Machine Learning Modellen für generative Zwecke. Alle drei haben sehr erfolgreich hochqualitative Beispiele generiert, aber jede der drei Familien hat eigene Probleme. GANs sind bekannt für instabiles Training und weniger Diversität der produzierten Beispiele durch ihr Training. VAEs basieren auf einem sogenannten "surrogate loss". Normalising Flows müssen spezielle Architekturen verwenden, um reversible Transformationen zu konstruieren.
 
-Diffusion Models sind von der Nicht-Gleichgewichtsthermodynamik inspiriert. Sie definieren eine Markov-Kette von Diffusionsschritten, um den Daten langsam zufälliges Rauschen hinzuzufügen, und lernen dann, den Diffusionsprozess umzukehren, um aus dem Rauschen gewünschte Datenproben zu konstruieren. Im Gegensatz zu VAEs oder Normalising Flows werden Diffusion Models mit einem festen Verfahren erlernt, und die latente Variable hat eine hohe Dimensionalität (dieselbe wie die Originaldaten).
+Diffusion Models sind von der "non-equilibrium" Thermodynamik inspiriert. Sie definieren eine Markov-Kette von Diffusionsschritten, um den Daten langsam zufälliges Rauschen hinzuzufügen, und lernen dann, den Diffusionsprozess umzukehren, um aus dem Rauschen gewünschte Datenproben zu konstruieren. Im Gegensatz zu VAEs oder Normalising Flows werden Diffusion Models mit einem festen Verfahren erlernt, und die latente Variable hat eine hohe Dimensionalität (dieselbe wie die Originaldaten).
 
 ![gen_model_overview.png](/assets/img/blog/diffusion_models/gen_model_overview.png)
 
