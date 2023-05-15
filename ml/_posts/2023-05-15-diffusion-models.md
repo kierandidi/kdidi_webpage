@@ -59,13 +59,14 @@ A caption for an image.
 Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem beliebigen Zeitpunkt $$t$$ in geschlossener Form samplen können, und zwar mithilfe eines [Reparametrisierungs-Tricks](https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick). Sei $$\alpha_t = 1 - \beta_t$$ und $$\overline{\alpha_t} = \prod^t_{i=1} \alpha_i$$:
 
 $$
-\begin{aligned}
+\begin{aligned}%!!15
     x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1}; \hspace{10px} \epsilon_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\[2em]
         &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \overline{\epsilon_{t-2}} (*) \\[2em]
         &= ... \\[2em]
         &= \sqrt{\overline{\alpha_t}}x_0 + \sqrt{1-\overline{\alpha_t}}\epsilon \\[2em]
 
     q(x_t | x_{0}) = \mathcal{N}(x_t; \sqrt{\overline{\alpha_t}} x_{0}, (1-\overline{\alpha_t}) \textbf{I})
+\end{aligned}
 $$
 
 (*) Wenn wir zwei Normalverteilungen mit verschiedenen Varianzen kombinieren, hat die neue Normalverteilung die Summe der Varianzen als Varianz: $$\mathcal{N}(0, \sigma^2_1\textbf{I}) + \mathcal{N}(0, \sigma^2_2\textbf{I}) = \mathcal{N}(0, (\sigma^2_1 + \sigma^2_2)\textbf{I})$$. In unserem Falle ist die kombinierte Standardabwecihung $$\sqrt{(1-\alpha_t) + \alpha_t(1-\alpha_{t-1}} = \sqrt{1-\alpha_t \alpha_{t-1}}$$.
@@ -73,6 +74,18 @@ $$
 Normalerweise können wir uns größere Updateschritte erlauben wenn unsere Sample mehr Rauschen enthält, also setzen wir die variance schedule so, dass $$\beta_t$$ mit $$t$$ wächst: $$\beta_1 < \beta_2 < ... < \beta_t$$ und daher $$\overline{\alpha_1} > \overline{\alpha_2} > ... > \overline{\alpha_t}$$.
 
 ## Verbindung zu Stochastic Gradient Langevin Dynamics
+
+Langevin Dynamics ist ein Konzept aus der Physik das zur statistischen Modellierung von molekularen Systemen entwickelt wurde. Wenn dieses Verfahren mit stochastic gradient descent kombiniert wird, erhalten wir *stochastic gradient langevin dynamics* ([Welling & Teh 2011](https://www.stats.ox.ac.uk/~teh/research/compstats/WelTeh2011a.pdf)). Dieses Verfahren kann Stichproben von einer Wahrscheinlichkeitsverteilung $$p(x)$$ ziehen und benötigt hierfür nur die Gradienten der Log-Wahrscheinlichkeit $$\nabla_x \log p(x)$$. Die Gradienten werden mit einem Rauschterm kombiniert, um die Stichproben zu erzeugen. Die Stichproben werden dann verwendet, um die Gradienten zu schätzen, und der Prozess wird wiederholt. Dieser iterative Prozess kann als Markovkette bestehend aus Updates beschrieben werden:
+
+$$x_t = x_{t-1} + \frac{\delta}{2} \nabla_x \log p(x_{t-1}) + \sqrt{\delta} \epsilon_t; \hspace{10px} \epsilon_t \sim \mathcal{N}(0, \textbf{I}) $$
+
+mit $$\delta$$ als die Schrittgröße der Updates. Wenn wir $$T \to 0$$ gehen lassen, geht $$\epsilon \to 0$$ und wir erhalten die tatsächliche Wahrscheinlichkeitsverteilung $$p(x)$$.
+
+Verglichen mit standard Gradient Descent Methoden, die nur die Gradienten der Log-Wahrscheinlichkeit verwenden, fügen wir hier einen Rauschterm hinzu. Hierdurch verhindern wir den Kollaps in lokale Minima der Wahrscheinlichkeitsverteilung.
+
+## Reverse Diffusion Process
+
+
 
 
 
