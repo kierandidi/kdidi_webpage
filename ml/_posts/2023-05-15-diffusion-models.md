@@ -85,11 +85,11 @@ Verglichen mit standard Gradient Descent Methoden, die nur die Gradienten der Lo
 
 ## Reverse Diffusion Process
 
-Wenn wir den oben beschriebenen *forward diffusion process* umkehren und somit Stichproben von $$q(x_{t-1} | x_{t})$$ ziehen könnten, können wir aus Gauss'schen Rauschen $$\x_T \sim \mathcal{N}(0, \textbf{I})$$ Stichproben von $$p(x)$$ ziehen. Dieser Prozess wird als *reverse diffusion process* bezeichnet. 
+Wenn wir den oben beschriebenen *forward diffusion process* umkehren und somit Stichproben von $$q(x_{t-1} \vert x_{t})$$ ziehen könnten, können wir aus Gauss'schen Rauschen $$\x_T \sim \mathcal{N}(0, \textbf{I})$$ Stichproben von $$p(x)$$ ziehen. Dieser Prozess wird als *reverse diffusion process* bezeichnet. 
 
-Falls $$\beta_t$$ klein genoug ist, wird $$q(x_{t-1} \| x_{t})$$ ebenfalls einer Normalverteilung folgen.
+Falls $$\beta_t$$ klein genoug ist, wird $$q(x_{t-1} \vert x_{t})$$ ebenfalls einer Normalverteilung folgen.
 
-Leider müssten wir die gesamte Datenverteilung $$p(x)$$ kennen, um $$q(x_{t-1} | x_{t})$$ zu berechnen. Dies ist in der Praxis nicht möglich. Wir können jedoch ein Modell $$p_{\theta}$$ lernen, dass diese bedingten Wahrscheinlichkeiten approximiert. Mithilfe dieses Modells können wir dann den *reverse diffusion process* durchführen und näherungsweise Stichproben von $$p(x)$$ ziehen:
+Leider müssten wir die gesamte Datenverteilung $$p(x)$$ kennen, um $$q(x_{t-1} \vert x_{t})$$ zu berechnen. Dies ist in der Praxis nicht möglich. Wir können jedoch ein Modell $$p_{\theta}$$ lernen, dass diese bedingten Wahrscheinlichkeiten approximiert. Mithilfe dieses Modells können wir dann den *reverse diffusion process* durchführen und näherungsweise Stichproben von $$p(x)$$ ziehen:
 
 $$ p_{\theta}(x_{0:T}) = p(x_T) \prod^T_{t=1} p_{\theta}(x_{t-1} | x_{t}) \hspace{10px} p_{\theta}(x_{t-1} | x_{t}) = \mathcal{N}(x_{t-1}; \mu_{\theta}(x_t, t), \Sigma_{\theta}(x_t,t))$$
 
@@ -100,7 +100,7 @@ Fig. 3. Ein beispielhaftes Training eines Diffusion Models zum Modellieren von 2
 
 Es ist bemerkenswert dass die reverse bedingte Wahrscheinlichkeit berechnet werden kan, wenn diese auf $$x_0$$ bedingt ist:
 
-$$q(x_{t-1} \| x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \tilde{\mu(x_t, t)}, \color{red} \tilde{\beta_t} \mathbf{I})$$
+$$q(x_{t-1} \| x_{t}) = \mathcal{N}(x_{t-1}; \color{blue} \widetilde{\mu}(x_t, t), \color{red} \tilde{\beta}_t \mathbf{I})$$
 
 Mit dem Satz von Bayes erhalten wir folgendes:
 
