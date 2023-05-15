@@ -60,8 +60,8 @@ Eine nützliche Eigenschaft dieses Prozesses ist dass wir $$x_t$$ zu einem belie
 
 $$
 \begin{aligned}
-    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} mit \epsion_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\[2em]
-        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \bar{\epsilon_{t-2}} \hspace{10px} mit \bar{\epsion_{t-2}} als Kombination von zwei Normalverteilungen (*) \\[2em]
+    x_t &= \sqrt{\alpha_t}x_{t-1} + \sqrt{1-\alpha_t} \epsilon_{t-1} \hspace{10px} mit \epsilon_{t-1}, \epsilon_{t-2}, ... \sim \mathcal{n}(0,\textbf{I}) \\[2em]
+        &= \sqrt{\alpha_t \alpha_{t-1}}x_{t-2}  + \sqrt{1-\alpha_t \alpha_{t-1}} \bar{\epsilon_{t-2}} \hspace{10px} mit \bar{\epsilon_{t-2}} als Kombination von zwei Normalverteilungen (*) \\[2em]
         &= ... \\s[2em]
         &= \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon \[2em]
 
@@ -71,6 +71,7 @@ $$
 
 (*) Wenn wir zwei Normalverteilungen mit verschiedenen Varianzen kombinieren, hat die neue Normalverteilung die Summe der Varianzen als Varianz: $$\mathcal{N}(0, \sigma^2_1\textbf{I}) + \mathcal{N}(0, \sigma^2_2\textbf{I}) = \mathcal{N}(0, (\sigma^2_1 + \sigma^2_2)\textbf{I})$$. In unserem Falle ist die kombinierte Standardabwecihung $$\sqrt{(1-\alpha_t) + \alpha_t(1-\alpha_{t-1}} = \sqrt{1-\alpha_t \alpha_{t-1}}$$.
 
+Normalerweise können wir uns größere Updateschritte erlauben wenn unsere Sample mehr Rauschen enthält, also setzen wir die variance schedule so, dass $$\beta_t$$ mit $$t$$ wächst: $$\beta_1 < \beta_2 < ... < \beta_t$$ und daher $$\overline{\alpha_1} > \overline{\alpha_2} > ... > \overline{\alpha_t}$$.
 
 
 
@@ -78,206 +79,6 @@ $$
 
 
 
-
-
-
-Ein Einheitsquadrat in der Domäne von $$X$$ entspricht also einem deformierten Parallelogramm in der Domäne von $$Y$$, sodass die Änderungsrate der Fläche pro Einheit die Fläche des Parallelogramms ist, d. h. ad-bc.
-Die Fläche eines Parallelogramms, ad-bc, ist nichts anderes als der Absolutwert der Determinante der linearen Transformation!
-
-In drei Dimensionen wird die "Flächenänderung des Parallelogramms" zu einer "Volumenänderung des Parallelepipeds" und in noch höheren Dimensionen zu einer "Volumenänderung eines n-Parallelotops". Das Konzept bleibt jedoch dasselbe - Determinanten sind nichts anderes als der Betrag (und die Richtung) der Volumenverzerrung einer linearen Transformation, verallgemeinert auf eine beliebige Anzahl von Dimensionen.
-
-Was ist, wenn die Transformation $$f$$ nichtlinear ist? Anstelle eines einzigen Parallelogramms, das die Verzerrung eines beliebigen Punktes im Raum abbildet, kann man sich viele winzig kleine Parallelogramme vorstellen, die dem Betrag der Volumenverzerrung für jeden Punkt im Bereich entsprechen. Mathematisch gesehen ist diese lokal-lineare Änderung des Volumens $$\lvert \det (J(f-1(x))) \rvert$$, wobei $$J(f^{-1}(x))$$ die Jacobi-Matrix der inversen Funktion ist - eine höherdimensionale Verallgemeinerung der Größe $$dx/dy$$ von vorhin.
-
-$$y=f(x)$$
-
-
-$$p(y)=p(f-1(y)) \lvert \det J(f-1(y)) \rvert$$
-
-
-$$\log{p(y)}=\log{p(f-1(y))}+\log{\lvert \det(J(f-1(y))) \rvert}$$
-
-
-
-Als ich in der Mittel- und Oberstufe etwas über Determinanten lernte, war ich sehr verwirrt über die scheinbar willkürliche Definition von Determinanten. Uns wurde nur beigebracht, wie man eine Determinante berechnet, statt zu wissen, was eine Determinante bedeutet: die lokale, linearisierte Rate der Volumenänderung einer Transformation ([3Blue1Brown's Videos](https://www.youtube.com/watch?v=Ip3X9LOh2dk) hierzu sind absolut Gold wert!).
-
-## Transformierte Verteilungen in TensorFlow
-
-TensorFlow hat eine elegante API zum Transformieren von Verteilungen. Eine `TransformedDistribution` wird durch ein Basisverteilungsobjekt spezifiziert, das wir transformieren werden, und ein Bijector-Objekt, das folgende Transformationen implementiert:
-
-1. eine Vorwärtstransformation $$y=f(x)$$, wobei $$f\colon \mathbb{R^d} \longrightarrow \mathbb{R^d}$$
-2. die inverse Transformation $$x=f^{-1}(y)$$, und 
-3. 3) die inverse log-Determinante des Jacobian $$\log{\mid \det J(f^{-1}(y)) \mid}$$ implementiert. Im weiteren Verlauf dieses Beitrags werde ich diese Größe mit ILDJ abkürzen.
-
-Unter dieser Abstraktion ist das Vorwärtssampling trivial:
-
-`bijector.forward(base_dist.sample())`
-
-Um die log-Dichteverteilung der transformierten Verteilung auszuwerten:
-
-`distribution.log_prob(bijector.inverse(x)) + bijector.inverse_log_det_jacobian(x)`
-
-Wenn `bijector.forward` eine differenzierbare Funktion ist, dann ist `Y = bijector.forward(x)` eine reparametrisierbare Verteilung in Bezug auf die Stichproben `x = base_distribution.sample()`. Das bedeutet, dass normalisierende Flows als Ersatz für Variational Posteriors in einem VAE verwendet werden können (als Alternative zur häufig verwendeten Normalverteilung).
-
-Einige häufig verwendete TensorFlow-Verteilungen sind tatsächlich mit diesen `TransformedDistributions` implementiert.
-
-| Ursprungsverteilung | Bijector.forward | Transformierte Verteilung |
-|------|-------------|---------------|
-| <a name="Normal"></a>[Normal](#) | $$exp(x)$$ | LogNormal |
-| <a name="Exp(rate=1)"></a>[Exp(rate=1)](#) | $$-\log{x}$$ | Gumbel(0,1) |
-| <a name="Gumbel(0,1)"></a>[Gumbel(0,1)](#) | $$softmax(x)$$ | Gumbel-Softmax / Concrete |
-
-Gemäß der Standardkonvention werden transformierte Verteilungen als `Bijector-1BaseDistribution` bezeichnet; so wird ein `ExpBijector`, der auf eine Normalverteilung angewendet wird, zu `LogNormal`. Es gibt einige Ausnahmen von diesem Benennungsschema - die [Gumbel-Softmax](http://blog.evjang.com/2016/11/tutorial-categorical-variational.html)-Verteilung ist als RelaxedOneHotCategorical-Verteilung implementiert, die einen SoftmaxCentered-Bijektor auf eine Gumbel-Verteilung anwendet.
-
-## Normalizing Flows und das Lernen flexibler Bijektoren
-
-Warum bei 1 Bijektor aufhören? Wir können eine beliebige Anzahl von Bijektoren miteinander verketten, ähnlich wie wir Schichten in einem neuronalen Netz miteinander verketten [^3]. Dieses Konstrukt wird als "Normalizing Flow" bezeichnet. Wenn ein Bijektor darüber hinaus über einstellbare Parameter in Bezug auf `bijector.log_prob` verfügt, kann der Bijektor tatsächlich so erlernt werden, dass er unsere Basisverteilung an beliebige Wahrscheinlichkeitsdichten anpasst. Jeder Bijektor fungiert als lernfähige "Schicht", und man kann einen Optimierer verwenden, um die Parameter der Transformation zu lernen, damit sie zu der Datenverteilung passen, die man zu modellieren versucht. Ein Algorithmus hierfür ist die Maximum-Likelihood-Schätzung, die unsere Modellparameter so modifiziert, dass unsere Trainingsdatenpunkte eine maximale log-Wahrscheinlichkeit unter unserer transformierten Verteilung haben. Aus Gründen der [numerischen Stabilität](https://stats.stackexchange.com/questions/174481/why-to-optimize-max-log-probability-instead-of-probability) berechnen und optimieren wir eher über log-Wahrscheinlichkeiten als über Wahrscheinlichkeiten.
-
-Diese Folie aus dem [UAW-Vortrag](https://www.youtube.com/watch?v=JrO5fSskISY) von Shakir Mohamed und Danilo Rezende [(Folien)](http://www.shakirm.com/slides/DeepGenModelsTutorial.pdf) veranschaulicht dieses Konzept:
-
-![flow4](/assets/img/blog/flow4.png)
-
-Die Berechnung der Determinante einer beliebigen N×N-Jacob-Matrix hat jedoch eine Laufzeitkomplexität von $$O(N^3)$$, was sehr teuer ist, wenn man sie in ein neuronales Netz einbaut. Hinzu kommt das Problem der Invertierung eines beliebigen Funktionsapproximators. Ein Großteil der aktuellen Forschung zu Normalizing Flows konzentriert sich darauf, wie ausdrucksstarke Bijectors entworfen werden können, die die GPU-Parallelisierung während der Vorwärts- und Umkehrberechnungen ausnutzen und gleichzeitig recheneffiziente ILDJs beibehalten.
-
-
-## Code-Beispiel
-
-Lasst uns einen grundlegenden Normalizing Flow in TensorFlow in etwa 100 Zeilen Code erstellen. Dieses Codebeispiel wird Gebrauch machen von:
-
-- TF [Distributions](https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/Distribution) - allgemeine API zur Manipulation von Verteilungen in TF. Für dieses Tutorial brauchst du TensorFlow 1.5 (s. [Brad's post](https://www.bradsaund.com/post/normalizing_flows/) für TensorFlow 2 Code).
-- TF [Bijector](https://www.tensorflow.org/probability/api_docs/python/tfp/bijectors) - allgemeine API zur Erstellung von Operatoren auf Verteilungen
-- Numpy, Matplotlib.
-
-~~~python
-# file: "nf1_imports.py"
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-tfd = tf.contrib.distributions
-tfb = tfd.bijectors
-~~~
-
-Wir versuchen, die Verteilung $$p(x_1,x_2)= \mathcal{N}(x_1 \mid \mu=1/4x_{2}^{2},\sigma=1) * \mathcal{N}(x_2 \mid \mu=0,\sigma=4)$$ zu modellieren. Wir können Stichproben aus der Zielverteilung mit dem folgenden Codeschnipsel erzeugen (wir erzeugen sie in TensorFlow, um zu vermeiden, dass wir bei jedem Minibatch Stichproben von der CPU auf die GPU kopieren müssen):
-
-~~~python
-# file: "nf1_target.py"
-batch_size=512
-x2_dist = tfd.Normal(loc=0., scale=4.)
-x2_samples = x2_dist.sample(batch_size)
-x1 = tfd.Normal(loc=.25 * tf.square(x2_samples),
-                scale=tf.ones(batch_size, dtype=tf.float32))
-x1_samples = x1.sample()
-x_samples = tf.stack([x1_samples, x2_samples], axis=1)
-~~~
-
-![flow5](/assets/img/blog/flow5.png)
-
-Für unsere Basisverteilung nutzen wir eine isotropische Normalverteilung: 
-
-~~~python
-# file: "nf1_base_dist.py"
-base_dist = tfd.MultivariateNormalDiag(loc=tf.zeros([2], tf.float32))
-~~~
-
-Als Nächstes konstruieren wir den `Bijector` und erstellen daraus eine `TransformedDistribution`. Lasst uns einen flow aufbauen, der einem klassischen vollständig verbundenen Netzwerk ähnelt, d. h. alternierende Matrixmultiplikation und Nichtlinearitäten.
-
-Die Jacobi-Matrix einer affinen Funktion ist trivial zu berechnen, aber im schlimmsten Fall [sind die Determinanten $$O(n^3)$$](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations), was inakzeptabel langsam ist. Stattdessen bietet TensorFlow eine strukturierte affine Transformation, deren Determinante effizienter berechnet werden kann. Diese affine Transformation ist parametrisiert als eine untere Dreiecksmatrix $$M$$ plus eine Aktualisierung niedrigen Ranges:
-
-$$M+V⋅D⋅V^T$$
-
-Um $$\det(M+V⋅D⋅V^T)$$ kostengünstig zu berechnen, verwenden wir das [Matrix-Determinanten-Lemma](https://en.wikipedia.org/wiki/Matrix_determinant_lemma).
-
-Nun benötigen wir eine invertierbare Nichtlinearität, um nichtlineare Funktionen auszudrücken (andernfalls bleibt die Kette der affinen Bijektoren affin). $$Sigmoid$$ / $$tanh$$ scheinen eine gute Wahl zu sein, aber sie sind unglaublich instabil zu invertieren - kleine Änderungen in der Ausgabe nahe -1 oder 1 entsprechen massiven Änderungen in der Eingabe. In meinen Experimenten konnte ich nicht 2 sättigende Nichtlinearitäten aneinanderreihen, ohne dass die Gradienten explodierten. $$ReLU$$ dagegen ist stabil, aber nicht invertierbar für $$x<0$$.
-
-Ich entschied mich dafür, $$PReLU$$ (parametrisierte $$ReLU$$) zu implementieren, was dasselbe ist wie $$Leaky ReLU$$, aber mit einer lernbaren Steigung im negativen Bereich. Die Einfachheit von PReLU und seine simple Jacobi-Matrix sind eine gute Übung für die Implementierung eigener Bijektoren: Beachte, dass die ILDJ 0 ist, wenn $$x>0$$ (keine Volumenänderung) und $$1/\alpha$$ andernfalls (Kompensation der Volumenkontraktion durch Multiplikation von $$x$$ mit $$\alpha$$).
-
-~~~python
-# file: "nf1_prelu.py"
-# einfache Interpretation - Multiplikation mit alpha führt zur Volumenkontraktion
-class LeakyReLU(tfb.Bijector):
-    def __init__(self, alpha=0.5, validate_args=False, name="leaky_relu"):
-        super(LeakyReLU, self).__init__(
-            event_ndims=1, validate_args=validate_args, name=name)
-        self.alpha = alpha
-
-    def _forward(self, x):
-        return tf.where(tf.greater_equal(x, 0), x, self.alpha * x)
-
-    def _inverse(self, y):
-        return tf.where(tf.greater_equal(y, 0), y, 1. / self.alpha * y)
-
-    def _inverse_log_det_jacobian(self, y):
-        event_dims = self._event_dims_tensor(y)
-        I = tf.ones_like(y)
-        J_inv = tf.where(tf.greater_equal(y, 0), I, 1.0 / self.alpha * I)
-        # abs ist redundant hier, da det Jacobian > 0 hier
-        log_abs_det_J_inv = tf.log(tf.abs(J_inv))
-        return tf.reduce_sum(log_abs_det_J_inv, axis=event_dims)
-~~~
-
-PReLU ist eine elementweise Transformation, daher ist die Jacobi-Matrix diagonal. Die Determinante einer Diagonalmatrix ist einfach das Produkt der Diagonaleinträge, so dass wir die ILDJ durch einfache Summierung der Diagonaleinträge der log-Jacobi-Matrix [^4] berechnen. Wir erstellen den "MLP Bijector" mit `tfb.Chain()` und wenden ihn dann auf unsere Basisverteilung an, um die transformierte Verteilung zu erhalten:
-
-~~~python
-# file: "nf1_chain.py"
-d, r = 2, 2
-DTYPE = tf.float32
-bijectors = []
-num_layers = 6
-for i in range(num_layers):
-    with tf.variable_scope('bijector_%d' % i):
-        V = tf.get_variable('V', [d, r], dtype=DTYPE)  # factor loading
-        shift = tf.get_variable('shift', [d], dtype=DTYPE)  # affine shift
-        L = tf.get_variable('L', [d * (d + 1) / 2],
-                            dtype=DTYPE)  # lower triangular
-        bijectors.append(tfb.Affine(
-            scale_tril=tfd.fill_triangular(L),
-            scale_perturb_factor=V,
-            shift=shift,
-        ))
-        alpha = tf.abs(tf.get_variable('alpha', [], dtype=DTYPE)) + .01
-        bijectors.append(LeakyReLU(alpha=alpha))
-# Last layer is affine. Note that tfb.Chain takes a list of bijectors in the *reverse* order
-# that they are applied.
-mlp_bijector = tfb.Chain(
-    list(reversed(bijectors[:-1])), name='2d_mlp_bijector')
-dist = tfd.TransformedDistribution(
-    distribution=base_dist,
-    bijector=mlp_bijector
-)
-~~~
-
-Zum Schluss trainieren wir das Modell mithilfe von Maximum-Likelihood-Schätzung: Maximierung der erwarteten log-Wahrscheinlichkeit unserer Stichproben von der realen Datenverteilung, gegeben unsere Modellwahl.
-
-~~~python
-# file: "nf1_opt.py"
-loss = -tf.reduce_mean(dist.log_prob(x_samples))
-train_op = tf.train.AdamOptimizer(1e-3).minimize(loss)
-sess = tf.InteractiveSession()
-sess.run(tf.global_variables_initializer())
-NUM_STEPS = int(1e5)
-global_step = []
-np_losses = []
-for i in range(NUM_STEPS):
-    _, np_loss = sess.run([train_op, loss])
-    if i % 1000 == 0:
-        global_step.append(i)
-        np_losses.append(np_loss)
-    if i % int(1e4) == 0:
-        print(i, np_loss)
-~~~
-
-Und das war's! TensorFlow-Distributionen machen Normalizing Flows implementierbar und akkumulieren automatisch alle Jacobi-Determinanten in einer Weise, die sauber und gut lesbar ist. Der vollständigen Code findet könnt ihr auf [Github](https://github.com/ericjang/normalizing-flows-tutorial/blob/master/nf_part1_intro.ipynb) finden.
-
-Ihr werdet vielleicht festellen, dass die Deformation ziemlich langsam ist und dass es viele Schichten braucht, um eine relativ einfache Transformation zu lernen [^5]. Im [nächsten Post](https://main--kdidi.netlify.app/blog/ml/2022-08-30-2022-08-30-flow_models_2/) werde ich modernere Techniken zum Erlernen von Normalizing Flows behandeln.
-
-[^1]: Die Vorstellung, dass wir unseren Datensatz mit \*neuen\* Informationen aus einem endlichen Datensatz erweitern können, ist ziemlich beunruhigend, und es muss sich erst noch zeigen, ob probabilistisches maschinelles Lernen wirklich echte generative Prozesse ersetzen kann (z. B. die Simulation der Flüssigkeitsdynamik), oder ob es am Ende des Tages nur zur Amortisierung von Berechnungen taugt und jede Verallgemeinerung, die wir über die Trainings-/Testverteilung erhalten, ein glücklicher Zufall ist.
-
-[^2]: [A note on the evaluation of generative models](https://arxiv.org/abs/1511.01844) ist eine anregende Diskussion darüber, dass eine hohe log-likelihood weder ausreichend noch notwendig ist, um "plausible" Bilder zu erzeugen. Dennoch ist es besser als nichts und in der Praxis ein nützliches Diagnoseinstrument.
-
-[^3]: Es gibt eine Verbindung zwischen Normalizing Flows und GANs über Encoder-Decoder-GAN-Architekturen, die die Inverse des Generators lernen (ALI / BiGAN). Da es einen separaten Encoder gibt, der versucht, $$u=G^{-1}(X)$$ so wiederherzustellen, dass $$X=G(u)$$ ist, kann man sich den Generator als einen Flow für die einfache uniforme Verteilung vorstellen. Wir wissen jedoch nicht, wie wir den Betrag der Volumenexpansion/-kontraktion in Bezug auf $$X$$ berechnen können, so dass wir die Dichte nicht aus GANs gewinnen können. Es ist jedoch wahrscheinlich nicht völlig unvernünftig, die log-det-Jacobimatrix numerisch zu modellieren oder eine Art von Linearzeit-Jacobimatrix durch Konstruktion zu erzwingen.
-
-[^4]: Das Lemma "Die Determinante einer Diagonalmatrix ist das Produkt der Diagonaleinträge" ist aus geometrischer Sicht recht intuitiv: Die Längenverzerrung jeder Dimension ist unabhängig von den anderen Dimensionen, so dass die gesamte Volumenänderung nur das Produkt der Änderungen in jeder Richtung ist, als ob wir das Volumen eines hochdimensionalen rechteckigen Prismas berechnen würden.
-
-[^5]: Die Kapazität dieses MLP ist eher begrenzt, da jede affine Transformation nur eine 2x2-Matrix ist und PReLU die zugrunde liegende Verteilung nur sehr langsam "verformt" (daher sind mehrere PreLUs erforderlich, um die Daten in die richtige Form zu bringen). Für niedrigdimensionale Verteilungen ist dieses MLP eine sehr schlechte Wahl für einen Normalizing Flow und ist zur Illustration der Konzepte gedacht.
 
 ## Credits
 
