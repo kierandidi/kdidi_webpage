@@ -4,7 +4,7 @@ title: 'BioHacks 2023'
 caption: Bringing people from AI and Bio together
 description: >
   Our goal is to bring people from AI and Bio together to solve problems in the life sciences.
-date: '01-09-2022'
+date: '24-05-2023'
 image: 
   path: /assets/img/projects/viruses.png
 #links:
@@ -23,7 +23,7 @@ This in the end took the form of the [BioHack London](https://biohacklondon.noti
 
 ## Credits
 
-Cheers to Ceara Harper and Pranay Shah for getting the BioHack London off the ground, and 
+Cheers to Ceara Harper and Pranay Shah for getting the BioHack London off the ground, and to Tess van Stekelenburg and the other BioxML hackathon organisers for putting this amazing event together!
 
 * toc
 {:toc}
