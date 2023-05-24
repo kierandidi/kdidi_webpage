@@ -62,6 +62,14 @@ You can just install Zotero from [their website](https://www.zotero.org/download
 
 Then you will need to install the BetterBibTex addon from [GitHub](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.23) to make it integrate seamlessly with Obsidian. After downloading the .xpi file from GitHub, go to Zotero and follow [these installation instructions](https://retorque.re/zotero-better-bibtex/installation/).
 
+## Zotero Storage
+
+By default, Zotero comes with 300 MB of online storage space for your references and associated documents. Since this is not a lot you will probably run quickly out of space. From my perspective there are three main ways to resolve this problem:
+
+1. **Do nothing**. If you online use Zotero on one device and do not need to cross-sync your data between devices, it is enough to have all your data on your local device. In my case, however, I wanted to sync my references and papers between my laptop and tablet to enable handwritten annotations and therefore needed to find a different solution.
+2. **Buy Zotero storage**. Zotero offers [different storage plans](https://www.zotero.org/storage) for a monthly fee. If you want to have your files in the Zotero storage, this can be a good option. I however wanted to work with my own cloud storage solution to make annotations on my tablet easier and therefore needed to find a different solution.
+3. **Use your own cloud storage**. Zotero offers the option to use your own cloud storage solution (e.g. Dropbox, Google Drive, OneDrive) to store your files. This is the option I went for. There are great resources out there that explain how to do it, for example [this video](https://www.youtube.com/watch?v=fEChje5xgQw). I now sync my files to my university OneDrive and can access these papers from both my laptop and my tablet. On my tablet I sync between OneDrive and GoodNotes, which allows me to annotate the papers with my Apple Pencil. Once I annotated something, I just sync it back to OneDrive and it will be available on my laptop as well.
+
 ## Installing Obsidian
 
 Similar to Zotero, just install Obsidian via [their website](https://obsidian.md/download). Once you have this, there are a million options on how to customize it and make it work with Zotero. I linked some example workflows in my [setup post](https://kdidi.netlify.app/blog/tools/2022-09-17-mac-setup-copy/), but will only present the one I settled on here.
