@@ -25,9 +25,9 @@
       "company": "EMBL EBI",
       "position": "ML Engineer Intern",
       "startDate": "2022-10-01",
-      "endDate": "",
+      "endDate": "2023-06-30",
       "highlights": [],
-      "summary": "- working on ML for protein design",
+      "summary": "- working on FAIR ML for protein design\n - built [repository of reproducible ML pipelines in biology](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1)",
       "url": "https://www.linkedin.com/company/csiro/",
       "location": "Cambridge, UK"
     },
@@ -35,9 +35,9 @@
       "company": "CSIRO",
       "position": "Software Engineer Intern",
       "startDate": "2022-07-31",
-      "endDate": "",
+      "endDate": "2022-10-31",
       "highlights": [],
-      "summary": "- developing cloud-native software for DNA analysis using Spark, AWS and Terraform.\n- published an IaC Terraform module for creating EMR Serverless applications on AWS",
+      "summary": "- developing cloud-native software for DNA analysis using Spark, AWS and Terraform\n- published an IaC Terraform module for creating EMR Serverless applications on AWS",
       "url": "https://www.linkedin.com/company/csiro/",
       "location": "Sydney, New South Wales, Australia"
     },
