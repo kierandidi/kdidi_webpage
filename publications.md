@@ -7,10 +7,15 @@ buttons:
 ---
 <!-- PDF version available [here]({{ site.baseurl }}/assets/Publication_List_Kieran_Didi.pdf){:.no-push-state}. -->
 ## Publications 
+- Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya K. Joshi, **Kieran Didi**, Simon V Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Lio, Tom Leon Blundell 
+- Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Rokkum Jamasb, Ilia Igashov, weitao Du, Tom Leon Blundell, Pietro Lio, Carla P Gomes, Max Welling, Michael M. Bronstein, Bruno Correia
 
 ### Pre-Prints
+- [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian R. Jamasb, Chaitanya K. Joshi, Simon V. Mathis, Pietro Lio, Tom Blundell
 - [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
 - [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for engineering, selection, and computational design](https://www.biorxiv.org/content/10.1101/2023.04.28.538712v1), Aubin Ramon, Alessio Saturnino, **Kieran Didi**, Matthew Greenig, Pietro Sormanni, **biorxviv**, 04/2023
+
+### Under review
 
 ### Book Chapters
 
