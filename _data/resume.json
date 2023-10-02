@@ -22,6 +22,26 @@
   },
   "work": [
     {
+      "company": "Absci",
+      "position": "AI Research Scientist (Intern)",
+      "startDate": "2023-09-05",
+      "endDate": "2023-12-15",
+      "highlights": [],
+      "summary": "- ML for antibody design",
+      "url": "https://www.linkedin.com/company/csiro/",
+      "location": "New York, US"
+    },
+    {
+      "company": "MILA",
+      "position": "Visiting Researcher",
+      "startDate": "2023-08-01",
+      "endDate": "2023-08-31",
+      "highlights": [],
+      "summary": "- Working with Recursion Valence team on GNNs for protein-ligand complexes",
+      "url": "https://www.linkedin.com/company/csiro/",
+      "location": "Cambridge, UK"
+    },
+    {
       "company": "EMBL EBI",
       "position": "ML Engineer Intern",
       "startDate": "2022-10-01",

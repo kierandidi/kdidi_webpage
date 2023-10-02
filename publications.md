@@ -29,7 +29,7 @@ buttons:
 
 
 ## Conference Presentations
-
+- [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium Broad Institute (US), 10/2023
 - [Accessible AMR-detection tools for clinicians via cloud-based bioinformatics](https://pheedloop.com/ABACBS2022/site/CI) (oral presentation), Clinical Informatics Symposium Melbourne (Australia), 12/2022
 - [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference Melbourne (Australia), 11/2022
 - [Moving bioinformatics to the cloud](https://escamps.org/) (keynote presentation), eSCAMPS Symposium Cambridge (UK), 09/2022
