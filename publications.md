@@ -11,9 +11,10 @@ buttons:
 ### Pre-Prints
 - [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian R. Jamasb, Chaitanya K. Joshi, Simon V. Mathis, Pietro Lio, Tom Blundell
 - [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
-- [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for engineering, selection, and computational design](https://www.biorxiv.org/content/10.1101/2023.04.28.538712v1), Aubin Ramon, Alessio Saturnino, **Kieran Didi**, Matthew Greenig, Pietro Sormanni, **biorxviv**, 04/2023
+- [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.biorxiv.org/content/10.1101/2023.04.28.538712v2), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **biorxviv**, 04/2023
 
 ### Under review
+- A framework for conditional diffusion modelling with applications in motif scaffolding for protein design, **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio
 - Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya K. Joshi, **Kieran Didi**, Simon V Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Lio, Tom Leon Blundell 
 - Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Rokkum Jamasb, Ilia Igashov, weitao Du, Tom Leon Blundell, Pietro Lio, Carla P Gomes, Max Welling, Michael M. Bronstein, Bruno Correia
 
@@ -29,6 +30,7 @@ buttons:
 
 
 ## Conference Presentations
+- [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBO/EMBL Heidelberg, 12/2023
 - [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium Broad Institute (US), 10/2023
 - [Accessible AMR-detection tools for clinicians via cloud-based bioinformatics](https://pheedloop.com/ABACBS2022/site/CI) (oral presentation), Clinical Informatics Symposium Melbourne (Australia), 12/2022
 - [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference Melbourne (Australia), 11/2022
