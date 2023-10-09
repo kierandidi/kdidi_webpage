@@ -18,16 +18,15 @@ buttons:
 - Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya K. Joshi, **Kieran Didi**, Simon V Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Lio, Tom Leon Blundell 
 - Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Rokkum Jamasb, Ilia Igashov, weitao Du, Tom Leon Blundell, Pietro Lio, Carla P Gomes, Max Welling, Michael M. Bronstein, Bruno Correia
 
-### Book Chapters
-
-- *Generative Models in Bioinformatics*, invited book chapter in Encyclopedia of Bioinformatics and Computational Biology, under review, 01/2023
-- [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook, active as editor
-
 ### Peer-reviewed
 
 - [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charlie Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian R. Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR 2023 MLDD workshop**, 03/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
+### Book Chapters
+
+- *Generative Models in Bioinformatics*, invited book chapter in Encyclopedia of Bioinformatics and Computational Biology, under review, 01/2023
+- [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook, active as editor
 
 ## Conference Presentations
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBO/EMBL Heidelberg, 12/2023
@@ -36,6 +35,10 @@ buttons:
 - [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference Melbourne (Australia), 11/2022
 - [Moving bioinformatics to the cloud](https://escamps.org/) (keynote presentation), eSCAMPS Symposium Cambridge (UK), 09/2022
 - [Detecting DNA integration via HPC bioinformatics pipeline](https://na.eventscloud.com/website/36005/home/) (poster),R&I Conference Sydney (Australia), 08/2022
+
+## Reviewing
+
+ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023
 ## Teaching
 
 - [Structural Bioinformatics](https://structural-bioinformatics.netlify.app/), lecture, Heidelberg University, 10/2023
