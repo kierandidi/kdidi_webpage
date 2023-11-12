@@ -14,14 +14,14 @@ buttons:
 
 ### Under review
 
-- Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Rokkum Jamasb, Ilia Igashov, weitao Du, Tom Leon Blundell, Pietro Lio, Carla P Gomes, Max Welling, Michael M. Bronstein, Bruno Correia
+- Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia
 
 ### Peer-reviewed
-- A framework for conditional diffusion modelling with applications in motif scaffolding for protein design, **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS MLSB 2023**, 11/2023
-- [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian R. Jamasb, Chaitanya K. Joshi, Simon V. Mathis, Pietro Lio, Tom Blundell, **NeurIPS GenBio 2023**, 11/2023
-- Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Lio, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
-- Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya K. Joshi, **Kieran Didi**, Simon V Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Lio, Tom Leon Blundell, **NeurIPS GenBio 2023**,10/2023
-- [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charlie Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian R. Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR MLDD 2023**, 03/2023
+- A framework for conditional diffusion modelling with applications in motif scaffolding for protein design, **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
+- [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian Jamasb, Chaitanya Joshi, Simon Mathis, Pietro Lio, Tom Blundell, **NeurIPS MLSB 2023 (Oral Presentation)**, 11/2023
+- Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
+- Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya Joshi, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **NeurIPS GenBio 2023**,10/2023
+- [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charles Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR MLDD 2023**, 03/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
 ### Book Chapters
@@ -30,16 +30,18 @@ buttons:
 - [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook, active as editor
 
 ## Conference Presentations
-- [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBO/EMBL Heidelberg, 12/2023
-- [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium Broad Institute (US), 10/2023
-- [Accessible AMR-detection tools for clinicians via cloud-based bioinformatics](https://pheedloop.com/ABACBS2022/site/CI) (oral presentation), Clinical Informatics Symposium Melbourne (Australia), 12/2022
-- [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference Melbourne (Australia), 11/2022
-- [Moving bioinformatics to the cloud](https://escamps.org/) (keynote presentation), eSCAMPS Symposium Cambridge (UK), 09/2022
-- [Detecting DNA integration via HPC bioinformatics pipeline](https://na.eventscloud.com/website/36005/home/) (poster),R&I Conference Sydney (Australia), 08/2022
+- [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
+- [Conditional Diffusion Models for Protein Design via Doob’s h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
+- [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023
+- [Accessible AMR-detection tools for clinicians via cloud-based bioinformatics](https://pheedloop.com/ABACBS2022/site/CI) (oral presentation), Clinical Informatics Symposium, Melbourne (Australia), 12/2022
+- [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference, Melbourne (Australia), 11/2022
+- [Moving bioinformatics to the cloud](https://escamps.org/) (keynote presentation), eSCAMPS Symposium, Cambridge (UK), 09/2022
+- [Detecting DNA integration via HPC bioinformatics pipeline](https://na.eventscloud.com/website/36005/home/) (poster),R&I Conference, Sydney (Australia), 08/2022
 
 ## Reviewing
 
 ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023
+
 ## Teaching
 - [SDEs and Diffuion Processes](https://sde-diffusion.netlify.app/), lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024
 - [Structural Bioinformatics](https://structural-bioinformatics.netlify.app/), lecture, Heidelberg University (BSc Biochemistry), 10/2023
