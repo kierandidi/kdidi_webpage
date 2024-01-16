@@ -30,24 +30,6 @@ This post is a rather unusual one since it is in German. I have always been invo
 
 Wenn du an maschinellem Lernen, an generativer Modellierung, Bayesian Deep Learning oder Deep Reinforcement Learning arbeitest, sind "Normalizing Flows" eine praktische Technik, die du in deinem algorithmischen Werkzeugkasten haben solltest.
 
-$$
-\begin{aligned} %!!15
-  \phi(x,y) &= \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) \\[2em]
-            &= \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j)            \\[2em]
-            &= (x_1, \ldots, x_n)
-               \left(\begin{array}{ccc}
-                 \phi(e_1, e_1)  & \cdots & \phi(e_1, e_n) \\
-                 \vdots          & \ddots & \vdots         \\
-                 \phi(e_n, e_1)  & \cdots & \phi(e_n, e_n)
-               \end{array}\right)
-               \left(\begin{array}{c}
-                 y_1    \\
-                 \vdots \\
-                 y_n
-               \end{array}\right)
-\end{aligned}
-$$
-
 Normalizing flows transformieren einfache Dichteverteilungen (wie die Normalverteilung) in komplexe Verteilungen, die für generative Modelle, RL und Variational Inference verwendet werden können. TensorFlow hat [ein paar nützliche Funktionen](https://arxiv.org/pdf/1711.10604.pdf), die es einfach machen, Flows zu erstellen und zu trainieren, um sie an reale Daten anzupassen.
 
 Diese Serie besteht aus zwei Teilen:
