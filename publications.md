@@ -30,9 +30,10 @@ buttons:
 ### Book Chapters
 
 - *Generative Models in Bioinformatics*, invited book chapter in Encyclopedia of Bioinformatics and Computational Biology, under review, 01/2023
-- [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook, active as editor
+- [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook editor
 
 ## Conference Presentations
+- [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 01/2024
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
 - [Conditional Diffusion Models for Protein Design via Doob’s h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
 - [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023
@@ -43,10 +44,10 @@ buttons:
 
 ## Reviewing
 
-ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023
+ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024
 
 ## Teaching
-- [SDEs and Diffuion Processes](https://sde-diffusion.netlify.app/), lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024
+- [SDEs and Diffusion Processes](https://sde-course.netlify.app/), lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024
 - [Structural Bioinformatics](https://structural-bioinformatics.netlify.app/), lecture, Heidelberg University (BSc Biochemistry), 10/2023
 - [Advanced Python for Scientists](https://github.com/kierandidi/advanced_python_for_scientists), lecture, Heidelberg University, 06/2023
 - [Algorithms II](https://www.cl.cam.ac.uk/teaching/2223/Algorithm2/), supervising course on data structures and graph algorithms, Cambridge University, 03-05/2023
