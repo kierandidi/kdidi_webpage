@@ -40,7 +40,7 @@ For the config file you need:
 - abbreviation for the host (up to you, here remote123)
 - the username with which you logon to the remote machine
 - the IP address of the remote machine
-- the identitify file with the public key (we will deal with this later)
+- the identitify file with the private key (we will deal with this later)
 
 Now we can already shorten our ssh command from `ssh <username>@<hostname>` to `ssh remote123`. But there is still room for improvement!
 
@@ -61,9 +61,10 @@ Now, log into your remote machine and execute the following series of commands:
 - `chmod 600 ~/.ssh/authorized_keys`
 - `nano ~/.ssh/authorized_keys`
 
-With this, you should now again be in a nano editor opened. Paste your public key in there via `Cmd + V`, save the file and voilà! You should now be able to connect to your remote machine via just running `ssh remote123`.
+With this, you should now again be in a nano editor opened. Paste your public key in there via `Cmd + V`, save the file and voilà! We have our key-based authentication set up.
 
-#### Step 3: Get it done is VS Code
+
+#### Step 3a: Get it done is VS Code
 
 This last step is actually trivial: You can just open the remote-ssh extension, point the extension towards your ssh config file on your local machine and you're done! So now you can just open that extension in VS Code, right-click on the host you want to connect and choose `Connect`; it will open the SSH tunnel and allow you to manipulate files and open terminals in VS Code but on the remote machine.
 
@@ -72,6 +73,19 @@ This last step is actually trivial: You can just open the remote-ssh extension, 
 </p>
 
 Once you have this working, VS Code unlocks its powers: you can connect to your remote machine in a few clicks and directly have an integrated terminal at your disposal. Even better, you can just copy files from and to your remote machine just by using drag-and-drop! For me this was a real game changer.
+
+#### Step 3b: Get it done via the terminal and ssh-agent
+
+In the VSCode case, the extension will take care of handling the private key authentication for you. But if you want to do it via the terminal, you can use the `ssh-agent` to handle the private key for you.
+
+You can read abou it in more detail [here](https://rabexc.org/posts/using-ssh-agent), but it boils down to `ssh-agent` handling the private key for you; you just have to add it to the agent via `ssh-add ~/.ssh/remote123_rsa`.
+
+So the process would be:
+1. Start the ssh-agent via `eval "$(ssh-agent -s)"`.
+2. Add the private key to the agent via `ssh-add ~/.ssh/remote123_rsa`. For safety reasons you can also add a timeout to the key via `ssh-add -t 1h ~/.ssh/remote123_rsa`.
+3. To automatically add the key to the agent when you start your terminal, you can add these lines to your `.bashrc` or `.zshrc`.
+
+You should now be able to connect to your remote machine via just running `ssh remote123`.
 
 ## Closing thoughts
 

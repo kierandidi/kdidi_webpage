@@ -151,7 +151,7 @@ You can imagine a Docker image as a pile of images stacked up onto each other th
   <img src="/assets/img/blog/docker/book_pile.png" width="50%" height="50%"/>
 </p>
 
-*Ahe Dockerimage is like a pile of objects that were built using instructions from the Dockerfile (the objects are represented by bricks in this case).*
+*A Dockerimage is like a pile of objects that were built using instructions from the Dockerfile (the objects are represented by bricks in this case).*
 
 The Dockerfile is responsible for changes: each layer in the Docker image is built via an instruction from the Docker file. Thereby, the image is created iteratively by building layer upon layer, each layer represententing the changes compared to the previous layer. 
 
