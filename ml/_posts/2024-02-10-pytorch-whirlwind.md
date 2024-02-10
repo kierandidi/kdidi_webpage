@@ -351,5 +351,7 @@ I hope that this post gave you a good overview of how to find the implementation
 
 There is an amazing blog post about [PyTorch internals](http://blog.ezyang.com/2019/05/pytorch-internals/) by Ed Zang as well as his [PyTorch developer podcast](https://pytorch-dev-podcast.simplecast.com/episodes) that helped me immensely in understanding the PyTorch codebase. Also shoutout to Christian Perone for his [slides on PyTorch 2 internals](https://blog.christianperone.com/2023/12/pytorch-2-intern) that shine some light on the recent developments connected with the PyTorch 2 release.
 
+PyTorch Logo taken from [this post](https://www.google.com/url?sa=i&url=https%3A%2F%2Fabout.fb.com%2Fnews%2F2022%2F09%2Fpytorch-foundation-to-accelerate-progress-in-ai-research%2F&psig=AOvVaw3jeDHL-YCCnCHsFYMy-iUn&ust=1707675842545000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCLiSrLGyoYQDFQAAAAAdAAAAABAE).
+
 
 *[SERP]: Search Engine Results Page

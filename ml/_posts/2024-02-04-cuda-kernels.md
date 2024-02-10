@@ -389,7 +389,4 @@ We can also use the decorator `triton.testing.perf_report` to get a performance 
 
 Thanks to the [CUDA MODE](https://www.youtube.com/@CUDAMODE) lecture series for the inspiration for this post and the community around that for interesting discussions!
 
-
-<span>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
 *[SERP]: Search Engine Results Page
