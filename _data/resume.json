@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Kieran Didi",
-    "label": "CompBio master's student",
+    "label": "BioML Researcher",
     "image": "",
     "email": "kieran.didi@gmail.com",
     "phone": "",
@@ -21,6 +21,16 @@
     ]
   },
   "work": [
+    {
+      "company": "NVIDIA",
+      "position": "ML Researcher",
+      "startDate": "2024-01-29",
+      "endDate": "",
+      "highlights": [],
+      "summary": "Generative Modelling for Biomolecules",
+      "url": "https://www.nvidia.com/de-de/",
+      "location": "Santa Clara, US"
+    },
     {
       "company": "Absci",
       "position": "AI Research Scientist (Intern)",
