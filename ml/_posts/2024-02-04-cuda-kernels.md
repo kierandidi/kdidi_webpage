@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use CUDA for PyTorch
+title: How to use CUDA and Triton in PyTorch
 image: /assets/img/blog/ssh_gpu/gpucluster.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -16,6 +16,9 @@ categories: ml
 # How to use CUDA for PyTorch
 
 Recently the [CUDA MODE](https://www.youtube.com/@CUDAMODE) lecture series started with some amazing talks about how you can use tools like CUDA or Triton to speed up your PyTorch programs (join the [Discord](https://discord.com/invite/XsdDHGtk9N) in case you are interested to learn more). Here I want to summarise and review some of the concepts and tools from the lecture and write them together in a coherent blog post.
+
+* toc
+{:toc}
 
 ## 1. Profiling
 
@@ -290,7 +293,7 @@ print(result)
 
 ### 2.3 Triton
 
-[Triton](https://openai.com/research/triton) is both a domain-specific language (DSL) and a compiler for writing highly efficient GPU code. It actually does not generate CUDA code, but PTX code, which is a lower-level intermediate representation of the CUDA code (basically the assembly language of CUDA). Newer features in PyTorch like `torch.compile` actually leverage Triton kernels under the hood, so it is worth understanding how it works. Since Triton is written in Python, it is easy to integrate with PyTorch. Here is an example of how to use Triton to write a simple matrix squaring operation:
+[Triton](https://openai.com/research/triton) is both a domain-specific language (DSL) and a compiler for writing highly efficient GPU code. It actually does not generate CUDA code, but PTX code, which is a lower-level intermediate representation of the CUDA code (basically the assembly language of CUDA). Newer features in PyTorch like `torch.compile` actually [leverage Triton kernels under the hood](https://pytorch.org/assets/pytorch2-2.pdf), so it is worth understanding how it works. Since Triton is written in Python, it is easy to integrate with PyTorch. Here is an example of how to use Triton to write a simple matrix squaring operation:
 
 ```python
 # Adapted straight from https://triton-lang.org/main/getting-started/tutorials/02-fused-softmax.html
@@ -357,6 +360,8 @@ assert torch.allclose(y_triton, y_torch), (y_triton, y_torch)
 
 We see that the output of the Triton kernel is the same as the output of the PyTorch function. 
 
+### 2.4 Debugging Triton
+
 Once we go to compiled code, we hopefully gain speed, but loose some of the flexibility that comes with eager execution, e.g. easy debugging via `pdb` and other Python debuggers or simple `print` statements.
 
 Fortunately, Triton has a debugger now: we can invoke it by changing the `triton.jit` decorator to `triton.jit(interpret=True)`. This will allow you to set normal `Python` breakpoints and step through the kernel line by line. 
@@ -366,14 +371,92 @@ The `interpret=True` option was recently deprecated, so you can instead use `os.
 
 When doing that, you will see that most objects in the kernel are of the type `WrappedTensor`. So if you want to inspect a variable, you have to access its `.tensor` attribute.
 
-To read more about Triton, you can have a look at the [original research paper](https://www.eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf), a [video by the author Philippe Tillet](https://www.youtube.com/watch?v=G951lCm_qnk) and a [Reddit discussion](https://www.reddit.com/r/MachineLearning/comments/otdpkx/n_introducing_triton_opensource_gpu_programming/) where he himself gave some useful perspectives on the project.
+Let's look at this in action with a simple vector addition kernel from the [Triton Docs](https://triton-lang.org/main/index.html). 
+
+If you do not have a GPU available, you can run this code in a Google Colab by first choosing a GPU runtime and then executing the following lines to get the latest Triton version and set up your CUDA libraries correctly:
+`!ldconfig /usr/lib64-nvidia`
+`!ldconfig -p | grep libcud`
+`!pip install -U --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/Triton-Nightly/pypi/simple/ triton-nightly`
+{:.note title="Attention"}
+
+Let us implement a simple vector addition kernel together with a helper function to call the kernel as well as some code to generate data and call that function:
+
+```python
+import triton
+import triton.language as tl
+import torch
+
+@triton.jit
+def add_kernel(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
+    pid = tl.program_id(axis=0)
+    breakpoint()
+    block_start = pid * BLOCK_SIZE
+    offsets = block_start + tl.arange(0, BLOCK_SIZE)
+    mask = offsets < n_elements
+    x = tl.load(x_ptr + offsets, mask=mask)
+    y = tl.load(y_ptr + offsets, mask=mask)
+    output = x + y
+    tl.store(output_ptr + offsets, output, mask=mask)
+
+def add(x: torch.Tensor, y: torch.Tensor):
+    output = torch.empty_like(x)
+    assert x.is_cuda and y.is_cuda and output.is_cuda
+    n_elements = output.numel()
+    grid = lambda meta: (triton.cdiv(n_elements, meta['BLOCK_SIZE']), )
+    add_kernel[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+    torch.cuda.synchronize()
+    return output
+
+torch.manual_seed(0)
+size = 98432
+x = torch.rand(size, device='cuda')
+y = torch.rand(size, device='cuda')
+output_torch = x + y
+output_triton = add(x, y)
+print(f'The maximum difference between torch and triton is '
+      f'{torch.max(torch.abs(output_torch - output_triton))}')
+```
+
+Does not seem to complicated, but what are all these in-built Triton variables like `tl.program_id`? What do the offsets look like? And what values do my data pointers have? If we try to set  `breakpoint()` to enter the PDB debugger we get a `NameError`.
+
+To answer these questions, `import os` and set the interpret flag for Triton to true: `os.environ["TRITON_INTERPRET"] = "1"`. Now our `breakpoint()` works like a charm and we can interactively debug our Triton kernel (even inside a notebook!).
+
+Via this, we learn for example that our `pid` is 0 in the first iteration, 1 in the second and so on! These iterations correspond to the workgroup/tile id, similar to the `blockIdx` in CUDA.
+
+We also see that the offsets are a contiguous array of indices that are used to later access the vectors. We can also see that `x_ptr` and `y_ptr` contain memory addresses. So what happens is that in `x = tl.load(x_ptr + offsets, mask=mask)`, Triton loads the whole block of memory from `x_ptr` and including all the offset locations. The compiler here makes sure that these memory accesses are efficient via e.g. memory coalesence.
+
+## 2.5 Triton Background
 
 What does Triton do under the hood? It converts the Python code first into a custom Triton IR and then via the Triton compiler into the well-known LLVM-IR. From there PTX code is generated. Basically, Triton leverages LLVM heavily and (quote from the paper) "just a few data- and control-flow extensions to LLVM-IR could enable various tile-level optimization passes which jointly lead to performance on-par with vendor libraries." These extensions allow Triton to do things like shared memory allocation or memory coalescence, things that in CUDA the GPU programmer has to handle manually.
 
 ![Triton under the hood](/assets/img/blog/gpu_profiling/triton.png)
 From [this news article](https://international.binus.ac.id/computer-science/2022/09/02/openai-proposes-open-source-triton-language-as-an-alternative-to-nvidias-cuda/)
 
-To get a feel for what Triton does under the hood, we can look at the PTX code generated for our Triton kernel. To do that, we can leverage the fact that `torch.compile` actually uses Triton under the hood. We can just write a simple function and then call `torch.compile` on it. Then, when running the script, we set the environment variable `TORCH_LOGS="output_code"` and run the script. This will create a directory `output_code` in the current working directory, which contains the Triton kernel.
+```python
+compiled = add_kernel[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+print("IR", compiled.asm['ttir'])
+print("TTGIR", compiled.asm['ttgir'])
+print("LLIR", compiled.asm['llir'])
+print("PTX", compiled.asm['ptx'])
+```
+
+1. **TTIR (Intermediate Representation)**:
+2. **TTGIR (Triton Thread-Group Intermediate Representation)**:
+3. **LLIR (Low-Level Intermediate Representation)**:
+4. **PTX (Parallel Thread Execution, also NVPTX)**:
+
+## 3. `torch.compile`
+
+To get a feel for how Triton fits into the PyTorch2 compilation stack, we can leverage the fact that `torch.compile` actually uses Triton under the hood. We can just write a simple function and then call `torch.compile` on it. Then, when running the script, we set the environment variable `os.environ["TORCH_LOGS"]` to different values (depending on which stage of the PyTorch compilation process we want to investigate) or set these values directly in PyTorch via `torch._logging.set_logs(argument)` with different arguments.
+
+| Stage              	| Value for TORCH_LOGS<br>(Env. variable) 	| Argument to `set_logs`<br>(Python function) 	|
+|--------------------	|-----------------------------------------	|---------------------------------------------	|
+| Dynamo Tracing     	| `+dynamo`                               	| `dynamo=logging.DEBUG`                      	|
+| Traced Graph       	| `graph`                                 	| `graph=True`                                	|
+| Fusion Detections  	| `fusion`                                	| `fusion=True`                               	|
+| Triton Output Code 	| `output_code`                           	| `output_code=True`                          	|
+
+
 
 ```python
 ```
@@ -385,8 +468,33 @@ One of the most important optimisations in ML is often kernel fusion, i.e. combi
 We can also use the decorator `triton.testing.perf_report` to get a performance report of our kernel. 
 
 ```python
+@triton.testing.perf_report(
+        triton.testing.Benchmark(
+            x_names=['size'],
+            x_vals=[2**i for i in range(12, 28, 1)],
+            x_log=True,
+            line_arg='provider',
+            line_vals=['triton', 'torch'],
+            line_names=['Triton', 'Torch'],
+            styles=[('blue', '-'), ('green', '-')],  # Line styles.
+            ylabel='GB/s',  # Label name for the y-axis.
+            plot_name='matrix-square-performance',  # Name for the plot. Used also as a file name for saving the plot.
+            args={},  # Values for function arguments not in x_names and y_name.
+        ))
+def benchmark(size, provider):
+    x = torch.rand(size, device='cuda', dtype=torch.float32)
+    quantiles = [0.5, 0.2, 0.8]
+    if provider == 'torch':
+        ms, min_ms, max_ms = triton.testing.do_bench(lambda: x**2, quantiles = quantiles)
+    if provider == 'triton':
+        ms, min_ms, max_ms = triton.testing.do_bench(lambda: square(x), quantiles=quantiles)
+    gbps = lambda ms: 12 * size / ms * 1e-6
+    return gbps(ms), gbps(max_ms), gbps(min_ms)
+
+benchmark.run(show_plots=True, print_data=True)
 ```
 
+To read more about Triton, you can have a look at the [original research paper](https://www.eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf), a [video by the author Philippe Tillet](https://www.youtube.com/watch?v=G951lCm_qnk) and a [Reddit discussion](https://www.reddit.com/r/MachineLearning/comments/otdpkx/n_introducing_triton_opensource_gpu_programming/) where he himself gave some useful perspectives on the project.
 
 ## Credits
 

@@ -19,7 +19,8 @@ PyTorch is *the* deep learning library. It is used by researchers and practition
 
 In my post about [GPU programming in PyTorch](), we saw that calling a linear layer in PyTorch via `torch.nn.Linear` results in a call to the `aten::addmm` function. The ATen library is part of the [PyTorch C++ API](https://pytorch-dev-podcast.simplecast.com/episodes/c-frontend) and is responsible for the tensor operations in PyTorch. So if we want to understand how the linear layer is implemented in PyTorch, we need to dig into C++ code and understand how the `aten::addmm` function is implemented. This is a bit of a convoluted process, but I  hope that in the process you learn as much about the PyTorch codebase as I did when I went down this rabbit hole.
 
-
+* toc
+{:toc}
 
 ## PyTorch Docs and the Dispatcher
 
