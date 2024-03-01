@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use CUDA and Triton in PyTorch
+title: How to use accelerate PyTorch on your GPU
 image: /assets/img/blog/ssh_gpu/gpucluster.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -13,7 +13,7 @@ invert_sidebar: true
 categories: ml
 ---
 
-# How to use CUDA for PyTorch
+# How to use accelerate PyTorch on your GPU
 
 Recently the [CUDA MODE](https://www.youtube.com/@CUDAMODE) lecture series started with some amazing talks about how you can use tools like CUDA or Triton to speed up your PyTorch programs (join the [Discord](https://discord.com/invite/XsdDHGtk9N) in case you are interested to learn more). Here I want to summarise and review some of the concepts and tools from the lecture and write them together in a coherent blog post.
 
@@ -24,7 +24,7 @@ Recently the [CUDA MODE](https://www.youtube.com/@CUDAMODE) lecture series start
 
 Profiling is the process of measuring the time and resources that a program uses. It is a crucial step in the development of any software, as it allows you to identify bottlenecks and areas for improvement. In the context of GPU programming, profiling is especially important, as the performance of a GPU program can be highly dependent on factors such as memory access patterns, kernel launch configurations, and the specific hardware being used. It is also not trivial to profile GPU code, as the operations are executed asynchronously on the GPU and we cannot simply measure execution time like we would with CPU code. In the following sections are a few tools to get you started on that for PyTorch code (for this you need to have access to a GPU, e.g. via Google Colab or a local machine with a CUDA-enabled GPU).
 
-### 1.1 Use `torch.cuda.Event`
+### 1.1 `torch.cuda.Event`
 
 To profile the time a torch opertion takes, you can use `torch.cuda.Event`. We cannot use the `time` module for this, because the operations are executed asynchronously on the GPU. Let us write a short function to profile the time a function call takes:
 
@@ -66,7 +66,7 @@ print(time_pytorch_function(square_3, b))
 We can see that the multiplication `a * a` is slightly faster than the power operation `a ** 2`. However, we have no idea why this is happening; it is the same operation, so are they using different CUDA kernels? We can use the `torch.autograd.profiler` to find out.
 
 
-### 1.2  Use `torch.autograd.profiler`
+### 1.2 `torch.autograd.profiler`
 
 Fortunately, we do not have to write all profiling tools ourselves PyTorch has a built-in profiler. Let us look again at the same operations:
 
@@ -128,7 +128,7 @@ Which gives us the following output:
 
 We can see that the `aten::linear` and the `aten::addmm` operation are the most time-consuming operations in this forward pass. In [another post]() I dig into how one can find the actual implementation of these functions in the PyTorch codebase to understand what they actually do, but for it is enough to know that `aten::linear` is the operation that applies a linear transformation to the input data and `aten::addmm` is the operation that performs a matrix multiplication of the input data with the weight matrix and adds a bias term.
 
-### 1.3 Use `torch.profiler`
+### 1.3 `torch.profiler`
 
 Another, more visual way to profile your code is to use `torch.profiler`. This is a more high-level interface to the profiler and allows you to export the profiling data to a Chrome trace file. Here is an example of how to use it:
 
@@ -168,7 +168,7 @@ However, we also get a Chrome trace file that we can open in Chrome to visualize
 
 We can see that the majority of the time is actually spent on the cpu, moving data to the GPU, whereas the actual matrix multiplication is quite fast (and uses a special CUDA kernel called `volta_sgemm_32x32_sliced1x4_tn`).
 
-### 1.4 Use `ncu` profiler
+### 1.4 `ncu` profiler
 
 The `ncu` profiler is a command-line tool that comes with the CUDA toolkit. It is a very powerful tool that allows you to profile your CUDA kernels in great detail. You invoke it by running `ncu python script.py`. It will then run your script and profile all the CUDA kernels that are called. It will then generate a report in the form of a ncu_logs file that contains helpful numbers and recommendations on how to optimize your code.
 
@@ -176,7 +176,7 @@ The `ncu` profiler is a command-line tool that comes with the CUDA toolkit. It i
 
 `ncu` also has a visual profiler that you can invoke by running `ncu --set full -o output $(which python) script.py`.
 
-### 1.5 Use `Nsight` profiler
+### 1.5 `Nsight` profiler
 
 One can also use the [Nsight Systems] tool by NVIDIA, which gives a visual trace of memory usage and other performance metrics of your kernels.
 
@@ -291,7 +291,9 @@ print(result)
 ```
 
 
-### 2.3 Triton
+## 3. Integrate Triton kernels into PyTorch
+
+### 3.1 Using Triton
 
 [Triton](https://openai.com/research/triton) is both a domain-specific language (DSL) and a compiler for writing highly efficient GPU code. It actually does not generate CUDA code, but PTX code, which is a lower-level intermediate representation of the CUDA code (basically the assembly language of CUDA). Newer features in PyTorch like `torch.compile` actually [leverage Triton kernels under the hood](https://pytorch.org/assets/pytorch2-2.pdf), so it is worth understanding how it works. Since Triton is written in Python, it is easy to integrate with PyTorch. Here is an example of how to use Triton to write a simple matrix squaring operation:
 
@@ -360,7 +362,7 @@ assert torch.allclose(y_triton, y_torch), (y_triton, y_torch)
 
 We see that the output of the Triton kernel is the same as the output of the PyTorch function. 
 
-### 2.4 Debugging Triton
+### 3.2 Debugging Triton
 
 Once we go to compiled code, we hopefully gain speed, but loose some of the flexibility that comes with eager execution, e.g. easy debugging via `pdb` and other Python debuggers or simple `print` statements.
 
@@ -425,7 +427,7 @@ Via this, we learn for example that our `pid` is 0 in the first iteration, 1 in 
 
 We also see that the offsets are a contiguous array of indices that are used to later access the vectors. We can also see that `x_ptr` and `y_ptr` contain memory addresses. So what happens is that in `x = tl.load(x_ptr + offsets, mask=mask)`, Triton loads the whole block of memory from `x_ptr` and including all the offset locations. The compiler here makes sure that these memory accesses are efficient via e.g. memory coalesence.
 
-## 2.5 Triton Background
+## 3.3 Triton Deep-Dive
 
 What does Triton do under the hood? It converts the Python code first into a custom Triton IR and then via the Triton compiler into the well-known LLVM-IR. From there PTX code is generated. Basically, Triton leverages LLVM heavily and (quote from the paper) "just a few data- and control-flow extensions to LLVM-IR could enable various tile-level optimization passes which jointly lead to performance on-par with vendor libraries." These extensions allow Triton to do things like shared memory allocation or memory coalescence, things that in CUDA the GPU programmer has to handle manually.
 
@@ -445,27 +447,19 @@ print("PTX", compiled.asm['ptx'])
 3. **LLIR (Low-Level Intermediate Representation)**:
 4. **PTX (Parallel Thread Execution, also NVPTX)**:
 
-## 3. `torch.compile`
+![Triton Compiler Pipeline](/assets/img/blog/triton/triton_compiler_pipeline.jpeg)
+Triton Compiler Pipeline ([Link](https://www.youtube.com/watch?v=AtbnRIzpwho))
 
-To get a feel for how Triton fits into the PyTorch2 compilation stack, we can leverage the fact that `torch.compile` actually uses Triton under the hood. We can just write a simple function and then call `torch.compile` on it. Then, when running the script, we set the environment variable `os.environ["TORCH_LOGS"]` to different values (depending on which stage of the PyTorch compilation process we want to investigate) or set these values directly in PyTorch via `torch._logging.set_logs(argument)` with different arguments.
+The interesting part about Triton is that it is not limited to a specific set of hardware architectures, but can in principle be used for a variety of ISAs ().
 
-| Stage              	| Value for TORCH_LOGS<br>(Env. variable) 	| Argument to `set_logs`<br>(Python function) 	|
-|--------------------	|-----------------------------------------	|---------------------------------------------	|
-| Dynamo Tracing     	| `+dynamo`                               	| `dynamo=logging.DEBUG`                      	|
-| Traced Graph       	| `graph`                                 	| `graph=True`                                	|
-| Fusion Detections  	| `fusion`                                	| `fusion=True`                               	|
-| Triton Output Code 	| `output_code`                           	| `output_code=True`                          	|
+![Triton Compiler Ecosystem](/assets/img/blog/triton/triton_compiler_architecture.jpeg)
+Triton Compiler Ecosystem ([Link](https://www.youtube.com/watch?v=AtbnRIzpwho))
 
+## 3.4 Benchmarking Triton
 
+We want to benchmark our Triton kernels similar to our CUDA kernels, of course; if they do not give us speed-ups we would not have needed to deal with them in the first place!
 
-```python
-```
-
-Looking at this, we can see that Triton leverages some heuristics to enable autotuning and other efficiency improvements. For example, it infers data types and element numbers and then uses this information to optimize the kernel.
-
-One of the most important optimisations in ML is often kernel fusion, i.e. combining multiple operations into one kernel. It avoids the overhead of memory access and kernel launch.
-
-We can also use the decorator `triton.testing.perf_report` to get a performance report of our kernel. 
+For profiling, we use the decorator `triton.testing.perf_report` to get a performance report of our kernel. 
 
 ```python
 @triton.testing.perf_report(
@@ -481,6 +475,7 @@ We can also use the decorator `triton.testing.perf_report` to get a performance 
             plot_name='matrix-square-performance',  # Name for the plot. Used also as a file name for saving the plot.
             args={},  # Values for function arguments not in x_names and y_name.
         ))
+
 def benchmark(size, provider):
     x = torch.rand(size, device='cuda', dtype=torch.float32)
     quantiles = [0.5, 0.2, 0.8]
@@ -495,6 +490,31 @@ benchmark.run(show_plots=True, print_data=True)
 ```
 
 To read more about Triton, you can have a look at the [original research paper](https://www.eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf), a [video by the author Philippe Tillet](https://www.youtube.com/watch?v=G951lCm_qnk) and a [Reddit discussion](https://www.reddit.com/r/MachineLearning/comments/otdpkx/n_introducing_triton_opensource_gpu_programming/) where he himself gave some useful perspectives on the project.
+
+## 4. `torch.compile`
+
+To get a feel for how Triton fits into the PyTorch2 compilation stack, we can leverage the fact that `torch.compile` actually uses Triton under the hood. We can just write a simple function and then call `torch.compile` on it. Then, when running the script, we set the environment variable `os.environ["TORCH_LOGS"]` to different values (depending on which stage of the PyTorch compilation process we want to investigate) or set these values directly in PyTorch via `torch._logging.set_logs(argument)` with different arguments.
+
+| Stage              	| Value for TORCH_LOGS<br>(Env. variable) 	| Argument to `set_logs`<br>(Python function) 	|
+|--------------------	|-----------------------------------------	|---------------------------------------------	|
+| Dynamo Tracing     	| `+dynamo`                               	| `dynamo=logging.DEBUG`                      	|
+| Traced Graph       	| `graph`                                 	| `graph=True`                                	|
+| Fusion Detections  	| `fusion`                                	| `fusion=True`                               	|
+| Triton Output Code 	| `output_code`                           	| `output_code=True`                          	|
+
+
+
+```python
+```
+
+![Triton in the DL Stack](/assets/img/blog/triton/triton_dl_stack.jpeg)
+Triton DL Stack ([Link](https://www.youtube.com/watch?v=AtbnRIzpwho))
+
+Looking at this, we can see that Triton leverages some heuristics to enable autotuning and other efficiency improvements. For example, it infers data types and element numbers and then uses this information to optimize the kernel.
+
+One of the most important optimisations in ML is often kernel fusion, i.e. combining multiple operations into one kernel. It avoids the overhead of memory access and kernel launch.
+
+
 
 ## Credits
 
