@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use accelerate PyTorch on your GPU
+title: How to accelerate PyTorch on your GPU
 image: /assets/img/blog/ssh_gpu/gpucluster.jpg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
@@ -13,7 +13,7 @@ invert_sidebar: true
 categories: ml
 ---
 
-# How to use accelerate PyTorch on your GPU
+# How to accelerate PyTorch on your GPU
 
 Recently the [CUDA MODE](https://www.youtube.com/@CUDAMODE) lecture series started with some amazing talks about how you can use tools like CUDA or Triton to speed up your PyTorch programs (join the [Discord](https://discord.com/invite/XsdDHGtk9N) in case you are interested to learn more). Here I want to summarise and review some of the concepts and tools from the lecture and write them together in a coherent blog post.
 
