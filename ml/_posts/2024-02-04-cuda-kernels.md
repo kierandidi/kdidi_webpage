@@ -460,7 +460,7 @@ Via this, we learn for example that our `pid` is 0 in the first iteration, 1 in 
 
 We also see that the offsets are a contiguous array of indices that are used to later access the vectors. We can also see that `x_ptr` and `y_ptr` contain memory addresses. So what happens is that in `x = tl.load(x_ptr + offsets, mask=mask)`, Triton loads the whole block of memory from `x_ptr` and including all the offset locations. The compiler here makes sure that these memory accesses are efficient via e.g. memory coalesence.
 
-## 3.3 Triton Deep-Dive
+### 3.3 Triton Deep-Dive
 
 What does Triton do under the hood? It converts the Python code first into a custom Triton IR and then via the Triton compiler into the well-known LLVM-IR. From there PTX code is generated. Basically, Triton leverages LLVM heavily and (quote from the paper) "just a few data- and control-flow extensions to LLVM-IR could enable various tile-level optimization passes which jointly lead to performance on-par with vendor libraries." These extensions allow Triton to do things like shared memory allocation or memory coalescence, things that in CUDA the GPU programmer has to handle manually.
 
@@ -500,7 +500,7 @@ Triton Compiler Ecosystem ([Link](https://www.youtube.com/watch?v=AtbnRIzpwho))
 
 While most programs targeted for GPUs will probably end up in LLVM IR and then get translated into the vendor-specific ISAs, code for CPUs, FPGAs and other hardware can get translated into other compiler backends, making the ecosystem modular.
 
-## 3.4 Benchmarking Triton
+### 3.4 Benchmarking Triton
 
 We want to benchmark our Triton kernels similar to our CUDA kernels, of course; if they do not give us speed-ups we would not have needed to deal with them in the first place!
 
