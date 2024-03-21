@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to represent protein structures in ML
-image: /assets/img/blog/protein_bits.jpeg
+image: /assets/img/blog/prot_representation/protein_bits.png
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
@@ -246,7 +246,24 @@ ATOM 6445 O OXT . LEU E 1 164 ? 98.129  21.647  -9.779  0.00 84.32  ? 164 LEU E 
 
 ### MMTF format (legacy)
 
+PDBx/mmCIF is now the standard format for storing macromolecular data. While due to its extensible and verbose format it has rich metadata and is sutied for *archival* purposes, it is not the best format to *transmit* large amounts of structural data due to redundant annotations and repetitive information as you have seen above. Also, the inefficient representation of coordinates separated by whitespaces to make it human-readable is another hurdle for fast transmission of data. 
+
+Due to these limitations, the [MMTF format](https://mmtf.rcsb.org/index.html) (Macromolecular transmission format) was introduced. It does not contain all data present in the PDBx/mmCIF files, but all the data necessary for most visualisation and structural analysis programs. The main pros of MMTF are its compact encoding and fast parsing due to binary instead of string representations. 
+
+![MMTF Compression Pipeline](/assets/img/blog/prot_representation/mmtf_parsing.png)
+[UCSD Presentation](https://github.com/sbl-sdsc/mmtf-workshop-2018/blob/master/0-introduction/MMTF2018-Introduction.pdf)
+
+[MessagePack](https://msgpack.org/): *It's like JSON, but fast and small*.
+
+[deprecated since July 2024](https://www.mail-archive.com/ccp4bb@jiscmail.ac.uk/msg56121.html)
+
 ### BinaryCIF format 
+
+[Binary CIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247)
+
+[Binary CIF specification](https://github.com/dsehnal/BinaryCIF)
+
+[discussion on BinaryCIF vs MMTF](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose)
 
 ## Coordinates: Atom14 vs Atom37
 
