@@ -22,6 +22,21 @@ invert_sidebar: true
 
 ## Conformational Entropy - A blessing and a curse
 
+[Making sense of chaos: uncovering the mechanisms of conformational entropy](https://chemrxiv.org/engage/chemrxiv/article-details/6518600200659409122ffde5)
+
+[Conformational entropy in molecular recognition by proteins (Frederick et al, Nature 2007)](https://www.nature.com/articles/nature05959)
+
+[Protein activity regulation by conformational entropy (Tzeng et al, Nature 2012)](https://www.nature.com/articles/nature11271)
+
+[Understanding Conformational Entropy in Small Molecules, Chan et al, JCTC 2021](https://pubs.acs.org/doi/full/10.1021/acs.jctc.0c01213?casa_token=r9E_Aqy1O0IAAAAA%3AGFdBBs1OYWM_dXjGaVf9nDZ5FiA0ETrmT2vu10jForx09q_oAmyzRDXcnk2JbvO_bFJXVYG12HhJ)
+
+[Interplay between Conformational Entropy and Solvation Entropy in Protein–Ligand Binding, Verteramo et al, JACS 2019](https://pubs.acs.org/doi/full/10.1021/jacs.8b11099)
+
+[Protein conformational entropy is not slaved to water, Marques et al, Sci. Rep. 2020](https://www.nature.com/articles/s41598-020-74382-5)
+
+[Conformational entropy in molecular recognition of intrinsically disordered proteins, Skriver et al, Curr. Op. Struc. Bio. 2023](https://www.sciencedirect.com/science/article/pii/S0959440X23001719)
+
+[Measuring Entropy in Molecular Recognition by Proteins, Wand and Sharp, Annu Rev Biophys. 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7071556/pdf/nihms-1031262.pdf)
 
 ## How much truth is there in our structures, anyway?
 
