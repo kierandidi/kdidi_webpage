@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to represent protein structures in ML
-image: /assets/img/blog/rosetta_logo.png
+image: /assets/img/blog/protein_bits.jpeg
 accent_image: 
   background: url('/assets/img/blog/jj-ying.jpg') center/cover
   overlay: false
@@ -14,8 +14,8 @@ invert_sidebar: true
 
 # How to represent protein structures in ML
 
+Machine Learning approaches empower [a new suite of algorithms and applications](https://www.sciencedirect.com/science/article/abs/pii/S2405471223002983) in structural biology and protein engineering/design. However, there is quite a gap between how protein structure data is classically stored in databases and how machine learning algorithms deal with data. Here, I want to bridge that gap and show how current algorithms such as AlphaFold2 make use of protein structure data in practice.
 
- 
 * toc
 {:toc}
 
@@ -100,7 +100,7 @@ You can imagine how parsing something like the resolution automatically from thi
 
 Two important things to note at this point:
 1. Against intuition, the `SEQRES` information does not always align with the sequence contained in the structure itself via the `ATOM` fields. This is a problem that plagues later data formats as well and can be [attributed to a variety of reasons](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format), mostly that flexible loops and chain ends are often not resolved in experimental structures but still present in the `SEQRES` representation. That is the reason why models like AlphaFold2 and OpenFold require tools like [KAlign](https://academic.oup.com/bioinformatics/article/36/6/1928/5607735) to align the sequence representation to the structure representation in cases where they do not match in the case of template search (see for example [this file](https://github.com/aqlaboratory/openfold/blob/main/openfold/data/tools/kalign.py) in the OpenFold codebase or section 1.2.3 in the [AlphaFold 2 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) (page 5)).
-2. The atom names are not just the chemical elements (C, N, O, ...), but have specific other descriptors depending on where in the amino acid this element occurs (C can be C, CA, CB, CG, ...).
+2. The atom names are not just the chemical elements (C, N, O, ...), but have specific other descriptors depending on where in the amino acid this element occurs (C can be C, CA, CB, CG, ...). How each of these amino acids is named exactly is set in the [PDB Chemical Component Dictionary](https://www.wwpdb.org/data/ccd#pdbechem), but in general you can keep in mind that for many atoms we enumerate them with greek characters after the atom symbol; CG then stands for "Carbon Gamma", i.e the third carbon atom in the chain.
 
 The PDB format does not support Greek characters, so the atom names are translated into the most similar Latin letters:
 
@@ -115,7 +115,9 @@ The PDB format does not support Greek characters, so the atom names are translat
 | &zeta;     | zeta          | Z        |
 | &nu;       | nu            | H        |
 
-C$$\alpha$$ is thus called CA, O$$\gamma$$ is called OG and so on. Sometimes (e.g. in Asp) there may be two identical atoms in the same position, whereby they are named 1 and 2, e.g. the two carboxyl atoms in Asp are called OD1 and OD2.
+C$$\alpha$$ is thus called CA, O$$\gamma$$ is called OG and so on. Sometimes (e.g. in Asp) there may be two identical atoms in the same position, whereby they are named 1 and 2, e.g. the two carboxyl atoms in Asp are called OD1 and OD2. Later in this article we will see a representation of these atoms for all amino acids, but for now we can use the [PDBeChem interface](https://www.ebi.ac.uk/pdbe-srv/pdbechem/) to look up this representation for the amino acid (or, in fact, any chemical component in the PDB) that we are interested in.
+
+If you insert `SER` for the amino acid serine in the "Code" search box, hit the `Search` button and upon getting the result click the `Atoms` tab on the left-hand side of the page, you will get all the atoms in that specific amino acid. We will see later that the representation in models such as AlphaFold2 is a bit shorter since a) they do not include hydrogens in the model and b) one oxygen atom is lost in the condensation of the individual amino acids into the backbone (one water molecule per bond formed to be precise).
 
 
 ### PDBx/mmCIF format
@@ -126,7 +128,7 @@ C$$\alpha$$ is thus called CA, O$$\gamma$$ is called OG and so on. Sometimes (e.
 
 ## Coordinates: Atom14 vs Atom37
 
-When looking at either the original [AlphaFold codebase]() or the open-source reproduction in PyTorch called [OpenFold](), many people trip over how the file formats just discussed are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
+When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the file formats just discussed are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
 
 The documentation on these two representations is sparse, with one being available on a [HuggingFace docstring](https://huggingface.co/spaces/simonduerr/ProteinMPNN/blame/e65166bd70446c6fddcc1581dbc6dac06e7f8dca/alphafold/alphafold/model/all_atom.py):
 
