@@ -94,7 +94,7 @@ You can imagine how parsing something like the resolution automatically from thi
 
 - it starts with a `HEADER` and some additional metadata such as the authors and the journal where the structure was published.
 - then there are many `REMARKS` that give additional information like the resolution of the structure and the experimental method by which it was acquired.
-- what follows is the `SEQRES` (short for sequence representation) that lists the sequence for the structure for quick parsing.
+- what follows is the `SEQRES` (short for sequence representation) that lists the sequence for the structure for quick parsing (more information on this [here](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format)).
 - following is some information about assigned secondary structure indicated via `HELIX` or `SHEET`
 - finally, the actual structure information with coordinates etc is prefaced with the `ATOM` qualifier and information such as the atom type described, the residue name, which chain it is part of and of course the coordinates as well as additional metadata such as the [B-factor](https://proteopedia.org/wiki/index.php/Temperature_value).
 
@@ -121,6 +121,128 @@ If you insert `SER` for the amino acid serine in the "Code" search box, hit the 
 
 
 ### PDBx/mmCIF format
+
+As mentioned, the PDB format has quite some limitations when it comes to supporting large structures as well as complex chemistries. To improve on this, a new format called [PDBx/mmCIF](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format) was introduced and is currently the default format in the PDB. It uses the ASCII character set and is a tabular data format, in which data items have a name of the format `_categoryname.attributename`, for example `_citation_author.name`. If there is only one value for this data item, it is displayed in the same line as a key-value pair. If there are multiple values for these names, a `loop_` token prefaces the categories, followed by rows of data items where the different values are separeted by white spaces.
+
+Compared to the legacy PDB format where a structure is just described as a list of atoms and amino acids, PDBx/mmCIF has more semantics in its representation. One example of this are *entities*, which are defined as [`chemically distinct part of a structure as represented in the PDBx/mmCIF data file`](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format). For example, a chemical ligand would be an entity, or chains in a protein would be an entity. Importantly, these entities can be present multiple times: A homodimer will have one entity since the same chain is present twice.
+
+With this background, let us look at the PDBx/mmCIF file for the same lysozyme structure we looked at before:
+
+~~~bash
+# file: "168l.cif"
+data_168L
+# 
+_entry.id   168L 
+# 
+_audit_conform.dict_name       mmcif_pdbx.dic 
+_audit_conform.dict_version    5.385 
+_audit_conform.dict_location   http://mmcif.pdb.org/dictionaries/ascii/mmcif_pdbx.dic 
+# 
+loop_
+_database_2.database_id 
+_database_2.database_code 
+_database_2.pdbx_database_accession 
+_database_2.pdbx_DOI 
+PDB   168L         pdb_0000168l 10.2210/pdb168l/pdb 
+WWPDB D_1000170153 ?            ?                   
+# 
+...
+_entity.id                         1 
+_entity.type                       polymer 
+_entity.src_method                 man 
+_entity.pdbx_description           'T4 LYSOZYME' 
+_entity.formula_weight             18373.139 
+_entity.pdbx_number_of_molecules   5 
+_entity.pdbx_ec                    3.2.1.17 
+_entity.pdbx_mutation              ? 
+_entity.pdbx_fragment              ? 
+_entity.details                    ? 
+# 
+_entity_poly.entity_id                      1 
+_entity_poly.type                           'polypeptide(L)' 
+_entity_poly.nstd_linkage                   no 
+_entity_poly.nstd_monomer                   no 
+_entity_poly.pdbx_seq_one_letter_code       
+;MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILR
+NAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDAAAAALAAAAWYNQTPNRAKRVITTFRTGTWDA
+YKNL
+;
+_entity_poly.pdbx_seq_one_letter_code_can   
+;MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILR
+NAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDAAAAALAAAAWYNQTPNRAKRVITTFRTGTWDA
+YKNL
+;
+_entity_poly.pdbx_strand_id                 A,B,C,D,E 
+_entity_poly.pdbx_target_identifier         ? 
+# 
+loop_
+_entity_poly_seq.entity_id 
+_entity_poly_seq.num 
+_entity_poly_seq.mon_id 
+_entity_poly_seq.hetero 
+1 1   MET n 
+1 2   ASN n 
+1 3   ILE n 
+1 4   PHE n 
+1 5   GLU n 
+1 6   MET n 
+1 7   LEU n 
+1 8   ARG n 
+...
+loop_
+_chem_comp.id 
+_chem_comp.type 
+_chem_comp.mon_nstd_flag 
+_chem_comp.name 
+_chem_comp.pdbx_synonyms 
+_chem_comp.formula 
+_chem_comp.formula_weight 
+ALA 'L-peptide linking' y ALANINE         ? 'C3 H7 N O2'     89.093  
+ARG 'L-peptide linking' y ARGININE        ? 'C6 H15 N4 O2 1' 175.209 
+ASN 'L-peptide linking' y ASPARAGINE      ? 'C4 H8 N2 O3'    132.118 
+ASP 'L-peptide linking' y 'ASPARTIC ACID' ? 'C4 H7 N O4'     133.103 
+CYS 'L-peptide linking' y CYSTEINE        ? 'C3 H7 N O2 S'   121.158 
+GLN 'L-peptide linking' y GLUTAMINE       ? 'C5 H10 N2 O3'   146.144 
+GLU 'L-peptide linking' y 'GLUTAMIC ACID' ? 'C5 H9 N O4'     147.129 
+...
+loop_
+_atom_site.group_PDB 
+_atom_site.id 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.occupancy 
+_atom_site.B_iso_or_equiv 
+_atom_site.pdbx_formal_charge 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.pdbx_PDB_model_num 
+ATOM 1    N N   . MET A 1 1   ? 74.851  69.339  -6.260  1.00 37.97  ? 1   MET A N   1 
+ATOM 2    C CA  . MET A 1 1   ? 75.137  68.258  -5.357  1.00 38.78  ? 1   MET A CA  1 
+ATOM 3    C C   . MET A 1 1   ? 73.896  67.665  -4.750  1.00 40.36  ? 1   MET A C   1 
+ATOM 4    O O   . MET A 1 1   ? 72.862  68.348  -4.627  1.00 40.50  ? 1   MET A O   1 
+ATOM 5    C CB  . MET A 1 1   ? 76.039  68.696  -4.203  1.00 40.16  ? 1   MET A CB  1 
+ATOM 6    C CG  . MET A 1 1   ? 76.921  67.555  -3.776  1.00 41.09  ? 1   MET A CG  1 
+ATOM 7    S SD  . MET A 1 1   ? 77.902  67.038  -5.191  1.00 40.98  ? 1   MET A SD  1 
+ATOM 8    C CE  . MET A 1 1   ? 78.748  65.645  -4.424  1.00 41.39  ? 1   MET A CE  1 
+ATOM 9    N N   . ASN A 1 2   ? 74.139  66.409  -4.302  1.00 41.77  ? 2   ASN A N   1 
+...
+ATOM 6442 C CG  . LEU E 1 164 ? 95.884  25.834  -10.740 0.00 85.05  ? 164 LEU E CG  1 
+ATOM 6443 C CD1 . LEU E 1 164 ? 96.110  27.302  -11.107 0.00 85.07  ? 164 LEU E CD1 1 
+ATOM 6444 C CD2 . LEU E 1 164 ? 94.874  25.202  -11.694 0.00 85.06  ? 164 LEU E CD2 1 
+ATOM 6445 O OXT . LEU E 1 164 ? 98.129  21.647  -9.779  0.00 84.32  ? 164 LEU E OXT 1 
+# 
+~~~
 
 ### MMTF format (legacy)
 
@@ -232,10 +354,17 @@ atom_type_num = len(atom_types)  # := 37.
 An optional caption for a code block
 {:.figcaption}
 
+
+| Category |Atom14| Atom37  |
+|-----------------|-----------|---------------|
+| Memory Requirements |Second cell | Third cell      |
+| Data Layout |Second cell | Third cell      |
+| Sequence Dependence |Second cell | Third cell      |
+
 ## Batching: Padded versus sparse
 
 
-## Reference Systems: Local reference frames vs reference-free coordinates
+## Reference Systems: Local reference frames vs reference-free coordinates vs internal coordinates
 
 ## Credits
 
