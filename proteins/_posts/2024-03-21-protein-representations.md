@@ -303,9 +303,9 @@ Internally the model uses the atom14 representation because it is
 computationally more efficient.
 The internal atom14 representation is turned into the atom37 at the output of
 the network to facilitate easier conversion to existing protein datastructures.
-{:.note title="Atom14 vs Atom37"}
+{:.note title="atom14 vs atom37"}
 
-What does this mean in practice? Let's look at the code. When looking at [`residue_constants.residue_atoms`](https://github.com/aqlaboratory/openfold/blob/127f1e7023c380c01330cee45544c23c079babe9/openfold/np/residue_constants.py#L355), we get the following description:
+What does this mean in practice? Let's look at the code. When looking at [`residue_constants.residue_atoms`](https://github.com/aqlaboratory/openfold/blob/127f1e7023c380c01330cee45544c23c079babe9/openfold/np/residue_constants.py#L355), we get the following description for the `atom14` representation:
 
 ~~~python
 # file: "residue_constants.py"
@@ -332,8 +332,10 @@ residue_atoms = {
     "TYR": ["C", "CA", "CB", "CG", "CD1", "CD2", "CE1", "CE2", "CZ", "N", "O", "OH"],
     "VAL": ["C", "CA", "CB", "CG1", "CG2", "N", "O"]}
 ~~~
-An optional caption for a code block
+`atom14` ordering.
 {:.figcaption}
+
+We see that depending on whch amino acid we have present, a certain position in a residue array can represent a different atom (for example, position 3 is `CG2` for Threonine, `CG1` for Valine and `N` for Serine). This makes storing this information very efficient, but can be cumbersome if we need to retrieve the coordinates of a certain atom like `N` from our data structure.
 
 On the other hand, the `atom37` representation has a fixed atom data size for every residue. This ordering can be found in [`residue_constants.atom_types`](https://github.com/aqlaboratory/openfold/blob/127f1e7023c380c01330cee45544c23c079babe9/openfold/np/residue_constants.py#L555):
 
@@ -384,15 +386,20 @@ atom_order = {atom_type: i for i, atom_type in enumerate(atom_types)}
 atom_type_num = len(atom_types)  # := 37.
 ~~~
 
-Atom37 ordering.
+`atom37` ordering.
 {:.figcaption}
 
+Here we can see that the ordering is always the same no matter which residue is represented; however, most of the fields will always be empty since the longest amino acid has only 14 atoms. We therefore exchange efficiency vs standardisation, which explains why internally AF2 often uses `atom14`, but when it interfaces to other programs at I/O it often uses `atom37`.
+
+If we think about our example of `Ser` again, we can see how the machine representations map to the actual amino acid (again with the caveat that hydrogens are ommited and the carboxyl oxygen is not counted since in a peptide backbone it will have let as water).
+
+![serine example](/assets/img/blog/prot_representation/serine_repr.jpeg)
 
 | Category |Atom14| Atom37  |
 |-----------------|-----------|---------------|
-| Memory Requirements |Second cell | Third cell      |
-| Data Layout |Second cell | Third cell      |
-| Sequence Dependence |Second cell | Third cell      |
+| Memory Requirements |Efficient | Wasteful     |
+| Data Layout |Varying Shape | Fixed Shape      |
+| Sequence Dependence |Yes| No      |
 
 ### Example: Lysozyme atom numbering
 
@@ -410,6 +417,9 @@ select range, resi 10-15 # select a subset of residues for simplicity
 hide everything # hide the whole structure for clarity\
 show sticks, range # show stick representation for the selected subset
 ~~~
+
+
+![chain example](/assets/img/blog/prot_representation/chain_repr.jpeg)
 
 ## Batching: Padded versus sparse
 
