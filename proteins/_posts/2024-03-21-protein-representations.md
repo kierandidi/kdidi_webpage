@@ -251,23 +251,36 @@ PDBx/mmCIF is now the standard format for storing macromolecular data. While due
 Due to these limitations, the [MMTF format](https://mmtf.rcsb.org/index.html) (Macromolecular transmission format) was introduced. It does not contain all data present in the PDBx/mmCIF files, but all the data necessary for most visualisation and structural analysis programs. The main pros of MMTF are its compact encoding and fast parsing due to binary instead of string representations. 
 
 ![MMTF Compression Pipeline](/assets/img/blog/prot_representation/mmtf_parsing.png)
-[UCSD Presentation](https://github.com/sbl-sdsc/mmtf-workshop-2018/blob/master/0-introduction/MMTF2018-Introduction.pdf)
 
-[MessagePack](https://msgpack.org/): *It's like JSON, but fast and small*.
+Overview of the MMTF compression pipeline. Source: [UCSD Presentation](https://github.com/sbl-sdsc/mmtf-workshop-2018/blob/master/0-introduction/MMTF2018-Introduction.pdf)
+{:.figcaption}
 
-[deprecated since July 2024](https://www.mail-archive.com/ccp4bb@jiscmail.ac.uk/msg56121.html)
+We can see that after some data preparation, the main step in the MMTF pipeline are various ways of encoding to reduce the file size:
+- [integer encoding]()
+- [dictionary encoding]()
+- [run-length encoding]()
+- [delta encoding]()
+
+After these encodings, the file size if comprised further by packing into the [MessagePack format](https://msgpack.org/). It's slogan reads like *It's like JSON, but fast and small*, indicating its flexiblity to store data e.g. as key-value pars, but in a binarized format.
+
+MMTF is great for fast transmission of data and rethought quite a lot of things in clever ways. However, it deviated quite a bit from the mmCIF standard and therefore [never really caught on in the community](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose). This is now finally confirmed with MMTF being [deprecated from July 2024 onward](https://www.mail-archive.com/ccp4bb@jiscmail.ac.uk/msg56121.html).
 
 ### BinaryCIF format 
 
-[Binary CIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247)
+There was a need for a binarized efficient format for protein structure information transfer that was more aligned with the PDBx/mmCIF file format specification. Enter [Binary CIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247), a newer format that is way easiert to interconvert with the now standard PDBx/mmCIF. The [Binary CIF specification](https://github.com/dsehnal/BinaryCIF) is actually quite readable, so I recommend to check it out.
 
-[Binary CIF specification](https://github.com/dsehnal/BinaryCIF)
+BinaryCIF was heavily inspired by MMTF, with many people working on both formats. This is visible in the usage of MessagePack and the different encodings employed.
 
 ![BinaryCIF compressions](/assets/img/blog/prot_representation/binary_cif_compression.png)
 
-[discussion on BinaryCIF vs MMTF](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose)
+Encodings employed for BinaryCIF. Source: [BinaryCIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247) 
+{:.figcaption}
+
+There are a few additional ones that you can read up on in the specification on GitHub, but mostly the same encodings as in MMTF were used.
 
 ## Coordinates: Atom14 vs Atom37
+
+We discussed how protein structures are stored in databases; with that done, let us talk about how they are represented in machine learning algorithms.
 
 When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the file formats just discussed are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
 
@@ -370,7 +383,8 @@ atom_types = [
 atom_order = {atom_type: i for i, atom_type in enumerate(atom_types)}
 atom_type_num = len(atom_types)  # := 37.
 ~~~
-An optional caption for a code block
+
+Atom37 ordering.
 {:.figcaption}
 
 
@@ -393,12 +407,22 @@ Then, execute the following commands via the integrated terminal:
 ~~~python
 fetch 168lA # get first chain of lysozyme assembly
 select range, resi 10-15 # select a subset of residues for simplicity
-hide everything # hide the whole structure for clarity
+hide everything # hide the whole structure for clarity\
 show sticks, range # show stick representation for the selected subset
 ~~~
 
 ## Batching: Padded versus sparse
 
+[Padding and Trunction](https://huggingface.co/docs/transformers/main/en/pad_truncation)
+
+[*Sentence pairs were batched together by approximate sequence length*](https://arxiv.org/abs/1706.03762)
+
+[advanced mini-batching](https://pytorch-geometric.readthedocs.io/en/latest/advanced/batching.html).
+
+![PyG batching](/assets/img/blog/prot_representation/pyg_batching.png)
+
+Advanced mini-batching in Pytorch Geometric. Source: [YouTube](https://www.youtube.com/watch?v=mz9xYNg9Ofs)
+{:.figcaption}
 
 ## Reference Systems: Local reference frames vs reference-free coordinates vs internal coordinates
 
