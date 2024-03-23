@@ -263,6 +263,8 @@ Due to these limitations, the [MMTF format](https://mmtf.rcsb.org/index.html) (M
 
 [Binary CIF specification](https://github.com/dsehnal/BinaryCIF)
 
+![BinaryCIF compressions](/assets/img/blog/prot_representation/binary_cif_compression.png)
+
 [discussion on BinaryCIF vs MMTF](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose)
 
 ## Coordinates: Atom14 vs Atom37
@@ -377,6 +379,23 @@ An optional caption for a code block
 | Memory Requirements |Second cell | Third cell      |
 | Data Layout |Second cell | Third cell      |
 | Sequence Dependence |Second cell | Third cell      |
+
+### Example: Lysozyme atom numbering
+
+Let us now visualise the concepts we looked at so far (atom names and atom representations) with a concrete example, again based on the lysozyme structure with the PDB code `168l`. Install PyMol (either the [commercial](https://pymol.org/) or the [open-source](https://github.com/schrodinger/pymol-open-source?tab=readme-ov-file) version) and open the program.
+
+If you have not used PyMol before, you can either skip this section or look at [this lesson from my Structural Bioinformatics course](https://structural-bioinformatics.netlify.app/blog/proteins/2023-02-01-lesson1/) that goes over this in detail.
+{:.note}
+
+
+Then, execute the following commands via the integrated terminal:
+
+~~~python
+fetch 168lA # get first chain of lysozyme assembly
+select range, resi 10-15 # select a subset of residues for simplicity
+hide everything # hide the whole structure for clarity
+show sticks, range # show stick representation for the selected subset
+~~~
 
 ## Batching: Padded versus sparse
 
