@@ -563,16 +563,23 @@ However, we are also invariant to reflections! When training AlphaFold2, the tea
 
 ![gdt_fape_comparison](/assets/img/blog/prot_representation/gdt_fape_comparison.png)
 
+Results if AF2 is trained with dRSMD instead of FAPE as loss. Source: [AF2 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf), page 36, section 1.9.3.
+{:.figcaption}
+
 You can see that while the predictions local structure (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculate with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
 
-Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With its help, 
+Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$\arrow{x}_j$$ 
 
 ![fape_columbia](/assets/img/blog/prot_representation/fape_columbia.png)
+
+{:.figcaption}
 
 An equivalent way of visualising this
 
 
 ![fape_epfl](/assets/img/blog/prot_representation/fape_epfl.png)
+
+{:.figcaption}
 
 
 ### Reference-free methods
