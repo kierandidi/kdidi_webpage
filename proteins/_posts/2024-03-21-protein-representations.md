@@ -413,31 +413,153 @@ Then, execute the following commands via the integrated terminal:
 
 ~~~python
 fetch 168lA # get first chain of lysozyme assembly
-select range, resi 10-15 # select a subset of residues for simplicity
-hide everything # hide the whole structure for clarity\
-show sticks, range # show stick representation for the selected subset
+select selection, resi 10-15 # select a subset of residues for simplicity
+hide everything # hide the whole structure for clarity
+show sticks, selection # show stick representation for the selected subset
 ~~~
 
 
 ![chain example](/assets/img/blog/prot_representation/chain_repr.jpeg)
 
+
+
+## Reference Systems: Local reference frames vs reference-free methods
+
+We now have covered how we go from the database formats for protein structures (PDBx/mmCIF, MMTF and BinaryCIF) to the formats commonly used as inputs for machine learning models (atom14, atom37). The question now is: what do the machine learning models do with this input information?
+
+Given that we deal with geometric quantities such as coordinates of protein structures, considerations like invariance and equivariance come into play. There is a whole field called [*Geometric Deep Learning*](https://geometricdeeplearning.com/) dealing with these considerations. For the usage of machine learning models for protein structure, it is important to understand the distinction between *reference-free* and *reference-based* methods.
+
+To learn more about geometric deep learning, you can either check out the [protobook by Bronstein et al.](https://arxiv.org/abs/2104.13478), the [Hitchhiker's guide to geometric GNNs](https://arxiv.org/abs/2312.07511) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-02-lesson5/) I gave about the topic.
+{:.note}
+
+![geometric_gnn_overview](/assets/img/blog/prot_representation/geometric_gnn_overview.png)
+
+If we predict some molecular property (such as binding affinity, solubility or immunogenicity) it is quite obvious to a human that rotations or translations of the protein should not change the prediction of these quantities. A neural network, however, just sees different numbers when a protein is translated and therefore needs to learn that these different inputs correspond to the same protein. This can be done via [data augmentation](), but this can become data-inefficient. Therefore, people looked for ways to build this inductive bias of invariance or equivariance to [SE(3) group actions](https://arxiv.org/abs/2103.15980) (i.e. rotations and translations) into the model.
+
+### Local reference-based methods
+
+On one hand, some models leverage *reference-based* methods, largely following the example of the original AlphaFold2 model. Here, a local reference frame for each residue is defined based on the backbone geometry, with the translational component being equal to the CA position and the rotational component originating from a Gram-Schmidt orthogonalisation with respect to the CA-C and the CA-N bond vector. 
+
+Here a paragraph from the []() that summarizes the current state in this field of research:
+
+Canonical frame-based invariant GNNs. Canonical frame-based GNNs [Liu et al., 2022, Wang
+et al., 2022a] use a local or global frame of reference to scalarise geometric quantities into invariant
+features which are used for message passing, offering an alternative technique when canonical
+reference frames can be defined. Most notably, the Invariant Point Attention layer (IPA) from
+AlphaFold2 [Jumper et al., 2021] defines canonical local reference frames at each residue in the
+protein backbone centred at the alpha Carbon atom and using the Nitrogen and adjacent Carbon atoms.
+Other invariant GNNs for protein structure modelling also process similar local reference frames
+[Ingraham et al., 2019, Wang et al., 2023b]. IPA is an invariant message passing layer operating
+on an all-to-all graph of protein residues. In each IPA layer, each node creates a geometric feature
+(position) in its local reference frame via a learnable linear transformation of its invariant features.
+To aggregate features from neighbours, neighbouring nodes’ positions are first rotated into a global
+reference frame where they can be composed with their invariant features (via an invariant attention
+mechanism), followed by rotating the aggregated features back into local reference frames at each
+node and projecting back to update the invariant features.
+{:.note}
+
+These canonical local reference frames $$T = (r, x) \in \text{SE(3)}$$ can be used to deal with quantities in a SE(3)-invariant way. Importantly, the orientational nature of the frame allows us to be SE(3)-invariant but not E(3)-invariant, i.e. reflections are still accounted for. This is important for biological applications since [chirality](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5765859/) plays a huge role in biomolecular interactions.
+
+As an example of why this is important, we can look at the task of protein structure prediction that [AlphaFold2](https://www.nature.com/articles/s41586-021-03819-2) tackled. 
+
+To learn more about AlphaFold2 and the problem of protein structure prediction, you can either check out the [3-part lecture series about AF2 by Nazim Bouatta](https://www.youtube.com/watch?v=yqeUH4RsJp8) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-03-lesson6/) I gave about the topic.
+{:.note}
+
+Here, one important metric for measuring prediction accuracy is the GDT score. To get good at maximising this score, a natural way to think about it is to take your predicted coordinates, compare them to the ground-truth coordinates and compute something like an RMSD loss. However, this does not take rototranslations into account of course. We can remedy that by calculating a [dRMSD loss](https://web.stanford.edu/class/cs273/slides/conformational-space.ppt), i.e. a RMSD loss on all pairwise distances in the structure. By using these internal coordinates, we are invariant to rototranslations.
+
+However, we are also invariant to reflections! When training AlphaFold2, the team at DeepMind tested what would happen if they used this dRMSD loss for training a model.
+
+![gdt_fape_comparison](/assets/img/blog/prot_representation/gdt_fape_comparison.png)
+
+You can see that while the predictions local structure (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculate with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
+
+Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With its help, 
+
+![fape_columbia](/assets/img/blog/prot_representation/fape_columbia.png)
+
+An equivalent way of visualising this
+
+
+![fape_epfl](/assets/img/blog/prot_representation/fape_epfl.png)
+
+
+### Reference-free methods
+
 ## Batching: Padded versus sparse
 
-[Padding and Trunction](https://huggingface.co/docs/transformers/main/en/pad_truncation)
+We now covered the whole pipeline, starting from database formats over input formats to network-internal representations to properly handle symmetries. A final consideration comes into play when we think about [batching](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/), a commonly used technique in machine learning where you do not pass your samples one by one into the network, but combine them together into a bigger tensor to achieve better hardware utilisation and therefore training performance.
 
-[*Sentence pairs were batched together by approximate sequence length*](https://arxiv.org/abs/1706.03762)
+There are many subtleties about how you choose your batch size since generally we perform a gradient update step after each of these batches; therefore, the batch size is not only influencing training performance but also accuracy by changing the dynamics of our gradient descent procedure. I won't go into detail here on that, but recommend [Andrej Karpathy's blog](https://karpathy.github.io/2019/04/25/recipe/) on general recipes for training neural networks.
+{:.note}
 
-[advanced mini-batching](https://pytorch-geometric.readthedocs.io/en/latest/advanced/batching.html).
+### The batching pain with variable-length input
+
+This batching of tensors is trivial in many computer vision use cases since often all your images are of the same size; you can therefore just stack them along a new dimension and ready is your batch. 
+
+For protein structures, it is a bit more complicated due to variable length. One strategy to deal with this involves [padding and trunction](https://huggingface.co/docs/transformers/main/en/pad_truncation). Here, we choose some maximum length for our batch and pad structures that are shorter than this via padding tokens (for coordinates this can be 0 or a small value that is unlikely to occur exactly like this in the data) and truncate structures that are longer than this (either randomly or via some biologically defined domain boundaries). This solves our issue, but introduces new ones: often, we do not want to truncate data since we may lose important information. If we now always choose the longest structure in a batch as the maximum length, we may end up with very inefficient training if there are very short sequences in the batch and padding tokens begin to represent a significant part of our batch. 
+
+### Efficient padding via length batching
+
+To circumvent this, people took inspiration from NLP. In the transformer paper, for example, it is stated that to circumvent the inefficient padding issue,[*sentence pairs were batched together by approximate sequence length*](https://arxiv.org/abs/1706.03762), resulting in more optimal padding. This has been replicated for example in [generative models for protein structure](https://github.com/microsoft/protein-frame-flow/blob/1c5ad9c28a1264e449d98c382123bb48227d9d97/data/pdb_dataloader.py#L162). This change might influence training dynamics since now the model sees similarly-sized inputs inside every batch, but empirically seems to still work fine.
+
+### Sparse batching 
+
+In the previous section we talked about the usage of GNNs (graph neural networks) for protein structures. A popular library in the field of GNNs is [PyG](https://pytorch-geometric.readthedocs.io/en/latest/index.html#) (PyTorch Geometric) that can be used for all kinds of graph-structure data.
+
+In contrast to the padding-and-truncation approach I mentioned before, they opt for a sparse batching procedure they term [advanced mini-batching](https://pytorch-geometric.readthedocs.io/en/latest/advanced/batching.html).
+
+Here, we treat the our graph data points in a batch as *one single datapoint* and use pointers to tell us about the boundaries between these. In practice, we concatenate all our node features along an existing dimension instead of stacking them along a new dimension, making padding and truncation obsolete.
 
 ![PyG batching](/assets/img/blog/prot_representation/pyg_batching.png)
 
-Advanced mini-batching in Pytorch Geometric. Source: [YouTube](https://www.youtube.com/watch?v=mz9xYNg9Ofs)
+Advanced mini-batching in Pytorch Geometric. Source: [PyG Docs](https://pytorch-geometric.readthedocs.io/en/latest/advanced/batching.html)
 {:.figcaption}
 
-## Reference Systems: Local reference frames vs reference-free coordinates vs internal coordinates
+We do something similar for the adjacency matrix which indicates the connectivity in the graphs. Stacking these in a block-diagonal fashion allows us to reuse existing algorithms for GNNs such as [message-passing](https://danielegrattarola.github.io/posts/2021-03-12/gnn-lecture-part-2.html) without having to change implementations. In addition, since the majority of elements in this matrix will be zero, we can use [sparse representations](https://glaringlee.github.io/sparse.html) that allow us to deal with this in a memory-efficient way.
 
-## Credits
+If you inspect protein structures represented in this PyG format (such as in the [ProteinWorkshop project](https://proteins.sh/) we recently published), you can see that a graph will look like this:
 
-Thanks a lot to the organisers of the RosettaCon conference, both for making the conference a great experience and for allowing me to post this summary on their website and use their logo for the post on my website.
+```
+DataBatch(
+  coords=[7241, 37, 3],
+  residues=[32], 
+  residue_id=[7241], 
+  chains=[7241], 
+  seq_pos=[7241, 1], 
+  batch=[7241], 
+  ptr=[33])
+```
+
+In contrast, this same batch in the "dense" format that uses padding would look like this:
+
+```
+DataBatch(
+  coords=[32, 385, 37, 3],
+  residues=[32],
+  residue_id=[32, 385],
+  chains=[32, 385],
+  seq_pos=[32, 385, 1])
+```
+
+We can notice several differences:
+- the dense format represents the batch as an explicit tensor dimension (first dimension of size 32) in all attributes. This dimension is not apparent in the PyG batch except for the attributes that are graph-level attributes and therefore do not change with the size of the graph (`residues` is an example here, for each graph it is a single list).
+- we can see in the dense batch that the longest protein structure in this batch is 385 residues (apparent in for example the `residue_id` attribute, a numerical encoding of the amino acid type). In the PyG batch, we can see that stacked together all amino acids in the batch sum to 7241. If you compare 7241 to 32*385 = 12320, we can see that padding introduces around 40% of memory overhead compared to the efficiently batched representation.
+- the PyG batch stores the batching information not in a separate dimension, but in separate attributes: `batch` indicates for each node in the batch to which graph in the batch it belongs, and `ptr` contains pointers to the boundaries between all the graphs in the batch to enable efficient indexing and information retrieval.
+
+Interconversion from dense to PyG format and back is easy to do if all of the graphs are the same size: we can use the [PyG DenseDataLoader](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/loader/dense_data_loader.html) for that. 
+
+In the padded case, there is no such functionality yet, but there might soon be a [DensePaddingDataLoader](https://github.com/pyg-team/pytorch_geometric/pull/8518) that does exactly that.
+
+## Summary
+
+In this post we discussed for different levels of information representation:
+1. We started with the data formats in which protein structures are stored and transmitted and the evolution they underwent in the last decades.
+2. After that we looked at how both sequence and structure information can be converted into a format that can be used by machine learning algorithms, specifically the `atom14` and `atom37` format.
+3. Once inside the network, we discussed how different methods leverage this information differently, either via reference-based or reference-free methods, both looking at how we can deal with geometric information while respecting the symmetries inherent to it.
+4. Finally, we looked at how different frameworks deal with the variable length of protein structures and how this affects batching behaviour.
+
+I hope that this post can shine some light not only which representations are used in which circumstances but also why. If you have feedback let me know!
+
+
 
 *[SERP]: Search Engine Results Page
