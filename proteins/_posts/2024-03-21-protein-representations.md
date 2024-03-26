@@ -568,7 +568,7 @@ Results if AF2 is trained with dRSMD instead of FAPE as loss. Source: [AF2 SI](h
 
 You can see that while the predictions local structure (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculate with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
 
-Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$\arrow{x}_j$$ and compute its position relative to the predicted frame of a different residue $$T_i$$. With this, we effectively get a displacement vector which is however reflection-aware due to the rotational component of the frame transformation.
+Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$x_j$$ and compute its position relative to the predicted frame of a different residue $$T_i$$. With this, we effectively get a displacement vector which is however reflection-aware due to the rotational component of the frame transformation.
 
 We can do the same thing for the ground-truth positions and frames that can be computed for the same combination of residues and score the difference as a RMSD-like quantity. This is what the FAPE loss amounts to.
 
@@ -586,7 +586,18 @@ FAPE loss in the context of the whole structure. Source: [AF2Seq paper](https://
 
 Note that there are different versions of the FAPE loss used in different parts of the model; while the final FAPE loss computes these L2 norms for all atoms, the intermediate FAPE loss only considers the CA positions.
 
-### Reference-free methods
+This type of frame definition is by no means the only way you can construct frames; [RGN2](https://www.nature.com/articles/s41587-022-01432-w), another model for protein structure prediction instead uses Frenet–Serret frames to model the protein backbone.
+
+### Reference-free methods: Invariant and Equivariant Message Passing
+
+
+### Screw these symmetries: data augmentation and other strategies
+
+Frame-based representations have been successfull in AlphaFold and have since been used in many other models, both supervised and generative, for example [RFDiffusion](https://www.nature.com/articles/s41586-023-06415-8) and [Chroma](https://www.nature.com/articles/s41586-023-06728-8). However, defining things like diffusion processes over these frames becomes [quite a bit harder](https://arxiv.org/abs/2302.02277), and if you additionally deal with sidechains and other details, frames might be too cumbersome for your use case.
+
+Other models therefore do not use frames, but some kind of internal coordinates that can be used without explicitly considering these symmetry constraints. Some examples of this include [RGN](https://www.cell.com/cell-systems/pdf/S2405-4712(19)30076-6.pdf) and [FoldingDiff](https://www.nature.com/articles/s41467-024-45051-2) that leverage torsion angles or [ProteinSGM](https://www.nature.com/articles/s43588-023-00440-3) that leverages a mixture of torsion angles and backbone distances.
+
+Another strategy that does not involve dealing with symmetries is - well, not dealing with symmetries. [Protpardelle](https://www.biorxiv.org/content/10.1101/2023.05.24.542194v1.full) is a protein diffusion model that operates on pure coordinate representations via a vision transformer and does some rotational and translational data augmentation to account for these symmetries. Finally, in the small molecule world, the [Molecular Conformer Fields paper](https://arxiv.org/abs/2311.17932) showed that empirically, not enforcing these symmetry constraints explicitly can still lead to SOTA performance, sparking [quite a discussion on Twitter](https://twitter.com/itsbautistam/status/1734929304440479791).
 
 ## Batching: Padded versus sparse
 
