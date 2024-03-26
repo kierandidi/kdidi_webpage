@@ -588,8 +588,16 @@ Note that there are different versions of the FAPE loss used in different parts 
 
 This type of frame definition is by no means the only way you can construct frames; [RGN2](https://www.nature.com/articles/s41587-022-01432-w), another model for protein structure prediction instead uses Frenet–Serret frames to model the protein backbone.
 
-### Reference-free methods: Invariant and Equivariant Message Passing
+### Reference-free methods: Invariant and Equivariant Update Functions
 
+We do not necessarily need to represent our structures as frames where we define a local reference coordinate system, but can also directly operate on our coordinates as long as we update our representation at every layer in a way that properly leverages these symmetries (e.g. by SE(3) invariance or equivariance).
+
+Examples that leverage this approach include [GVP-GNN](https://arxiv.org/abs/2009.01411) which defines equivariant update functions as well as [SchNet](https://arxiv.org/abs/1706.08566) and [DimeNet](https://arxiv.org/abs/2003.03123) that leverage invariant update functions (message passing functions in GNN-speak). 
+
+To learn more about how these different approaches can be classified, I recommend both [this paper](https://proceedings.mlr.press/v202/joshi23a.html) as well as the [Hitchhiker's guide to geometric GNNs](https://arxiv.org/abs/2312.07511).
+{:.note}
+
+Leaving the GNN camp for a bit, [Ophiuchus](https://arxiv.org/abs/2310.02508) showed that one can use hierarchical autoencoders to operate over protein structures which are represented by CA atoms and geometric features attached to them that describe the other atomic positions. They employ SE(3)-equivariant convolutions to operate on this representation and demonstrate its usage for compression and structure generation.
 
 ### Screw these symmetries: data augmentation and other strategies
 
