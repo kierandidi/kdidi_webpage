@@ -92,15 +92,15 @@ ATOM      5  CB  MET A   1      76.039  68.696  -4.203  1.00 40.16           C
 
 You can imagine how parsing something like the resolution automatically from this might be quite a pain. The main structure of such a PDB file is as follows:
 
-- it starts with a `HEADER` and some additional metadata such as the authors and the journal where the structure was published.
-- then there are many `REMARKS` that give additional information like the resolution of the structure and the experimental method by which it was acquired.
-- what follows is the `SEQRES` (short for sequence representation) that lists the sequence for the structure for quick parsing (more information on this [here](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format)).
-- following is some information about assigned secondary structure indicated via `HELIX` or `SHEET`
-- finally, the actual structure information with coordinates etc is prefaced with the `ATOM` qualifier and information such as the atom type described, the residue name, which chain it is part of and of course the coordinates as well as additional metadata such as the [B-factor](https://proteopedia.org/wiki/index.php/Temperature_value).
+- it starts with a `HEADER` and some additional metadata such as the authors and the journal where the structure was published
+- then there are many `REMARKS` that give additional information like the resolution of the structure and the experimental method by which it was acquired
+- what follows is the `SEQRES` (short for sequence representation) that lists the sequence for the structure for quick parsing (more information on this [here](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format))
+- then some information about assigned secondary structure indicated via `HELIX` or `SHEET`
+- finally, we have the actual structure information, prefaced with the ATOM qualifier, describing the atom type, the residue name, which chain it is part of and of course the coordinates as well as additional metadata such as the [B-factor](https://proteopedia.org/wiki/index.php/Temperature_value)
 
 Two important things to note at this point:
-1. Against intuition, the `SEQRES` information does not always align with the sequence contained in the structure itself via the `ATOM` fields. This is a problem that plagues later data formats as well and can be [attributed to a variety of reasons](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format), mostly that flexible loops and chain ends are often not resolved in experimental structures but still present in the `SEQRES` representation. That is the reason why models like AlphaFold2 and OpenFold require tools like [KAlign](https://academic.oup.com/bioinformatics/article/36/6/1928/5607735) to align the sequence representation to the structure representation in cases where they do not match in the case of template search (see for example [this file](https://github.com/aqlaboratory/openfold/blob/main/openfold/data/tools/kalign.py) in the OpenFold codebase or section 1.2.3 in the [AlphaFold 2 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) (page 5)).
-2. The atom names are not just the chemical elements (C, N, O, ...), but have specific other descriptors depending on where in the amino acid this element occurs (C can be C, CA, CB, CG, ...). How each of these amino acids is named exactly is set in the [PDB Chemical Component Dictionary](https://www.wwpdb.org/data/ccd#pdbechem), but in general you can keep in mind that for many atoms we enumerate them with greek characters after the atom symbol; CG then stands for "Carbon Gamma", i.e the third carbon atom in the chain.
+1. Counterintuitively, the `SEQRES` information does not always align with the sequence contained in the structure itself via the `ATOM` fields. This is a problem that plagues later data formats as well and can be [attributed to a variety of reasons](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/primary-sequences-and-the-pdb-format), mostly that flexible loops and chain ends are often not resolved in experimental structures but nonetheless present in the `SEQRES` representation. That is the reason why models like AlphaFold2 and OpenFold require tools like [KAlign](https://academic.oup.com/bioinformatics/article/36/6/1928/5607735) to align the sequence representation to the structure representation in cases where they do not match during template search (see for example [this file](https://github.com/aqlaboratory/openfold/blob/main/openfold/data/tools/kalign.py) in the OpenFold codebase or section 1.2.3 in the [AlphaFold 2 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) (page 5)).
+2. The atom names are not just the chemical elements (C, N, O, ...), but have specific other descriptors depending on where in the amino acid this element occurs (C can be C, CA, CB, CG, ...). How each of these amino acids is named exactly is described in the [PDB Chemical Component Dictionary](https://www.wwpdb.org/data/ccd#pdbechem), but in general you can keep in mind that for many atoms we enumerate them with Greek characters after the atom symbol; CG then stands for "Carbon Gamma", i.e the third carbon atom in the chain.
 
 The PDB format does not support Greek characters, so the atom names are translated into the most similar Latin letters:
 
@@ -115,16 +115,16 @@ The PDB format does not support Greek characters, so the atom names are translat
 | &zeta;     | zeta          | Z        |
 | &nu;       | nu            | H        |
 
-C$$\alpha$$ is thus called CA, O$$\gamma$$ is called OG and so on. Sometimes (e.g. in Asp) there may be two identical atoms in the same position, whereby they are named 1 and 2, e.g. the two carboxyl atoms in Asp are called OD1 and OD2. Later in this article we will see a representation of these atoms for all amino acids, but for now we can use the [PDBeChem interface](https://www.ebi.ac.uk/pdbe-srv/pdbechem/) to look up this representation for the amino acid (or, in fact, any chemical component in the PDB) that we are interested in.
+C$$\alpha$$ is thus called CA, O$$\gamma$$ is called OG and so on. Sometimes (e.g. in Asp) there may be two identical atoms in the same position, in which case they are named 1 and 2, e.g. the two carboxyl atoms in Asp are called OD1 and OD2. Later in this article we will see a representation of these atoms for all amino acids, but for now we can use the [PDBeChem interface](https://www.ebi.ac.uk/pdbe-srv/pdbechem/) to look up this representation for the amino acid (or, in fact, any chemical component in the PDB) that we are interested in.
 
 If you insert `SER` for the amino acid serine in the "Code" search box, hit the `Search` button and upon getting the result click the `Atoms` tab on the left-hand side of the page, you will get all the atoms in that specific amino acid. We will see later that the representation in models such as AlphaFold2 is a bit shorter since a) they do not include hydrogens in the model and b) one oxygen atom is lost in the condensation of the individual amino acids into the backbone (one water molecule per bond formed to be precise).
 
 
 ### PDBx/mmCIF format
 
-As mentioned, the PDB format has quite some limitations when it comes to supporting large structures as well as complex chemistries. To improve on this, a new format called [PDBx/mmCIF](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format) was introduced and is currently the default format in the PDB. It uses the ASCII character set and is a tabular data format, in which data items have a name of the format `_categoryname.attributename`, for example `_citation_author.name`. If there is only one value for this data item, it is displayed in the same line as a key-value pair. If there are multiple values for these names, a `loop_` token prefaces the categories, followed by rows of data items where the different values are separeted by white spaces.
+As mentioned, the PDB format has quite a few limitations when it comes to supporting large structures as well as complex chemistries. To improve on this, a new format called [PDBx/mmCIF](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format) was introduced and is currently the default format in the PDB. It uses the ASCII character set and is a tabular data format, in which data items have a name of the format `_categoryname.attributename`, for example `_citation_author.name`. If there is only one value for this data item, it is displayed in the same line as a key-value pair. If there are multiple values for these names, a `loop_` token prefaces the categories, followed by rows of data items where the different values are separeted by white spaces.
 
-Compared to the legacy PDB format where a structure is just described as a list of atoms and amino acids, PDBx/mmCIF has more semantics in its representation. One example of this are *entities*, which are defined as [`chemically distinct part of a structure as represented in the PDBx/mmCIF data file`](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format). For example, a chemical ligand would be an entity, or chains in a protein would be an entity. Importantly, these entities can be present multiple times: A homodimer will have one entity since the same chain is present twice.
+Compared to the legacy PDB format where a structure is just described as a list of atoms and amino acids, PDBx/mmCIF has more semantics in its representation. One example of this is the concept of an *entity*, which is defined as a [chemically distinct part of a structure as represented in the PDBx/mmCIF data file](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format). For example, a chemical ligand would be an entity, as would chains in a protein. Importantly, these entities can be present multiple times: a homodimer will have one entity since the same chain is present twice.
 
 With this background, let us look at the PDBx/mmCIF file for the same lysozyme structure we looked at before:
 
@@ -246,7 +246,7 @@ ATOM 6445 O OXT . LEU E 1 164 ? 98.129  21.647  -9.779  0.00 84.32  ? 164 LEU E 
 
 ### MMTF format (legacy)
 
-PDBx/mmCIF is now the standard format for storing macromolecular data. While due to its extensible and verbose format it has rich metadata and is sutied for *archival* purposes, it is not the best format to *transmit* large amounts of structural data due to redundant annotations and repetitive information as you have seen above. Also, the inefficient representation of coordinates separated by whitespaces to make it human-readable is another hurdle for fast transmission of data. 
+PDBx/mmCIF is now the standard format for storing macromolecular data. While due to its extensible and verbose format it has rich metadata and is suited for *archival* purposes, it is not the best format to *transmit* large amounts of structural data due to redundant annotations and repetitive information as you have seen above. Also, the inefficient representation of coordinates separated by whitespaces to make it human-readable is another hurdle for fast transmission of data. 
 
 Due to these limitations, the [MMTF format](https://mmtf.rcsb.org/index.html) (Macromolecular transmission format) was introduced. It does not contain all data present in the PDBx/mmCIF files, but all the data necessary for most visualisation and structural analysis programs. The main pros of MMTF are its compact encoding and fast parsing due to binary instead of string representations. 
 
@@ -255,19 +255,19 @@ Due to these limitations, the [MMTF format](https://mmtf.rcsb.org/index.html) (M
 Overview of the MMTF compression pipeline. Source: [UCSD Presentation](https://github.com/sbl-sdsc/mmtf-workshop-2018/blob/master/0-introduction/MMTF2018-Introduction.pdf)
 {:.figcaption}
 
-We can see that after some data preparation, the main step in the MMTF pipeline are various ways of encoding to reduce the file size:
+We can see that after some data preparation, the main steps in the MMTF pipeline are various ways of encoding to reduce the file size:
 - [integer encoding]()
 - [dictionary encoding]()
 - [run-length encoding]()
 - [delta encoding]()
 
-After these encodings, the file size if comprised further by packing into the [MessagePack format](https://msgpack.org/). It's slogan reads like *It's like JSON, but fast and small*, indicating its flexiblity to store data e.g. as key-value pars, but in a binarized format.
+After these encodings, the file size is compressed further by packing into the [MessagePack format](https://msgpack.org/). Its slogan reads like *It's like JSON, but fast and small*, indicating its flexiblity in storing data e.g. as key-value pars, but in a binarized format.
 
-MMTF is great for fast transmission of data and rethought quite a lot of things in clever ways. However, it deviated quite a bit from the mmCIF standard and therefore [never really caught on in the community](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose). This is now finally confirmed with MMTF being [deprecated from July 2024 onward](https://www.mail-archive.com/ccp4bb@jiscmail.ac.uk/msg56121.html).
+MMTF is great for fast transmission of data and rethought quite a lot of things in clever ways. However, it deviated quite a bit from the mmCIF standard and therefore [never really caught on in the community](https://bioinformatics.stackexchange.com/questions/14738/binarycif-vs-mmtf-formats-which-one-to-choose). This has now been confirmed, with MMTF being [deprecated from July 2024 onward](https://www.mail-archive.com/ccp4bb@jiscmail.ac.uk/msg56121.html).
 
 ### BinaryCIF format 
 
-There was a need for a binarized efficient format for protein structure information transfer that was more aligned with the PDBx/mmCIF file format specification. Enter [Binary CIF](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247), a newer format that is easier to interconvert with the now standard PDBx/mmCIF. The [Binary CIF specification](https://github.com/dsehnal/BinaryCIF) is actually quite readable, so I recommend to check it out.
+There was a need for a binarized efficient format for protein structure information transfer that was more aligned with the PDBx/mmCIF file format specification. Enter [Binary CIF](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247), a newer format that is easier to interconvert with the now standard PDBx/mmCIF. The [Binary CIF specification](https://github.com/dsehnal/BinaryCIF) is actually quite readable, so I recommend checking it out.
 
 BinaryCIF was heavily inspired by MMTF, with many people working on both formats. This is visible in the usage of MessagePack and the different encodings employed.
 
@@ -276,11 +276,11 @@ BinaryCIF was heavily inspired by MMTF, with many people working on both formats
 Encodings employed for BinaryCIF. Source: [BinaryCIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247) 
 {:.figcaption}
 
-There are a few additional ones that you can read up on in the specification on GitHub, but mostly the same encodings as in MMTF were used.
+There are a few additional ones that you can read up on in the specification on GitHub, but mostly the same encodings were used as in MMTF
 
 ## Input Data for Machine Learning Algorithms
 
-We discussed how protein structures are stored in databases; with that done, let us talk about how they are represented in machine learning algorithms.
+We've discussed how protein structures are stored in databases; with that done, let us talk about how they are represented in machine learning algorithms.
 
 ### Amino acid encodings
 
@@ -290,12 +290,12 @@ However, if you actually look into different code bases, you will soon find a de
 
 ![standardisation](/assets/img/blog/prot_representation/standards_xkcd.png)
 
-The old ordeal about standardisation. Source: [xkcd.com](https://xkcd.com/927/)
+The old ordeal of standardisation. Source: [xkcd.com](https://xkcd.com/927/)
 {:.figcaption}
 
 Depending on which codebase you use, the ordering of amino acids used to encode them into numerical format might be different, introducing the possibility of silent but horrible bugs later down the line. Some alphabets even have a different vocabulary size since they deal with post-translational modifications, non-canonical amino acids or other phenomena you encounter in the wild west of structural biology.
 
-For many applications, people use a de-facto standard by adapting the encoding defined by AlphaFold2. If we look at the OpenFold codebase, we can see that their ordering includes the 20 canonical amino acids together with an unknown residue token represented as `X`:
+For many applications, people use a de-facto standard by adapting the encoding defined by AlphaFold2. If we look at the OpenFold codebase, we can see that their ordering includes the 20 canonical amino acids together with an unknown residue token represented by `X`:
 
 ```python
 # This is the standard residue order when coding AA type as a number.
@@ -336,7 +336,7 @@ However, some other models/frameworks use an amino acid encoding that is created
 
 ### Coordinates: Atom14 vs Atom37
 
-When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the coordinates from the file formates discussed earlier are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
+When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the coordinates from the file formats discussed earlier are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
 
 The documentation on these two representations is sparse, with one being available on a [HuggingFace docstring](https://huggingface.co/spaces/simonduerr/ProteinMPNN/blame/e65166bd70446c6fddcc1581dbc6dac06e7f8dca/alphafold/alphafold/model/all_atom.py):
 
@@ -443,7 +443,7 @@ atom_type_num = len(atom_types)  # := 37.
 `atom37` ordering.
 {:.figcaption}
 
-Here we can see that the ordering is always the same no matter which residue is represented; however, most of the fields will always be empty since the longest amino acid (tryptophane) has only 14 atoms. We therefore exchange efficiency vs standardisation, which explains why internally AF2 often uses `atom14`, but when it interfaces to other programs at I/O it often uses `atom37`.
+Here we can see that the ordering is always the same no matter which residue is represented; however, most of the fields will always be empty since the longest amino acid (tryptophane) has only 14 atoms. We therefore exchange efficiency for standardisation, which explains why internally AF2 often uses `atom14`, but when it interfaces to other programs at I/O it often uses `atom37`.
 
 If we think about our example of `Ser` again, we can see how the machine representations map to the actual amino acid (again with the caveat that hydrogens are ommited and the carboxyl oxygen is not counted since in a peptide backbone it will have let as water).
 
@@ -506,7 +506,7 @@ print(selection.res_id) # [ 11 11 ... 15 15 ]
 print(selection.array_length()) # 40
 ```
 
-We see that our selection contains 40 atoms. We can check if that corresponds to the amino acids we wanted to select by checking how many non-hydrogen atoms each of these amino acids have and by subtracting on average 1 oxygen atom per amino acid for forming of the peptide bond.
+We see that our selection contains 40 atoms. We can check if that corresponds to the amino acids we wanted to select by checking how many non-hydrogen atoms each of these amino acids have and by subtracting on average 1 oxygen atom per amino acid for the formation of the peptide bond.
 
 ![amino_acids](/assets/img/blog/prot_representation/amino_acids.png)
 
@@ -525,14 +525,14 @@ $$
 
 We now have covered how we go from the database formats for protein structures (PDBx/mmCIF, MMTF and BinaryCIF) to the formats commonly used as inputs for machine learning models (atom14, atom37). The question now is: what do the machine learning models do with this input information?
 
-Given that we deal with geometric quantities such as coordinates of protein structures, considerations like invariance and equivariance come into play. There is a whole field called [*Geometric Deep Learning*](https://geometricdeeplearning.com/) dealing with these considerations. For the usage of machine learning models for protein structure, it is important to understand the distinction between *reference-free* and *reference-based* methods.
+Given that we deal with geometric quantities such as coordinates of protein structures, considerations like invariance and equivariance come into play. There is a whole field called [*Geometric Deep Learning*](https://geometricdeeplearning.com/) that deals with with these considerations. For the usage of machine learning models for protein structure, it is important to understand the distinction between *reference-free* and *reference-based* methods.
 
-To learn more about geometric deep learning, you can either check out the [protobook by Bronstein et al.](https://arxiv.org/abs/2104.13478), the [Hitchhiker's guide to geometric GNNs](https://arxiv.org/abs/2312.07511) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-02-lesson5/) I gave about the topic.
+To learn more about geometric deep learning, you can either check out the [protobook by Bronstein et al.](https://arxiv.org/abs/2104.13478), the [Hitchhiker's guide to geometric GNNs](https://arxiv.org/abs/2312.07511) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-02-lesson5/) I gave on the topic.
 {:.note}
 
 ![geometric_gnn_overview](/assets/img/blog/prot_representation/geometric_gnn_overview.png)
 
-If we predict some molecular property (such as binding affinity, solubility or immunogenicity) it is quite obvious to a human that rotations or translations of the protein should not change the prediction of these quantities. A neural network, however, just sees different numbers when a protein is translated and therefore needs to learn that these different inputs correspond to the same protein. This can be done via [data augmentation](), but this can become data-inefficient. Therefore, people looked for ways to build this inductive bias of invariance or equivariance to [SE(3) group actions](https://arxiv.org/abs/2103.15980) (i.e. rotations and translations) into the model.
+If we predict some molecular property (such as binding affinity, solubility or immunogenicity) it is quite obvious to a human that rotations or translations of the protein should not change the prediction of these quantities. A neural network, however, just sees different numbers when a protein is translated and therefore needs to learn that these different inputs correspond to the same protein. This can be done via [data augmentation](https://en.wikipedia.org/wiki/Data_augmentation), but this can become data-inefficient. Therefore, people looked for ways to build this inductive bias of invariance or equivariance to [SE(3) group actions](https://arxiv.org/abs/2103.15980) (i.e. rotations and translations) into the model.
 
 ### Local reference-based methods
 
@@ -560,7 +560,7 @@ These canonical local reference frames $$T = (r, x) \in \text{SE(3)}$$ can be us
 
 As an example of why this is important, we can look at the task of protein structure prediction that [AlphaFold2](https://www.nature.com/articles/s41586-021-03819-2) tackled. 
 
-To learn more about AlphaFold2 and the problem of protein structure prediction, you can either check out the [3-part lecture series about AF2 by Nazim Bouatta](https://www.youtube.com/watch?v=yqeUH4RsJp8) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-03-lesson6/) I gave about the topic.
+To learn more about AlphaFold2 and the problem of protein structure prediction, you can either check out the [3-part lecture series about AF2 by Nazim Bouatta](https://www.youtube.com/watch?v=yqeUH4RsJp8) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-03-lesson6/) I gave on the topic.
 {:.note}
 
 Here, one important metric for measuring prediction accuracy is the GDT score. To get good at maximising this score, a natural way to think about it is to take your predicted coordinates, compare them to the ground-truth coordinates and compute something like an RMSD loss. However, this does not take rototranslations into account of course. We can remedy that by calculating a [dRMSD loss](https://web.stanford.edu/class/cs273/slides/conformational-space.ppt), i.e. a RMSD loss on all pairwise distances in the structure. By using these internal coordinates, we are invariant to rototranslations.
@@ -572,9 +572,9 @@ However, we are also invariant to reflections! When training AlphaFold2, the tea
 Results if AF2 is trained with dRSMD instead of FAPE as loss. Source: [AF2 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf), page 36, section 1.9.3.
 {:.figcaption}
 
-You can see that while the predictions local structure (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculate with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
+You can see that while the local structure of predicted proteins (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculated with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
 
-Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$x_j$$ and compute its position relative to the predicted frame of a different residue $$T_i$$. With this, we effectively get a displacement vector which is however reflection-aware due to the rotational component of the frame transformation.
+Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware way. How do we do that? We can take a predicted position $$x_j$$ and compute its position relative to the predicted frame of a different residue $$T_i$$. With this, we effectively get a displacement vector which is however reflection-aware due to the rotational component of the frame transformation.
 
 We can do the same thing for the ground-truth positions and frames that can be computed for the same combination of residues and score the difference as a RMSD-like quantity. This is what the FAPE loss amounts to.
 
@@ -583,7 +583,7 @@ We can do the same thing for the ground-truth positions and frames that can be c
 FAPE loss visualisation for a single pair of residues. Source: [YouTube talk at HMS](https://www.youtube.com/watch?v=ri39B0Voujc).
 {:.figcaption}
 
-An equivalent way of visualising this is not looking at a single pair of residues, but consider it in the context of the whole structure. In this context, we align the predicted and the target structure based on frame $$T_i$$ and then calculate the L2 norm of all the other residues with respect to this specific alignment. We can then repeat this for all residues in the sequence to calculate the overall FAPE loss.
+An equivalent way of visualising this involves not looking at a single pair of residues, but considering it in the context of the whole structure. Here, we align the predicted and the target structure based on frame $$T_i$$ and then calculate the L2 norm of all the other residues with respect to this specific alignment. We can then repeat this for all residues in the sequence to calculate the overall FAPE loss.
 
 ![fape_epfl](/assets/img/blog/prot_representation/fape_epfl.png)
 
@@ -615,20 +615,20 @@ Another strategy that does not involve dealing with symmetries is - well, not de
 
 ## Batching: Padded versus sparse
 
-We now covered the whole pipeline, starting from database formats over input formats to network-internal representations to properly handle symmetries. A final consideration comes into play when we think about [batching](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/), a commonly used technique in machine learning where you do not pass your samples one by one into the network, but combine them together into a bigger tensor to achieve better hardware utilisation and therefore training performance.
+We've now covered the whole pipeline, starting from database formats over input formats to network-internal representations to properly handle symmetries. A final consideration comes into play when we think about [batching](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/), a commonly used technique in machine learning where you do not pass your samples one by one into the network, but combine them into a bigger tensor to achieve better hardware utilisation and therefore training performance.
 
-There are many subtleties about how you choose your batch size since generally we perform a gradient update step after each of these batches; therefore, the batch size is not only influencing training performance but also accuracy by changing the dynamics of our gradient descent procedure. I won't go into detail here on that, but recommend [Andrej Karpathy's blog](https://karpathy.github.io/2019/04/25/recipe/) on general recipes for training neural networks.
+There are many subtleties to choosing your batch size since generally we perform a gradient update step after each of these batches; therefore, the batch size not only influences training performance but also accuracy by changing the dynamics of our gradient descent procedure. I won't go into detail here on that, but recommend [Andrej Karpathy's blog](https://karpathy.github.io/2019/04/25/recipe/) on general recipes for training neural networks.
 {:.note}
 
 ### The batching pain with variable-length input
 
-This batching of tensors is trivial in many computer vision use cases since often all your images are of the same size; you can therefore just stack them along a new dimension and ready is your batch. 
+This batching of tensors is trivial in many computer vision use cases since often all your images are of the same size; you can therefore just stack them along a new dimension and ready is your batch.
 
 For protein structures, it is a bit more complicated due to variable length. One strategy to deal with this involves [padding and trunction](https://huggingface.co/docs/transformers/main/en/pad_truncation). Here, we choose some maximum length for our batch and pad structures that are shorter than this via padding tokens (for coordinates this can be 0 or a small value that is unlikely to occur exactly like this in the data) and truncate structures that are longer than this (either randomly or via some biologically defined domain boundaries). This solves our issue, but introduces new ones: often, we do not want to truncate data since we may lose important information. If we now always choose the longest structure in a batch as the maximum length, we may end up with very inefficient training if there are very short sequences in the batch and padding tokens begin to represent a significant part of our batch. 
 
 ### Efficient padding via length batching
 
-To circumvent this, people took inspiration from NLP. In the transformer paper, for example, it is stated that to circumvent the inefficient padding issue,[*sentence pairs were batched together by approximate sequence length*](https://arxiv.org/abs/1706.03762), resulting in more optimal padding. This has been replicated for example in [generative models for protein structure](https://github.com/microsoft/protein-frame-flow/blob/1c5ad9c28a1264e449d98c382123bb48227d9d97/data/pdb_dataloader.py#L162). This change might influence training dynamics since now the model sees similarly-sized inputs inside every batch, but empirically seems to still work fine.
+To circumvent this, people took inspiration from NLP. In the transformer paper, for example, it is stated that to circumvent the inefficient padding issue, [*sentence pairs were batched together by approximate sequence length*](https://arxiv.org/abs/1706.03762), resulting in more optimal padding. This has been replicated for example in [generative models for protein structure](https://github.com/microsoft/protein-frame-flow/blob/1c5ad9c28a1264e449d98c382123bb48227d9d97/data/pdb_dataloader.py#L162). This change might influence training dynamics since now the model sees similarly-sized inputs inside every batch, but empirically still seems to work fine.
 
 ### Sparse batching 
 
@@ -680,13 +680,13 @@ In the padded case, there is no such functionality yet, but there might soon be 
 
 ## Summary
 
-In this post we discussed for different levels of information representation:
+In this post we discussed four different levels of information representation:
 1. We started with the data formats in which protein structures are stored and transmitted and the evolution they underwent in the last decades.
 2. After that we looked at how both sequence and structure information can be converted into a format that can be used by machine learning algorithms, specifically the `atom14` and `atom37` format.
-3. Once inside the network, we discussed how different methods leverage this information differently, either via reference-based or reference-free methods, both looking at how we can deal with geometric information while respecting the symmetries inherent to it.
+3. Once inside the network, we discussed how different methods leverage this information differently, either via reference-based or reference-free methods, looking at how we can deal with geometric information while respecting the symmetries inherent to it.
 4. Finally, we looked at how different frameworks deal with the variable length of protein structures and how this affects batching behaviour.
 
-I hope that this post can shine some light not only which representations are used in which circumstances but also why. If you have feedback let me know!
+I hope that this post can shine some light not only on which representations are used in which circumstances but also why. If you have feedback let me know!
 
 
 
