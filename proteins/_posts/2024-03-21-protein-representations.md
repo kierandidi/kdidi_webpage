@@ -467,12 +467,18 @@ Then, execute the following commands via the integrated terminal:
 
 ~~~python
 fetch 168lA # get first chain of lysozyme assembly
-select selection, resi 10-15 # select a subset of residues for simplicity
+select selection, resi 11-15 # select a subset of residues for simplicity
 hide everything # hide the whole structure for clarity
 show sticks, selection # show stick representation for the selected subset; carbon is green, oxygen is red, nitrogen is blue
 color yellow, (name CG) # color all CG atoms yellow
 color orange,  (name NH1) # color the single NH1 atom orange
 ~~~
+
+After doing this, you should see something like this:
+
+![pymol_structure](/assets/img/blog/prot_representation/pymol_structure.png)
+
+We can compare this to a schematic sketch of this protein segment, similar to what we did before with serine:
 
 ![chain example](/assets/img/blog/prot_representation/chain_repr.jpeg)
 
@@ -500,7 +506,7 @@ print(selection.res_id) # [ 11 11 ... 15 15 ]
 print(selection.array_length()) # 40
 ```
 
-Note that we needed to choose >10 here since in Python we zero-index, but the PDB starts its indices at 1 (and, by extension, PyMol does). We see that our selection contains 40 atoms. We can check if that corresponds to the amino acids we wanted to select by checking how many non-hydrogen atoms each of these amino acids have and by subtracting on average 1 oxygen atom per amino acid for forming of the peptide bond.
+We see that our selection contains 40 atoms. We can check if that corresponds to the amino acids we wanted to select by checking how many non-hydrogen atoms each of these amino acids have and by subtracting on average 1 oxygen atom per amino acid for forming of the peptide bond.
 
 ![amino_acids](/assets/img/blog/prot_representation/amino_acids.png)
 
