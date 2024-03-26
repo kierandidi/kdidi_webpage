@@ -332,10 +332,7 @@ restype_order_with_x = {restype: i for i, restype in enumerate(restypes_with_x)}
 OpenFold amino acid encoding.
 {:.figcaption}
 
-
-
-
-
+However, some other models/frameworks use an amino acid encoding that is created by sorting the *1-letter codes* instead of the *3-letter codes* alphabetically. If in doubt, check which encoding your data uses to avoid confusion.
 
 ### Coordinates: Atom14 vs Atom37
 
@@ -446,7 +443,7 @@ atom_type_num = len(atom_types)  # := 37.
 `atom37` ordering.
 {:.figcaption}
 
-Here we can see that the ordering is always the same no matter which residue is represented; however, most of the fields will always be empty since the longest amino acid has only 14 atoms. We therefore exchange efficiency vs standardisation, which explains why internally AF2 often uses `atom14`, but when it interfaces to other programs at I/O it often uses `atom37`.
+Here we can see that the ordering is always the same no matter which residue is represented; however, most of the fields will always be empty since the longest amino acid (tryptophane) has only 14 atoms. We therefore exchange efficiency vs standardisation, which explains why internally AF2 often uses `atom14`, but when it interfaces to other programs at I/O it often uses `atom37`.
 
 If we think about our example of `Ser` again, we can see how the machine representations map to the actual amino acid (again with the caveat that hydrogens are ommited and the carboxyl oxygen is not counted since in a peptide backbone it will have let as water).
 
@@ -472,13 +469,51 @@ Then, execute the following commands via the integrated terminal:
 fetch 168lA # get first chain of lysozyme assembly
 select selection, resi 10-15 # select a subset of residues for simplicity
 hide everything # hide the whole structure for clarity
-show sticks, selection # show stick representation for the selected subset
+show sticks, selection # show stick representation for the selected subset; carbon is green, oxygen is red, nitrogen is blue
+color yellow, (name CG) # color all CG atoms yellow
+color orange,  (name NH1) # color the single NH1 atom orange
 ~~~
-
 
 ![chain example](/assets/img/blog/prot_representation/chain_repr.jpeg)
 
+Schematic representation of the selection from our protein, with the coloring imitating our color scheme in PyMol.
+{:.figcaption}
 
+We can see that PyMol knows about the atom naming convention we discussed and can select and color residues accordingly. It does this by parsing the information it gets from the PDB file and storing this inside the structure object it displays.
+
+We can do the same thing programmatically by using a library such as [Biotite](https://www.biotite-python.org/index.html).
+
+```python
+import biotite.structure as struc
+import biotite.structure.io.mmtf as mmtf
+import biotite.database.rcsb as rcsb
+
+mmtf_file = mmtf.MMTFFile.read(rcsb.fetch("168l", "mmtf"))
+structure = mmtf.get_structure(mmtf_file, model=1)
+
+chain_A = structure[
+    (structure.chain_id == "A") & (structure.hetero == False)
+]
+print(chain_A.res_id) # array([  1,   1,   1, ..., 164, 164, 164])
+selection = chain_A[(chain_A.res_id > 10) & (chain_A.res_id <= 15)]
+print(selection.res_id) # [ 11 11 ... 15 15 ]
+print(selection.array_length()) # 40
+```
+
+Note that we needed to choose >10 here since in Python we zero-index, but the PDB starts its indices at 1 (and, by extension, PyMol does). We see that our selection contains 40 atoms. We can check if that corresponds to the amino acids we wanted to select by checking how many non-hydrogen atoms each of these amino acids have and by subtracting on average 1 oxygen atom per amino acid for forming of the peptide bond.
+
+![amino_acids](/assets/img/blog/prot_representation/amino_acids.png)
+
+Proteinogenic amino acids and some of their properties. Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Overview_proteinogenic_amino_acids-DE.svg)
+{:.figcaption}
+
+$$
+\begin{align}
+E + G + 2L + R - 5
+&= 10 + 5 + 2*9 + 12 - 5
+&= 40
+\end{align}
+$$
 
 ## Reference Systems: Local reference frames vs reference-free methods
 
