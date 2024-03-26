@@ -267,7 +267,7 @@ MMTF is great for fast transmission of data and rethought quite a lot of things 
 
 ### BinaryCIF format 
 
-There was a need for a binarized efficient format for protein structure information transfer that was more aligned with the PDBx/mmCIF file format specification. Enter [Binary CIF paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247), a newer format that is way easiert to interconvert with the now standard PDBx/mmCIF. The [Binary CIF specification](https://github.com/dsehnal/BinaryCIF) is actually quite readable, so I recommend to check it out.
+There was a need for a binarized efficient format for protein structure information transfer that was more aligned with the PDBx/mmCIF file format specification. Enter [Binary CIF](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008247), a newer format that is easier to interconvert with the now standard PDBx/mmCIF. The [Binary CIF specification](https://github.com/dsehnal/BinaryCIF) is actually quite readable, so I recommend to check it out.
 
 BinaryCIF was heavily inspired by MMTF, with many people working on both formats. This is visible in the usage of MessagePack and the different encodings employed.
 
@@ -278,11 +278,68 @@ Encodings employed for BinaryCIF. Source: [BinaryCIF paper](https://journals.plo
 
 There are a few additional ones that you can read up on in the specification on GitHub, but mostly the same encodings as in MMTF were used.
 
-## Coordinates: Atom14 vs Atom37
+## Input Data for Machine Learning Algorithms
 
 We discussed how protein structures are stored in databases; with that done, let us talk about how they are represented in machine learning algorithms.
 
-When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the file formats just discussed are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
+### Amino acid encodings
+
+Encoding the sequence information into a numerical format should not be too hard; our vocabulary size is only 20 and we do not have to deal with symmetries as we will see later with geometric information like coordinates.
+
+However, if you actually look into different code bases, you will soon find a decade-old problem revived again:
+
+![standardisation](/assets/img/blog/prot_representation/standards_xkcd.png)
+
+The old ordeal about standardisation. Source: [xkcd.com](https://xkcd.com/927/)
+{:.figcaption}
+
+Depending on which codebase you use, the ordering of amino acids used to encode them into numerical format might be different, introducing the possibility of silent but horrible bugs later down the line. Some alphabets even have a different vocabulary size since they deal with post-translational modifications, non-canonical amino acids or other phenomena you encounter in the wild west of structural biology.
+
+For many applications, people use a de-facto standard by adapting the encoding defined by AlphaFold2. If we look at the OpenFold codebase, we can see that their ordering includes the 20 canonical amino acids together with an unknown residue token represented as `X`:
+
+```python
+# This is the standard residue order when coding AA type as a number.
+# Reproduce it by taking 3-letter AA codes and sorting them alphabetically.
+restypes = [
+    "A",
+    "R",
+    "N",
+    "D",
+    "C",
+    "Q",
+    "E",
+    "G",
+    "H",
+    "I",
+    "L",
+    "K",
+    "M",
+    "F",
+    "P",
+    "S",
+    "T",
+    "W",
+    "Y",
+    "V",
+]
+restype_order = {restype: i for i, restype in enumerate(restypes)}
+restype_num = len(restypes)  # := 20.
+unk_restype_index = restype_num  # Catch-all index for unknown restypes.
+
+restypes_with_x = restypes + ["X"]
+restype_order_with_x = {restype: i for i, restype in enumerate(restypes_with_x)}
+```
+OpenFold amino acid encoding.
+{:.figcaption}
+
+
+
+
+
+
+### Coordinates: Atom14 vs Atom37
+
+When looking at either the original [AlphaFold codebase](https://github.com/google-deepmind/alphafold) or the open-source reproduction in PyTorch called [OpenFold](https://github.com/aqlaboratory/openfold), many people trip over how the coordinates from the file formates discussed earlier are represented inside the neural network. This confusion is enhanced by there being two different network-internal representations which are converted into each other depending on the use case scenario.
 
 The documentation on these two representations is sparse, with one being available on a [HuggingFace docstring](https://huggingface.co/spaces/simonduerr/ProteinMPNN/blame/e65166bd70446c6fddcc1581dbc6dac06e7f8dca/alphafold/alphafold/model/all_atom.py):
 
@@ -440,7 +497,7 @@ If we predict some molecular property (such as binding affinity, solubility or i
 
 On one hand, some models leverage *reference-based* methods, largely following the example of the original AlphaFold2 model. Here, a local reference frame for each residue is defined based on the backbone geometry, with the translational component being equal to the CA position and the rotational component originating from a Gram-Schmidt orthogonalisation with respect to the CA-C and the CA-N bond vector. 
 
-Here a paragraph from the []() that summarizes the current state in this field of research:
+Here a paragraph from the [Hitchhiker's Guide to Geometric GNNs for 3D Atomic Systems](https://arxiv.org/abs/2312.07511) that summarizes the current state in this field of research:
 
 Canonical frame-based invariant GNNs. Canonical frame-based GNNs [Liu et al., 2022, Wang
 et al., 2022a] use a local or global frame of reference to scalarise geometric quantities into invariant
