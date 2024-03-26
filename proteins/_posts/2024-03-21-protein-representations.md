@@ -568,19 +568,23 @@ Results if AF2 is trained with dRSMD instead of FAPE as loss. Source: [AF2 SI](h
 
 You can see that while the predictions local structure (as measured by the [lddt-CA score](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799472/)) seem very good, the global structure (as measured by the [GDT score](https://en.wikipedia.org/wiki/Global_distance_test)) seems to follow a bimodal distribution, with half the predictions performing well and the other half faring badly. Could this be due to the reflection invariance of the dRMSD loss? When calculating the GDT score with respect to the mirror image structure, the team observed a reversal of the distribution! Finally, when looking at the maximum of these two scores (one calculate with respect to the ground truth structure and one with respect to its mirror image), the model shows strong performance, indicating that the issue was indeed the reflection-invariant dRSMD loss.
 
-Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$\arrow{x}_j$$ 
+Here frames come to our rescue and allow the definition of the so-called FAPE loss (frame-aligned point error, minimal implementation [here](https://github.com/wangleiofficial/FAPEloss)). With their help, we can compute distance-like quantities, but in a reflection-aware away. How do we do that? We can take a predicted position $$\arrow{x}_j$$ and compute its position relative to the predicted frame of a different residue $$T_i$$. With this, we effectively get a displacement vector which is however reflection-aware due to the rotational component of the frame transformation.
+
+We can do the same thing for the ground-truth positions and frames that can be computed for the same combination of residues and score the difference as a RMSD-like quantity. This is what the FAPE loss amounts to.
 
 ![fape_columbia](/assets/img/blog/prot_representation/fape_columbia.png)
 
+FAPE loss visualisation for a single pair of residues. Source: [YouTube talk at HMS](https://www.youtube.com/watch?v=ri39B0Voujc).
 {:.figcaption}
 
-An equivalent way of visualising this
-
+An equivalent way of visualising this is not looking at a single pair of residues, but consider it in the context of the whole structure. In this context, we align the predicted and the target structure based on frame $$T_i$$ and then calculate the L2 norm of all the other residues with respect to this specific alignment. We can then repeat this for all residues in the sequence to calculate the overall FAPE loss.
 
 ![fape_epfl](/assets/img/blog/prot_representation/fape_epfl.png)
 
+FAPE loss in the context of the whole structure. Source: [AF2Seq paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10204179/).
 {:.figcaption}
 
+Note that there are different versions of the FAPE loss used in different parts of the model; while the final FAPE loss computes these L2 norms for all atoms, the intermediate FAPE loss only considers the CA positions.
 
 ### Reference-free methods
 
