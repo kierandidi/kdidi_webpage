@@ -90,13 +90,19 @@ There have been multiple versions of NeRF such as [pNeRF](https://onlinelibrary.
 2. Given a first backbone atom ($$A_1$$), we can place the second one arbitrarily in space and just constrain its position by the known bond distance $$d_1$$: $$A_2(0,0,d_1)$$
 3. Given the first two backbone atoms ($$A_1, A_2$$), we can place the third one in space by using the literature bond distance $$d_2$$ and angle $$\theta_1$$: $$A_3(0, \sin(\theta_1) * d_2, d1 - \cos(\theta_1) * d_2)$$
 4. Given the first three backbone atoms ($$A_1, A_2, A_3$$), we can place the fourth one in space by using the literature bond distance ($$d_3$$), the literature (or saved in the case of FoldComp) angle $$\theta_2$$ and the stored torsion angle $$\tau_1$$. We do this in 2 steps:
-  4.1 We first define a new coordinate system called *specialized reference frame* centered at $$A_3$$ using spherical coordinates and places $$A_4^*$$ there:
+  4.1 We first define a new coordinate system called *specialised reference frame* centered at $$A_3$$ using spherical coordinates and places $$A_4^*$$ there:\\
+
 $$
 \begin{aligned}
 A_4^* &= (d_3 \cos(\theta_2), d_3 \cos(\tau_1) \sin(\theta_2), d_3 \sin(\tau_1) \sin(\theta_2))
 \end{align}
 $$
+
+Calculation of $$A_4^*$$ in the specialised reference frame.
+{:.figcaption}
+
 4.2 We then rototranslate $$A_4^*$$ back from that specialised reference frame back to our original coordinate system via $$A_4 = RA_4^* + A_3$$ and with
+
 $$
 \begin{align}
 R &= [\hat{A}_{2-3}, \hat{n} \cross \hat{A}_{2-3}, \hat{n}] \\
@@ -104,6 +110,10 @@ R &= [\hat{A}_{2-3}, \hat{n} \cross \hat{A}_{2-3}, \hat{n}] \\
 \hat{n} &= \frac{A_1 A_2 \cross \hat{A}_{2-3}}{\mid A_1 A_2 \cross \hat{A}_{2-3} \mid }
 \end{aligned}
 $$
+
+Rototranslation of $$A_4^*$$ back to the original coordinate system to form $$A_4$$.
+{:.figcaption}
+
 5. We can repeat step 4 for all forthcoming atoms until we are at the end of the polymer chains.
 
 Reconstruction of the backbone works in a similar way, just using different values for bond distances, bond angles and torsion angles.
