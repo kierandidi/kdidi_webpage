@@ -93,9 +93,9 @@ There have been multiple versions of NeRF such as [pNeRF](https://onlinelibrary.
   4.1 We first define a new coordinate system called *specialised reference frame* centered at $$A_3$$ using spherical coordinates and places $$A_4^*$$ there:
 
 $$
-\begin{aligned}
+\begin{aligned} %!!15
 A_4^* &= (d_3 \cos(\theta_2), d_3 \cos(\tau_1) \sin(\theta_2), d_3 \sin(\tau_1) \sin(\theta_2))
-\end{align}
+\end{aligned}
 $$
 
 Calculation of $$A_4^*$$ in the specialised reference frame.
@@ -125,7 +125,7 @@ An optional caption for a math block
 4.2 We then rototranslate $$A_4^*$$ back from that specialised reference frame back to our original coordinate system via $$A_4 = RA_4^* + A_3$$ and with
 
 $$
-\begin{align}
+\begin{aligned} %!!15 
 R &= [\hat{A}_{2-3}, \hat{n} \cross \hat{A}_{2-3}, \hat{n}] \\
 \hat{A}_{2-3} &= \frac{A_2 A_3}{\mid A_2 A_3 \mid}\\
 \hat{n} &= \frac{A_1 A_2 \cross \hat{A}_{2-3}}{\mid A_1 A_2 \cross \hat{A}_{2-3} \mid }
