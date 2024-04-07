@@ -44,15 +44,17 @@ invert_sidebar: true
 
 
 
-## Constraining conformations to enhance affinity and avidity - i-shaped antibodies (iAbs) and Contorsbodies
+## Constraining conformations to enhance affinity and avidity - i-shaped antibodies (iAbs), contorsbodies and more
 
-[iAbs]()
+[iAbs](https://www.nature.com/articles/s41467-024-44985-x)
 
-[Contorsbodies]()
+[Contorsbodies](https://www.sciencedirect.com/science/article/pii/S2001037020302701)
 
-[Antibody Zoo]()
+[Antibody Zoo](https://www.tandfonline.com/doi/full/10.1080/19420862.2016.1268307)
 
 [Antibody Agonist investigation]()
+
+[Role of affinity maturation](https://www.cell.com/cell-reports/fulltext/S2211-1247(19)31104-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2211124719311040%3Fshowall%3Dtrue)
 
 
 

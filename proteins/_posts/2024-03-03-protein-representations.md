@@ -16,7 +16,7 @@ invert_sidebar: true
 
 Machine Learning approaches empower [a new suite of algorithms and applications](https://www.sciencedirect.com/science/article/abs/pii/S2405471223002983) in structural biology and protein engineering/design. However, there is quite a gap between how protein structure data is classically stored in databases and how machine learning algorithms deal with data. Here, I want to bridge that gap and show how current algorithms such as AlphaFold2 make use of protein structure data in practice.
 
-* toc
+1. toc
 {:toc}
 
 ## Protein Structure File Formats: PDB vs PDBx/mmCIF vs MMTF vs BinaryCIF
@@ -455,6 +455,10 @@ If we think about our example of `Ser` again, we can see how the machine represe
 | Data Layout |Varying Shape | Fixed Shape      |
 | Sequence Dependence |Yes| No      |
 
+### Boundary Conditions: OXT
+
+I have been talking before about the oxygen atom of the carboxy group that is lost when two amino acids combine to form a peptide bond. Well, that is true for all amino acids except the last one at the C-terminus since there the carboxy group will still be free and has two oxygen atoms. At physiological pH the carboxy group will be deprotonated so both oxygen atoms are chemically equivalent with equal bond lengths (as opposed to the single and double bond image we always draw on paper), but our [file formats still require us](https://chemistry.stackexchange.com/questions/22245/what-does-c-oxt-stand-for-in-pdb-files) to name one of the oxygens at the terminus as a "normal" oxygen, i.e. `O` and the other one `OXT`. You will therefore often see the last atom in a protein structure being `OXT`, such as in [this Biopandas tutorial](https://biopandas.github.io/biopandas/tutorials/Working_with_PDB_Structures_in_DataFrames/). When I say "often", I mean "not always"; the termini of protein are known to often be too flexible to crystallise, therefore the structure in our PDB files will often end prior to the C-terminus and not contain an OXT. This is not super problematic since given the planarity of the delocalised carboxy electron system, one can place the OXT easily given the carbon and the other oxygen atom. Predicted structures such as the ones from AlphaFold2 on the other hand will always contain the OXT atom since they do not have to battle experimental resolution problems.
+
 ### Example: Lysozyme atom numbering
 
 Let us now visualise the concepts we looked at so far (atom names and atom representations) with a concrete example, again based on the lysozyme structure with the PDB code `168l`. Install PyMol (either the [commercial](https://pymol.org/) or the [open-source](https://github.com/schrodinger/pymol-open-source?tab=readme-ov-file) version) and open the program.
@@ -558,6 +562,8 @@ node and projecting back to update the invariant features.
 
 These canonical local reference frames $$T = (r, x) \in \text{SE(3)}$$ can be used to deal with quantities in a SE(3)-invariant way. Importantly, the orientational nature of the frame allows us to be SE(3)-invariant but not E(3)-invariant, i.e. reflections are still accounted for. This is important for biological applications since [chirality](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5765859/) plays a huge role in biomolecular interactions.
 
+#### Why SE(3) instead of E(3) equivariance can be important
+
 As an example of why this is important, we can look at the task of protein structure prediction that [AlphaFold2](https://www.nature.com/articles/s41586-021-03819-2) tackled. 
 
 To learn more about AlphaFold2 and the problem of protein structure prediction, you can either check out the [3-part lecture series about AF2 by Nazim Bouatta](https://www.youtube.com/watch?v=yqeUH4RsJp8) or [this lecture](https://structural-bioinformatics.netlify.app/blog/proteins/2023-08-03-lesson6/) I gave on the topic.
@@ -593,6 +599,29 @@ FAPE loss in the context of the whole structure. Source: [AF2Seq paper](https://
 Note that there are different versions of the FAPE loss used in different parts of the model; while the final FAPE loss computes these L2 norms for all atoms, the intermediate FAPE loss only considers the CA positions.
 
 This type of frame definition is by no means the only way you can construct frames; [RGN2](https://www.nature.com/articles/s41587-022-01432-w), another model for protein structure prediction instead uses Frenet–Serret frames to model the protein backbone.
+
+#### Ambivalent mappings from frames to coordinates
+
+At the end of AlphaFold2, the algorithm has to again map the frame-based representation into 3D coordinates. This should not be a problem since we have our backbone frames that allows to reconstruct the backbone positions, and we predict the torsion angles of the rigid groups in the side chains so that we can place all atoms correctly according to the following table.
+
+![af_rigids_table](/assets/img/blog/prot_representation/af_rigids_table.png)
+
+
+Rigid groups for constructing all atoms from given torsion angles. Source: [AF2 SI, Table 2](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf)
+{:.figcaption}
+
+However, you can see a few boxed atoms in the table. These atoms are symmetric under 180 degree rotations, such as five of the six atoms in the phenyl ring of phenylalanine (PHE) and tyrosine (TYR) or the terminal carboxyl oxygens in asparagine (ASP) and glutamate (GLU). 
+
+Some of these atoms are on the rotation axis such as the terminal carbon atom in the phenyl rings and are therefore invariant to the rotation; some of the other atoms however swap positions due to the 180 degree rotation symmetry and their atom names are therefore ambiguous.
+
+AlphaFold deals with this by renaming the atoms in a globally consistent way via lDDT loss computations (see [algorithm 26 in the SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) and [this part](https://github.com/aqlaboratory/openfold/blob/127f1e7023c380c01330cee45544c23c079babe9/openfold/np/residue_constants.py#L1341) of the OpenFold codebase). 
+
+![af_renaming_table](/assets/img/blog/prot_representation/af_renaming_table.png)
+
+Renaming convention for ambivalent atom placements. Source: [AF2 SI, Table 3](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf)
+{:.figcaption}
+
+Another problem that comes from this ambiguity is that the network can in theory predict to valid values for the torsion angle of these rigid groups, $$\chi$$ as well as $$\chi + \pi$$. AlphaFold therefore allows the network to predict both angles by giving it both the predicted and the possible alternative angle (in the case of non-symmetric configurations, they are both set to the predicted value). In this way, the network is allowed to learn both valid values.
 
 ### Reference-free methods: Invariant and Equivariant Update Functions
 
@@ -677,6 +706,33 @@ We can notice several differences:
 Interconversion from dense to PyG format and back is easy to do if all of the graphs are the same size: we can use the [PyG DenseDataLoader](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/loader/dense_data_loader.html) for that. 
 
 In the padded case, there is no such functionality yet, but there might soon be a [DensePaddingDataLoader](https://github.com/pyg-team/pytorch_geometric/pull/8518) that does exactly that.
+
+## AFDB, ESMAtlas & co: how to deal with large databases
+
+The PDB as a database of experimental protein structures keeps growing, currently standing at [nearly 218k](https://www.rcsb.org/) entries. However, it seems small compared to the [AlphaFoldDB (>200m)](https://academic.oup.com/nar/article/50/D1/D439/6430488) and [ESMAtlas (772m structures)](https://esmatlas.com/), powered by the recent advances in protein structure prediction via methods like [AlphaFold2](https://www.nature.com/articles/s41586-021-03819-2) and [ESMFold](https://www.science.org/doi/10.1126/science.ade2574).
+
+This development changed the game in protein biology. While until recently the [gap between available protein sequences and structures widened further and further](https://moalquraishi.wordpress.com/2019/04/01/the-future-of-protein-science-will-not-be-supervised/), we suddenly have a wealth of structural information that was unimaginable a decade ago. This quote from Mohammed AlQuraishi (Columbia University) sums up this paradigm shift well:
+
+> Everything we did with protein sequences we can now do with protein structures
+{:.lead}
+
+While that is a theoretically true and very exciting prospect, there is one big problem: we do not have tools to deal with such amounts of structural data. Here a visual comparison between the size of the PDB and the AFDB:
+
+![afdb_size](/assets/img/blog/prot_representation/afdb_size.png)
+
+Visual comparison of the size of the PDB vs the AFDB. Source: [YouTube](https://www.youtube.com/watch?v=IJtWTxhuunk)
+{:.figcaption}
+
+You can see that we deal with a different order of magnitude in data here. This brings up a plethora of issues, starting from pure memory usage (the storage for AFDB is 23 TB) to questions of how we move these enormous amounts of data and also process them. 
+
+Many groups have developed tools in the last years to tackle this issue. Especially the [Steinegger lab](https://steineggerlab.com/en/) has produced some fantastic tools in that space from which I want to present three here in this blogpost: Foldcomp for structure compression, Foldseek for structure clustering and mmseqs for sequence clustering (also very important in that context for generating both input MSAs and training splits).
+
+Many groups have developed tools in the last years to tackle this issue. Especially the [Steinegger lab](https://steineggerlab.com/en/) has produced some fantastic tools in that space. If you want to read more about these tools, I have a [separate blogpost]() describing three of them in detail: Foldcomp for structure compression, Foldseek for structure clustering and mmseqs for sequence clustering (also very important in that context for generating both input MSAs and training splits).
+
+![steinegger_tools](/assets/img/blog/prot_representation/steinegger_tools.png)
+
+Tools from the Steinegger Lab. Source: [YouTube](https://www.youtube.com/watch?v=IJtWTxhuunk)
+{:.figcaption}
 
 ## Summary
 
