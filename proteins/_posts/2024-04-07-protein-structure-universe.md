@@ -30,7 +30,9 @@ This development changed the game in protein biology. While until recently the [
 
 While that is a theoretically true and very exciting prospect, there is one big problem: we do not have tools to deal with such amounts of structural data. Here a visual comparison between the size of the PDB and the AFDB:
 
-![afdb_size](/assets/img/blog/prot_representation/afdb_size.png)
+<p align="center">
+  <img src="/assets/img/blog/prot_representation/afdb_size.png" width="50%" height="50%"/>
+</p>
 
 Visual comparison of the size of the PDB vs the AFDB. Source: [YouTube](https://www.youtube.com/watch?v=IJtWTxhuunk)
 {:.figcaption}
@@ -46,10 +48,8 @@ Tools from the Steinegger Lab. Source: [YouTube](https://www.youtube.com/watch?v
 
 
 ## FoldComp: compressing protein structures to managable sizes
-
 - [Paper](https://academic.oup.com/bioinformatics/article/39/4/btad153/7085592)
 - [Talk](https://www.youtube.com/watch?v=aFtqH0VqE7w)
-
 ### The trouble with compression
 
 A perfect compression format satisfied all these three conditions:
@@ -91,24 +91,26 @@ There have been multiple versions of NeRF such as [pNeRF](https://onlinelibrary.
 3. Given the first two backbone atoms ($$A_1, A_2$$), we can place the third one in space by using the literature bond distance $$d_2$$ and angle $$\theta_1$$: $$A_3(0, \sin(\theta_1) * d_2, d1 - \cos(\theta_1) * d_2)$$
 4. Given the first three backbone atoms ($$A_1, A_2, A_3$$), we can place the fourth one in space by using the literature bond distance ($$d_3$$), the literature (or saved in the case of FoldComp) angle $$\theta_2$$ and the stored torsion angle $$\tau_1$$. We do this in 2 steps:
   4.1 We first define a new coordinate system called *specialized reference frame* centered at $$A_3$$ using spherical coordinates and places $$A_4^*$$ there:
-  $$
-  \begin{align}
-  A_4^* = (d_3 \cos(\theta_2), d_3 \cos(\tau_1) \sin(\theta_2), d_3 \sin(\tau_1) \sin(\theta_2))
-  \end{align}
-  $$
-  4.2 We then rototranslate $$A_4^*$$ back from that specialised reference frame back to our original coordinate system via $$A_4 = RA_4^* + A_3$$ and with
-  $$
-  \begin{align}
-  R = [\hat{A}_{2-3}, \hat{n} \cross \hat{A}_{2-3}, \hat{n}] \\
-  \hat{A}_{2-3} = \frac{A_2 A_3}{\mid A_2 A_3 \mid}\\
-  \hat{n} = \frac{A_1 A_2 \cross \hat{A}_{2-3}}{\mid A_1 A_2 \cross \hat{A}_{2-3} \mid }
-  \end{align}
-  $$
+$$
+\begin{aligned}
+A_4^* &= (d_3 \cos(\theta_2), d_3 \cos(\tau_1) \sin(\theta_2), d_3 \sin(\tau_1) \sin(\theta_2))
+\end{align}
+$$
+4.2 We then rototranslate $$A_4^*$$ back from that specialised reference frame back to our original coordinate system via $$A_4 = RA_4^* + A_3$$ and with
+$$
+\begin{align}
+R &= [\hat{A}_{2-3}, \hat{n} \cross \hat{A}_{2-3}, \hat{n}] \\
+\hat{A}_{2-3} &= \frac{A_2 A_3}{\mid A_2 A_3 \mid}\\
+\hat{n} &= \frac{A_1 A_2 \cross \hat{A}_{2-3}}{\mid A_1 A_2 \cross \hat{A}_{2-3} \mid }
+\end{aligned}
+$$
 5. We can repeat step 4 for all forthcoming atoms until we are at the end of the polymer chains.
 
 Reconstruction of the backbone works in a similar way, just using different values for bond distances, bond angles and torsion angles.
 
-![NeRF algorithm](/Users/kierandidi/kdidi_webpage/assets/img/blog/prot_representation/nerf.png)
+<p align="center">
+  <img src="/assets/img/blog/prot_representation/nerf.png" width="50%" height="50%"/>
+</p>
 
 NeRF algorithm. Source: [Structural Bioinformatics Library](https://sbl.inria.fr/doc/Molecular_coordinates-user-manual.html#fig-nerf-embedding)
 {:.figcaption}
@@ -229,7 +231,9 @@ The virtual center described above is determined by a [pre-specified procedure d
 2. CB, CA and the virtual center form a 90 degree angle
 3. The CA-virtual center distance is twice the CA-CB distance
 
-![virtual_center](/assets/img/blog/prot_representation/virtual_center.png)
+<p align="center">
+  <img src="/assets/img/blog/prot_representation/virtual_center.png" width="50%" height="50%"/>
+</p>
 
 Construction of the virtual center in FoldSeek. Source: [(Suppl. Fig. 1)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-023-01773-0/MediaObjects/41587_2023_1773_MOESM1_ESM.pdf)
 {:.figcaption}
