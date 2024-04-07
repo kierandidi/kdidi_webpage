@@ -219,7 +219,12 @@ FoldSeek does away with this and instead describes the *tertiary* instead of the
 2. Get the CA atoms of these two residues as well as the CA atoms of the residues before and after them in the sequence (in total 6), extract distance- and angle-based features from this 6-atom constellation and collect them in a 10D-descriptor.
 3. Discretise this information into one of the 20 letters from the 3Di alphabet.
 
-![foldseek_algo](/assets/img/blog/prot_representation/foldseek_algo.png)
+<p align="center">
+  <img src="/assets/img/blog/prot_representation/foldseek_algo.png" width="50%" height="50%"/>
+</p>
+
+FoldSeek stages in part b of the figure. We will come back to part a. Source: [FoldSeek Paper](https://www.nature.com/articles/s41587-023-01773-0)
+{:.figcaption}
 
 We will talk in more detail about step 1 and 3 of this process, but you can see how the resulting 3Di sequence can be fed into any sequence-based program to get a structural alignment or clustering. In the paper, the authors show that they can do that with similar sensitivity as actual structural alignment programs, but at a fraction of the computational cost.
 
@@ -255,11 +260,14 @@ By targeting not the same 10D descriptor but the descriptor of a homolog, the VQ
 
 ### Speeding things up by building on mmseqs2
 
-We have now trained our VQ-VAE and can use it to encode a protein structure into a 3Di sequence. We could just leave it there and leverage good-old dynamic programming via [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) to get local alignments. But the authors were aiming for speed, so they did not stop there and took inspiration from their mmseqs2 sequence aligner described above. In fact, they use exactly the same pipeline!
+We have now trained our VQ-VAE and can use it to encode a protein structure into a 3Di sequence. We could just leave it there and leverage good-old dynamic programming via [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) to get local alignments. But the authors were aiming for speed, so they did not stop there and took inspiration from their MMseqs2 sequence aligner described above. In fact, they use exactly the same pipeline!
 
-![mmseqs2_pipeline](/assets/img/blog/prot_representation/mmseqs2_pipeline.png)
 
-Similar to MMSeqs2, FoldSeek progressively filters out hits and passes them to more and more expensive alignment stages. Source: [YouTube](https://www.youtube.com/watch?v=lMq89wEPuaU)
+<p align="center">
+  <img src="/assets/img/blog/prot_representation/foldseek_algo.png" width="50%" height="50%"/>
+</p>
+
+In part a, we can see that Foldseek uses the same prefilter and alignment modules as MMseqs2. Source: [FoldSeek Paper](https://www.nature.com/articles/s41587-023-01773-0)
 {:.figcaption}
 
 Since the 3Di representation is just a sequence, we can plug that sequence into the MMseqs2 prefilter and alignment modules and get ultra-fast structural alignment. We can benefit from the clever prefilter design as well as the hardware optimisations like [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) instructions, optimised CPU cache, vectorisation and so on.
