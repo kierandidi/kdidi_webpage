@@ -48,12 +48,14 @@ buttons:
 ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024
 
 ## Teaching
+- [Deep Learning in Structure-Based Drug Design](https://www.sib.swiss/training/course/20240609_CADD), tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024
 - [SDEs and Diffusion Processes](https://sde-course.netlify.app/), lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024
 - [Structural Bioinformatics](https://structural-bioinformatics.netlify.app/), lecture, Heidelberg University (BSc Biochemistry), 10/2023
+- [Graph Modelling with Applications to Structural Biology](https://www.vanderschaar-lab.com/ccaim-ai-and-machine-learning-summer-school/), presentation, CCAIM AI and Machine Learning Summer School, 09/2023
 - [Advanced Python for Scientists](https://github.com/kierandidi/advanced_python_for_scientists), lecture, Heidelberg University, 06/2023
 - [Algorithms II](https://www.cl.cam.ac.uk/teaching/2223/Algorithm2/), supervising course on data structures and graph algorithms, Cambridge University, 03-05/2023
 - [Algorithms I](https://www.cl.cam.ac.uk/teaching/2223/Algorithm1/), Cambridge University, 01-03/2023
-- *MLOps with PyTorch Lightning and W&B*, conceptualised and lecture workshop, ML Forum CSIRO Australia, 01/2023
+- *MLOps with PyTorch Lightning and W&B*, workshop, ML Forum CSIRO Australia, 01/2023
 - [Python for Scientists](https://github.com/kierandidi/python_for_scientists), lecture, Heidelberg University, 11/2022
 - [Python Best Practices](https://ssciwr.github.io/Python-best-practices-course/), workshop (co-host), Scientific Software Center Heidelberg, 11/2022
 - [Deep Learning with PyTorch](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Lunch Time Python workshop, Scientific Software Center Heidelberg, 10/2022
