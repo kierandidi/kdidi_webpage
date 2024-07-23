@@ -9,20 +9,24 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
+- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker, Francisco Vargas, Shreyas Padhy, **Kieran Didi**, Simon Mathis, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **arxiv**, 06/2024
+
 - [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
 
 ### Under review
 - Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia
 
 ### Science Journals
-- [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen, Filipe Menezes, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz
+- [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen, Filipe Menezes, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
+- [Synsor: a tool for alignment-free detection of engineered DNA sequences], Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
 - [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
 ### ML Conferences
-- Dynamics-Informed Protein Design with Structure Conditioning, Urszula Julia Komorowska, Simon V Mathis, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR**,01/2024
-- Evaluating Representation Learning on the Protein Structure Universe, Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya Joshi, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR**,01/2024
-- A framework for conditional diffusion modelling with applications in motif scaffolding for protein design, **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
+- [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://arxiv.org/abs/2406.13839), 
+- [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska, Simon V Mathis, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICML ML4LMS 2024 (Oral Presentation)**, 01/2024
+- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya Joshi, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR**,01/2024
+- [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://arxiv.org/abs/2312.09236), **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
 - [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian Jamasb, Chaitanya Joshi, Simon Mathis, Pietro Lio, Tom Blundell, **NeurIPS MLSB 2023 (Oral Presentation)**, 11/2023
 - Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
 - [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charles Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR MLDD 2023**, 03/2023
@@ -31,10 +35,9 @@ buttons:
 ### Book Chapters
 
 - *Generative Models in Bioinformatics*, invited book chapter in Encyclopedia of Bioinformatics and Computational Biology, under review, 01/2023
-- [The Art of Molecular Programming](https://molecularprogrammers.org/), textbook editor
 
 ## Conference Presentations
-- [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 01/2024
+- [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
 - [Conditional Diffusion Models for Protein Design via Doob’s h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
 - [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023
