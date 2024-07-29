@@ -18,7 +18,7 @@ buttons:
 
 ### Science Journals
 - [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen, Filipe Menezes, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
-- [Synsor: a tool for alignment-free detection of engineered DNA sequences], Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
+- [Synsor: a tool for alignment-free detection of engineered DNA sequences](https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full), Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
 - [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
@@ -37,6 +37,7 @@ buttons:
 - *Generative Models in Bioinformatics*, invited book chapter in Encyclopedia of Bioinformatics and Computational Biology, under review, 01/2023
 
 ## Conference Presentations
+- [Why equivariance is (not) so popular in Life and Material Science](https://ml4lms.bio/blog/1250) (invited talk), ICML ML4LMS 2024, 07/2024
 - [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
 - [Conditional Diffusion Models for Protein Design via Doob’s h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
