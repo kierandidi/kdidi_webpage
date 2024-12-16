@@ -13,10 +13,9 @@ buttons:
 
 - [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
 
-### Under review
-- Structure-based Drug Design with Equivariant Diffusion Models, Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia
 
 ### Science Journals
+- [Structure-based Drug Design with Equivariant Diffusion Models](https://www.nature.com/articles/s43588-024-00737-x), Arne Schneuing, Yuanqi Du, Charles Harris, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
 - [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen, Filipe Menezes, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
 - [Synsor: a tool for alignment-free detection of engineered DNA sequences](https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full), Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
 - [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
