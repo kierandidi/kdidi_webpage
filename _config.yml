@@ -25,12 +25,12 @@ title:                 Kieran Didi
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Master's student interested in Protein Design, AI and bioinformatics. 
+  PhD student interested in Protein Design, ML and bioinformatics. 
   Blogging about papers, tools and experiences in the CompBio space.
 
 
 # A shorter description for the sidebar.
-tagline:               AI \| CompBio \| Healthcare
+tagline:               ML \| CompBio \| Proteins
 
 # A list of keywords for your blog
 keywords:              []
@@ -46,7 +46,7 @@ author:
   email:               kieran.didi@gmail.com
   picture:
     path:              /assets/img/Kieran_Didi_Circle.png
-  about:               Hi, I am Kieran, AI for biology enthusiast.
+  # about:               Hi, I am Kieran
   
 # # Used by `jekyll-seo-tag`:
 # twitter:             <username>
