@@ -9,8 +9,9 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
-- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker, Francisco Vargas, Shreyas Padhy, **Kieran Didi**, Simon Mathis, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **arxiv**, 06/2024
-
+- [GPU-accelerated homology search with MMseqs2](https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract), Felix Kallenborn*, Alejandro Chacon*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
+- [MotifBench: A standardized protein design benchmark for motif-scaffolding problems](https://arxiv.org/abs/2502.12479), Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
+- [BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery](https://arxiv.org/abs/2411.10548), Peter St. John, ...
 - [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
 
 
@@ -21,15 +22,20 @@ buttons:
 - [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter, Runzhang Qi, Nadia A. Erkamp, Georg Krainer, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
 
-### ML Conferences
-- [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://arxiv.org/abs/2406.13839), Rishabh Anand, Chaitanya K. Joshi, Alex Morehead, Arian R. Jamasb, Charles Harris, Simon V. Mathis, **Kieran Didi**, Bryan Hooi, Pietro Liò, **ICML SPIGM 2024 (Oral Presentation)**, 07/2024
-- [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska, Simon V Mathis, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR**, 01/2024
-- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb, Alex Morehead, Zuobai Zhang, Chaitanya Joshi, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR**,01/2024
-- [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://arxiv.org/abs/2312.09236), **Kieran Didi**, Francisco Vargas, Simon Mathis, Vincent Dutordoir, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
+### ML Conferences (Main Track)
+- [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen*, Seonghwan Seo*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**
+- [Proteina: Scaling Flow-based Protein Structure Generative Models](https://arxiv.org/abs/2503.00710), Tomas Geffner*, **Kieran Didi***, Zuobai Zhang*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2025 (oral presentation)**
+- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker*, Francisco Vargas*, Shreyas Padhy*, **Kieran Didi***, Simon Mathis*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS 2024**
+- [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska*, Simon V Mathis*, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR 2024**
+- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb*, Alex Morehead*, Zuobai Zhang*, Chaitanya Joshi*, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR 2024**
+
+
+### ML Conferences (Workshop Track)
+- [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://arxiv.org/abs/2406.13839), Rishabh Anand*, Chaitanya K. Joshi*, Alex Morehead, Arian R. Jamasb, Charles Harris, Simon V. Mathis, **Kieran Didi**, Bryan Hooi, Pietro Liò, **ICML SPIGM 2024 (Oral Presentation)**, 07/2024
+- [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://arxiv.org/abs/2312.09236), **Kieran Didi***, Francisco Vargas*, Simon Mathis*, Vincent Dutordoir*, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
 - [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian Jamasb, Chaitanya Joshi, Simon Mathis, Pietro Lio, Tom Blundell, **NeurIPS MLSB 2023 (Oral Presentation)**, 11/2023
 - Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
 - [Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models](https://drive.google.com/file/d/11kSYs6WYAg2_D0HtF8NxG7e6dUGQcVaL/view), Charles Harris, **Kieran Didi**, Arne Schneuing, Yuanqi Du, Arian Jamasb, Michael Bronstein, Bruno Correia, Pietro Liò, Tom Blundell, **ICLR MLDD 2023**, 03/2023
-
 
 ### Book Chapters
 
