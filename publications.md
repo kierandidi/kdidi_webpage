@@ -11,62 +11,115 @@ buttons:
 ### Pre-Prints
 - GPU-accelerated homology search with MMseqs2
   Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
+  <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper">📄 Paper</a>
     <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code">💻 Code</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{kallenborn2024gpu,
+        title={GPU-accelerated homology search with MMseqs2},
+        author={Kallenborn, Felix and Chacon, Alejandro and Hundt, Christian and Sirelkhatim, Hassan and Didi, Kieran and Cha, Sooyoung and Dallago, Christian and Mirdita, Milot and Schmidt, Bertil and Steinegger, Martin},
+        journal={bioRxiv},
+        pages={2024--11},
+        year={2024},
+        publisher={Cold Spring Harbor Laboratory}
+}</div>
+    <a href="https://github.com/soedinglab/MMseqs2/wiki" class="pub-button webpage">🌐 Webpage</a>
+    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog">📝 Blog</a>
   </div>
 
 - MotifBench: A standardized protein design benchmark for motif-scaffolding problems
   Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
+  <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2502.12479" class="pub-button paper">📄 Paper</a>
-    <a href="https://github.com/microsoft/protein-designs" class="pub-button code">💻 Code</a>
-  </div>
+    <a href="https://github.com/blt2114/MotifBench" class="pub-button code">💻 Code</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{zheng2025motifbench,
+        title={MotifBench: A standardized protein design benchmark for motif-scaffolding problems},
+        author={Zheng, Zhuoqi and Zhang, Bo and Didi, Kieran and Yang, Kevin K and Yim, Jason and Watson, Joseph L and Chen, Hai-Feng and Trippe, Brian L},
+        journal={arXiv preprint arXiv:2502.12479},
+        year={2025}}
+      </div>
+    </div>
 
 - BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery
   Peter St. John et al, **arxiv**, 11/2024
+  <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2411.10548" class="pub-button paper">📄 Paper</a>
+    <a href="https://github.com/NVIDIA/bionemo-framework" class="pub-button code">💻 Code</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{john2024bionemo,
+      title={BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery},
+      author={John, Peter St and Lin, Dejun and Binder, Polina and Greaves, Malcolm and Shah, Vega and John, John St and Lange, Adrian and Hsu, Patrick and Illango, Rajesh and Ramanathan, Arvind and others},
+      journal={arXiv preprint arXiv:2411.10548},
+      year={2024}
+    }</div>
+    <a href="https://www.nvidia.com/en-us/clara/biopharma/" class="pub-button webpage">🌐 Webpage</a>
+    <a href="https://nvidianews.nvidia.com/news/nvidia-opens-bionemo-to-scale-digital-biology-for-global-biopharma-and-scientific-industry" class="pub-button blog">📝 Blog</a>
   </div>
 
 - BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse
   Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
+  <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1" class="pub-button paper">📄 Paper</a>
+    <a href="https://www.ebi.ac.uk/biomodels/" class="pub-button code">💻 Webpage</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
+    <a href="#" class="pub-button webpage">🌐 Webpage</a>
+    <a href="#" class="pub-button blog">📝 Blog</a>
+    <a href="#" class="pub-button poster">📃 Poster</a>
   </div>
 
 
 ### Science Journals
 - Structure-based Drug Design with Equivariant Diffusion Models
   Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
+  <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s43588-024-00737-x" class="pub-button paper">📄 Paper</a>
     <a href="https://github.com/arneschneuing/DiffSBDD" class="pub-button code">💻 Code</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
     <a href="https://www.nature.com/articles/s43588-024-00738-9" class="pub-button press">📰 News</a>
   </div>
 
 - MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery
   Till Siebenmorgen\*, Filipe Menezes\*, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
+  <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s43588-024-00627-2" class="pub-button paper">📄 Paper</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
   </div>
 
 - Synsor: a tool for alignment-free detection of engineered DNA sequences
   Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
+  <br>
   <div class="publication-buttons">
     <a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full" class="pub-button paper">📄 Paper</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
   </div>
 
 - AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering
   Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
+  <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s42256-023-00778-3" class="pub-button paper">📄 Paper</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
   </div>
 
 - Biomolecular condensate phase diagrams with a combinatorial microdroplet platform
   William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
+  <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s41467-022-35265-7" class="pub-button paper">📄 Paper</a>
+    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
   </div>
 
 
