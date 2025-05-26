@@ -50,34 +50,23 @@ pre {
   text-decoration: none;
   transition: all 0.2s ease;
   
-  &.paper {
-    background-color: #4a90e2;
-    color: white;
-    &:hover { background-color: #357abd; }
+  background-color: transparent;
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+
+  &:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+    border-color: #27ae60;
   }
   
-  &.video {
-    background-color: #e74c3c;
-    color: white;
-    &:hover { background-color: #c0392b; }
-  }
-  
-  &.press {
-    background-color: #2ecc71;
-    color: white;
-    &:hover { background-color: #27ae60; }
-  }
-  
-  &.code {
-    background-color: #9b59b6;
-    color: white;
-    &:hover { background-color: #8e44ad; }
-  }
-  
+  &.paper,
+  &.video,
+  &.press,
+  &.code,
   &.slides {
-    background-color: #f1c40f;
-    color: white;
-    &:hover { background-color: #f39c12; }
+    background-color: transparent !important;
+    color: inherit !important;
   }
   
   i {
