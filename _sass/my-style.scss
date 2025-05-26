@@ -1,75 +1,75 @@
 // applause-button
 
 applause-button {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-  
-    .count-container {
-      color: inherit;
-    }
-  }
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
 
-  // Fancy Codeblock Scrollbar
+  .count-container {
+    color: inherit;
+  }
+}
+
+// Fancy Codeblock Scrollbar
 
 pre {
-  border-color: transparent;
-  transition: border-color 0.5s ease;
+border-color: transparent;
+transition: border-color 0.5s ease;
 
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: auto;
-  }
+&::-webkit-scrollbar {
+  height: 8px;
+  width: auto;
+}
 
-  &:hover {
-    border-color: var(--gray);
-    transition: border-color 0.2s ease;
-  }
+&:hover {
+  border-color: var(--gray);
+  transition: border-color 0.2s ease;
+}
 
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-color: inherit;
-    border-radius: 10px;
-    border-right-style: inset;
-    border-right-width: calc(100vw + 100vh);
-  }
+&::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-color: inherit;
+  border-radius: 10px;
+  border-right-style: inset;
+  border-right-width: calc(100vw + 100vh);
+}
 }
 
 .publication-buttons {
-  display: inline-flex;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
+display: inline-flex;
+gap: 0.5rem;
+margin: 0.5rem 0;
 }
 
 .pub-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  
-  background-color: transparent;
-  color: #2ecc71;
-  border: 1px solid #2ecc71;
+display: inline-flex;
+align-items: center;
+padding: 0.25rem 0.75rem;
+border-radius: 4px;
+font-size: 0.875rem;
+text-decoration: none;
+transition: all 0.2s ease;
 
-  &:hover {
-    background-color: rgba(46, 204, 113, 0.1);
-    color: #27ae60;
-    border-color: #27ae60;
-  }
-  
-  &.paper,
-  &.video,
-  &.press,
-  &.code,
-  &.slides {
-    background-color: transparent !important;
-    color: inherit !important;
-  }
-  
-  i {
-    margin-right: 0.25rem;
-  }
+background-color: transparent;
+color: #2ecc71;
+border: 1px solid #2ecc71;
+
+&:hover {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+  border-color: #27ae60;
+}
+
+&.paper,
+&.video,
+&.press,
+&.code,
+&.slides {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+i {
+  margin-right: 0.25rem;
+}
 }

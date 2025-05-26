@@ -68,6 +68,8 @@
   {% unless site.hydejack.no_break_layout %}
     @import "hydejack/__link__/break-layout";
   {% endunless %}
+
+  @import "my-style";
 {% else %}
   @import "html";
 
@@ -114,6 +116,7 @@
   {% endunless %}
 
   @import "my-inline";
+  @import "my-style";
 
   {% include styles/common.scss %}
 {% endunless %}
@@ -126,5 +129,3 @@
 {% if site.hydejack.dark_mode.dynamic %}
   @import "pro/dark-mode-dynamic-syntax";
 {% endif %}
-
-// Custom styles for publications page

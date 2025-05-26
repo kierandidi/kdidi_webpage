@@ -232,16 +232,3 @@ ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, 
 - [Deep Learning with PyTorch](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Lunch Time Python workshop, Scientific Software Center Heidelberg, 10/2022
 - [Python for Biochemists](https://github.com/kierandidi/Python_for_Biochemists), lecture, Heidelberg University, 03/2022
 
-{% for key in site.data.publications_bibtex %}
-  {% assign bibtex = site.data.publications_bibtex[key] %}
-  <div class="cite-modal" id="cite-{{ key }}">
-    <div class="cite-modal-content">
-      <span class="close-cite">&times;</span>
-      <pre>{{ bibtex | escape }}</pre>
-      <button class="download-bibtex" data-bibtex="{{ key }}">Download BibTeX</button>
-    </div>
-  </div>
-{% endfor %}
-
-
-
