@@ -9,18 +9,66 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
-- [GPU-accelerated homology search with MMseqs2](https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract), Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
-- [MotifBench: A standardized protein design benchmark for motif-scaffolding problems](https://arxiv.org/abs/2502.12479), Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
-- [BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery](https://arxiv.org/abs/2411.10548), Peter St. John et al, **arxiv**, 11/2024
-- [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
+- GPU-accelerated homology search with MMseqs2
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper">📄 Paper</a>
+    <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code">💻 Code</a>
+  </div>
+  Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
+
+- MotifBench: A standardized protein design benchmark for motif-scaffolding problems
+  <div class="publication-buttons">
+    <a href="https://arxiv.org/abs/2502.12479" class="pub-button paper">📄 Paper</a>
+    <a href="https://github.com/microsoft/protein-designs" class="pub-button code">💻 Code</a>
+  </div>
+  Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
+
+- BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery
+  <div class="publication-buttons">
+    <a href="https://arxiv.org/abs/2411.10548" class="pub-button paper">📄 Paper</a>
+  </div>
+  Peter St. John et al, **arxiv**, 11/2024
+
+- BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1" class="pub-button paper">📄 Paper</a>
+  </div>
+  Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
 
 
 ### Science Journals
-- [Structure-based Drug Design with Equivariant Diffusion Models](https://www.nature.com/articles/s43588-024-00737-x), Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
-- [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen\*, Filipe Menezes\*, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
-- [Synsor: a tool for alignment-free detection of engineered DNA sequences](https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full), Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
-- [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
-- [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
+- Structure-based Drug Design with Equivariant Diffusion Models
+  <div class="publication-buttons">
+    <a href="https://www.nature.com/articles/s43588-024-00737-x" class="pub-button paper">📄 Paper</a>
+    <a href="https://github.com/arneschneuing/DiffSBDD" class="pub-button code">💻 Code</a>
+    <a href="https://www.nature.com/articles/s43588-024-00738-9" class="pub-button press">📰 News</a>
+  </div>
+  Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
+
+- MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery
+  <div class="publication-buttons">
+    <a href="https://www.nature.com/articles/s43588-024-00627-2" class="pub-button paper">📄 Paper</a>
+  </div>
+  Till Siebenmorgen\*, Filipe Menezes\*, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
+
+- Synsor: a tool for alignment-free detection of engineered DNA sequences
+  <div class="publication-buttons">
+    <a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full" class="pub-button paper">📄 Paper</a>
+  </div>
+  Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
+
+- AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering
+  <div class="publication-buttons">
+    <a href="https://www.nature.com/articles/s42256-023-00778-3" class="pub-button paper">📄 Paper</a>
+  </div>
+  Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
+
+- Biomolecular condensate phase diagrams with a combinatorial microdroplet platform
+  <div class="publication-buttons">
+    <a href="https://www.nature.com/articles/s41467-022-35265-7" class="pub-button paper">📄 Paper</a>
+  </div>
+  William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
+
 
 ### ML Conferences (Main Track)
 - [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**
@@ -39,13 +87,13 @@ buttons:
 
 ### Book Chapters
 
-- *Generative Models in Bioinformatics*, Mitchell J O’Brien, Letitia MF Sng, Priya Ramarao-Milne, **Kieran Didi**, Denis C Bauer, **Encyclopedia of Bioinformatics and Computational Biology**, 01/2023
+- *Generative Models in Bioinformatics*, Mitchell J O'Brien, Letitia MF Sng, Priya Ramarao-Milne, **Kieran Didi**, Denis C Bauer, **Encyclopedia of Bioinformatics and Computational Biology**, 01/2023
 
 ## Conference Presentations
 - [Why equivariance is (not) so popular in Life and Material Science](https://ml4lms.bio/blog/1250) (invited talk), ICML ML4LMS 2024, 07/2024
 - [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
-- [Conditional Diffusion Models for Protein Design via Doob’s h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
+- [Conditional Diffusion Models for Protein Design via Doob's h-transform](https://www.moml.mit.edu/) (poster), MoML Conference, MIT (US), 11/2023
 - [Reality Check - Evaluating Generative Models for Protein and Ligand Design](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium) (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023
 - [Accessible AMR-detection tools for clinicians via cloud-based bioinformatics](https://pheedloop.com/ABACBS2022/site/CI) (oral presentation), Clinical Informatics Symposium, Melbourne (Australia), 12/2022
 - [sINSIDER: a cloud-native modular platform for kmer-based genomic analysis](https://www.abacbs.org/conference2022) (oral presentation), ABACBS Conference, Melbourne (Australia), 11/2022
