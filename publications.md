@@ -15,6 +15,11 @@ buttons:
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button poster" target="_blank" rel="noopener">Poster</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button slides" target="_blank" rel="noopener">📄 Slides</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
 - MotifBench: A standardized protein design benchmark for motif-scaffolding problems
@@ -22,7 +27,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2502.12479" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-    <a href="https://github.com/microsoft/protein-designs" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://github.com/blt2114/MotifBench" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 - BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery
@@ -30,6 +35,9 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2411.10548" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/BioNeMo/BioNeMo" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.nvidia.com/en-us/clara/biopharma/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://nvidianews.nvidia.com/news/nvidia-opens-bionemo-to-scale-digital-biology-for-global-biopharma-and-scientific-industry" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
   </div>
 
 - BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse
@@ -37,6 +45,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://www.ebi.ac.uk/biomodels/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
 
 
@@ -54,6 +63,8 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s43588-024-00627-2" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/t7morgen/misato-dataset" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.nature.com/articles/s43588-024-00631-6" class="pub-button press" target="_blank" rel="noopener">Press</a>
   </div>
 
 - Synsor: a tool for alignment-free detection of engineered DNA sequences
@@ -61,6 +72,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/aidantay/Synsor" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 - AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering
@@ -68,6 +80,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s42256-023-00778-3" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://gitlab.developers.cam.ac.uk/ch/sormanni/abnativ" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 - Biomolecular condensate phase diagrams with a combinatorial microdroplet platform
@@ -89,12 +102,18 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2503.00710" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/NVIDIA-Digital-Bio/proteina/" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://research.nvidia.com/labs/genair/proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://www.youtube.com/watch?v=Y2dRj9_ZEHw&pp=ygUWcHJvdGVpbmEga2Fyc3RlbiBrcmVpcw%3D%3D" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
+
   </div>
 
 - [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker\*, Francisco Vargas\*, Shreyas Padhy\*, **Kieran Didi**\*, Simon Mathis\*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS 2024**
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2406.01781" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://www.youtube.com/watch?v=GrtWwD8pPWY" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
+
   </div>
 
 - [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska\*, Simon V Mathis\*, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR 2024**
@@ -107,6 +126,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2406.13864" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/a-r-j/ProteinWorkshop" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 
@@ -115,6 +135,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2406.13839" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/rish-16/rna-backbone-design" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 - [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://arxiv.org/abs/2312.09236), **Kieran Didi***, Francisco Varga*, Simon Mathis*, Vincent Dutordoir*, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 2023 (Oral Presentation)**, 11/2023
@@ -127,6 +148,7 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2308.07413" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/cch1999/posecheck" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 - Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
