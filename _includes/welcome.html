@@ -1,0 +1,38 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Open modal
+  document.querySelectorAll('.cite-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = btn.getAttribute('data-cite');
+      var modal = document.getElementById('cite-' + id);
+      if (modal) modal.style.display = 'flex';
+    });
+  });
+  // Close modal
+  document.querySelectorAll('.close-cite').forEach(function(span) {
+    span.addEventListener('click', function() {
+      span.closest('.cite-modal').style.display = 'none';
+    });
+  });
+  // Close on background click
+  document.querySelectorAll('.cite-modal').forEach(function(modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+  // Download BibTeX
+  document.querySelectorAll('.download-bibtex').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = btn.getAttribute('data-bibtex');
+      var pre = document.querySelector('#cite-' + id + ' pre');
+      if (pre) {
+        var blob = new Blob([pre.textContent], {type: 'text/x-bibtex'});
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = id + '.bib';
+        a.click();
+      }
+    });
+  });
+});
+</script> 

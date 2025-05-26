@@ -1,0 +1,63 @@
+mmseqs2: |
+  @article{Kallenborn2025mmseqs2,
+    title={GPU-accelerated homology search with MMseqs2},
+    author={Felix Kallenborn and Alejandro Chacon and Christian Hundt and Hassan Sirelkhatim and Kieran Didi and Sooyoung Cha and Christian Dallago and Milot Mirdita and Bertil Schmidt and Martin Steinegger},
+    journal={bioRxiv},
+    year={2025}
+  }
+motifbench: |
+  @article{Zheng2025motifbench,
+    title={MotifBench: A standardized protein design benchmark for motif-scaffolding problems},
+    author={Zhuoqi Zheng and Bo Zhang and Kieran Didi and Kevin K. Yang and Jason Yim and Joseph L. Watson and Hai-Feng Chen and Brian L. Trippe},
+    journal={arxiv},
+    year={2025}
+  }
+bionemo: |
+  @article{StJohn2024bionemo,
+    title={BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery},
+    author={Peter St. John and others},
+    journal={arxiv},
+    year={2024}
+  }
+biomodelsml: |
+  @article{Tiwari2023biomodelsml,
+    title={BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse},
+    author={Divyang Deep Tiwari and Nils Hoffmann and Kieran Didi and Sumukh Deshpande and Sucheta Ghosh and Tung V. N. Nguyen and Karthik Raman and Henning Hermjakob and Rahuman S Malik Sheriff},
+    journal={bioRxiv},
+    year={2023}
+  }
+diffsbdd: |
+  @article{Schneuing2024diffsbdd,
+    title={Structure-based Drug Design with Equivariant Diffusion Models},
+    author={Arne Schneuing and Yuanqi Du and Charles Harris and Kieran Didi and Arian Jamasb and Ilia Igashov and weitao Du and Tom Blundell and Pietro Liò and Carla Gomes and Max Welling and Michael Bronstein and Bruno Correia},
+    journal={Nature Computational Science},
+    year={2024}
+  }
+misato: |
+  @article{Siebenmorgen2024misato,
+    title={MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery},
+    author={Till Siebenmorgen and Filipe Menezes and Sabrina Benassou and Erinc Merdivan and Kieran Didi and André Santos Dias Mourão and Radosław Kitel and Pietro Liò and Stefan Kesselheim and Marie Piraud and Fabian J. Theis and Michael Sattler and Grzegorz M. Popowicz},
+    journal={Nature Computational Science},
+    year={2024}
+  }
+synsor: |
+  @article{Tay2024synsor,
+    title={Synsor: a tool for alignment-free detection of engineered DNA sequences},
+    author={Aidan P Tay and Kieran Didi and Anuradha Wickramarachchi and Denis Bauer and Laurence Wilson and Maciej Maselko},
+    journal={Frontiers in Bioengineering and Biotechnology},
+    year={2024}
+  }
+abnativ: |
+  @article{Ramon2023abnativ,
+    title={AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering},
+    author={Aubin Ramon and Montader Ali and Misha Atkinson and Alessio Saturnino and Kieran Didi and Cristina Visentin and Stefano Ricagno and Xing Xu and Matthew Greenig and Pietro Sormanni},
+    journal={Nature Machine Intelligence},
+    year={2023}
+  }
+condensate: |
+  @article{Arter2022condensate,
+    title={Biomolecular condensate phase diagrams with a combinatorial microdroplet platform},
+    author={William E. Arter and Runzhang Qi and Nadia A. Erkamp and Georg Krainer and Kieran Didi and Timothy J. Welsh and Julia Acker and Jonathan Nixon-Abell and Seema Qamar and Jordina Guillén-Boixet and Titus M. Franzmann and David Kuster and Anthony A. Hyman and Alexander Borodavka and Peter St George-Hyslop and Simon Alberti and Tuomas P. J. Knowles},
+    journal={Nature Communications},
+    year={2022}
+  } 
