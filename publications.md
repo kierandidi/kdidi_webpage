@@ -13,9 +13,9 @@ buttons:
   Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
   <br>
   <div class="publication-buttons">
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper">📄 Paper</a>
-    <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code">💻 Code</a>
-    <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
     <div class="bibtex-entry" style="display:none;">@article{kallenborn2024gpu,
         title={GPU-accelerated homology search with MMseqs2},
         author={Kallenborn, Felix and Chacon, Alejandro and Hundt, Christian and Sirelkhatim, Hassan and Didi, Kieran and Cha, Sooyoung and Dallago, Christian and Mirdita, Milot and Schmidt, Bertil and Steinegger, Martin},
@@ -24,8 +24,8 @@ buttons:
         year={2024},
         publisher={Cold Spring Harbor Laboratory}
 }</div>
-    <a href="https://github.com/soedinglab/MMseqs2/wiki" class="pub-button webpage">🌐 Webpage</a>
-    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog">📝 Blog</a>
+    <a href="https://github.com/soedinglab/MMseqs2/wiki" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">📝 Blog</a>
   </div>
 
 - MotifBench: A standardized protein design benchmark for motif-scaffolding problems
@@ -65,12 +65,16 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1" class="pub-button paper">📄 Paper</a>
-    <a href="https://www.ebi.ac.uk/biomodels/" class="pub-button code">💻 Webpage</a>
     <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
-    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
-    <a href="#" class="pub-button webpage">🌐 Webpage</a>
-    <a href="#" class="pub-button blog">📝 Blog</a>
-    <a href="#" class="pub-button poster">📃 Poster</a>
+    <div class="bibtex-entry" style="display:none;">@article{tiwari2023biomodelsml,
+        title={BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse},
+        author={Tiwari, Divyang Deep and Hoffmann, Nils and Didi, Kieran and Deshpande, Sumukh and Ghosh, Sucheta and Nguyen, Tung VN and Raman, Karthik and Hermjakob, Henning and Sheriff, Rahuman},
+        journal={bioRxiv},
+        pages={2023--05},
+        year={2023},
+        publisher={Cold Spring Harbor Laboratory}
+      }</div>
+    <a href="https://www.ebi.ac.uk/biomodels/" class="pub-button webpage">🌐 Webpage</a>
   </div>
 
 
@@ -82,8 +86,16 @@ buttons:
     <a href="https://www.nature.com/articles/s43588-024-00737-x" class="pub-button paper">📄 Paper</a>
     <a href="https://github.com/arneschneuing/DiffSBDD" class="pub-button code">💻 Code</a>
     <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
-    <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
-    <a href="https://www.nature.com/articles/s43588-024-00738-9" class="pub-button press">📰 News</a>
+    <div class="bibtex-entry" style="display:none;">@article{schneuing2024structure,
+        title={Structure-based drug design with equivariant diffusion models},
+        author={Schneuing, Arne and Harris, Charles and Du, Yuanqi and Didi, Kieran and Jamasb, Arian and Igashov, Ilia and Du, Weitao and Gomes, Carla and Blundell, Tom L and Lio, Pietro and others},
+        journal={Nature Computational Science},
+        volume={4},
+        number={12},
+        pages={899--909},
+        year={2024},
+        publisher={Nature Publishing Group}
+      }</div>
   </div>
 
 - MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery
@@ -93,6 +105,9 @@ buttons:
     <a href="https://www.nature.com/articles/s43588-024-00627-2" class="pub-button paper">📄 Paper</a>
     <a href="#" class="pub-button cite" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block' ? 'none' : 'block'); return false;">🔖 Cite</a>
     <div class="bibtex-entry" style="display:none;">@article{placeholder2024, title={Placeholder Title}, author={Author, A.}, journal={Placeholder Journal}, year={2024} }</div>
+    <a href="https://github.com/t7morgen/misato-dataset" class="pub-button code">💻 Code</a>
+    <a href="https://www.nature.com/articles/s43588-024-00631-6" class="pub-button press">📰 News</a>
+  
   </div>
 
 - Synsor: a tool for alignment-free detection of engineered DNA sequences
