@@ -1,138 +1,75 @@
 // applause-button
 
 applause-button {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-  
-    .count-container {
-      color: inherit;
-    }
-  }
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
 
-  // Fancy Codeblock Scrollbar
+  .count-container {
+    color: inherit;
+  }
+}
+
+// Fancy Codeblock Scrollbar
 
 pre {
-  border-color: transparent;
-  transition: border-color 0.5s ease;
+border-color: transparent;
+transition: border-color 0.5s ease;
 
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: auto;
-  }
+&::-webkit-scrollbar {
+  height: 8px;
+  width: auto;
+}
 
-  &:hover {
-    border-color: var(--gray);
-    transition: border-color 0.2s ease;
-  }
+&:hover {
+  border-color: var(--gray);
+  transition: border-color 0.2s ease;
+}
 
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-color: inherit;
-    border-radius: 10px;
-    border-right-style: inset;
-    border-right-width: calc(100vw + 100vh);
-  }
+&::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-color: inherit;
+  border-radius: 10px;
+  border-right-style: inset;
+  border-right-width: calc(100vw + 100vh);
+}
 }
 
 .publication-buttons {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
+display: inline-flex;
+gap: 0.5rem;
+margin: 0.5rem 0;
 }
 
 .pub-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.4rem 1.1rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  background-color: transparent;
-  color: #2ecc71;
-  border: 1.5px solid #2ecc71;
-  box-shadow: 0 2px 8px rgba(46,204,113,0.08);
-  cursor: pointer;
-  margin: 0 0.1em 0.2em 0;
+display: inline-flex;
+align-items: center;
+padding: 0.25rem 0.75rem;
+border-radius: 4px;
+font-size: 0.875rem;
+text-decoration: none;
+transition: all 0.2s ease;
+
+background-color: transparent;
+color: #2ecc71;
+border: 1px solid #2ecc71;
+
+&:hover {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+  border-color: #27ae60;
 }
 
-.pub-button:hover, .pub-button:focus {
-  background-color: #2ecc71;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(46,204,113,0.12);
-  text-decoration: none;
+&.paper,
+&.video,
+&.press,
+&.code,
+&.slides {
+  background-color: transparent !important;
+  color: inherit !important;
 }
 
-.pub-button:last-child {
-  margin-right: 0;
+i {
+  margin-right: 0.25rem;
 }
-
-// Remove color: inherit !important for all button types
-.pub-button.paper,
-.pub-button.video,
-.pub-button.press,
-.pub-button.code,
-.pub-button.slides,
-.pub-button.webpage,
-.pub-button.blog,
-.pub-button.poster {
-  background-color: #2ecc71 !important;
-  color: #fff !important;
 }
-
-.bibtex-entry {
-  font-family: monospace;
-  background: #f8f8f8;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 0.5em 1em;
-  margin: 0.5em 0 0 0;
-  font-size: 0.95em;
-  white-space: pre-wrap;
-}
-
-.cite-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.4);
-  justify-content: center;
-  align-items: center;
-}
-.cite-modal-content {
-  background: #fff;
-  color: #222;
-  padding: 1.5em;
-  border-radius: 8px;
-  max-width: 90vw;
-  max-height: 80vh;
-  overflow: auto;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
-  position: relative;
-}
-.cite-modal .close-cite {
-  position: absolute;
-  top: 0.5em; right: 0.8em;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-.cite-modal pre {
-  background: #f8f8f8;
-  padding: 1em;
-  border-radius: 4px;
-  font-size: 0.95em;
-  overflow-x: auto;
-}
-.download-bibtex {
-  margin-top: 1em;
-  padding: 0.5em 1em;
-  border: 1px solid #2ecc71;
-  background: transparent;
-  color: #2ecc71;
-  border-radius: 4px;
-  cursor: pointer;
-} 
