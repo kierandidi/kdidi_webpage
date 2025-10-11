@@ -9,18 +9,35 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
-- GPU-accelerated homology search with MMseqs2
-  Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **bioRxiv**, 04/2025
+ - La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching
+  Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **arxiv**, 07/2025
   <br>
   <div class="publication-buttons">
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-    <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
-    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button poster" target="_blank" rel="noopener">Poster</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button slides" target="_blank" rel="noopener">📄 Slides</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
+    <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/NVIDIA-Digital-Bio/la-proteina" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
+
+- Highly efficient protein structure prediction on NVIDIA RTX Blackwell and Grace-Hopper
+  **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **Technical Report**, 09/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://developer.nvidia.com/blog/accelerate-protein-structure-inference-over-100x-with-nvidia-rtx-pro-6000-blackwell-server-edition/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
+
+- De novo Design of All-atom Biomolecular Interactions with RFdiffusion3
+  Jasper Kenneth Veje Butcher, Rohith Krishna, Raktim Mitra, Rafael Isaac Brent, Yanjing Li, Nathaniel Corley, Paul Kim, Jonathan Funk, Simon Valentin Mathis, Saman Salike, Aiko Muraishi, Helen Eisenach, Tuscan Rock Thompson, Jie Chen, Yuliya Politanska, Enisha Sehgal, Brian Coventry, Odin Zhang, Bo Qiang, **Kieran Didi**, Maxwell Kazman, Frank DiMaio, David Baker, **biorxiv**, 09/2025
+  <br>
+  <div class="publication-buttons">
+  <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+- Accelerating Biomolecular Modeling with AtomWorks and RF3
+  Nathaniel Corley\*, Simon Mathis\*, Rohith Krishna\*, Magnus S Bauer, Tuscan R Thompson, Woody Ahern, Maxwell W Kazman, Rafael I Brent, **Kieran Didi**, Andrew Kubaney, Lilian McHugh, Arnav Nagle, Andrew Favor, Meghana Kshirsagar, Pascal Sturmfels, Yanjing Li, Jasper Butcher, Bo Qiang, Lars L Schaaf, Raktim Mitra, Katelyn Campbell, Odin Zhang, Roni Weissman, Ian R Humphreys, Qian Cong, Jonathan Funk, Shreyash Sonthalia, Pietro Liò, David Baker, Frank DiMaio, **biorxiv**, 08/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/RosettaCommons/atomworks/tree/production" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
 
 - MotifBench: A standardized protein design benchmark for motif-scaffolding problems
   Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
@@ -50,6 +67,19 @@ buttons:
 
 
 ### Science Journals
+- GPU-accelerated homology search with MMseqs2
+  Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **Nature Methods**, 09/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.nature.com/articles/s41592-025-02819-8" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button poster" target="_blank" rel="noopener">Poster</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button slides" target="_blank" rel="noopener">📄 Slides</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
+  </div>
+  
 - Structure-based Drug Design with Equivariant Diffusion Models
   Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
   <br>
@@ -183,7 +213,7 @@ buttons:
 
 ## Reviewing
 
-ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024
+ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024, NeurIPS 2025
 
 ## Teaching
 - [Deep Learning in Structure-Based Drug Design](https://www.sib.swiss/training/course/20240609_CADD), tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024
