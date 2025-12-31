@@ -39,6 +39,39 @@ sup {
   }
 }
 
+// Footnote tooltip/popup
+.footnote-tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  background: var(--gray-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gray-text);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  word-wrap: break-word;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; // Allow interaction when visible
+  }
+  
+  // Style links in tooltip
+  a {
+    color: var(--accent-color, rgb(79,177,186));
+    text-decoration: underline;
+    pointer-events: auto;
+  }
+}
+
 // List of footnotes
 .footnotes {
   margin-top: 5rem;

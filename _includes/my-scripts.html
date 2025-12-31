@@ -100,3 +100,133 @@ if (pushState) {
 }
 </script>
 
+<script>
+function initFootnoteTooltips() {
+  // Create tooltip element
+  const tooltip = document.createElement('div');
+  tooltip.className = 'footnote-tooltip';
+  document.body.appendChild(tooltip);
+  
+  // Cache footnote content
+  const footnoteCache = {};
+  document.querySelectorAll('.footnotes > ol > li').forEach(function(li) {
+    const id = li.id;
+    if (id && id.startsWith('fn:')) {
+      const key = id.replace('fn:', '');
+      // Get text content, preserving links
+      const content = li.innerHTML;
+      footnoteCache[key] = content;
+    }
+  });
+  
+  let currentTimeout = null;
+  let currentLink = null;
+  
+  function showTooltip(link, content) {
+    if (currentTimeout) {
+      clearTimeout(currentTimeout);
+    }
+    
+    const rect = link.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    
+    tooltip.innerHTML = content;
+    
+    // Position tooltip above the link, centered horizontally
+    let leftPos = rect.left + scrollLeft + (rect.width / 2) - 200;
+    let topPos = rect.top + scrollTop - 10;
+    
+    tooltip.style.left = leftPos + 'px';
+    tooltip.style.top = topPos + 'px';
+    tooltip.classList.add('visible');
+    
+    // Adjust position if tooltip goes off screen
+    setTimeout(function() {
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const tooltipWidth = tooltipRect.width;
+      const tooltipHeight = tooltipRect.height;
+      
+      // Horizontal adjustments
+      if (tooltipRect.right > window.innerWidth) {
+        tooltip.style.left = (window.innerWidth - tooltipWidth - 20) + 'px';
+      }
+      if (tooltipRect.left < 0) {
+        tooltip.style.left = '20px';
+      }
+      
+      // Vertical adjustments - show below if not enough space above
+      if (tooltipRect.top < 0) {
+        tooltip.style.top = (rect.bottom + scrollTop + 10) + 'px';
+      }
+      
+      // If still off screen, try centering vertically
+      const finalRect = tooltip.getBoundingClientRect();
+      if (finalRect.top < 0) {
+        tooltip.style.top = (window.innerHeight / 2 - tooltipHeight / 2) + 'px';
+      }
+    }, 0);
+    
+    currentLink = link;
+  }
+  
+  function hideTooltip() {
+    if (currentTimeout) {
+      clearTimeout(currentTimeout);
+    }
+    currentTimeout = setTimeout(function() {
+      tooltip.classList.remove('visible');
+      currentLink = null;
+    }, 100);
+  }
+  
+  // Handle footnote links
+  document.querySelectorAll('a[href^="#fn:"]').forEach(function(link) {
+    const href = link.getAttribute('href');
+    const key = href.replace('#fn:', '');
+    
+    if (footnoteCache[key]) {
+      // Mouse enter - show tooltip
+      link.addEventListener('mouseenter', function(e) {
+        e.preventDefault();
+        showTooltip(link, footnoteCache[key]);
+      });
+      
+      // Mouse leave - hide tooltip
+      link.addEventListener('mouseleave', function() {
+        hideTooltip();
+      });
+      
+      // Click - still navigate but show tooltip first
+      link.addEventListener('click', function(e) {
+        // Don't prevent default - allow navigation
+        // But show tooltip briefly
+        showTooltip(link, footnoteCache[key]);
+        setTimeout(function() {
+          hideTooltip();
+        }, 2000);
+      });
+    }
+  });
+  
+  // Hide tooltip when clicking elsewhere
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('a[href^="#fn:"]') && e.target !== tooltip && !tooltip.contains(e.target)) {
+      hideTooltip();
+    }
+  });
+  
+  // Hide tooltip on scroll
+  window.addEventListener('scroll', function() {
+    hideTooltip();
+  }, true);
+}
+
+document.addEventListener('DOMContentLoaded', initFootnoteTooltips);
+
+var pushStateFootnote = document.getElementById('_pushState');
+if (pushStateFootnote) {
+  pushStateFootnote.addEventListener('hy-push-state-load', initFootnoteTooltips);
+}
+</script>
+
