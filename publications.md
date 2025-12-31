@@ -162,13 +162,13 @@ buttons:
 
 
 ### ML Conferences (Workshop Track)
-- [Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design](https://arxiv.org/abs/2510.24732), Authors TBD, **ICML GenBio 2025**, 10/2025
+- [Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design](https://arxiv.org/abs/2510.24732), Junhua Chen, Simon Mathis, Charles Harris, **Kieran Didi**, Pietro Lio, **ICML GenBio 2025**, 10/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2510.24732" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
   </div>
 
-- [Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design](https://arxiv.org/abs/2512.01976), Authors TBD, **NeurIPS AI4Science 2025**, 12/2025
+- [Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design](https://arxiv.org/abs/2512.01976), Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, **Kieran Didi**, Tomas Geffner, Guoqing Zhou, Jian Tang, Christian Dallago, Arash Vahdat, Emine Kucukbenli, Karsten Kreis, **NeurIPS AI4Science 2025**, 12/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2512.01976" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
