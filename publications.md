@@ -9,8 +9,13 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
- - La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching
-  Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **arxiv**, 07/2025
+ - [A universal model for drug-receptor interactions](https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract), Filipe Menezes, Adam Wahida, Tony Fröhlich, Phillip Grass, Jan Zauita, Valeria Napolitano, Till Siebenmorgen, Katarzyna Pustelny, Agata Barzowska-Gogola, Sarah Rioton, **Kieran Didi**, Michael Bronstein, Anna Czarna, Andreas Hochhaus, Oliver Plettenburg, Michael Sattler, Johannes NissenMeyer, Marcus Conrad, Razelle Kurzrock, Grzegorz M. Popowicz, **biorxiv**, 10/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+ - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **arxiv**, 07/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -18,37 +23,34 @@ buttons:
     <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
 
-- Highly efficient protein structure prediction on NVIDIA RTX Blackwell and Grace-Hopper
-  **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **Technical Report**, 09/2025
+- [Highly efficient protein structure prediction on NVIDIA RTX Blackwell and Grace-Hopper](https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf), **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **Technical Report**, 09/2025
   <br>
   <div class="publication-buttons">
     <a href="https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://developer.nvidia.com/blog/accelerate-protein-structure-inference-over-100x-with-nvidia-rtx-pro-6000-blackwell-server-edition/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
 
-- De novo Design of All-atom Biomolecular Interactions with RFdiffusion3
-  Jasper Kenneth Veje Butcher, Rohith Krishna, Raktim Mitra, Rafael Isaac Brent, Yanjing Li, Nathaniel Corley, Paul Kim, Jonathan Funk, Simon Valentin Mathis, Saman Salike, Aiko Muraishi, Helen Eisenach, Tuscan Rock Thompson, Jie Chen, Yuliya Politanska, Enisha Sehgal, Brian Coventry, Odin Zhang, Bo Qiang, **Kieran Didi**, Maxwell Kazman, Frank DiMaio, David Baker, **biorxiv**, 09/2025
+- [De novo Design of All-atom Biomolecular Interactions with RFdiffusion3](https://www.biorxiv.org/content/10.1101/2025.09.18.676967v1), Jasper Kenneth Veje Butcher, Rohith Krishna, Raktim Mitra, Rafael Isaac Brent, Yanjing Li, Nathaniel Corley, Paul Kim, Jonathan Funk, Simon Valentin Mathis, Saman Salike, Aiko Muraishi, Helen Eisenach, Tuscan Rock Thompson, Jie Chen, Yuliya Politanska, Enisha Sehgal, Brian Coventry, Odin Zhang, Bo Qiang, **Kieran Didi**, Maxwell Kazman, Frank DiMaio, David Baker, **biorxiv**, 09/2025
   <br>
   <div class="publication-buttons">
   <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/RosettaCommons/foundry" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.ipd.uw.edu/2025/12/rfdiffusion3-now-available/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
   </div>
 
-- Accelerating Biomolecular Modeling with AtomWorks and RF3
-  Nathaniel Corley\*, Simon Mathis\*, Rohith Krishna\*, Magnus S Bauer, Tuscan R Thompson, Woody Ahern, Maxwell W Kazman, Rafael I Brent, **Kieran Didi**, Andrew Kubaney, Lilian McHugh, Arnav Nagle, Andrew Favor, Meghana Kshirsagar, Pascal Sturmfels, Yanjing Li, Jasper Butcher, Bo Qiang, Lars L Schaaf, Raktim Mitra, Katelyn Campbell, Odin Zhang, Roni Weissman, Ian R Humphreys, Qian Cong, Jonathan Funk, Shreyash Sonthalia, Pietro Liò, David Baker, Frank DiMaio, **biorxiv**, 08/2025
+- [Accelerating Biomolecular Modeling with AtomWorks and RF3](https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract), Nathaniel Corley\*, Simon Mathis\*, Rohith Krishna\*, Magnus S Bauer, Tuscan R Thompson, Woody Ahern, Maxwell W Kazman, Rafael I Brent, **Kieran Didi**, Andrew Kubaney, Lilian McHugh, Arnav Nagle, Andrew Favor, Meghana Kshirsagar, Pascal Sturmfels, Yanjing Li, Jasper Butcher, Bo Qiang, Lars L Schaaf, Raktim Mitra, Katelyn Campbell, Odin Zhang, Roni Weissman, Ian R Humphreys, Qian Cong, Jonathan Funk, Shreyash Sonthalia, Pietro Liò, David Baker, Frank DiMaio, **biorxiv**, 08/2025
   <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-    <a href="https://github.com/RosettaCommons/atomworks/tree/production" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://github.com/RosettaCommons/atomworks" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
 
-- MotifBench: A standardized protein design benchmark for motif-scaffolding problems
-  Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
+- [MotifBench: A standardized protein design benchmark for motif-scaffolding problems](https://arxiv.org/abs/2502.12479), Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2502.12479" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/blt2114/MotifBench" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
-- BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery
-  Peter St. John et al, **arxiv**, 11/2024
+- [BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery](https://arxiv.org/abs/2411.10548), Peter St. John et al, **arxiv**, 11/2024
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2411.10548" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -57,8 +59,7 @@ buttons:
     <a href="https://nvidianews.nvidia.com/news/nvidia-opens-bionemo-to-scale-digital-biology-for-global-biopharma-and-scientific-industry" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
   </div>
 
-- BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse
-  Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
+- [BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1), Divyang Deep Tiwari, Nils Hoffmann, **Kieran Didi**, Sumukh Deshpande, Sucheta Ghosh, Tung V. N. Nguyen, Karthik Raman, Henning Hermjakob, Rahuman S Malik Sheriff, **biorxviv**, 05/2023
   <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -67,8 +68,13 @@ buttons:
 
 
 ### Science Journals
-- GPU-accelerated homology search with MMseqs2
-  Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **Nature Methods**, 09/2025
+- [Predicting PROTAC off-target effects via warhead involvement levels in drug–target interactions using graph attention neural networks](https://www.sciencedirect.com/science/article/pii/S2001037025004301), Yutong Hu, **Kieran Didi**, Adam P. Cribbs, Jianfeng Sun, **Computational and Structural Biotechnology Journal**, 10/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.sciencedirect.com/science/article/pii/S2001037025004301" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+- [GPU-accelerated homology search with MMseqs2](https://www.nature.com/articles/s41592-025-02819-8), Felix Kallenborn\*, Alejandro Chacon\*, Christian Hundt, Hassan Sirelkhatim, **Kieran Didi**, Sooyoung Cha, Christian Dallago, Milot Mirdita, Bertil Schmidt, Martin Steinegger, **Nature Methods**, 09/2025
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s41592-025-02819-8" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -80,16 +86,14 @@ buttons:
     <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
   
-- Structure-based Drug Design with Equivariant Diffusion Models
-  Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
+- [Structure-based Drug Design with Equivariant Diffusion Models](https://www.nature.com/articles/s43588-024-00737-x), Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 12/2024
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s43588-024-00737-x" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/arneschneuing/DiffSBDD" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
-- MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery
-  Till Siebenmorgen\*, Filipe Menezes\*, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
+- [MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery](https://www.nature.com/articles/s43588-024-00627-2), Till Siebenmorgen\*, Filipe Menezes\*, Sabrina Benassou, Erinc Merdivan, **Kieran Didi**, André Santos Dias Mourão, Radosław Kitel, Pietro Liò, Stefan Kesselheim, Marie Piraud, Fabian J. Theis, Michael Sattler & Grzegorz M. Popowicz, **Nature Computational Science**, 05/2024
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s43588-024-00627-2" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -97,24 +101,21 @@ buttons:
     <a href="https://www.nature.com/articles/s43588-024-00631-6" class="pub-button press" target="_blank" rel="noopener">Press</a>
   </div>
 
-- Synsor: a tool for alignment-free detection of engineered DNA sequences
-  Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
+- [Synsor: a tool for alignment-free detection of engineered DNA sequences](https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full), Aidan P Tay, **Kieran Didi**, Anuradha Wickramarachchi, Denis Bauer, Laurence Wilson and Maciej Maselko, **Frontiers in Bioengineering and Biotechnology**, 04/2024
   <br>
   <div class="publication-buttons">
     <a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/aidantay/Synsor" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
-- AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering
-  Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
+- [AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering](https://www.nature.com/articles/s42256-023-00778-3), Aubin Ramon, Montader Ali, Misha Atkinson, Alessio Saturnino, **Kieran Didi**, Cristina Visentin, Stefano Ricagno, Xing Xu, Matthew Greenig, Pietro Sormanni, **Nature Machine Intelligence**, 04/2023
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s42256-023-00778-3" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://gitlab.developers.cam.ac.uk/ch/sormanni/abnativ" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
-- Biomolecular condensate phase diagrams with a combinatorial microdroplet platform
-  William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
+- [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti & Tuomas P. J. Knowles, **Nature Communications**, 12/2022
   <br>
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s41467-022-35265-7" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -161,6 +162,18 @@ buttons:
 
 
 ### ML Conferences (Workshop Track)
+- [Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design](https://arxiv.org/abs/2510.24732), Authors TBD, **ICML GenBio 2025**, 10/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://arxiv.org/abs/2510.24732" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+- [Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design](https://arxiv.org/abs/2512.01976), Authors TBD, **NeurIPS AI4Science 2025**, 12/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://arxiv.org/abs/2512.01976" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
 - [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://arxiv.org/abs/2406.13839), Rishabh Anand\*, Chaitanya K. Joshi\*, Alex Morehead, Arian R. Jamasb, Charles Harris, Simon V. Mathis, **Kieran Didi**, Bryan Hooi, Pietro Liò, **ICML SPIGM 2024 (Oral Presentation)**, 07/2024
   <br>
   <div class="publication-buttons">
@@ -181,7 +194,7 @@ buttons:
     <a href="https://github.com/cch1999/posecheck" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
-- Modelling biology in novel ways - an AI-first course in Structural Bioinformatics, **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
+- [Modelling biology in novel ways - an AI-first course in Structural Bioinformatics](#), **Kieran Didi**, Charles Harris, Pietro Liò, Rainer Beck, **NeurIPS AI4Science 2023**, 10/2023 
   <br>
   <div class="publication-buttons">
     <a href="#" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>

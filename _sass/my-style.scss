@@ -71,6 +71,12 @@ border: 1px solid #2ecc71;
 &.press {
   background-color: transparent !important;
   color: inherit !important;
+  
+  &:hover {
+    background-color: rgba(46, 204, 113, 0.1) !important;
+    color: #27ae60 !important;
+    border-color: #27ae60 !important;
+  }
 }
 
 i {
