@@ -19,6 +19,17 @@ With the explosion of protein structure prediction and the sheer number of predi
 1. toc
 {:toc}
 
+If you would like to cite this post in an academic context, you can use this BibTeX snippet:
+
+```bibtex
+@misc{didi2024proteinstructureuniverse,
+  author = {Didi, Kieran},
+  title = {Dealing with the flood of protein structures},
+  url = {https://kdidi.netlify.app/blog/proteins/2024-04-07-protein-structure-universe/},
+  year = {2024}
+}
+```
+
 ## How protein structure prediction changed the game
 
 The PDB as a database of experimental protein structures keeps growing, currently standing at [nearly 218k](https://www.rcsb.org/) entries. However, it seems small compared to the [AlphaFoldDB (>200m)](https://academic.oup.com/nar/article/50/D1/D439/6430488) and [ESMAtlas (772m structures)](https://esmatlas.com/), powered by the recent advances in protein structure prediction via methods like [AlphaFold2](https://www.nature.com/articles/s41586-021-03819-2) and [ESMFold](https://www.science.org/doi/10.1126/science.ade2574).

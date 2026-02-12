@@ -19,6 +19,17 @@ Machine Learning approaches empower [a new suite of algorithms and applications]
 1. toc
 {:toc}
 
+If you would like to cite this post in an academic context, you can use this BibTeX snippet:
+
+```bibtex
+@misc{didi2024proteinrepresentations,
+  author = {Didi, Kieran},
+  title = {How to represent protein structures in ML},
+  url = {https://kdidi.netlify.app/blog/proteins/2024-02-03-protein-representations/},
+  year = {2024}
+}
+```
+
 ## Protein Structure File Formats: PDB vs PDBx/mmCIF vs MMTF vs BinaryCIF
 
 Before we turn to machine learning algorithms such as AlphaFold2, let's shortly discuss how these coordinates are stored in the [PDB](https://www.rcsb.org/) to start with.
