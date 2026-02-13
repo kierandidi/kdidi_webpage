@@ -117,7 +117,7 @@ $$
 \begin{aligned} %!!15 
 R &= [\hat{A}_{2-3}, \hat{n} \times \hat{A}_{2-3}, \hat{n}] \\
 \hat{A}_{2-3} &= \frac{A_2 A_3}{\mid A_2 A_3 \mid}\\
-\hat{n} &= \frac{A_1 A_2 \times \hat{A}_{2-3}}{\mid A_1 A_2 \cross \hat{A}_{2-3} \mid }
+\hat{n} &= \frac{A_1 A_2 \times \hat{A}_{2-3}}{\mid A_1 A_2 \times \hat{A}_{2-3} \mid }
 \end{aligned}
 $$
 
