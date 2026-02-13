@@ -219,9 +219,7 @@ Another cool property of MMSeqs2 clustering is the possibility to [add new seque
 
 Sequence alignment as described before is one of the main pillars in bioinformatics and useful for a variety of applications, from detecting homology to creating training splits for machine learning models.
 
-However, when talking about protein structure, sequence alignments do not always tell the full story: in many cases, proteins may have very different sequences but very similar structures. This could be due to remote homology such as in the case of [ubiquitin and it's mysterious cousin Sumo](https://www.nature.com/articles/35056591) which have been separated by more than 1 billion years of evolutionarity history but still are structurally strikingly similar despite a sequence identity of only 16%. Other examples include enterotoxin
-
-![enterotoxin_homologs]()
+However, when talking about protein structure, sequence alignments do not always tell the full story: in many cases, proteins may have very different sequences but very similar structures. This could be due to remote homology such as in the case of [ubiquitin and it's mysterious cousin Sumo](https://www.nature.com/articles/35056591) which have been separated by more than 1 billion years of evolutionarity history but still are structurally strikingly similar despite a sequence identity of only 16%.
 
 This makes the idea of *structural alignment* and *structural clustering* very appealing: with this, you could detect these remote homologies, enabling you to detect very remote homologies while also preventing your machine learning models that deal with protein structures from cheating via such examples.
 
