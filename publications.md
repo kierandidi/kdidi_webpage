@@ -9,18 +9,17 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
+ - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **biorxiv**, 03/2026
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://flip.protein.properties/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+  </div>
+
  - [A universal model for drug-receptor interactions](https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract), Filipe Menezes, Adam Wahida, Tony Fröhlich, Phillip Grass, Jan Zauita, Valeria Napolitano, Till Siebenmorgen, Katarzyna Pustelny, Agata Barzowska-Gogola, Sarah Rioton, **Kieran Didi**, Michael Bronstein, Anna Czarna, Andreas Hochhaus, Oliver Plettenburg, Michael Sattler, Johannes NissenMeyer, Marcus Conrad, Razelle Kurzrock, Grzegorz M. Popowicz, **biorxiv**, 10/2025
   <br>
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-  </div>
-
- - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **arxiv**, 07/2025
-  <br>
-  <div class="publication-buttons">
-    <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-    <a href="https://github.com/NVIDIA-Digital-Bio/la-proteina" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
-    <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
 
 - [Highly efficient protein structure prediction on NVIDIA RTX Blackwell and Grace-Hopper](https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf), **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **Technical Report**, 09/2025
@@ -79,7 +78,6 @@ buttons:
   <div class="publication-buttons">
     <a href="https://www.nature.com/articles/s41592-025-02819-8" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
     <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button poster" target="_blank" rel="noopener">Poster</a>
     <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button slides" target="_blank" rel="noopener">📄 Slides</a>
@@ -123,6 +121,20 @@ buttons:
 
 
 ### ML Conferences (Main Track)
+ - [Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](https://arxiv.org/abs/2507.09466), **Kieran Didi**\*, Zuobai Zhang\*, Guoqing Zhou\*, Danny Reidenbach\*, Zhonglin Cao\*, Sooyoung Cha\*, Tomas Geffner, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026 (oral presentation)**, 07/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://openreview.net/forum?id=qmCpJtFZra" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+ - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026**, 07/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/NVIDIA-Digital-Bio/la-proteina" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+  </div>
+
 - [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**
   <br>
   <div class="publication-buttons">
