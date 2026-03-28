@@ -9,6 +9,12 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
+ - [Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale](https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf), **Kieran Didi\***, Danny Reidenbach\*, Matthew Penner, Supriya Ravichandran, Marshall Case, Mike Nichols, Erik Swanson, Alex Reis, Maggie Prescott, Yue Qian, Dongming Qian, Jingjing Yang, Weiji Li, Le Li, Daichi Shonai, Sean Gay, Bhoomika Basu Mallik, Ho Yeung Chim, Liurong Chen, Miguel Atienza Juantay, Hubert Klein, Anna U. Macintyre, Maxim Secor, Daniele Granata, Zhonglin Cao, Guoqing Zhou, Tomas Geffner, Xi Chen, Micha Livne, Zuobai Zhang, Tianjing Zhang, Kyle Gion, Michael M. Bronstein, Martin Steinegger, Kristine Deibler, Scott Soderling, Alena Khmelinskaia, Florian Hollfelder, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Pierce Ogden, Karsten Kreis, **Technical Report**, 03/2026
+  <br>
+  <div class="publication-buttons">
+    <a href="https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+  </div>
  - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **biorxiv**, 03/2026
   <br>
   <div class="publication-buttons">
@@ -22,10 +28,10 @@ buttons:
     <a href="https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
   </div>
 
-- [Highly efficient protein structure prediction on NVIDIA RTX Blackwell and Grace-Hopper](https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf), **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **Technical Report**, 09/2025
+- [Efficient protein structure prediction from compact computers to datacenters with OpenFold-TRT](https://www.biorxiv.org/content/10.64898/2026.03.11.711233v1), **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **biorxiv**, 09/2025
   <br>
   <div class="publication-buttons">
-    <a href="https://research.nvidia.com/labs/dbr/assets/data/manuscripts/fast_folding.pdf" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://www.biorxiv.org/content/10.64898/2026.03.11.711233v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://developer.nvidia.com/blog/accelerate-protein-structure-inference-over-100x-with-nvidia-rtx-pro-6000-blackwell-server-edition/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
 
 - [De novo Design of All-atom Biomolecular Interactions with RFdiffusion3](https://www.biorxiv.org/content/10.1101/2025.09.18.676967v1), Jasper Kenneth Veje Butcher, Rohith Krishna, Raktim Mitra, Rafael Isaac Brent, Yanjing Li, Nathaniel Corley, Paul Kim, Jonathan Funk, Simon Valentin Mathis, Saman Salike, Aiko Muraishi, Helen Eisenach, Tuscan Rock Thompson, Jie Chen, Yuliya Politanska, Enisha Sehgal, Brian Coventry, Odin Zhang, Bo Qiang, **Kieran Didi**, Maxwell Kazman, Frank DiMaio, David Baker, **biorxiv**, 09/2025
