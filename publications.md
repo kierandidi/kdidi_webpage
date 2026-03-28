@@ -9,6 +9,7 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
+
  - [Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale](https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf), **Kieran Didi\***, Danny Reidenbach\*, Matthew Penner, Supriya Ravichandran, Marshall Case, Mike Nichols, Erik Swanson, Alex Reis, Maggie Prescott, Yue Qian, Dongming Qian, Jingjing Yang, Weiji Li, Le Li, Daichi Shonai, Sean Gay, Bhoomika Basu Mallik, Ho Yeung Chim, Liurong Chen, Miguel Atienza Juantay, Hubert Klein, Anna U. Macintyre, Maxim Secor, Daniele Granata, Zhonglin Cao, Guoqing Zhou, Tomas Geffner, Xi Chen, Micha Livne, Zuobai Zhang, Tianjing Zhang, Kyle Gion, Michael M. Bronstein, Martin Steinegger, Kristine Deibler, Scott Soderling, Alena Khmelinskaia, Florian Hollfelder, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Pierce Ogden, Karsten Kreis, **Technical Report**, 03/2026
   <br>
   <div class="publication-buttons">
@@ -17,6 +18,7 @@ buttons:
     <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
+
  - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **biorxiv**, 03/2026
   <br>
   <div class="publication-buttons">
@@ -42,6 +44,7 @@ buttons:
   <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/RosettaCommons/foundry" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://www.ipd.uw.edu/2025/12/rfdiffusion3-now-available/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
+    <a href="https://www.youtube.com/watch?v=Y8-V7HH9Hr4" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
 - [Accelerating Biomolecular Modeling with AtomWorks and RF3](https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract), Nathaniel Corley\*, Simon Mathis\*, Rohith Krishna\*, Magnus S Bauer, Tuscan R Thompson, Woody Ahern, Maxwell W Kazman, Rafael I Brent, **Kieran Didi**, Andrew Kubaney, Lilian McHugh, Arnav Nagle, Andrew Favor, Meghana Kshirsagar, Pascal Sturmfels, Yanjing Li, Jasper Butcher, Bo Qiang, Lars L Schaaf, Raktim Mitra, Katelyn Campbell, Odin Zhang, Roni Weissman, Ian R Humphreys, Qian Cong, Jonathan Funk, Shreyash Sonthalia, Pietro Liò, David Baker, Frank DiMaio, **biorxiv**, 08/2025
@@ -49,6 +52,8 @@ buttons:
   <div class="publication-buttons">
     <a href="https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/RosettaCommons/atomworks" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://www.youtube.com/watch?v=Jyv7a1LhBwE" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
+  </div>
 
 - [MotifBench: A standardized protein design benchmark for motif-scaffolding problems](https://arxiv.org/abs/2502.12479), Zhuoqi Zheng, Bo Zhang, **Kieran Didi**, Kevin K. Yang, Jason Yim, Joseph L. Watson, Hai-Feng Chen, Brian L. Trippe, **arxiv**, 02/2025
   <br>
