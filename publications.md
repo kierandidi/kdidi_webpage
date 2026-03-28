@@ -13,7 +13,9 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/NVIDIA-Digital-Bio/proteina-complexa" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
  - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **biorxiv**, 03/2026
   <br>
@@ -131,6 +133,9 @@ buttons:
   <br>
   <div class="publication-buttons">
     <a href="https://openreview.net/forum?id=qmCpJtFZra" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://github.com/NVIDIA-Digital-Bio/proteina-complexa" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+    <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
  - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026**, 07/2025
@@ -139,6 +144,7 @@ buttons:
     <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://github.com/NVIDIA-Digital-Bio/la-proteina" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+    <a href="https://www.youtube.com/watch?v=kA6-x5CpJIU" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
 - [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**
