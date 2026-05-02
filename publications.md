@@ -19,13 +19,6 @@ buttons:
     <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
- - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **biorxiv**, 03/2026
-  <br>
-  <div class="publication-buttons">
-    <a href="https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
-    <a href="https://flip.protein.properties/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
-  </div>
-
  - [A universal model for drug-receptor interactions](https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract), Filipe Menezes, Adam Wahida, Tony Fröhlich, Phillip Grass, Jan Zauita, Valeria Napolitano, Till Siebenmorgen, Katarzyna Pustelny, Agata Barzowska-Gogola, Sarah Rioton, **Kieran Didi**, Michael Bronstein, Anna Czarna, Andreas Hochhaus, Oliver Plettenburg, Michael Sattler, Johannes NissenMeyer, Marcus Conrad, Razelle Kurzrock, Grzegorz M. Popowicz, **biorxiv**, 10/2025
   <br>
   <div class="publication-buttons">
@@ -134,6 +127,12 @@ buttons:
 
 
 ### ML Conferences (Main Track)
+ - [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **ICML 2026 (Spotlight)**, 05/2026
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://flip.protein.properties/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
+  </div>
  - [Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](https://arxiv.org/abs/2507.09466), **Kieran Didi**\*, Zuobai Zhang\*, Guoqing Zhou\*, Danny Reidenbach\*, Zhonglin Cao\*, Sooyoung Cha\*, Tomas Geffner, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026 (oral presentation)**, 07/2025
   <br>
   <div class="publication-buttons">
@@ -143,7 +142,7 @@ buttons:
     <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
- - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026**, 07/2025
+ - [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi**\*, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026 (ranked 15/19814, top 0.1% of submissions)**, 07/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2507.09466" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
