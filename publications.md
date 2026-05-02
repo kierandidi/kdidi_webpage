@@ -133,7 +133,7 @@ buttons:
     <a href="https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
     <a href="https://flip.protein.properties/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
- - [Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](https://arxiv.org/abs/2507.09466), **Kieran Didi**\*, Zuobai Zhang\*, Guoqing Zhou\*, Danny Reidenbach\*, Zhonglin Cao\*, Sooyoung Cha\*, Tomas Geffner, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026 (oral presentation)**, 07/2025
+ - [Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](https://arxiv.org/abs/2603.27950), **Kieran Didi**\*, Zuobai Zhang\*, Guoqing Zhou\*, Danny Reidenbach\*, Zhonglin Cao\*, Sooyoung Cha\*, Tomas Geffner, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2026 (oral presentation)**, 01/2026
   <br>
   <div class="publication-buttons">
     <a href="https://openreview.net/forum?id=qmCpJtFZra" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -151,13 +151,13 @@ buttons:
     <a href="https://www.youtube.com/watch?v=kA6-x5CpJIU" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 
-- [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**
+- [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML 2025**, 04/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2504.08051" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
   </div>
 
-- [Proteina: Scaling Flow-based Protein Structure Generative Models](https://arxiv.org/abs/2503.00710), Tomas Geffner\*, **Kieran Didi**\*, Zuobai Zhang\*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2025 (oral presentation)**
+- [Proteina: Scaling Flow-based Protein Structure Generative Models](https://arxiv.org/abs/2503.00710), Tomas Geffner\*, **Kieran Didi**\*, Zuobai Zhang\*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR 2025 (oral presentation)**, 03/2025
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2503.00710" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -167,7 +167,7 @@ buttons:
 
   </div>
 
-- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker\*, Francisco Vargas\*, Shreyas Padhy\*, **Kieran Didi**\*, Simon Mathis\*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS 2024**
+- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker\*, Francisco Vargas\*, Shreyas Padhy\*, **Kieran Didi**\*, Simon Mathis\*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS 2024**, 06/2024
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2406.01781" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
@@ -175,13 +175,13 @@ buttons:
 
   </div>
 
-- [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska\*, Simon V Mathis\*, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR 2024**
+- [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska\*, Simon V Mathis\*, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik , **ICLR 2024**, 06/2024
   <br>
   <div class="publication-buttons">
     <a href="https://openreview.net/forum?id=jZPqf2G9Sw" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
   </div>
 
-- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb\*, Alex Morehead\*, Zuobai Zhang\*, Chaitanya Joshi\*, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR 2024**
+- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb\*, Alex Morehead\*, Zuobai Zhang\*, Chaitanya Joshi\*, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR 2024**, 06/2024
   <br>
   <div class="publication-buttons">
     <a href="https://arxiv.org/abs/2406.13864" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
