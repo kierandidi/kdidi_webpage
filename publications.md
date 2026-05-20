@@ -9,7 +9,6 @@ buttons:
 ## Publications 
 
 ### Pre-Prints
-
  - [Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale](https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf), **Kieran Didi\***, Danny Reidenbach\*, Matthew Penner, Supriya Ravichandran, Marshall Case, Mike Nichols, Erik Swanson, Alex Reis, Maggie Prescott, Yue Qian, Dongming Qian, Jingjing Yang, Weiji Li, Le Li, Daichi Shonai, Sean Gay, Bhoomika Basu Mallik, Ho Yeung Chim, Liurong Chen, Miguel Atienza Juantay, Hubert Klein, Anna U. Macintyre, Maxim Secor, Daniele Granata, Zhonglin Cao, Guoqing Zhou, Tomas Geffner, Xi Chen, Micha Livne, Zuobai Zhang, Tianjing Zhang, Kyle Gion, Michael M. Bronstein, Martin Steinegger, Kristine Deibler, Scott Soderling, Alena Khmelinskaia, Florian Hollfelder, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Pierce Ogden, Karsten Kreis, **Technical Report**, 03/2026
   <br>
   <div class="publication-buttons">
@@ -18,11 +17,16 @@ buttons:
     <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
-
- - [A universal model for drug-receptor interactions](https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract), Filipe Menezes, Adam Wahida, Tony Fröhlich, Phillip Grass, Jan Zauita, Valeria Napolitano, Till Siebenmorgen, Katarzyna Pustelny, Agata Barzowska-Gogola, Sarah Rioton, **Kieran Didi**, Michael Bronstein, Anna Czarna, Andreas Hochhaus, Oliver Plettenburg, Michael Sattler, Johannes NissenMeyer, Marcus Conrad, Razelle Kurzrock, Grzegorz M. Popowicz, **biorxiv**, 10/2025
+ - [AlphaFold Database expands to proteome-scale quaternary structures](https://www.biorxiv.org/content/10.64898/2026.03.27.714458v1), Yewon Han, Maxim I. Tsenkov, Niccolò A. E. Venanzi, Damian Bertoni, Sooyoung Cha, Alejandro Chacón, Nick Dietrich, Boris Fomitchev, Yonathan Goldtzvik, Darren Hsu, Jeannie Austin, Joseph Ellaway, **Kieran Didi**, Oleg Kovalevskiy, Dariusz Lasecki, Agata Laydon, Micha Livne, Paulyna Magaña, Maciej Majewski, Sreenath Nair, Urmila Paramval, Nilkanth Patel, Risha Patel, Ivanna Pidruchna, Brianda Santini Lopez, Prashant Sohani, Ahsan Tanweer, Duc Tran, Kyle Tretina, Melanie Vollmar, Quan Vu, Augustin Žídek, Sameer Velankar, Martin Steinegger, Jennifer Fleming, Milot Mirdita, Christian Dallago, **biorxiv**, 03/2026
   <br>
   <div class="publication-buttons">
-    <a href="https://www.biorxiv.org/content/10.1101/2025.08.01.668090v9.abstract" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+    <a href="https://www.biorxiv.org/content/10.64898/2026.03.27.714458v1" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
+  </div>
+
+ - [A universal model for drug-receptor interactions](https://www.biorxiv.org/content/10.1101/2025.08.01.668090v10), Filipe Menezes, Adam Wahida, Tony Fröhlich, Phillip Grass, Jan Zauita, Valeria Napolitano, Till Siebenmorgen, Katarzyna Pustelny, Agata Barzowska-Gogola, Sarah Rioton, **Kieran Didi**, Michael Bronstein, Anna Czarna, Andreas Hochhaus, Oliver Plettenburg, Michael Sattler, Johannes NissenMeyer, Marcus Conrad, Razelle Kurzrock, Grzegorz M. Popowicz, **biorxiv**, 10/2025
+  <br>
+  <div class="publication-buttons">
+    <a href="https://www.biorxiv.org/content/10.1101/2025.08.01.668090v10" class="pub-button paper" target="_blank" rel="noopener">📄 Paper</a>
   </div>
 
 - [Efficient protein structure prediction from compact computers to datacenters with OpenFold-TRT](https://www.biorxiv.org/content/10.64898/2026.03.11.711233v1), **Kieran Didi\***, Prashant Sohani\*, Fabian Berressem, Alexander Nesterovskiy, Boris Fomitchev, Robert Ohannessian, Mohamed Elbalkini, Jonathan Cogan, Anthony Costa, Arash Vahdat, Felix Kallenborn, Bertil Schmidt, Milot Mirdita, Martin Steinegger, Christian Dallago, Alejandro Chacon, **biorxiv**, 09/2025
@@ -254,7 +258,7 @@ buttons:
 
 ## Reviewing
 
-ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024, NeurIPS 2025
+ICML CompBio 2023, NeurIPS AI4Science 2023, NeurIPS GenBio 2023, MoML@MIT 2023, ICLR GEM 2024, NeurIPS 2025, ICLR 2026, Nature Communications
 
 ## Teaching
 - [Deep Learning in Structure-Based Drug Design](https://www.sib.swiss/training/course/20240609_CADD), tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024
