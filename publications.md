@@ -245,7 +245,9 @@ buttons:
   <div class="publication-buttons">
   </div>
 
-## Conference Presentations
+## Selected Talks and Presentations
+- [Sequence-Structure Codesign: A journey in latent space](https://www.imperial.ac.uk/events/209589/london-protein-design-day/), London Protein Design Day, Imperial College London (UK), 06/2026
+- [Proteina-Complexa: Atomistic Protein Design and what to do with it](https://coursesandconferences.wellcomeconnectingscience.org/event/ai-x-bio-20260608/?utm_source=linkedin&utm_medium=social-network&utm_campaign=aixbio26-social&utm_id=aixbio26), AIxBIO 2026, Wellcome Sanger Institute Cambridge (UK), 06/2026
 - [Why equivariance is (not) so popular in Life and Material Science](https://ml4lms.bio/blog/1250) (invited talk), ICML ML4LMS 2024, 07/2024
 - [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024
 - [Where do we stand in protein and ligand design?](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/) (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023
