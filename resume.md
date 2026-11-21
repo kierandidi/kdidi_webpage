@@ -2,7 +2,7 @@
 layout: resume
 title: Résumé
 description: >
-  CV of Kieran Didi, master's student at Cambridge and Heidelberg focused on the interface of life sciences and computer science, with a focus on machine learning, cloud computing and software engineering for biology.
+  Kieran Didi, Senior Machine Learning Scientist at NVIDIA and PhD student in Computer Science at Oxford.
 hide_description: true
 left_column:
   - work

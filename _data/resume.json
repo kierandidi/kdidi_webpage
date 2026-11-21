@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Kieran Didi",
-    "label": "BioML Researcher",
+    "label": "Senior Machine Learning Scientist",
     "image": "",
     "email": "kieran.didi@gmail.com",
     "phone": "",
     "url": "https://kdidi.netlify.app/",
-    "summary": "Excited about Drug Discovery, Protein Design and Entrepreneurship. ",
+    "summary": "I work on generative modelling for protein design at NVIDIA and study Computer Science at the University of Oxford. [Publications and talks](/publications/)",
     "location": {
       "countryCode": "DE",
       "address": ""
@@ -16,29 +16,29 @@
       {
         "network": "LinkedIn",
         "username": "Kieran Didi",
-        "url": "https://www.linkedin.com/in/me/"
+        "url": "https://www.linkedin.com/in/kieran-didi/"
       }
     ]
   },
   "work": [
     {
       "company": "NVIDIA",
-      "position": "ML Researcher",
+      "position": "Senior Machine Learning Scientist",
       "startDate": "2024-01-29",
       "endDate": "",
       "highlights": [],
-      "summary": "Generative Modelling for Biomolecules",
-      "url": "https://www.nvidia.com/de-de/",
-      "location": "Santa Clara, US"
+      "summary": "ML Research in GenAIR team under Arash Vahdat on generative modelling for biology",
+      "url": "https://research.nvidia.com/labs/genair/",
+      "location": "Remote and San Francisco, US"
     },
     {
       "company": "Absci",
-      "position": "AI Research Scientist (Intern)",
+      "position": "Deep Learning Researcher (Intern)",
       "startDate": "2023-09-05",
       "endDate": "2023-12-15",
       "highlights": [],
       "summary": "- ML for antibody design",
-      "url": "https://www.linkedin.com/company/csiro/",
+      "url": "https://www.absci.com/",
       "location": "New York, US"
     },
     {
@@ -48,8 +48,8 @@
       "endDate": "2023-08-31",
       "highlights": [],
       "summary": "- Working with Recursion Valence team on GNNs for protein-ligand complexes",
-      "url": "https://www.linkedin.com/company/csiro/",
-      "location": "Cambridge, UK"
+      "url": "https://mila.quebec/",
+      "location": "Montreal, Canada"
     },
     {
       "company": "EMBL EBI",
@@ -58,7 +58,7 @@
       "endDate": "2023-06-30",
       "highlights": [],
       "summary": "- working on FAIR ML for protein design\n - built [repository of reproducible ML pipelines in biology](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1)",
-      "url": "https://www.linkedin.com/company/csiro/",
+      "url": "https://www.ebi.ac.uk/",
       "location": "Cambridge, UK"
     },
     {
@@ -72,20 +72,10 @@
       "location": "Sydney, New South Wales, Australia"
     },
     {
-      "company": "Nucleate UK, Cambridge Chapter",
-      "position": "Communications Lead",
-      "startDate": "2022-07-31",
-      "endDate": "",
-      "highlights": [],
-      "summary": "- Coordinating the communication strategy for Nucleate Cambridge, reaching students, inventors, and investors.",
-      "url": "https://www.linkedin.com/company/csiro/",
-      "location": "Cambridge, UK"
-    },
-    {
       "company": "PTNG Consulting",
       "position": "Consultant",
       "startDate": "2022-06-30",
-      "endDate": "",
+      "endDate": "2024-01",
       "highlights": [],
       "summary": "- conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
       "url": "https://www.linkedin.com/company/ptng-consulting/",
@@ -114,10 +104,17 @@
   ],
   "volunteer": [
     {
+      "organization": "Computational Motifs Hacking Group",
+      "position": "Founder & Co-lead",
+      "startDate": "2024-07",
+      "summary": "Organized monthly sessions on accelerating science with computation",
+      "url": "https://www.compmotifs.com/"
+    },
+    {
       "organization": "Nucleate UK",
       "position": "Communications Lead, Cambridge Chapter",
       "startDate": "2022-07-31",
-      "endDate": "",
+      "endDate": "2024-07",
       "summary": "Organized nationwide comms strategy for empowering biotech talents",
       "highlights": [],
       "url": "https://nucleate.xyz/locations/united-kingdom/"
@@ -140,26 +137,49 @@
       "highlights": [],
       "url": "https://www.stura.uni-heidelberg.de/"
     }
-
   ],
   "education": [
+    {
+      "institution": "University of Oxford",
+      "area": "Computer Science",
+      "studyType": "PhD",
+      "startDate": "2024",
+      "courses": [
+        "Research in generative ML for protein design and optimization, supervised by Michael Bronstein.",
+        "ELLIS PhD Scholar and EPSRC fully-funded scholarship"
+      ]
+    },
     {
       "institution": "Cambridge University",
       "area": "Computational Biology",
       "studyType": "MPhil",
       "startDate": "2022-10-31",
       "endDate": "2023-08-31",
-      "gpa": "",
-      "courses": ["Theory of Deep Learning", "ML Systems", "optimisation", "biological design", "genomics I+II", "systems biology"]
+      "gpa": "Distinction",
+      "courses": [
+        "Theory of Deep Learning",
+        "ML Systems",
+        "optimisation",
+        "biological design",
+        "genomics I+II",
+        "systems biology"
+      ]
     },
     {
       "institution": "Heidelberg University",
       "area": "Biochemistry, focus Computer Science",
       "studyType": "Master of Science - MS",
       "startDate": "2021-10-31",
-      "endDate": "2024-10-31",
+      "endDate": "2023",
       "gpa": "1.0 (best in year, German scale)",
-      "courses": ["machine learning I+II", "operating systems + networks", "GPU computing", "numerics", "software development", "algorithms & data structures"]
+      "courses": [
+        "machine learning I+II",
+        "operating systems + networks",
+        "GPU computing",
+        "numerics",
+        "software development",
+        "algorithms & data structures"
+      ]
     },
     {
       "institution": "University of Cambridge",
@@ -168,7 +188,13 @@
       "startDate": "2020-12-31",
       "endDate": "2021-12-31",
       "gpa": "/",
-      "courses": ["math. methods", "symmetry", "cheminformatics", "theoretical chemistry", "scientific programming"]
+      "courses": [
+        "math. methods",
+        "symmetry",
+        "cheminformatics",
+        "theoretical chemistry",
+        "scientific programming"
+      ]
     },
     {
       "institution": "Heidelberg University",
@@ -177,51 +203,71 @@
       "startDate": "2018-10-31",
       "endDate": "2021-09-30",
       "gpa": "1.0 (best in year, German scale)",
-      "courses": ["bioinformatics", "statistical learning", "molecular biology", "protein engineering", "organic chemistry"]
+      "courses": [
+        "bioinformatics",
+        "statistical learning",
+        "molecular biology",
+        "protein engineering",
+        "organic chemistry"
+      ]
     }
   ],
   "awards": [
     {
-      "title": "DAAD and Studienstiftung scholarship",
-      "date": "2022-04-31",
-      "awarder": "DAAD, Studienstiftung",
-      "summary": "Received two scholarships for my master's studies at Cambridge due to academic grades and performance at interviews"
+      "title": "Duveen Scholarship St John’s College Oxford: ambassador for the college for a US trip",
+      "date": "2025"
     },
     {
-      "title": "Sartorius STEM scholarship",
-      "date": "2021-10-31",
-      "awarder": "Sartorius",
-      "summary": "Received the Sartorius scholarship due to academic achievements and performance at video interview and in-person assesment center"
+      "title": "ELLIS PhD scholarship for interdisciplinary machine learning research",
+      "date": "2025"
     },
     {
-      "title": "ICU Scholarship",
-      "date": "2019-09-30",
-      "awarder": "QX - Quaterly Crossing",
-      "summary": "One of seven finalists awarded the ICU Scholarship by the business and leadership network QX. The scholarships allows participation in international conferences such as the MBA World Summit or the Leadership Conference, includes intensive management mentoring and a lot of different activities to foster exchange between the scholars and the network."
+      "title": "EPSRC DTP scholarship for academic excellence and full funding for Oxford PhD",
+      "date": "2024"
     },
     {
-      "title": "German Academic Foundation Scholarship",
-      "date": "2018-10-31",
-      "awarder": "German Academic Foundation",
-      "summary": "Full scholarship for both undergraduate and master's studies"
+      "title": "Excellence certificate at Heidelberg University for best master’s degree in the year",
+      "date": "2024"
     },
     {
-      "title": "Silver Medal",
-      "date": "2018-07-01",
-      "awarder": "International Biology Olympiad",
-      "summary": "Came in second in nationwide competition, silver medal at the international competition in Teheran. "
+      "title": "Scholar’s award at St John’s College Cambridge for distinction in MPhil degree",
+      "date": "2023"
     },
     {
-      "title": "NanoBio Vice-winner",
-      "date": "2017-09-01",
-      "awarder": "Deutscher Verband Nanotechnologie e.V.",
-      "summary": "At the \"NanoBio\" Competition, my team and I came in second nationwide for our project in which we constructed artificial muscle fibres out of Nylon and analyzed their properties."
+      "title": "Software Sustainability Fellowship: working on reproducibility in ML for Biology",
+      "date": "2023"
     },
     {
-      "title": "DECHEMAX Top 10 Germany ",
-      "date": "2017-05-01",
-      "awarder": "DECHEMA Gesellschaft für Chemische Technik und Biotechnologie e.V.",
-      "summary": "At the \"DECHEMAX\" competition my team and I were chosen as one of the ten best teams in Germany for our experimental performance. "
+      "title": "Polaris Fellowship",
+      "date": "2023"
+    },
+    {
+      "title": "AI Fellowship by Hummingbird VC",
+      "date": "2022"
+    },
+    {
+      "title": "Kurt Hahn Scholarship at Cambridge University ",
+      "date": "2022"
+    },
+    {
+      "title": "Scholarship from both DAAD and Studienstiftung for master’s studies at Cambridge",
+      "date": "2022"
+    },
+    {
+      "title": "Sartorius scholarship for master’s studies at Heidelberg ",
+      "date": "2021"
+    },
+    {
+      "title": "Marsilius Certificate for statistical learning: econometric predictions via LSTMs",
+      "date": "2021"
+    },
+    {
+      "title": "Scholarship of German Academic Foundation based on intellectual ability",
+      "date": "2018"
+    },
+    {
+      "title": "Biology Olympiad, 2nd place in Germany (>2,000 participants), silver medal at the International Competition in Tehran (best 30% of global selection of talents)",
+      "date": "2018"
     }
   ],
   "certificates": [

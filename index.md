@@ -4,7 +4,7 @@ title: About
 cover: true
 ---
 
-Hey everyone! I am Kieran, currently a [PhD student with Michael Bronstein at Oxford University](https://www.cs.ox.ac.uk/people/kieran.didi/) and a research scientist at the [Fundamental Generative AI team](https://research.nvidia.com/labs/genair/) at NVIDIA. On this webpage you find my blog where I comment on new papers, developments and random thoughts.
+Hey everyone! I am Kieran, currently a [PhD student with Michael Bronstein at Oxford University](https://www.cs.ox.ac.uk/people/kieran.didi/) and a Senior Machine Learning Scientist at the [Fundamental Generative AI team](https://research.nvidia.com/labs/genair/) at NVIDIA. My research focuses on generative models for protein design. You can find my [publications](/publications/) and [CV](/resume/) here.
 
 Besides my research and studies, I love writing, reading, every sport that involves a ball and doing Blender visualisations such as the picture you see below showing K-Ras with an inhibitor or this video showing a [penicillin-binding protein](https://pdb101.rcsb.org/motm/29).
 

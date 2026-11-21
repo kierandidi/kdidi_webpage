@@ -1,10 +1,10 @@
 {% assign from_to_separator = strings.from_to_separator | default:strings.resume.from_to_separator | default:"–" %}
 {% assign present = strings.present | default:strings.resume.present | default:"present" %}
 
-<time datetime="{{ include.from | date_to_xmlschema }}">{{ include.from | date:include.format }}</time>
+{% if include.from.size == 4 %}<time datetime="{{ include.from }}">{{ include.from }}</time>{% else %}<time datetime="{{ include.from | date_to_xmlschema }}">{{ include.from | date:include.format }}</time>{% endif %}
 {{from_to_separator}}
 {% if include.to.size > 0 %}
-  <time datetime="{{ include.to | date_to_xmlschema }}">{{ include.to | date:include.format }}</time>
+  {% if include.to.size == 4 %}<time datetime="{{ include.to }}">{{ include.to }}</time>{% else %}<time datetime="{{ include.to | date_to_xmlschema }}">{{ include.to | date:include.format }}</time>{% endif %}
 {% else %}
   <em>{{present}}</em>
 {% endif %}
