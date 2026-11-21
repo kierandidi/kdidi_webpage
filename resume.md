@@ -16,6 +16,8 @@ buttons:
 
 {% include pro/resume/buttons.html %}
 
+[Publications]({{ '/publications/' | relative_url }}) · [Talks]({{ '/publications/' | relative_url }}#selected-talks-and-presentations) · [Teaching]({{ '/publications/' | relative_url }}#teaching)
+
 ## Education
 
 {% for degree in cv.education %}
@@ -32,23 +34,6 @@ buttons:
 {{ job.summary }}
 {% for highlight in job.highlights %}- {{ highlight }}
 {% endfor %}
-{% endfor %}
-
-## Research publications
-
-[Publications with author lists and project resources](/publications/)
-
-{% for pub in cv.publications %}- {% if pub.url != empty %}[{{ pub.name }}]({{ pub.url }}){% else %}{{ pub.name }}{% endif %}. {{ pub.publisher }}{% if pub.releaseDate != empty %}, {{ pub.releaseDate }}{% endif %}.
-{% endfor %}
-
-## Teaching
-
-{% for item in cv.teaching %}- {{ item }}
-{% endfor %}
-
-## Selected talks and presentations
-
-{% for item in cv.presentations %}- {{ item }}
 {% endfor %}
 
 ## Scholarships and awards
