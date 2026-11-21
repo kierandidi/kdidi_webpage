@@ -73,9 +73,6 @@ title: Publications
   <div class="publication-buttons">
     <a href="https://github.com/soedinglab/MMseqs2" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/" class="pub-button blog" target="_blank" rel="noopener">💬 Blog</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button poster" target="_blank" rel="noopener">Poster</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button slides" target="_blank" rel="noopener">📄 Slides</a>
-    <a href="https://www.biorxiv.org/content/10.1101/2024.11.13.623350v4.abstract" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 - [Structure-based Drug Design with Equivariant Diffusion Models](https://www.nature.com/articles/s43588-024-00737-x), Arne Schneuing\*, Yuanqi Du\*, Charles Harris\*, **Kieran Didi**, Arian Jamasb, Ilia Igashov, weitao Du, Tom Blundell, Pietro Liò, Carla Gomes, Max Welling, Michael Bronstein, Bruno Correia, **Nature Computational Science**, 2024
   <div class="publication-buttons">
