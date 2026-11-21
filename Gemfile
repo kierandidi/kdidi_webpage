@@ -8,7 +8,9 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1"
+gem "jekyll", "~> 4.4"
+# Hydejack 9 uses the SassC stylesheet pipeline.
+gem "jekyll-sass-converter", "~> 2.2"
 
 gem "jekyll-theme-hydejack", path: "./#jekyll-theme-hydejack"
 
@@ -27,6 +29,7 @@ gem "jekyll-theme-hydejack", path: "./#jekyll-theme-hydejack"
 gem "kramdown-math-katex"
 
 gem "execjs"
+gem "bigdecimal"
 
 # Fixes `jekyll serve` in ruby 3
 gem "webrick"
