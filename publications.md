@@ -93,9 +93,14 @@ title: Publications
   </div>
 - [Biomolecular condensate phase diagrams with a combinatorial microdroplet platform](https://www.nature.com/articles/s41467-022-35265-7), William E. Arter\*, Runzhang Qi\*, Nadia A. Erkamp\*, Georg Krainer\*, **Kieran Didi**, Timothy J. Welsh, Julia Acker, Jonathan Nixon-Abell, Seema Qamar, Jordina Guillén-Boixet, Titus M. Franzmann, David Kuster, Anthony A. Hyman, Alexander Borodavka, Peter St George-Hyslop, Simon Alberti, Tuomas P. J. Knowles, **Nature Communications**, 2022
 
+- [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://openreview.net/forum?id=wOc1Yx5s09), Rishabh Anand\*, Chaitanya K. Joshi\*, Alex Morehead, Arian R. Jamasb, Charles Harris, Simon V. Mathis, **Kieran Didi**, Rex Ying, Bryan Hooi, Pietro Liò, **Transactions on Machine Learning Research**, 2025 (also presented at ICML SPIGM, 2024)
+  <div class="publication-buttons">
+    <a href="https://github.com/rish-16/rna-backbone-design" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
+  </div>
+
 ### Conference papers
 
-- [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://www.biorxiv.org/content/10.64898/2026.02.23.707496v3.abstract), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **ICML (oral presentation)**, 2026
+- [FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications](https://proceedings.mlr.press/v306/didi26a.html), **Kieran Didi**, Sarah Alamdari, Alex X Lu, Bruce Wittmann, Kadina E Johnston, Ava P Amini, Ali K Madani, Maya Czeneszew, Christian Dallago, Kevin K Yang, **ICML (oral presentation)**, 2026
   <div class="publication-buttons">
     <a href="https://flip.protein.properties/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
   </div>
@@ -105,38 +110,34 @@ title: Publications
     <a href="https://research.nvidia.com/labs/genair/proteina-complexa/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://www.youtube.com/watch?v=-XNMSnFUPjk" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
-- [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), Tomas Geffner\*, **Kieran Didi\***, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR**, 2026
+- [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6e1734c47c0cc899021060d88f69dc65-Abstract-Conference.html), Tomas Geffner\*, **Kieran Didi\***, Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR**, 2026
   <div class="publication-buttons">
     <a href="https://github.com/NVIDIA-Digital-Bio/la-proteina" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://research.nvidia.com/labs/genair/la-proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://www.youtube.com/watch?v=kA6-x5CpJIU" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
-- [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://arxiv.org/abs/2504.08051), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML**, 2025
-- [Proteina: Scaling Flow-based Protein Structure Generative Models](https://arxiv.org/abs/2503.00710), Tomas Geffner\*, **Kieran Didi\***, Zuobai Zhang\*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR (oral presentation)**, 2025
+- [Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](https://proceedings.mlr.press/v267/shen25b.html), Tony Shen\*, Seonghwan Seo\*, Ross Irwin, **Kieran Didi**, Simon Olsson, Woo Youn Kim, Martin Ester, **ICML**, 2025
+- [Proteina: Scaling Flow-based Protein Structure Generative Models](https://proceedings.iclr.cc/paper_files/paper/2025/hash/f4e9121ad30cd4e5528042fbfd835b3f-Abstract-Conference.html), Tomas Geffner\*, **Kieran Didi\***, Zuobai Zhang\*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis, **ICLR (oral presentation)**, 2025
   <div class="publication-buttons">
     <a href="https://github.com/NVIDIA-Digital-Bio/proteina/" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
     <a href="https://research.nvidia.com/labs/genair/proteina/" class="pub-button webpage" target="_blank" rel="noopener">🌐 Webpage</a>
     <a href="https://www.youtube.com/watch?v=Y2dRj9_ZEHw&pp=ygUWcHJvdGVpbmEga2Fyc3RlbiBrcmVpcw%3D%3D" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
-- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://arxiv.org/abs/2406.01781), Alexander Denker\*, Francisco Vargas\*, Shreyas Padhy\*, **Kieran Didi\***, Simon Mathis\*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS**, 2024
+- [DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform](https://proceedings.neurips.cc/paper_files/paper/2024/hash/22d258dfbdf840ccbf266bbc545dd95f-Abstract-Conference.html), Alexander Denker\*, Francisco Vargas\*, Shreyas Padhy\*, **Kieran Didi\***, Simon Mathis\*, Vincent Dutordoir, Riccardo Barbano, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS**, 2024
   <div class="publication-buttons">
     <a href="https://www.youtube.com/watch?v=GrtWwD8pPWY" class="pub-button video" target="_blank" rel="noopener">🎥 Video</a>
   </div>
 - [Dynamics-Informed Protein Design with Structure Conditioning](https://openreview.net/forum?id=jZPqf2G9Sw), Urszula Julia Komorowska\*, Simon V Mathis\*, **Kieran Didi**, Francisco Vargas, Pietro Lio, Mateja Jamnik, **ICLR**, 2024
-- [Evaluating Representation Learning on the Protein Structure Universe](https://arxiv.org/abs/2406.13864), Arian Rokkum Jamasb\*, Alex Morehead\*, Zuobai Zhang\*, Chaitanya Joshi\*, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR**, 2024
+- [Evaluating Representation Learning on the Protein Structure Universe](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6d6f9908ea35313dd7566f5ce8c6e815-Abstract-Conference.html), Arian Rokkum Jamasb\*, Alex Morehead\*, Zuobai Zhang\*, Chaitanya Joshi\*, **Kieran Didi**, Simon Mathis, Charles Harris, Jian Tang, Jianlin Cheng, Pietro Liò, Tom Blundell, **ICLR**, 2024
   <div class="publication-buttons">
     <a href="https://github.com/a-r-j/ProteinWorkshop" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
   </div>
 
 ### Workshop papers
 
-- [Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design](https://arxiv.org/abs/2510.24732), Junhua Chen, Simon Mathis, Charles Harris, **Kieran Didi**, Pietro Lio, **ICML GenBio**, 2025
-- [Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design](https://arxiv.org/abs/2512.01976), Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, **Kieran Didi**, Tomas Geffner, Guoqing Zhou, Jian Tang, Christian Dallago, Arash Vahdat, Emine Kucukbenli, Karsten Kreis, **NeurIPS AI4Science**, 2025
-- [RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design](https://arxiv.org/abs/2406.13839), Rishabh Anand\*, Chaitanya K. Joshi\*, Alex Morehead, Arian R. Jamasb, Charles Harris, Simon V. Mathis, **Kieran Didi**, Bryan Hooi, Pietro Liò, **ICML SPIGM (oral presentation)**, 2024
-  <div class="publication-buttons">
-    <a href="https://github.com/rish-16/rna-backbone-design" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
-  </div>
-- [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://arxiv.org/abs/2312.09236), **Kieran Didi\***, Francisco Varga\*, Simon Mathis\*, Vincent Dutordoir\*, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 (oral presentation)**, 2023
+- [Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design](https://openreview.net/pdf/abe94d2f9446dab1e5bff1b7a2ea121c043ad986.pdf), Junhua Chen, Simon Mathis, Charles Harris, **Kieran Didi**, Pietro Lio, **ICML GenBio**, 2025
+- [Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design](https://openreview.net/pdf/0e4002289fe69955fa6da8bd2b75d3d0ced39f58.pdf), Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, **Kieran Didi**, Tomas Geffner, Guoqing Zhou, Jian Tang, Christian Dallago, Arash Vahdat, Emine Kucukbenli, Karsten Kreis, **NeurIPS AI4Science**, 2025
+- [A framework for conditional diffusion modelling with applications in motif scaffolding for protein design](https://ai4d3.github.io/2023/papers/72.pdf), **Kieran Didi\***, Francisco Varga\*, Simon Mathis\*, Vincent Dutordoir\*, Emile Mathieu, Urszula Julia Komorowska, Pietro Lio, **NeurIPS AI4D3 (oral presentation)**, 2023
 - [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?](https://arxiv.org/abs/2308.07413), Charles Harris, **Kieran Didi**, Arian Jamasb, Chaitanya Joshi, Simon Mathis, Pietro Lio, Tom Blundell, **NeurIPS MLSB (oral presentation)**, 2023
   <div class="publication-buttons">
     <a href="https://github.com/cch1999/posecheck" class="pub-button code" target="_blank" rel="noopener">💻 Code</a>
@@ -168,7 +169,7 @@ title: Publications
 - [What comes after atomistic protein design? AI x Bio conference](https://coursesandconferences.wellcomeconnectingscience.org/event/ai-x-bio-20260608/?utm_source=linkedin&utm_medium=social-network&utm_campaign=aixbio26-social&utm_id=aixbio26), Wellcome Sanger Institute Cambridge (UK), 06/2026
 - [Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale](https://research.nvidia.com/labs/genair/proteina-complexa/assets/proteina_complexa_validation.pdf), ML4ProteinEngineering Seminar (online), 04/2026
 - [Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](https://proceedings.iclr.cc/paper_files/paper/2026/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html), Starkly Speaking Reading Group (online), 03/2026
-- [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://arxiv.org/abs/2507.09466), ML4ProteinEngineering Seminar (online), 08/2025
+- [La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6e1734c47c0cc899021060d88f69dc65-Abstract-Conference.html), ML4ProteinEngineering Seminar (online), 08/2025
 - [Why equivariance is (not) so popular in Life Sciences (invited talk)](https://ml4lms.bio/blog/1250), ICML ML4LMS 2024, 07/2024
 - A framework for conditional diffusion models with applications in motif scaffolding for protein design, ML4ProteinEngineering Seminar (online), 06/2024
 - [Conditioning generative models for proteins, images and more](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/) (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024

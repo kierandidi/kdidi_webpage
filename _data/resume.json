@@ -7,10 +7,10 @@
     "email": "kieran.didi@gmail.com",
     "phone": "",
     "url": "https://kdidi.netlify.app/",
-    "summary": "I work on generative modelling for protein design at NVIDIA and study Computer Science at the University of Oxford. [Publications and talks](/publications/)",
+    "summary": "I’m a PhD student working with [Michael Bronstein at the University of Oxford](https://www.cs.ox.ac.uk/people/michael.bronstein/) and [David Baker at the Institute for Protein Design](https://www.bakerlab.org/). I’m also a Senior Machine Learning Scientist in [NVIDIA’s Fundamental Generative AI team](https://research.nvidia.com/labs/genair/), where I work on generative models for protein design.",
     "location": {
-      "countryCode": "DE",
-      "address": ""
+      "city": "Seattle",
+      "countryCode": "US"
     },
     "profiles": [
       {
@@ -29,7 +29,7 @@
       "highlights": [],
       "summary": "ML Research in GenAIR team under Arash Vahdat on generative modelling for biology",
       "url": "https://research.nvidia.com/labs/genair/",
-      "location": "Remote and San Francisco, US"
+      "location": "Remote + San Francisco, US"
     },
     {
       "company": "Absci",
@@ -37,67 +37,59 @@
       "startDate": "2023-09-05",
       "endDate": "2023-12-15",
       "highlights": [],
-      "summary": "- ML for antibody design",
+      "summary": "ML and data engineering for antibody design via geometric deep learning",
       "url": "https://www.absci.com/",
-      "location": "New York, US"
+      "location": "NYC, US"
     },
     {
-      "company": "MILA",
-      "position": "Visiting Researcher",
-      "startDate": "2023-08-01",
-      "endDate": "2023-08-31",
-      "highlights": [],
-      "summary": "- Working with Recursion Valence team on GNNs for protein-ligand complexes",
-      "url": "https://mila.quebec/",
-      "location": "Montreal, Canada"
-    },
-    {
-      "company": "EMBL EBI",
-      "position": "ML Engineer Intern",
+      "company": "EMBL-EBI",
+      "position": "Machine Learning Engineer Intern (part-time during studies)",
       "startDate": "2022-10-01",
       "endDate": "2023-06-30",
       "highlights": [],
-      "summary": "- working on FAIR ML for protein design\n - built [repository of reproducible ML pipelines in biology](https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1)",
+      "summary": "Critically test and evaluate BioML models",
       "url": "https://www.ebi.ac.uk/",
       "location": "Cambridge, UK"
     },
     {
-      "company": "CSIRO",
-      "position": "Software Engineer Intern",
+      "company": "CSIRO Sydney, team Translational Bioinformatics",
+      "position": "Software Engineering Intern (Biosecurity, Cloud-native genomics)",
       "startDate": "2022-07-31",
       "endDate": "2022-10-31",
-      "highlights": [],
-      "summary": "- developing [cloud-native software for DNA analysis](https://d2pnh0u0m8yu2n.cloudfront.net/) using Spark, AWS and Terraform\n- published an [IaC Terraform module](https://registry.terraform.io/modules/kierandidi/emrserverless/aws/1.0.0) for creating EMR Serverless applications on AWS",
+      "highlights": [
+        "Published open-source Terraform module for Spark on AWS (>3k downloads)"
+      ],
+      "summary": "Developing cloud-native Python software for omics analysis",
       "url": "https://www.linkedin.com/company/csiro/",
-      "location": "Sydney, New South Wales, Australia"
+      "location": "Sydney, Australia"
     },
     {
       "company": "PTNG Consulting",
-      "position": "Consultant",
+      "position": "Consultant for ML/bioinformatics projects",
       "startDate": "2022-06-30",
       "endDate": "2024-01",
       "highlights": [],
-      "summary": "- conducting ML and bioinformatic analysis as well as literature research in order to communicate insights",
+      "summary": "ML for protein design/optimization and bioinformatics analysis",
       "url": "https://www.linkedin.com/company/ptng-consulting/",
-      "location": "Melbourne, Victoria, Australia"
+      "location": "Melbourne, Australia"
     },
     {
-      "company": "University of Cambridge",
-      "position": "Thesis Student",
+      "company": "Chemistry Department, Cambridge University",
+      "position": "Thesis Student, Bernardes/Knowles/Sormanni Lab",
       "startDate": "2020-09-30",
       "endDate": "2021-10-31",
       "highlights": [],
-      "summary": "- designed peptide therapeutics and worked on [screening system](https://www.nature.com/articles/s41467-022-35265-7)\n- built database for high-quality antibody sequences, including data quality control and annotation\n- developed ML models with PyTorch and processing pipeline to [quantify nativeness of antibody sequences](https://www.biorxiv.org/content/10.1101/2023.04.28.538712v1)",
+      "summary": "Developed peptide therapeutics and protein screening system (Nature Communications)",
       "url": "https://www.linkedin.com/school/university-of-cambridge/",
-      "location": "Cambridge, England, United Kingdom"
+      "location": "Cambridge, UK"
     },
     {
-      "company": "BioMedX Innovation Center",
+      "company": "BioMed X Innovation Center (with Janssen Pharmaceuticals)",
       "position": "Research Intern",
       "startDate": "2019-08-31",
       "endDate": "2020-04-30",
       "highlights": [],
-      "summary": "Team IAA in cooperation with Janssen Pharmaceuticals: \n- worked on a [screening system for autoimmune diseases](https://www.biorxiv.org/content/10.1101/2023.05.16.540992v1)\n- identification of auto-antigens, construction of T cell reporter lines",
+      "summary": "Established a screening system for autoimmune diseases for multi-national pharmaceutical company, enabling personalized screens",
       "url": "https://www.linkedin.com/company/biomed-x-institute/",
       "location": "Heidelberg, Germany"
     }
@@ -118,24 +110,6 @@
       "summary": "Organized nationwide comms strategy for empowering biotech talents",
       "highlights": [],
       "url": "https://nucleate.xyz/locations/united-kingdom/"
-    },
-    {
-      "organization": "Förderverein der Biologie-Olympiade",
-      "position": "Internship Officer",
-      "startDate": "2019-05-31",
-      "endDate": "2022-07-31",
-      "summary": "In the context of the Biology Olympiad, I organize internships for successful and motivated participants and am the responsible coordinator between the pupils and the supervising professors or PhD students.",
-      "highlights": [],
-      "url": "https://ibo-verein.de/"
-    },
-    {
-      "organization": "Studierendenrat Heidelberg",
-      "position": "Conference Coordinator",
-      "startDate": "2018-11-30",
-      "endDate": "2020-09-30",
-      "summary": "As a member of the Conference Administration of the Student Council Heidelberg, I organized and led the conferences and worked together with people from all different backgrounds on proposals.",
-      "highlights": [],
-      "url": "https://www.stura.uni-heidelberg.de/"
     }
   ],
   "education": [
@@ -146,8 +120,10 @@
       "startDate": "2024",
       "courses": [
         "Research in generative ML for protein design and optimization, supervised by Michael Bronstein.",
-        "ELLIS PhD Scholar and EPSRC fully-funded scholarship"
-      ]
+        "ELLIS PhD Scholar and EPSRC fully-funded scholarship",
+        "Supervised Principles of Programming Languages, Concurrent Programming and CompBio"
+      ],
+      "endDate": "2027"
     },
     {
       "institution": "Cambridge University",
@@ -157,12 +133,9 @@
       "endDate": "2023-08-31",
       "gpa": "Distinction",
       "courses": [
-        "Theory of Deep Learning",
-        "ML Systems",
-        "optimisation",
-        "biological design",
-        "genomics I+II",
-        "systems biology"
+        "Lectures include adv. graph ML, protein design, information theory, probabilistic ML",
+        "Supervised algorithms course, designed and lectured course on SDEs+Generative Modelling",
+        "1-month research stay at MILA (Montreal, CA) as a visiting researcher for ML in Drug Discovery"
       ]
     },
     {
@@ -173,12 +146,9 @@
       "endDate": "2023",
       "gpa": "1.0 (best in year, German scale)",
       "courses": [
-        "machine learning I+II",
-        "operating systems + networks",
-        "GPU computing",
-        "numerics",
-        "software development",
-        "algorithms & data structures"
+        "Lectures from CS/Physics faculty, including machine learning I+II, GPU computing, operating systems, networks, software development, algorithms",
+        "Lectures from Biology/Chemistry faculty, including bioinformatics and simulation methods",
+        "Designed and lectured a course on data analysis with Python and bioinformatics"
       ]
     },
     {
@@ -189,11 +159,7 @@
       "endDate": "2021-12-31",
       "gpa": "/",
       "courses": [
-        "math. methods",
-        "symmetry",
-        "cheminformatics",
-        "theoretical chemistry",
-        "scientific programming"
+        "Natural Sciences Part II, lectures including math. methods, symmetry, theor. chemistry"
       ]
     },
     {
@@ -204,11 +170,7 @@
       "endDate": "2021-09-30",
       "gpa": "1.0 (best in year, German scale)",
       "courses": [
-        "bioinformatics",
-        "statistical learning",
-        "molecular biology",
-        "protein engineering",
-        "organic chemistry"
+        "Additional lectures in statistical learning"
       ]
     }
   ],
@@ -270,87 +232,1181 @@
       "date": "2018"
     }
   ],
-  "certificates": [
+  "publications": [
     {
-      "name": "Fundamentals of Deep Learning",
-      "issuer": "NVIDIA",
-      "startDate": "2022-06-30",
-      "url": "https://courses.nvidia.com/certificates/14800358ebc948bdbaf306e195c74ff5/"
+      "name": "tmol: a GPU-accelerated implementation of the Rosetta energy function for machine learning",
+      "url": "https://arxiv.org/abs/2611.21857",
+      "publisher": "arXiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Andrew Leaver-Fay*",
+        "Kieran Didi*",
+        "Jeff Flatten*",
+        "Alex Ford",
+        "Guangfeng Zhou",
+        "Nathaniel Corley",
+        "Hahnbeom Park",
+        "Maxwell W. Kazman",
+        "Rafael I. Brent",
+        "Joseph Kleinhenz",
+        "Henry Solberg",
+        "Andrew M. Watkins",
+        "Brian Kuhlman",
+        "David Baker",
+        "Frank DiMaio"
+      ]
     },
     {
-      "name": "Fundamentals of Deep Learning for Multi-GPUs",
-      "issuer": "NVIDIA",
-      "startDate": "2022-06-30",
-      "url": "https://courses.nvidia.com/certificates/ed43e69f4c834cd48d0cc1e43adb9367/"
+      "name": "Biomolecular design through latent reasoning with RFD4-Proteina",
+      "url": "https://doi.org/10.64898/2026.11.12.766037",
+      "publisher": "bioRxiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Nathaniel Corley*",
+        "Kieran Didi*",
+        "Maxwell W. Kazman*",
+        "Rafael I. Brent*",
+        "Magnus S. Bauer",
+        "Riti Biswas",
+        "Julia E. Bonzanini",
+        "Adam M. Chazin-Gray",
+        "Jie Chen",
+        "Andrew Favor",
+        "Maximilian Gantz",
+        "Henry A. Jones",
+        "Paul Kim",
+        "Margaret C. Lunn-Halbert",
+        "Nora K. McNamara-Bordewick",
+        "Saman Salike",
+        "DéJenaé L. See",
+        "Shajesh Sharma",
+        "Eric Sun",
+        "Preetham Venkatesh",
+        "Seth M. Woodbury",
+        "Kejia Wu",
+        "Yuyang Zhang",
+        "Joel D. Allen",
+        "Jasper Butcher",
+        "Lemuel Chang",
+        "Yehlin Cho",
+        "Alexis Courbet",
+        "Brian Coventry",
+        "Christian Dallago",
+        "Elliot S. Delfosse",
+        "Helen E. Eisenach",
+        "Mariana Garcia Sanchez",
+        "Tomas Geffner",
+        "Inna Goreshnik",
+        "Per Greisen",
+        "Andrew C. Hunt",
+        "David E. Kim",
+        "Donghyo Kim",
+        "Brianne R. King",
+        "Rohith Krishna",
+        "Yanjing Li",
+        "Zi Ming Li",
+        "Aiko Muraishi",
+        "Edin Muratspahíc",
+        "Oliver Nagl",
+        "Griffin H. Rangel",
+        "Antonia Ruder",
+        "Hojeong Shin",
+        "Zefei Xu",
+        "Yuwei Yang",
+        "Max Crispin",
+        "Neil P. King",
+        "Frank DiMaio",
+        "Gaurav Bhardwaj",
+        "Michael Bronstein",
+        "Karsten Kreis",
+        "Donald Hilvert",
+        "Anthony P. Green",
+        "Arash Vahdat",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "Programmable amide bond formation using de novo ligases",
+      "url": "https://doi.org/10.64898/2026.11.08.765178",
+      "publisher": "bioRxiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Saman Salike",
+        "Timo Flügel",
+        "Maximilian Gantz",
+        "Stanislav S. Moroz",
+        "Andrew C Hunt",
+        "Henry Jones",
+        "Abhishek Singh",
+        "Nathaniel Corley",
+        "Kieran Didi",
+        "Rafael I Brent",
+        "Maxwell W Kazman",
+        "Zefei Xu",
+        "Christina Savvides",
+        "Seth M Woodbury",
+        "Belen Sotomayor",
+        "Hannah Nguyen",
+        "Johnny Mendoza",
+        "Alex Kang",
+        "Asim K Bera",
+        "Xinting Li",
+        "Sambashiva Banala",
+        "Jasper Butcher",
+        "Luke D Lavis",
+        "Anthony P Green",
+        "Donald Hilvert",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "Adapting biological mechanisms for agentic protein design",
+      "url": "https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/",
+      "publisher": "preprint",
+      "releaseDate": "2026",
+      "authors": [
+        "Yehlin Cho",
+        "Kieran Didi",
+        "Micha Livne",
+        "Kyle Gion",
+        "Christian Dallago*"
+      ]
+    },
+    {
+      "name": "Fast remote nucleotide sequence alignment with Riboseek",
+      "url": "https://doi.org/10.64898/2026.07.31.741718",
+      "publisher": "bioRxiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Sukhwan Park",
+        "Kieran Didi",
+        "Andrew Favor",
+        "Anton Bushuiev",
+        "Soohyun Kim",
+        "Milot Mirdita",
+        "Martin Steinegger"
+      ]
+    },
+    {
+      "name": "Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale",
+      "url": "https://doi.org/10.64898/2026.09.12.751118",
+      "publisher": "bioRxiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Kieran Didi*",
+        "Danny Reidenbach*",
+        "Matthew Penner",
+        "Supriya Ravichandran",
+        "Marshall Case",
+        "Mike Nichols",
+        "Erik Swanson",
+        "Alex Reis",
+        "Maggie Prescott",
+        "Yue Qian",
+        "Dongming Qian",
+        "Jingjing Yang",
+        "Weiji Li",
+        "Le Li",
+        "Daichi Shonai",
+        "Sean Gay",
+        "Bhoomika Basu Mallik",
+        "Ho Yeung Chim",
+        "Liurong Chen",
+        "Miguel Atienza Juanatey",
+        "Hubert Klein",
+        "Dominic Rieger",
+        "Phillip Schlegel",
+        "Anna U. Macintyre",
+        "Maxim Secor",
+        "Daniele Granata",
+        "Sooyoung Cha",
+        "Zhonglin Cao",
+        "Guoqing Zhou",
+        "Tomas Geffner",
+        "Xi Chen",
+        "Micha Livne",
+        "Zuobai Zhang",
+        "Tianjing Zhang",
+        "Kyle Gion",
+        "Michael M. Bronstein",
+        "Martin Steinegger",
+        "Kristine Deibler",
+        "Scott Soderling",
+        "Clara T. Schoeder",
+        "Alena Khmelinskaia",
+        "Florian Hollfelder",
+        "Christian Dallago",
+        "Emine Kucukbenli",
+        "Arash Vahdat",
+        "Pierce Ogden",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "AlphaFold Database expands to proteome-scale quaternary structures",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.03.27.714458v1",
+      "publisher": "bioRxiv",
+      "releaseDate": "2026",
+      "authors": [
+        "Yewon Han",
+        "Maxim I Tsenkov",
+        "Niccolò AE Venanzi",
+        "Sooyoung Cha",
+        "Nilkanth Patel",
+        "Sreenath Nair",
+        "Razan Abbara",
+        "Damian Bertoni",
+        "Alejandro Chacón",
+        "Nick Dietrich",
+        "Boris Fomitchev",
+        "Yonathan Goldtzvik",
+        "Darren Hsu",
+        "Jeannie Austin",
+        "Joseph Ellaway",
+        "Kieran Didi",
+        "Gyuri Kim",
+        "Hyunbin Kim",
+        "Oleg Kovalevskiy",
+        "Dariusz Lasecki",
+        "Agata Laydon",
+        "Micha Livne",
+        "Paulyna Magaña",
+        "Maciej Majewski",
+        "Urmila Paramval",
+        "Risha Patel",
+        "Ivanna Pidruchna",
+        "Brianda Santini Lopez",
+        "Prashant Sohani",
+        "Ahsan Tanweer",
+        "Duc Tran",
+        "Kyle Tretina",
+        "Melanie Vollmar",
+        "Quan Vu",
+        "Augustin Žídek",
+        "Sameer Velankar",
+        "Martin Steinegger",
+        "Jennifer Fleming",
+        "Milot Mirdita",
+        "Christian Dallago"
+      ]
+    },
+    {
+      "name": "A universal model for drug-receptor interactions",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.08.01.668090v10",
+      "publisher": "bioRxiv",
+      "releaseDate": "2025",
+      "authors": [
+        "Filipe Menezes",
+        "Adam Wahida",
+        "Tony Fröhlich",
+        "Phillip Grass",
+        "Jan Zauita",
+        "Valeria Napolitano",
+        "Till Siebenmorgen",
+        "Katarzyna Pustelny",
+        "Agata Barzowska-Gogola",
+        "Sarah Rioton",
+        "Kieran Didi",
+        "Michael Bronstein",
+        "Anna Czarna",
+        "Andreas Hochhaus",
+        "Oliver Plettenburg",
+        "Michael Sattler",
+        "Johannes NissenMeyer",
+        "Marcus Conrad",
+        "Razelle Kurzrock",
+        "Grzegorz M. Popowicz"
+      ]
+    },
+    {
+      "name": "Accelerating Biomolecular Modeling with AtomWorks and RF3",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2.abstract",
+      "publisher": "bioRxiv",
+      "releaseDate": "2025",
+      "authors": [
+        "Nathaniel Corley*",
+        "Simon Mathis*",
+        "Rohith Krishna*",
+        "Magnus S Bauer",
+        "Tuscan R Thompson",
+        "Woody Ahern",
+        "Maxwell W Kazman",
+        "Rafael I Brent",
+        "Kieran Didi",
+        "Andrew Kubaney",
+        "Lilian McHugh",
+        "Arnav Nagle",
+        "Andrew Favor",
+        "Meghana Kshirsagar",
+        "Pascal Sturmfels",
+        "Yanjing Li",
+        "Jasper Butcher",
+        "Bo Qiang",
+        "Lars L Schaaf",
+        "Raktim Mitra",
+        "Katelyn Campbell",
+        "Odin Zhang",
+        "Roni Weissman",
+        "Ian R Humphreys",
+        "Qian Cong",
+        "Jonathan Funk",
+        "Shreyash Sonthalia",
+        "Pietro Liò",
+        "David Baker",
+        "Frank DiMaio"
+      ]
+    },
+    {
+      "name": "MotifBench: A standardized protein design benchmark for motif-scaffolding problems",
+      "url": "https://arxiv.org/abs/2502.12479",
+      "publisher": "arXiv",
+      "releaseDate": "2025",
+      "authors": [
+        "Zhuoqi Zheng",
+        "Bo Zhang",
+        "Kieran Didi",
+        "Kevin K. Yang",
+        "Jason Yim",
+        "Joseph L. Watson",
+        "Hai-Feng Chen",
+        "Brian L. Trippe"
+      ]
+    },
+    {
+      "name": "BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery",
+      "url": "https://arxiv.org/abs/2411.10548",
+      "publisher": "arXiv",
+      "releaseDate": "2024",
+      "authors": [
+        "Peter St. John",
+        "Dejun Lin",
+        "Polina Binder",
+        "Malcolm Greaves",
+        "Vega Shah",
+        "John St. John",
+        "Adrian Lange",
+        "Patrick Hsu",
+        "Rajesh Illango",
+        "Arvind Ramanathan",
+        "Anima Anandkumar",
+        "David H Brookes",
+        "Akosua Busia",
+        "Abhishaike Mahajan",
+        "Stephen Malina",
+        "Neha Prasad",
+        "Sam Sinai",
+        "Lindsay Edwards",
+        "Thomas Gaudelet",
+        "Cristian Regep",
+        "Martin Steinegger",
+        "Burkhard Rost",
+        "Alexander Brace",
+        "Kyle Hippe",
+        "Luca Naef",
+        "Keisuke Kamata",
+        "George Armstrong",
+        "Kevin Boyd",
+        "Zhonglin Cao",
+        "Han-Yi Chou",
+        "Simon Chu",
+        "Allan dos Santos Costa",
+        "Sajad Darabi",
+        "Eric Dawson",
+        "Kieran Didi",
+        "Cong Fu",
+        "Mario Geiger",
+        "Michelle Gill",
+        "Darren J Hsu",
+        "Gagan Kaushik",
+        "Maria Korshunova",
+        "Steven Kothen-Hill",
+        "Youhan Lee",
+        "Meng Liu",
+        "Micha Livne",
+        "Zachary McClure",
+        "Jonathan Mitchell",
+        "Alireza Moradzadeh",
+        "Ohad Mosafi",
+        "Youssef Nashed",
+        "Saee Paliwal",
+        "Yuxing Peng",
+        "Sara Rabhi",
+        "Farhad Ramezanghorbani",
+        "Danny Reidenbach",
+        "Camir Ricketts",
+        "Brian C Roland",
+        "Kushal Shah",
+        "Tyler Shimko",
+        "Hassan Sirelkhatim",
+        "Savitha Srinivasan",
+        "Abraham C Stern",
+        "Dorota Toczydlowska",
+        "Srimukh Prasad Veccham",
+        "Niccolò Alberto Elia Venanzi",
+        "Anton Vorontsov",
+        "Jared Wilber",
+        "Isabel Wilkinson",
+        "Wei Jing Wong",
+        "Eva Xue",
+        "Cory Ye",
+        "Xin Yu",
+        "Yang Zhang",
+        "Guoqing Zhou",
+        "Becca Zandstein",
+        "Alejandro Chacon",
+        "Prashant Sohani",
+        "Maximilian Stadler",
+        "Christian Hundt",
+        "Feiwen Zhu",
+        "Christian Dallago",
+        "Bruno Trentini",
+        "Emine Kucukbenli",
+        "Saee Paliwal",
+        "Timur Rvachov",
+        "Eddie Calleja",
+        "Johnny Israeli",
+        "Harry Clifford",
+        "Risto Haukioja",
+        "Nicholas Haemel",
+        "Kyle Tretina",
+        "Neha Tadimeti",
+        "Anthony B Costa"
+      ]
+    },
+    {
+      "name": "BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.05.22.540599v1",
+      "publisher": "bioRxiv",
+      "releaseDate": "2023",
+      "authors": [
+        "Divyang Deep Tiwari",
+        "Nils Hoffmann",
+        "Kieran Didi",
+        "Sumukh Deshpande",
+        "Sucheta Ghosh",
+        "Tung V. N. Nguyen",
+        "Karthik Raman",
+        "Henning Hermjakob",
+        "Rahuman S Malik Sheriff"
+      ]
+    },
+    {
+      "name": "Online Search-Augmented Reinforcement Post-Training for All-Atom Protein Design",
+      "url": "https://openreview.net/forum?id=PIj90T0pCO",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Yanjing Li",
+        "Shayaan Uddin",
+        "Kieran Didi",
+        "Maxwell Kazman",
+        "Nathaniel Corley",
+        "Rafael I. Brent",
+        "Rohith Krishna",
+        "Fanglei Xue",
+        "Hanqi Feng",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "Multimodal Latent Flow Matching for De Novo Nanobody Design",
+      "url": "https://openreview.net/forum?id=9HFK96EYgl",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Danny Reidenbach",
+        "Guoqing Zhou",
+        "Yue Wang",
+        "Yousef Nashed",
+        "Zhonglin Cao",
+        "Simon K.S. Chu",
+        "Youhan Lee",
+        "Kieran Didi",
+        "Zuobai Zhang",
+        "Tomas Geffner",
+        "Arash Vahdat",
+        "Karsten Kreis",
+        "Emine Kucukbenli"
+      ]
+    },
+    {
+      "name": "Multi-Scenario Generative Protein Design via Preference Alignment",
+      "url": "https://openreview.net/forum?id=ZjTEBV3mT2",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Felix Faltings",
+        "Zuobai Zhang",
+        "Tomas Geffner",
+        "Tommi Jaakkola",
+        "Karsten Kreis",
+        "Arash Vahdat",
+        "Kieran Didi"
+      ]
+    },
+    {
+      "name": "Proteina-Reforza: Reinforcement Learning Protein Binder Design",
+      "url": "https://openreview.net/forum?id=nvnIYLDgTp",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Zuobai Zhang",
+        "Chaoran Cheng",
+        "Yehlin Cho",
+        "Zhonglin Cao",
+        "Guanhua He",
+        "Kieran Didi",
+        "Danny Reidenbach",
+        "Tomas Geffner",
+        "Maxim Secor",
+        "Veronika Thost",
+        "Ge Liu",
+        "William J. Greenleaf",
+        "Kristine Deibler",
+        "Emine Kucukbenli",
+        "Christian Dallago",
+        "Arash Vahdat",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "Proteina-Pronto: Fast De Novo Protein Design and Structure Prediction via Distillation",
+      "url": "https://openreview.net/forum?id=DDGx4Agd4S",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Tomas Geffner*",
+        "Karsten Kreis*",
+        "Zhonglin Cao*",
+        "Kieran Didi*",
+        "Zuobai Zhang",
+        "Danny Reidenbach",
+        "Guoqing Zhou",
+        "Micha Livne",
+        "Christian Dallago",
+        "Emine Kucukbenli",
+        "Arash Vahdat"
+      ]
+    },
+    {
+      "name": "Towards All-Atom Protein World Models: Learning and Diagnosing Predictive Latent Representations",
+      "url": "https://openreview.net/forum?id=ohiv4hh8dy",
+      "publisher": "OpenReview",
+      "releaseDate": "2026",
+      "authors": [
+        "Aisha Hodzic",
+        "Kieran Didi",
+        "Michael M. Bronstein"
+      ]
+    },
+    {
+      "name": "DMSsim: a statistical design framework for count-based sorting experiments that generate AI-ready sequence–function data",
+      "url": "",
+      "publisher": "Manuscript in preparation",
+      "releaseDate": "",
+      "authors": [
+        "Kieran Didi*",
+        "Simon V. Mathis*",
+        "Matthew Penner",
+        "Maximilian Gantz",
+        "Florian Hollfelder",
+        "Michael M. Bronstein"
+      ]
+    },
+    {
+      "name": "Atomic functional site scaffolding in biopolymers with RFdiffusion3",
+      "url": "https://doi.org/10.1126/science.aeh2982",
+      "publisher": "Science",
+      "releaseDate": "2026",
+      "authors": [
+        "Jasper Butcher",
+        "Rohith Krishna",
+        "Raktim Mitra",
+        "Seth M. Woodbury",
+        "Donghyo Kim",
+        "Rafael I. Brent",
+        "Yanjing Li",
+        "Nathaniel Corley",
+        "Andrew Favor",
+        "Anqi Chen",
+        "Paul T. Kim",
+        "Jonathan Funk",
+        "Gabriela Bastidas Reinoso",
+        "Kejia Wu",
+        "Aiko Muraishi",
+        "Helen E. Eisenach",
+        "Saman Salike",
+        "Simon Mathis",
+        "Tuscan Rock Thompson",
+        "Antonia Ruder",
+        "Enisha Sehgal",
+        "Andrew Kubaney",
+        "Jie Chen",
+        "Yuliya Politanska",
+        "Brian Coventry",
+        "Odin Zhang",
+        "Florence J. Hardy",
+        "Bo Qiang",
+        "Kieran Didi",
+        "Maxwell Kazman",
+        "Lars L. Schaaf",
+        "Frank DiMaio",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "De novo design of cysteine proteases",
+      "url": "https://doi.org/10.1038/s41586-026-11143-w",
+      "publisher": "Nature",
+      "releaseDate": "2026",
+      "authors": [
+        "Hojae Choi",
+        "Magnus S. Bauer",
+        "Brian Coventry",
+        "Preetham Venkatesh",
+        "Anqi Chen",
+        "Donghyo Kim",
+        "Asim K. Bera",
+        "Alex Kang",
+        "Hannah Nguyen",
+        "Shayan Sadre",
+        "Justin Decarreau",
+        "Emily Joyce",
+        "Bhanumathi Shankaran",
+        "Tuscan Rock Thompson",
+        "Gabriel Greenstein",
+        "Kieran Didi",
+        "Lars L. Schaaf",
+        "Jacob Merle Gershon",
+        "Alexander F. Shida",
+        "Gyu Rie Lee",
+        "Donald Hilvert",
+        "Samuel J. Pellock",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "Computational design of metalloproteases",
+      "url": "https://doi.org/10.1038/s41586-026-11167-2",
+      "publisher": "Nature",
+      "releaseDate": "2026",
+      "authors": [
+        "Anqi Chen*",
+        "Kejia Wu*",
+        "Hojae Choi",
+        "Preetham Venkatesh",
+        "Samuel J. Pellock",
+        "Nikita Hanikel",
+        "Hojeong Shin",
+        "Declan Evans",
+        "Kieran Didi",
+        "Lars L. Schaaf",
+        "Cristina Díaz-Perlas",
+        "Brian Coventry",
+        "Donghyo Kim",
+        "Seth M. Woodbury",
+        "Pengfei Ji",
+        "Shingo Honda",
+        "Asim K. Bera",
+        "Hannah Nguyen",
+        "Alex Kang",
+        "Yanqing Wang",
+        "Xinting Li",
+        "Stacey Gerben",
+        "Lemuel Chang",
+        "Xiao Yan",
+        "Benjamí Oller-Salvia",
+        "Anthony A. Hyman",
+        "Donald Hilvert",
+        "David Baker"
+      ]
+    },
+    {
+      "name": "Efficient protein structure prediction from compact computers to datacenters with OpenFold-TRT",
+      "url": "https://doi.org/10.34133/csbj.0242",
+      "publisher": "Computational and Structural Biotechnology Journal",
+      "releaseDate": "2026",
+      "authors": [
+        "Kieran Didi*",
+        "Prashant Sohani*",
+        "Fabian Berressem",
+        "Alexander Nesterovskiy",
+        "Boris Fomitchev",
+        "Robert Ohannessian",
+        "Mohamed Elbalkini",
+        "Jonathan Cogan",
+        "Anthony Costa",
+        "Arash Vahdat",
+        "Felix Kallenborn",
+        "Bertil Schmidt",
+        "Milot Mirdita",
+        "Martin Steinegger",
+        "Christian Dallago",
+        "Alejandro Chacon"
+      ]
+    },
+    {
+      "name": "Predicting PROTAC off-target effects via warhead involvement levels in drug–target interactions using graph attention neural networks",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2001037025004301",
+      "publisher": "Computational and Structural Biotechnology Journal",
+      "releaseDate": "2025",
+      "authors": [
+        "Yutong Hu",
+        "Kieran Didi",
+        "Adam P. Cribbs",
+        "Jianfeng Sun"
+      ]
+    },
+    {
+      "name": "GPU-accelerated homology search with MMseqs2",
+      "url": "https://www.nature.com/articles/s41592-025-02819-8",
+      "publisher": "Nature Methods",
+      "releaseDate": "2025",
+      "authors": [
+        "Felix Kallenborn*",
+        "Alejandro Chacon*",
+        "Christian Hundt",
+        "Hassan Sirelkhatim",
+        "Kieran Didi",
+        "Sooyoung Cha",
+        "Christian Dallago",
+        "Milot Mirdita",
+        "Bertil Schmidt",
+        "Martin Steinegger"
+      ]
+    },
+    {
+      "name": "Structure-based Drug Design with Equivariant Diffusion Models",
+      "url": "https://www.nature.com/articles/s43588-024-00737-x",
+      "publisher": "Nature Computational Science",
+      "releaseDate": "2024",
+      "authors": [
+        "Arne Schneuing*",
+        "Yuanqi Du*",
+        "Charles Harris*",
+        "Kieran Didi",
+        "Arian Jamasb",
+        "Ilia Igashov",
+        "weitao Du",
+        "Tom Blundell",
+        "Pietro Liò",
+        "Carla Gomes",
+        "Max Welling",
+        "Michael Bronstein",
+        "Bruno Correia"
+      ]
+    },
+    {
+      "name": "MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery",
+      "url": "https://www.nature.com/articles/s43588-024-00627-2",
+      "publisher": "Nature Computational Science",
+      "releaseDate": "2024",
+      "authors": [
+        "Till Siebenmorgen*",
+        "Filipe Menezes*",
+        "Sabrina Benassou",
+        "Erinc Merdivan",
+        "Kieran Didi",
+        "André Santos Dias Mourão",
+        "Radosław Kitel",
+        "Pietro Liò",
+        "Stefan Kesselheim",
+        "Marie Piraud",
+        "Fabian J. Theis",
+        "Michael Sattler",
+        "Grzegorz M. Popowicz"
+      ]
+    },
+    {
+      "name": "Synsor: a tool for alignment-free detection of engineered DNA sequences",
+      "url": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2024.1375626/full",
+      "publisher": "Frontiers in Bioengineering and Biotechnology",
+      "releaseDate": "2024",
+      "authors": [
+        "Aidan P Tay",
+        "Kieran Didi",
+        "Anuradha Wickramarachchi",
+        "Denis Bauer",
+        "Laurence Wilson",
+        "Maciej Maselko"
+      ]
+    },
+    {
+      "name": "AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering",
+      "url": "https://www.nature.com/articles/s42256-023-00778-3",
+      "publisher": "Nature Machine Intelligence",
+      "releaseDate": "2023",
+      "authors": [
+        "Aubin Ramon",
+        "Montader Ali",
+        "Misha Atkinson",
+        "Alessio Saturnino",
+        "Kieran Didi",
+        "Cristina Visentin",
+        "Stefano Ricagno",
+        "Xing Xu",
+        "Matthew Greenig",
+        "Pietro Sormanni"
+      ]
+    },
+    {
+      "name": "Biomolecular condensate phase diagrams with a combinatorial microdroplet platform",
+      "url": "https://www.nature.com/articles/s41467-022-35265-7",
+      "publisher": "Nature Communications",
+      "releaseDate": "2022",
+      "authors": [
+        "William E. Arter*",
+        "Runzhang Qi*",
+        "Nadia A. Erkamp*",
+        "Georg Krainer*",
+        "Kieran Didi",
+        "Timothy J. Welsh",
+        "Julia Acker",
+        "Jonathan Nixon-Abell",
+        "Seema Qamar",
+        "Jordina Guillén-Boixet",
+        "Titus M. Franzmann",
+        "David Kuster",
+        "Anthony A. Hyman",
+        "Alexander Borodavka",
+        "Peter St George-Hyslop",
+        "Simon Alberti",
+        "Tuomas P. J. Knowles"
+      ]
+    },
+    {
+      "name": "RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design",
+      "url": "https://openreview.net/forum?id=wOc1Yx5s09",
+      "publisher": "Transactions on Machine Learning Research",
+      "releaseDate": "2025",
+      "authors": [
+        "Rishabh Anand*",
+        "Chaitanya K. Joshi*",
+        "Alex Morehead",
+        "Arian R. Jamasb",
+        "Charles Harris",
+        "Simon V. Mathis",
+        "Kieran Didi",
+        "Rex Ying",
+        "Bryan Hooi",
+        "Pietro Liò"
+      ]
+    },
+    {
+      "name": "FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications",
+      "url": "https://proceedings.mlr.press/v306/didi26a.html",
+      "publisher": "ICML (oral presentation)",
+      "releaseDate": "2026",
+      "authors": [
+        "Kieran Didi",
+        "Sarah Alamdari",
+        "Alex X Lu",
+        "Bruce Wittmann",
+        "Kadina E Johnston",
+        "Ava P Amini",
+        "Ali K Madani",
+        "Maya Czeneszew",
+        "Christian Dallago",
+        "Kevin K Yang"
+      ]
+    },
+    {
+      "name": "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
+      "publisher": "ICLR (oral presentation)",
+      "releaseDate": "2026",
+      "authors": [
+        "Kieran Didi*",
+        "Zuobai Zhang*",
+        "Guoqing Zhou*",
+        "Danny Reidenbach*",
+        "Zhonglin Cao*",
+        "Sooyoung Cha*",
+        "Tomas Geffner",
+        "Christian Dallago",
+        "Jian Tang",
+        "Michael M. Bronstein",
+        "Martin Steinegger",
+        "Emine Kucukbenli",
+        "Arash Vahdat",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6e1734c47c0cc899021060d88f69dc65-Abstract-Conference.html",
+      "publisher": "ICLR",
+      "releaseDate": "2026",
+      "authors": [
+        "Tomas Geffner*",
+        "Kieran Didi*",
+        "Danny Reidenbach",
+        "Zhonglin Cao",
+        "Zuobai Zhang",
+        "Christian Dallago",
+        "Emine Kucukbenli",
+        "Arash Vahdat",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "Compositional Flows for 3D Molecule and Synthesis Pathway Co-design",
+      "url": "https://proceedings.mlr.press/v267/shen25b.html",
+      "publisher": "ICML",
+      "releaseDate": "2025",
+      "authors": [
+        "Tony Shen*",
+        "Seonghwan Seo*",
+        "Ross Irwin",
+        "Kieran Didi",
+        "Simon Olsson",
+        "Woo Youn Kim",
+        "Martin Ester"
+      ]
+    },
+    {
+      "name": "Proteina: Scaling Flow-based Protein Structure Generative Models",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/f4e9121ad30cd4e5528042fbfd835b3f-Abstract-Conference.html",
+      "publisher": "ICLR (oral presentation)",
+      "releaseDate": "2025",
+      "authors": [
+        "Tomas Geffner*",
+        "Kieran Didi*",
+        "Zuobai Zhang*",
+        "Danny Reidenbach",
+        "Zhonglin Cao",
+        "Jason Yim",
+        "Mario Geiger",
+        "Christian Dallago",
+        "Emine Kucukbenli",
+        "Arash Vahdat",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/22d258dfbdf840ccbf266bbc545dd95f-Abstract-Conference.html",
+      "publisher": "NeurIPS",
+      "releaseDate": "2024",
+      "authors": [
+        "Alexander Denker*",
+        "Francisco Vargas*",
+        "Shreyas Padhy*",
+        "Kieran Didi*",
+        "Simon Mathis*",
+        "Vincent Dutordoir",
+        "Riccardo Barbano",
+        "Emile Mathieu",
+        "Urszula Julia Komorowska",
+        "Pietro Lio"
+      ]
+    },
+    {
+      "name": "Dynamics-Informed Protein Design with Structure Conditioning",
+      "url": "https://openreview.net/forum?id=jZPqf2G9Sw",
+      "publisher": "ICLR",
+      "releaseDate": "2024",
+      "authors": [
+        "Urszula Julia Komorowska*",
+        "Simon V Mathis*",
+        "Kieran Didi",
+        "Francisco Vargas",
+        "Pietro Lio",
+        "Mateja Jamnik"
+      ]
+    },
+    {
+      "name": "Evaluating Representation Learning on the Protein Structure Universe",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/6d6f9908ea35313dd7566f5ce8c6e815-Abstract-Conference.html",
+      "publisher": "ICLR",
+      "releaseDate": "2024",
+      "authors": [
+        "Arian Rokkum Jamasb*",
+        "Alex Morehead*",
+        "Zuobai Zhang*",
+        "Chaitanya Joshi*",
+        "Kieran Didi",
+        "Simon Mathis",
+        "Charles Harris",
+        "Jian Tang",
+        "Jianlin Cheng",
+        "Pietro Liò",
+        "Tom Blundell"
+      ]
+    },
+    {
+      "name": "Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design",
+      "url": "https://openreview.net/pdf/abe94d2f9446dab1e5bff1b7a2ea121c043ad986.pdf",
+      "publisher": "ICML GenBio",
+      "releaseDate": "2025",
+      "authors": [
+        "Junhua Chen",
+        "Simon Mathis",
+        "Charles Harris",
+        "Kieran Didi",
+        "Pietro Lio"
+      ]
+    },
+    {
+      "name": "Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design",
+      "url": "https://openreview.net/pdf/0e4002289fe69955fa6da8bd2b75d3d0ced39f58.pdf",
+      "publisher": "NeurIPS AI4Science",
+      "releaseDate": "2025",
+      "authors": [
+        "Danny Reidenbach",
+        "Zhonglin Cao",
+        "Zuobai Zhang",
+        "Kieran Didi",
+        "Tomas Geffner",
+        "Guoqing Zhou",
+        "Jian Tang",
+        "Christian Dallago",
+        "Arash Vahdat",
+        "Emine Kucukbenli",
+        "Karsten Kreis"
+      ]
+    },
+    {
+      "name": "A framework for conditional diffusion modelling with applications in motif scaffolding for protein design",
+      "url": "https://ai4d3.github.io/2023/papers/72.pdf",
+      "publisher": "NeurIPS AI4D3 (oral presentation)",
+      "releaseDate": "2023",
+      "authors": [
+        "Kieran Didi*",
+        "Francisco Varga*",
+        "Simon Mathis*",
+        "Vincent Dutordoir*",
+        "Emile Mathieu",
+        "Urszula Julia Komorowska",
+        "Pietro Lio"
+      ]
+    },
+    {
+      "name": "Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?",
+      "url": "https://arxiv.org/abs/2308.07413",
+      "publisher": "NeurIPS MLSB (oral presentation)",
+      "releaseDate": "2023",
+      "authors": [
+        "Charles Harris",
+        "Kieran Didi",
+        "Arian Jamasb",
+        "Chaitanya Joshi",
+        "Simon Mathis",
+        "Pietro Lio",
+        "Tom Blundell"
+      ]
+    },
+    {
+      "name": "Modelling biology in novel ways - an AI-first course in Structural Bioinformatics",
+      "url": "https://openreview.net/forum?id=Zh5heSS5dc",
+      "publisher": "NeurIPS AI4Science",
+      "releaseDate": "2023",
+      "authors": [
+        "Kieran Didi",
+        "Charles Harris",
+        "Pietro Liò",
+        "Rainer Beck"
+      ]
+    },
+    {
+      "name": "Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models",
+      "url": "https://mlanthology.org/iclrw/2023/harris2023iclrw-flexible/",
+      "publisher": "ICLR MLDD",
+      "releaseDate": "2023",
+      "authors": [
+        "Charles Harris",
+        "Kieran Didi",
+        "Arne Schneuing",
+        "Yuanqi Du",
+        "Arian Jamasb",
+        "Michael Bronstein",
+        "Bruno Correia",
+        "Pietro Liò",
+        "Tom Blundell"
+      ]
+    },
+    {
+      "name": "Generating machine-learning-ready enzyme sequence-function data from microdroplet screening",
+      "url": "https://doi.org/10.1016/bs.mie.2026.10.008",
+      "publisher": "Methods in Enzymology, vol. 736",
+      "releaseDate": "2026",
+      "authors": [
+        "Kieran Didi",
+        "Simon V. Mathis",
+        "Matthew Penner",
+        "Michal Lihan",
+        "Michael M. Bronstein",
+        "Pietro Lio",
+        "Florian Hollfelder",
+        "Maximilian Gantz"
+      ]
+    },
+    {
+      "name": "Artificial Intelligence and Machine Learning in Bioinformatics",
+      "url": "https://doi.org/10.1016/B978-0-323-95502-7.00108-1",
+      "publisher": "Encyclopedia of Bioinformatics and Computational Biology, 2nd edition",
+      "releaseDate": "2025",
+      "authors": [
+        "Mitchell J. O’Brien",
+        "Letitia M. F. Sng",
+        "Priya Ramarao-Milne",
+        "Kieran Didi",
+        "Denis C. Bauer"
+      ]
     }
   ],
-  "publications": [],
-  "skills": [
-    {
-      "name": "Python",
-      "level": "professional",
-      "keywords": []
-    },
-    {
-      "name": "R",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "C++",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "ML for Biology",
-      "level": "professional",
-      "keywords": []
-    },
-    {
-      "name": "Cloud Computing",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "AWS",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "Terraform",
-      "level": "professional",
-      "keywords": []
-    },
-    {
-      "name": "Web Development",
-      "level": "Intermediate",
-      "keywords": []
-    },
-    {
-      "name": "Immunology",
-      "level": "professional",
-      "keywords": []
-    }
-  ],
-  "languages": [
-    {
-      "fluency": "Native Speaker",
-      "language": "German "
-    },
-    {
-      "fluency": "Native Speaker",
-      "language": "English"
-    },
-    {
-      "fluency": "Elementary proficiency",
-      "language": "French"
-    }
-  ],
-  "interests": [],
-  "references": [],
-  "projects": [],
   "meta": {
     "version": "v1.0.0",
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
-  }
+  },
+  "teaching": [
+    "Principles of Programming Languages, teaching, Oxford University, 10-12/2026",
+    "Concurrent Programming, teaching, Oxford University, 10-12/2026",
+    "Machine Learning Fundamentals, teaching, Oxford University, 08/2026",
+    "Machine Learning for Science, 2-week lecture course, Oxford Summer School, 07/2026",
+    "Bioinformatics, seminar series, Oxford University, 10/2025-02/2026",
+    "Generative Modelling in Protein Design and Bioinformatics, guest lecture in bioinformatics course, Stanford University, 07/2025",
+    "Deep Learning in Structure-Based Drug Design, tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024",
+    "SDEs and Diffusion Processes, lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024",
+    "Structural Bioinformatics, lecture, Heidelberg University (BSc Biochemistry), 10/2023",
+    "Graph Modelling with Applications to Structural Biology, presentation, CCAIM AI and Machine Learning Summer School, 09/2023",
+    "Advanced Python for Scientists, lecture, Heidelberg University, 06/2023",
+    "Algorithms II, supervising course on data structures and graph algorithms, Cambridge University, 03-05/2023",
+    "Algorithms I, Cambridge University, 01-03/2023",
+    "MLOps with PyTorch Lightning and W&B, workshop, ML Forum CSIRO Australia, 01/2023",
+    "Python for Scientists, lecture, Heidelberg University, 11/2022",
+    "Python Best Practices, workshop (co-host), Scientific Software Center Heidelberg, 11/2022",
+    "Deep Learning with PyTorch, Lunch Time Python workshop, Scientific Software Center Heidelberg, 10/2022",
+    "Python for Biochemists, lecture, Heidelberg University, 03/2022"
+  ],
+  "presentations": [
+    "RFD4-Proteina and recent results, Google DeepMind, London (UK), 11/2026",
+    "RFD4-Proteina for general protein design, Dayhoff Labs, London (UK), 11/2026",
+    "Enzyme design and RFD4-Proteina, Ellison Institute, Oxford (UK), 11/2026",
+    "RFD4-Proteina, Atomworks, and Annotated CIFs, RosettaCommons Workflows (online), 11/2026",
+    "The Proteina Model Family, In Silico, London (UK), 11/2026",
+    "RFD4-Proteina: Biomolecular Design through Latent Reasoning, Starkly Speaking Reading Group (online), 11/2026",
+    "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute,",
+    "Open tools & models at the frontier of biological science, The Next Generation Symposium (AITHYRA), Vienna (Austria), 11/2026",
+    "Biomolecular design through latent reasoning with RFD4-Proteina, European RosettaCon, Lisbon (Portugal), 10/2026",
+    "What we can and cannot learn from general GenAI: Universal molecular design with Proteina models, BZH, Heidelberg University (Germany), 10/2026",
+    "Latent generative search unlocks de novo design of untapped biomolecular interactions at scale, EMBL, Heidelberg (Germany), 10/2026",
+    "From Pixels to Proteins: Scaling Generative AI for Science, Charité, Berlin (Germany), 10/2026",
+    "State-of-the-art protein design with latent reasoning, GTC Berlin (Germany)",
+    "Unlocking glycan binding and other polar interactions via generative modelling, London Protein Design Day, Imperial College (UK), 06/2026",
+    "What comes after atomistic protein design? AI x Bio conference, Wellcome Sanger Institute Cambridge (UK), 06/2026",
+    "Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale, ML4ProteinEngineering Seminar (online), 04/2026",
+    "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute, Starkly Speaking Reading Group (online), 03/2026",
+    "La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching, ML4ProteinEngineering Seminar (online), 08/2025",
+    "Why equivariance is (not) so popular in Life Sciences (invited talk), ICML ML4LMS 2024, 07/2024",
+    "A framework for conditional diffusion models with applications in motif scaffolding for protein design, ML4ProteinEngineering Seminar (online), 06/2024",
+    "Conditioning generative models for proteins, images and more (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024",
+    "Where do we stand in protein and ligand design? (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023",
+    "Conditional Diffusion Models for Protein Design via Doob's h-transform (poster), MoML Conference, MIT (US), 11/2023",
+    "Reality Check - Evaluating Generative Models for Protein and Ligand Design (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023",
+    "Accessible AMR-detection tools for clinicians via cloud-based bioinformatics (oral presentation), Clinical Informatics Symposium, Melbourne (Australia), 12/2022",
+    "sINSIDER: a cloud-native modular platform for kmer-based genomic analysis (oral presentation), ABACBS Conference, Melbourne (Australia), 11/2022",
+    "Moving bioinformatics to the cloud (keynote), eSCAMPS Symposium, Cambridge (UK), 09/2022",
+    "Detecting DNA integration via HPC bioinformatics pipeline (poster), R&I Conference, Sydney (Australia), 08/2022"
+  ]
 }
