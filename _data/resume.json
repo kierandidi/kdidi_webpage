@@ -119,7 +119,7 @@
       "studyType": "PhD",
       "startDate": "2024",
       "courses": [
-        "Research in generative ML for protein design and optimization, supervised by Michael Bronstein.",
+        "Research in generative ML for protein design and optimization, co-supervised by Michael Bronstein (University of Oxford) and David Baker (University of Washington).",
         "ELLIS PhD Scholar and EPSRC fully-funded scholarship",
         "Supervised Principles of Programming Languages, Concurrent Programming and CompBio"
       ],
@@ -254,7 +254,12 @@
         "Brian Kuhlman",
         "David Baker",
         "Frank DiMaio"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://rosettacommons.github.io/tmol/latest/",
+        "Code": "https://github.com/RosettaCommons/tmol"
+      }
     },
     {
       "name": "Biomolecular design through latent reasoning with RFD4-Proteina",
@@ -323,7 +328,11 @@
         "Anthony P. Green",
         "Arash Vahdat",
         "David Baker"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Press": "https://newsroom.uw.edu/news-releases/researchers-achieve-major-advance-in-protein-design/"
+      }
     },
     {
       "name": "Programmable amide bond formation using de novo ligases",
@@ -357,7 +366,11 @@
         "Anthony P Green",
         "Donald Hilvert",
         "David Baker"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://www.janelia.org/node/70628"
+      }
     },
     {
       "name": "Adapting biological mechanisms for agentic protein design",
@@ -370,7 +383,8 @@
         "Micha Livne",
         "Kyle Gion",
         "Christian Dallago*"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Fast remote nucleotide sequence alignment with Riboseek",
@@ -385,7 +399,11 @@
         "Soohyun Kim",
         "Milot Mirdita",
         "Martin Steinegger"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Code": "https://github.com/steineggerlab/riboseek"
+      }
     },
     {
       "name": "Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale",
@@ -440,7 +458,12 @@
         "Arash Vahdat",
         "Pierce Ogden",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://research.nvidia.com/labs/genair/proteina-complexa/",
+        "Code": "https://github.com/NVIDIA-Digital-Bio/proteina-complexa"
+      }
     },
     {
       "name": "AlphaFold Database expands to proteome-scale quaternary structures",
@@ -488,7 +511,12 @@
         "Jennifer Fleming",
         "Milot Mirdita",
         "Christian Dallago"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://alphafold.ebi.ac.uk/",
+        "Press": "https://www.ebi.ac.uk/about/news/technology-and-innovation/first-complexes-alphafold-database/"
+      }
     },
     {
       "name": "A universal model for drug-receptor interactions",
@@ -516,7 +544,8 @@
         "Marcus Conrad",
         "Razelle Kurzrock",
         "Grzegorz M. Popowicz"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Accelerating Biomolecular Modeling with AtomWorks and RF3",
@@ -554,7 +583,12 @@
         "Pietro Liò",
         "David Baker",
         "Frank DiMaio"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Code": "https://github.com/RosettaCommons/atomworks",
+        "Video": "https://www.youtube.com/watch?v=Jyv7a1LhBwE"
+      }
     },
     {
       "name": "MotifBench: A standardized protein design benchmark for motif-scaffolding problems",
@@ -570,7 +604,12 @@
         "Joseph L. Watson",
         "Hai-Feng Chen",
         "Brian L. Trippe"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Code": "https://github.com/blt2114/MotifBench",
+        "Video": "https://www.youtube.com/watch?v=YLIBvA1dsQ4"
+      }
     },
     {
       "name": "BioNeMo Framework: a modular, high-performance library for AI model development in drug discovery",
@@ -671,7 +710,13 @@
         "Kyle Tretina",
         "Neha Tadimeti",
         "Anthony B Costa"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://docs.nvidia.com/bionemo-framework/latest/main/about/overview/index.html",
+        "Code": "https://github.com/NVIDIA/bionemo-framework",
+        "Press": "https://nvidianews.nvidia.com/news/nvidia-opens-bionemo-to-scale-digital-biology-for-global-biopharma-and-scientific-industry"
+      }
     },
     {
       "name": "BioModelsML: Building a FAIR and reproducible collection of machine learning models in life sciences and medicine for easy reuse",
@@ -688,7 +733,11 @@
         "Karthik Raman",
         "Henning Hermjakob",
         "Rahuman S Malik Sheriff"
-      ]
+      ],
+      "category": "Preprints",
+      "resources": {
+        "Webpage": "https://www.ebi.ac.uk/biomodels/"
+      }
     },
     {
       "name": "Online Search-Augmented Reinforcement Post-Training for All-Atom Protein Design",
@@ -706,7 +755,8 @@
         "Fanglei Xue",
         "Hanqi Feng",
         "David Baker"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Multimodal Latent Flow Matching for De Novo Nanobody Design",
@@ -727,7 +777,8 @@
         "Arash Vahdat",
         "Karsten Kreis",
         "Emine Kucukbenli"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Multi-Scenario Generative Protein Design via Preference Alignment",
@@ -742,7 +793,8 @@
         "Karsten Kreis",
         "Arash Vahdat",
         "Kieran Didi"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Proteina-Reforza: Reinforcement Learning Protein Binder Design",
@@ -767,7 +819,8 @@
         "Christian Dallago",
         "Arash Vahdat",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Proteina-Pronto: Fast De Novo Protein Design and Structure Prediction via Distillation",
@@ -786,7 +839,8 @@
         "Christian Dallago",
         "Emine Kucukbenli",
         "Arash Vahdat"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "Towards All-Atom Protein World Models: Learning and Diagnosing Predictive Latent Representations",
@@ -797,7 +851,8 @@
         "Aisha Hodzic",
         "Kieran Didi",
         "Michael M. Bronstein"
-      ]
+      ],
+      "category": "Preprints"
     },
     {
       "name": "DMSsim: a statistical design framework for count-based sorting experiments that generate AI-ready sequence–function data",
@@ -811,7 +866,8 @@
         "Maximilian Gantz",
         "Florian Hollfelder",
         "Michael M. Bronstein"
-      ]
+      ],
+      "category": "Manuscript in preparation"
     },
     {
       "name": "Atomic functional site scaffolding in biopolymers with RFdiffusion3",
@@ -852,7 +908,13 @@
         "Lars L. Schaaf",
         "Frank DiMaio",
         "David Baker"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/RosettaCommons/foundry",
+        "Video": "https://www.youtube.com/watch?v=Y8-V7HH9Hr4",
+        "Blog": "https://www.ipd.uw.edu/2025/12/rfdiffusion3-now-available/"
+      }
     },
     {
       "name": "De novo design of cysteine proteases",
@@ -883,7 +945,11 @@
         "Donald Hilvert",
         "Samuel J. Pellock",
         "David Baker"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Press": "https://newsroom.uw.edu/news-releases/molecular-scissors-open-path-to-new-therapies"
+      }
     },
     {
       "name": "Computational design of metalloproteases",
@@ -919,7 +985,11 @@
         "Anthony A. Hyman",
         "Donald Hilvert",
         "David Baker"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Press": "https://newsroom.uw.edu/news-releases/molecular-scissors-open-path-to-new-therapies"
+      }
     },
     {
       "name": "Efficient protein structure prediction from compact computers to datacenters with OpenFold-TRT",
@@ -943,7 +1013,11 @@
         "Martin Steinegger",
         "Christian Dallago",
         "Alejandro Chacon"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Blog": "https://developer.nvidia.com/blog/accelerate-protein-structure-inference-over-100x-with-nvidia-rtx-pro-6000-blackwell-server-edition/"
+      }
     },
     {
       "name": "Predicting PROTAC off-target effects via warhead involvement levels in drug–target interactions using graph attention neural networks",
@@ -955,7 +1029,11 @@
         "Kieran Didi",
         "Adam P. Cribbs",
         "Jianfeng Sun"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/mivolis/SENTINEL"
+      }
     },
     {
       "name": "GPU-accelerated homology search with MMseqs2",
@@ -973,7 +1051,13 @@
         "Milot Mirdita",
         "Bertil Schmidt",
         "Martin Steinegger"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Webpage": "https://mmseqs.com/",
+        "Code": "https://github.com/soedinglab/MMseqs2",
+        "Blog": "https://developer.nvidia.com/blog/boost-alphafold2-protein-structure-prediction-with-gpu-accelerated-mmseqs2/"
+      }
     },
     {
       "name": "Structure-based Drug Design with Equivariant Diffusion Models",
@@ -994,7 +1078,12 @@
         "Max Welling",
         "Michael Bronstein",
         "Bruno Correia"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/arneschneuing/DiffSBDD",
+        "Video": "https://www.youtube.com/watch?v=H-NcX6xrpZY&t=336s"
+      }
     },
     {
       "name": "MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery",
@@ -1015,7 +1104,13 @@
         "Fabian J. Theis",
         "Michael Sattler",
         "Grzegorz M. Popowicz"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/t7morgen/misato-dataset",
+        "Press": "https://www.nature.com/articles/s43588-024-00631-6",
+        "Dataset": "https://zenodo.org/records/7711953"
+      }
     },
     {
       "name": "Synsor: a tool for alignment-free detection of engineered DNA sequences",
@@ -1029,7 +1124,11 @@
         "Denis Bauer",
         "Laurence Wilson",
         "Maciej Maselko"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/aidantay/Synsor"
+      }
     },
     {
       "name": "AbNatiV: VQ-VAE-based assessment of antibody and nanobody nativeness for hit selection, humanisation, and engineering",
@@ -1047,7 +1146,11 @@
         "Xing Xu",
         "Matthew Greenig",
         "Pietro Sormanni"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://gitlab.developers.cam.ac.uk/ch/sormanni/abnativ"
+      }
     },
     {
       "name": "Biomolecular condensate phase diagrams with a combinatorial microdroplet platform",
@@ -1072,7 +1175,11 @@
         "Peter St George-Hyslop",
         "Simon Alberti",
         "Tuomas P. J. Knowles"
-      ]
+      ],
+      "category": "Journal articles",
+      "resources": {
+        "Code": "https://github.com/rqi14/PhaseScan"
+      }
     },
     {
       "name": "RNA-FrameFlow: Flow Matching for de novo 3D RNA Backbone Design",
@@ -1090,7 +1197,12 @@
         "Rex Ying",
         "Bryan Hooi",
         "Pietro Liò"
-      ]
+      ],
+      "category": "Journal articles",
+      "note": "Also presented at ICML SPIGM, 2024.",
+      "resources": {
+        "Code": "https://github.com/rish-16/rna-backbone-design"
+      }
     },
     {
       "name": "FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications",
@@ -1108,7 +1220,13 @@
         "Maya Czeneszew",
         "Christian Dallago",
         "Kevin K Yang"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Webpage": "https://flip.protein.properties/",
+        "Code": "https://github.com/J-SNACKKB/FLIP",
+        "Dataset": "https://zenodo.org/records/18433203"
+      }
     },
     {
       "name": "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
@@ -1130,7 +1248,14 @@
         "Emine Kucukbenli",
         "Arash Vahdat",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Webpage": "https://research.nvidia.com/labs/genair/proteina-complexa/",
+        "Code": "https://github.com/NVIDIA-Digital-Bio/proteina-complexa",
+        "Video · ML4PE": "https://www.youtube.com/watch?v=DaOlUqlVxik",
+        "Video · Valence Labs": "https://www.youtube.com/watch?v=-XNMSnFUPjk"
+      }
     },
     {
       "name": "La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching",
@@ -1147,7 +1272,13 @@
         "Emine Kucukbenli",
         "Arash Vahdat",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Webpage": "https://research.nvidia.com/labs/genair/la-proteina/",
+        "Code": "https://github.com/NVIDIA-Digital-Bio/la-proteina",
+        "Video": "https://www.youtube.com/watch?v=kA6-x5CpJIU"
+      }
     },
     {
       "name": "Compositional Flows for 3D Molecule and Synthesis Pathway Co-design",
@@ -1162,7 +1293,11 @@
         "Simon Olsson",
         "Woo Youn Kim",
         "Martin Ester"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Code": "https://github.com/tsa87/cgflow"
+      }
     },
     {
       "name": "Proteina: Scaling Flow-based Protein Structure Generative Models",
@@ -1181,7 +1316,13 @@
         "Emine Kucukbenli",
         "Arash Vahdat",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Webpage": "https://research.nvidia.com/labs/genair/proteina/",
+        "Code": "https://github.com/NVIDIA-Digital-Bio/proteina/",
+        "Video": "https://www.youtube.com/watch?v=Y2dRj9_ZEHw"
+      }
     },
     {
       "name": "DEFT: Efficient Finetuning of Conditional Diffusion Models by Learning the Generalised h-transform",
@@ -1199,11 +1340,12 @@
         "Emile Mathieu",
         "Urszula Julia Komorowska",
         "Pietro Lio"
-      ]
+      ],
+      "category": "Conference papers"
     },
     {
       "name": "Dynamics-Informed Protein Design with Structure Conditioning",
-      "url": "https://openreview.net/forum?id=jZPqf2G9Sw",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1e115bc9e9d700b93ce24f0d4f640ad-Abstract-Conference.html",
       "publisher": "ICLR",
       "releaseDate": "2024",
       "authors": [
@@ -1213,7 +1355,11 @@
         "Francisco Vargas",
         "Pietro Lio",
         "Mateja Jamnik"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Webpage": "https://openreview.net/forum?id=jZPqf2G9Sw"
+      }
     },
     {
       "name": "Evaluating Representation Learning on the Protein Structure Universe",
@@ -1232,7 +1378,11 @@
         "Jianlin Cheng",
         "Pietro Liò",
         "Tom Blundell"
-      ]
+      ],
+      "category": "Conference papers",
+      "resources": {
+        "Code": "https://github.com/a-r-j/ProteinWorkshop"
+      }
     },
     {
       "name": "Flows, straight but not so fast: Exploring the design space of Rectified Flows in Protein Design",
@@ -1245,7 +1395,8 @@
         "Charles Harris",
         "Kieran Didi",
         "Pietro Lio"
-      ]
+      ],
+      "category": "Workshop papers"
     },
     {
       "name": "Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design",
@@ -1264,7 +1415,8 @@
         "Arash Vahdat",
         "Emine Kucukbenli",
         "Karsten Kreis"
-      ]
+      ],
+      "category": "Workshop papers"
     },
     {
       "name": "A framework for conditional diffusion modelling with applications in motif scaffolding for protein design",
@@ -1279,7 +1431,11 @@
         "Emile Mathieu",
         "Urszula Julia Komorowska",
         "Pietro Lio"
-      ]
+      ],
+      "category": "Workshop papers",
+      "resources": {
+        "Video": "https://www.youtube.com/watch?v=GrtWwD8pPWY"
+      }
     },
     {
       "name": "Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models?",
@@ -1294,7 +1450,11 @@
         "Simon Mathis",
         "Pietro Lio",
         "Tom Blundell"
-      ]
+      ],
+      "category": "Workshop papers",
+      "resources": {
+        "Code": "https://github.com/cch1999/posecheck"
+      }
     },
     {
       "name": "Modelling biology in novel ways - an AI-first course in Structural Bioinformatics",
@@ -1306,7 +1466,11 @@
         "Charles Harris",
         "Pietro Liò",
         "Rainer Beck"
-      ]
+      ],
+      "category": "Workshop papers",
+      "resources": {
+        "Webpage": "https://structural-bioinformatics.netlify.app/"
+      }
     },
     {
       "name": "Flexible Small-Molecule Design and Optimization with Equivariant Diffusion Models",
@@ -1323,7 +1487,8 @@
         "Bruno Correia",
         "Pietro Liò",
         "Tom Blundell"
-      ]
+      ],
+      "category": "Workshop papers"
     },
     {
       "name": "Generating machine-learning-ready enzyme sequence-function data from microdroplet screening",
@@ -1339,7 +1504,8 @@
         "Pietro Lio",
         "Florian Hollfelder",
         "Maximilian Gantz"
-      ]
+      ],
+      "category": "Book chapters"
     },
     {
       "name": "Artificial Intelligence and Machine Learning in Bioinformatics",
@@ -1352,7 +1518,8 @@
         "Priya Ramarao-Milne",
         "Kieran Didi",
         "Denis C. Bauer"
-      ]
+      ],
+      "category": "Book chapters"
     }
   ],
   "meta": {
@@ -1360,53 +1527,52 @@
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
   },
   "teaching": [
-    "Principles of Programming Languages, teaching, Oxford University, 10-12/2026",
-    "Concurrent Programming, teaching, Oxford University, 10-12/2026",
+    "[Principles of Programming Languages](https://www.cs.ox.ac.uk/teaching/courses/2026-2027/principles/), teaching, Oxford University, 10-12/2026",
+    "[Concurrent Programming](https://www.cs.ox.ac.uk/teaching/courses/2026-2027/concurrentprogramming/), teaching, Oxford University, 10-12/2026",
     "Machine Learning Fundamentals, teaching, Oxford University, 08/2026",
     "Machine Learning for Science, 2-week lecture course, Oxford Summer School, 07/2026",
     "Bioinformatics, seminar series, Oxford University, 10/2025-02/2026",
     "Generative Modelling in Protein Design and Bioinformatics, guest lecture in bioinformatics course, Stanford University, 07/2025",
-    "Deep Learning in Structure-Based Drug Design, tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024",
-    "SDEs and Diffusion Processes, lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024",
-    "Structural Bioinformatics, lecture, Heidelberg University (BSc Biochemistry), 10/2023",
-    "Graph Modelling with Applications to Structural Biology, presentation, CCAIM AI and Machine Learning Summer School, 09/2023",
-    "Advanced Python for Scientists, lecture, Heidelberg University, 06/2023",
-    "Algorithms II, supervising course on data structures and graph algorithms, Cambridge University, 03-05/2023",
-    "Algorithms I, Cambridge University, 01-03/2023",
+    "[Deep Learning in Structure-Based Drug Design](https://www.sib.swiss/training/course/20240609_CADD), tutorial, Spring School Structure-based Computer-aided Drug Design, Swiss Institute of Bioinformatics (SIB), 06/2024",
+    "[SDEs and Diffusion Processes](https://sde-course.netlify.app/), lecture, Cambridge University (MPhil Advanced Computer Science), 01/2024",
+    "[Structural Bioinformatics](https://structural-bioinformatics.netlify.app/), lecture, Heidelberg University (BSc Biochemistry), 10/2023",
+    "[Graph Modelling with Applications to Structural Biology](https://www.vanderschaar-lab.com/ccaim-ai-and-machine-learning-summer-school/), presentation, CCAIM AI and Machine Learning Summer School, 09/2023",
+    "[Advanced Python for Scientists](https://github.com/kierandidi/advanced_python_for_scientists), lecture, Heidelberg University, 06/2023",
+    "[Algorithms II](https://www.cl.cam.ac.uk/teaching/2223/Algorithm2/), supervising course on data structures and graph algorithms, Cambridge University, 03-05/2023",
+    "[Algorithms I](https://www.cl.cam.ac.uk/teaching/2223/Algorithm1/), Cambridge University, 01-03/2023",
     "MLOps with PyTorch Lightning and W&B, workshop, ML Forum CSIRO Australia, 01/2023",
-    "Python for Scientists, lecture, Heidelberg University, 11/2022",
-    "Python Best Practices, workshop (co-host), Scientific Software Center Heidelberg, 11/2022",
-    "Deep Learning with PyTorch, Lunch Time Python workshop, Scientific Software Center Heidelberg, 10/2022",
-    "Python for Biochemists, lecture, Heidelberg University, 03/2022"
+    "[Python for Scientists](https://github.com/kierandidi/python_for_scientists), lecture, Heidelberg University, 11/2022",
+    "[Python Best Practices](https://ssciwr.github.io/Python-best-practices-course/), workshop (co-host), Scientific Software Center Heidelberg, 11/2022",
+    "[Deep Learning with PyTorch](https://ssciwr.github.io/lunch-time-python/#:~:text=Lunch%20Time%20Python%20aims%20at,will%20be%20made%20available%20afterwards.), Lunch Time Python workshop, Scientific Software Center Heidelberg, 10/2022",
+    "[Python for Biochemists](https://github.com/kierandidi/Python_for_Biochemists), lecture, Heidelberg University, 03/2022"
   ],
   "presentations": [
     "RFD4-Proteina and recent results, Google DeepMind, London (UK), 11/2026",
     "RFD4-Proteina for general protein design, Dayhoff Labs, London (UK), 11/2026",
     "Enzyme design and RFD4-Proteina, Ellison Institute, Oxford (UK), 11/2026",
     "RFD4-Proteina, Atomworks, and Annotated CIFs, RosettaCommons Workflows (online), 11/2026",
-    "The Proteina Model Family, In Silico, London (UK), 11/2026",
+    "The Proteina Model Family, In Silico, London (UK), 11/2026 · [Event](https://aievents.now/london/events/in-silico-006-2026-11-11)",
     "RFD4-Proteina: Biomolecular Design through Latent Reasoning, Starkly Speaking Reading Group (online), 11/2026",
-    "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute,",
-    "Open tools & models at the frontier of biological science, The Next Generation Symposium (AITHYRA), Vienna (Austria), 11/2026",
-    "Biomolecular design through latent reasoning with RFD4-Proteina, European RosettaCon, Lisbon (Portugal), 10/2026",
+    "Open tools & models at the frontier of biological science, The Next Generation Symposium (AITHYRA), Vienna (Austria), 11/2026 · [Event](https://www.aithyra.at/news/detail/aithyra-1-day-symposium-the-next-generation-ai-for-biomedical-science)",
+    "Biomolecular design through latent reasoning with RFD4-Proteina, European RosettaCon, Lisbon (Portugal), 10/2026 · [Event](https://rosettacommons.org/events/erc/schedule/)",
     "What we can and cannot learn from general GenAI: Universal molecular design with Proteina models, BZH, Heidelberg University (Germany), 10/2026",
     "Latent generative search unlocks de novo design of untapped biomolecular interactions at scale, EMBL, Heidelberg (Germany), 10/2026",
     "From Pixels to Proteins: Scaling Generative AI for Science, Charité, Berlin (Germany), 10/2026",
     "State-of-the-art protein design with latent reasoning, GTC Berlin (Germany)",
-    "Unlocking glycan binding and other polar interactions via generative modelling, London Protein Design Day, Imperial College (UK), 06/2026",
-    "What comes after atomistic protein design? AI x Bio conference, Wellcome Sanger Institute Cambridge (UK), 06/2026",
+    "Unlocking glycan binding and other polar interactions via generative modelling, London Protein Design Day, Imperial College (UK), 06/2026 · [Event](https://www.imperial.ac.uk/events/209589/london-protein-design-day/)",
+    "What comes after atomistic protein design? AI x Bio conference, Wellcome Sanger Institute Cambridge (UK), 06/2026 · [Event](https://coursesandconferences.wellcomeconnectingscience.org/event/ai-x-bio-20260608/)",
     "Latent Generative Search unlocks de novo Design of Untapped Biomolecular Interactions at Scale, ML4ProteinEngineering Seminar (online), 04/2026",
-    "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute, Starkly Speaking Reading Group (online), 03/2026",
-    "La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching, ML4ProteinEngineering Seminar (online), 08/2025",
-    "Why equivariance is (not) so popular in Life Sciences (invited talk), ICML ML4LMS 2024, 07/2024",
-    "A framework for conditional diffusion models with applications in motif scaffolding for protein design, ML4ProteinEngineering Seminar (online), 06/2024",
-    "Conditioning generative models for proteins, images and more (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024",
-    "Where do we stand in protein and ligand design? (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023",
-    "Conditional Diffusion Models for Protein Design via Doob's h-transform (poster), MoML Conference, MIT (US), 11/2023",
-    "Reality Check - Evaluating Generative Models for Protein and Ligand Design (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023",
-    "Accessible AMR-detection tools for clinicians via cloud-based bioinformatics (oral presentation), Clinical Informatics Symposium, Melbourne (Australia), 12/2022",
-    "sINSIDER: a cloud-native modular platform for kmer-based genomic analysis (oral presentation), ABACBS Conference, Melbourne (Australia), 11/2022",
+    "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute, Starkly Speaking Reading Group (online), 03/2026 · [Event](https://groups.google.com/g/starkspeak/c/Z3cyduxg42s)",
+    "La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching, ML4ProteinEngineering Seminar (online), 08/2025 · [Video](https://www.youtube.com/watch?v=kA6-x5CpJIU)",
+    "Why equivariance is (not) so popular in Life Sciences (invited talk), ICML ML4LMS 2024, 07/2024 · [Event](https://ml4lms.bio/)",
+    "A framework for conditional diffusion models with applications in motif scaffolding for protein design, ML4ProteinEngineering Seminar (online), 06/2024 · [Video](https://www.youtube.com/watch?v=GrtWwD8pPWY)",
+    "Conditioning generative models for proteins, images and more (oral presentation), AI and Biology Conference, EMBL Heidelberg (Germany), 03/2024 · [Event](https://www.embl.org/about/info/course-and-conference-office/events/ees24-01/)",
+    "Where do we stand in protein and ligand design? (oral presentation), Computational Structural Biology Conference, EMBL Heidelberg (Germany), 12/2023 · [Event](https://www.embl.org/about/info/course-and-conference-office/events/csb23-01/)",
+    "Conditional Diffusion Models for Protein Design via Doob's h-transform (poster), MoML Conference, MIT (US), 11/2023 · [Event](https://www.moml.mit.edu/moml-mit-2023)",
+    "Reality Check - Evaluating Generative Models for Protein and Ligand Design (poster), Machine Learning in Drug Discovery Symposium, Broad Institute (US), 10/2023 · [Event](https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery-symposium-2023)",
+    "Accessible AMR-detection tools for clinicians via cloud-based bioinformatics (oral presentation), Clinical Informatics Symposium, Melbourne (Australia), 12/2022 · [Event](https://pheedloop.com/ABACBS2022/site/CI)",
+    "sINSIDER: a cloud-native modular platform for kmer-based genomic analysis (oral presentation), ABACBS Conference, Melbourne (Australia), 11/2022 · [Event](https://www.abacbs.org/conference2022)",
     "Moving bioinformatics to the cloud (keynote), eSCAMPS Symposium, Cambridge (UK), 09/2022",
-    "Detecting DNA integration via HPC bioinformatics pipeline (poster), R&I Conference, Sydney (Australia), 08/2022"
+    "Detecting DNA integration via HPC bioinformatics pipeline (poster), R&I Conference, Sydney (Australia), 08/2022 · [Event](https://na.eventscloud.com/website/36005/home/)"
   ]
 }
