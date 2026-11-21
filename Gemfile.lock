@@ -12,7 +12,6 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
-    duktape (2.6.0.0)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -105,7 +104,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  duktape
   execjs
   jekyll (~> 4.1)
   jekyll-avatar
@@ -127,4 +125,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   1.17.2
+   2.5.23

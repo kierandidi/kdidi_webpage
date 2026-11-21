@@ -26,8 +26,6 @@ gem "jekyll-theme-hydejack", path: "./#jekyll-theme-hydejack"
 # If you're using the MathJax math engine instead, free to remove the line below:
 gem "kramdown-math-katex"
 
-# A JavaScript runtime for ruby that helps with running the katex gem above.
-gem "duktape"
 gem "execjs"
 
 # Fixes `jekyll serve` in ruby 3
