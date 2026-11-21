@@ -10,17 +10,17 @@
     <header class="{% unless forloop.first %}mt2{% endunless %}">
       {% if awa.date.size > 0 %}
         <p class="faded">
-          <time datetime="{{ awa.date | date_to_xmlschema }}">{{ awa.date | date:from_to_format }}</time>
+          {% if awa.date.size == 4 %}<time datetime="{{ awa.date }}">{{ awa.date }}</time>{% else %}<time datetime="{{ awa.date | date_to_xmlschema }}">{{ awa.date | date:from_to_format }}</time>{% endif %}
         </p>
       {% endif %}
       <h3 class="h4 faded" property="award">
         {% capture title %}<span class="bc">{{ awa.title }}</span>{% endcapture %}
         {% capture awarder %}<span class="bc">{{ awa.awarder }}</span>{% endcapture %}
-        {{ strings.resume.awards_title
+        {% unless awa.awarder %}{{ title }}{% else %}{{ strings.resume.awards_title
           | default:"<!--title--> from <!--awarder-->"
           | replace:"<!--title-->", title
           | replace:"<!--awarder-->", awarder
-        }}
+        }}{% endunless %}
       </h3>
     </header>
 

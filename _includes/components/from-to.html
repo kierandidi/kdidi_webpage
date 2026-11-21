@@ -1,10 +1,15 @@
 {% assign from_to_separator = strings.from_to_separator | default:strings.resume.from_to_separator | default:"–" %}
 {% assign present = strings.present | default:strings.resume.present | default:"present" %}
 
-<time datetime="{{ include.from | date_to_xmlschema }}">{{ include.from | date:include.format }}</time>
-{{from_to_separator}}
-{% if include.to.size > 0 %}
-  <time datetime="{{ include.to | date_to_xmlschema }}">{{ include.to | date:include.format }}</time>
-{% else %}
-  <em>{{present}}</em>
-{% endif %}
+{% for key in (1..2) %}
+  {% if key == 1 %}{% assign value = include.from %}{% else %}{{ from_to_separator }}{% assign value = include.to %}{% endif %}
+  {% if value.size == 4 %}
+    <time datetime="{{ value }}">{{ value }}</time>
+  {% elsif value.size == 7 %}
+    <time datetime="{{ value }}">{{ value | append:'-01' | date:include.format }}</time>
+  {% elsif value.size > 0 %}
+    <time datetime="{{ value | date_to_xmlschema }}">{{ value | date:include.format }}</time>
+  {% else %}
+    <em>{{ present }}</em>
+  {% endif %}
+{% endfor %}
