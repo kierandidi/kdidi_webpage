@@ -21,6 +21,8 @@ This in the end took the form of the [BioHack London](https://biohacklondon.noti
 
 
 
+BioHack continued in New York City and other locations. [BioHack NYC 2023](https://www.linkedin.com/posts/kieran-didi_biohack-goes-international-it-was-great-activity-7132412753746513920-aLrN) was followed by a [second NYC edition at NYU in November 2024](https://wp.nyu.edu/sccpc/2024/11/21/simons-center-cosponsors-biohack-nyc/), where 70 participants worked together on AI and biology projects.
+
 ## Credits
 
 Cheers to Ceara Harper and Pranay Shah for getting the BioHack London off the ground, and to Tess van Stekelenburg and the other BioxML hackathon organisers for putting this amazing event together!
