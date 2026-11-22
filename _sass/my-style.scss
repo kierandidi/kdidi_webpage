@@ -108,3 +108,32 @@ transition: border-color 0.5s ease;
   font-size: 1.5em;
   cursor: pointer;
 }
+.featured-projects {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  @media (min-width: 42em) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  gap: 2rem 1.5rem;
+
+  .featured-project-link {
+    display: block;
+    border: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: white;
+    border-radius: .4rem;
+  }
+
+  .project-image-cover { object-fit: cover; }
+  .project-image-contain { object-fit: contain; }
+
+  h2 {
+    margin: .65rem 0 .3rem;
+    font-size: 1.25rem;
+  }
+
+  p { margin: 0; }
+}
